@@ -1,0 +1,86 @@
+{
+  "custom": {},
+  "params": {
+    "engUnit": "n/a",
+    "label": "Label",
+    "value": true
+  },
+  "propConfig": {
+    "params.engUnit": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.value": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 46,
+      "width": 176
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.label"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Value"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.value"
+              },
+              "transforms": [
+                {
+                  "expression": "if(toStr({value}) \u003d \"true\", \"True\",\n\tif(toStr({value}) \u003d \"false\", \"False\", {value})\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "classes": "exchange/datacenter/framework/data/text-value",
+            "textAlign": "right"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

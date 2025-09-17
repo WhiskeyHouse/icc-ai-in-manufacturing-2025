@@ -1,0 +1,15 @@
+{
+  "base": {
+    "style": {
+      "borderTopLeftRadius": "10px",
+      "borderTopRightRadius": "10px",
+      "borderBottomLeftRadius": "10px",
+      "borderBottomRightRadius": "10px",
+      "fontFamily": "Roboto",
+      "fontSize": "19px",
+      "padding": "6.5px",
+      "textAlign": "center",
+      "whiteSpace": "nowrap"
+    }
+  }
+}

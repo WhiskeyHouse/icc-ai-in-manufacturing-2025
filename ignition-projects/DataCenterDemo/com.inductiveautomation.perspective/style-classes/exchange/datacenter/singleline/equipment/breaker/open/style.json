@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "color": "var(--neutral-90)",
+      "stroke": "var(--neutral-90)",
+      "fill": "var(--neutral-90)"
+    }
+  }
+}

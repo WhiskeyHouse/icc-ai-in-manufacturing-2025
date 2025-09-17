@@ -1,0 +1,98 @@
+{
+  "custom": {},
+  "params": {
+    "redundantServer": "",
+    "redundantStatus": [],
+    "server": "Frontend 1",
+    "status": []
+  },
+  "propConfig": {
+    "params.redundantServer": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.redundantStatus": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.server": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.status": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 122
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "redundantServer": "{view.params.redundantServer}",
+                  "redundantStatus": "{view.params.redundantStatus}",
+                  "server": "{view.params.server}",
+                  "status": "{view.params.status}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "#\tdef get_instance(status):\n#   \t    return {item.name: system.tag.readBlocking(tagPaths\u003d[item.fullPath])[0].value for item in status if item.name in [\"IsRunning\", \"AgentName\"]}\n#   \t\n#   \tstatusList \u003d [get_instance(value.status)]\n#   \tstatusList.append(get_instance(value.redundantStatus)) if value.redundantStatus else None\n#   \treturn statusList\n\tinstance \u003d []\n\tfor item in value.status:\n\t\tif item.name \u003d\u003d \"IsRunning\":\n\t\t\tinstance.append({\"server\":value.server, \"fullPath\":item.fullPath})\n\t\n\tfor item in value.redundantStatus:\n\t\tif item.name \u003d\u003d \"IsRunning\":\n\t\t\tinstance.append({\"server\":value.redundantServer, \"fullPath\":item.fullPath})\n\treturn instance",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "alignContent": "flex-end",
+          "direction": "column",
+          "elementPosition": {
+            "basis": "25px",
+            "grow": 0,
+            "shrink": 0
+          },
+          "elementStyle": {
+            "overflow": "visible"
+          },
+          "justify": "flex-end",
+          "path": "Exchange/DataCenter/Architecture/EmbeddedViews/Icons/Status",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/framework/data/text-value"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

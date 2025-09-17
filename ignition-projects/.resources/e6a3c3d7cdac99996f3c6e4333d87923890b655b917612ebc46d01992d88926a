@@ -1,0 +1,306 @@
+{
+  "custom": {
+    "bucketName": "Outlet",
+    "multiInstance": true,
+    "tagBrowse": [
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet1",
+        "hasChildren": true,
+        "name": "Outlet1",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet2",
+        "hasChildren": true,
+        "name": "Outlet2",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet3",
+        "hasChildren": true,
+        "name": "Outlet3",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet4",
+        "hasChildren": true,
+        "name": "Outlet4",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet5",
+        "hasChildren": true,
+        "name": "Outlet5",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet6",
+        "hasChildren": true,
+        "name": "Outlet6",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet7",
+        "hasChildren": true,
+        "name": "Outlet7",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet8",
+        "hasChildren": true,
+        "name": "Outlet8",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet9",
+        "hasChildren": true,
+        "name": "Outlet9",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet10",
+        "hasChildren": true,
+        "name": "Outlet10",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet11",
+        "hasChildren": true,
+        "name": "Outlet11",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet12",
+        "hasChildren": true,
+        "name": "Outlet12",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet13",
+        "hasChildren": true,
+        "name": "Outlet13",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet14",
+        "hasChildren": true,
+        "name": "Outlet14",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet15",
+        "hasChildren": true,
+        "name": "Outlet15",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      },
+      {
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet/Outlet16",
+        "hasChildren": true,
+        "name": "Outlet16",
+        "tagType": "UdtInstance",
+        "typeId": "Exchange/DataCenterDemo/Equipment/PDU/Outlet",
+        "value": null
+      }
+    ]
+  },
+  "params": {
+    "folderPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A/Outlet"
+  },
+  "propConfig": {
+    "custom.bucketName": {
+      "binding": {
+        "config": {
+          "path": "view.params.folderPath"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.rsplit(\"/\",1)[1]",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.multiInstance": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.tagBrowse[0].hasChildren}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tagBrowse": {
+      "binding": {
+        "config": {
+          "path": "view.params.folderPath"
+        },
+        "transforms": [
+          {
+            "code": "\treturn system.tag.browse(value)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.folderPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 293,
+      "width": 361
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.bucketName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": 2,
+            "classes": "exchange/datacenter/equipment/common/text"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Accordion"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.multiInstance} \u0026\u0026 len({view.custom.tagBrowse}) \u003e 1"
+              },
+              "type": "expr"
+            }
+          },
+          "props.items": {
+            "binding": {
+              "config": {
+                "path": "view.custom.tagBrowse"
+              },
+              "transforms": [
+                {
+                  "code": "\tdef getAccordionInstance(title, tagPath):\n\t\treturn {\n\t\t  \"expanded\": False,\n\t\t  \"header\": {\n\t\t    \"toggle\": {\n\t\t      \"enabled\": True,\n\t\t      \"expandedIcon\": {\n\t\t        \"path\": \"material/expand_less\",\n\t\t        \"color\": \"\",\n\t\t        \"style\": {\n\t\t          \"classes\": \"\"\n\t\t        }\n\t\t      },\n\t\t      \"collapsedIcon\": {\n\t\t        \"path\": \"material/expand_more\",\n\t\t        \"color\": \"\",\n\t\t        \"style\": {\n\t\t          \"classes\": \"\"\n\t\t        }\n\t\t      }\n\t\t    },\n\t\t    \"content\": {\n\t\t      \"type\": \"text\",\n\t\t      \"text\": title,\n\t\t      \"useDefaultViewWidth\": False,\n\t\t      \"useDefaultViewHeight\": False,\n\t\t      \"viewPath\": \"\",\n\t\t      \"viewParams\": {},\n\t\t      \"style\": {\n\t\t        \"classes\": \"\"\n\t\t      }\n\t\t    },\n\t\t    \"height\": \"40px\",\n\t\t    \"reverse\": False,\n\t\t    \"style\": {\n\t\t      \"classes\": \"\"\n\t\t    }\n\t\t  },\n\t\t  \"body\": {\n\t\t    \"viewPath\": \"Exchange/DynamicPopup/Framework/Data/Components/DataCanvas\",\n\t\t    \"viewParams\": {\"folderPath\": tagPath},\n\t\t    \"useDefaultViewWidth\": False,\n\t\t    \"useDefaultViewHeight\": False,\n\t\t    \"height\": \"auto\",\n\t\t    \"style\": {\n\t\t      \"classes\": \"\",\n\t\t      \"margin\": \"16px\"\n\t\t    }\n\t\t  }\n\t\t}\n\treturn [getAccordionInstance(tag.get(\"fullPath\").rsplit(\"/\",1)[1], tag.get(\"fullPath\")) for tag in value]",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.accordion"
+      },
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "!{view.custom.multiInstance} || len({view.custom.tagBrowse}) \u003d 1"
+              },
+              "type": "expr"
+            }
+          },
+          "props.instances": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.multiInstance} \u0026\u0026 len({view.custom.tagBrowse}) \u003d 1,\n\t{view.custom.tagBrowse[0].fullPath},\n\t{view.params.folderPath}\n)"
+              },
+              "transforms": [
+                {
+                  "code": "\ttagPath \u003d value\n\ttags \u003d system.tag.browse(tagPath)\n\n\treturn [\n\t\t{\"tagPath\": tag.get(\"fullPath\")} for tag in tags if tag.get(\"name\") !\u003d \u0027PopupTitle\u0027]",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "elementPosition": {
+            "basis": "auto",
+            "grow": 0
+          },
+          "loading": {
+            "order": "with-parent"
+          },
+          "path": "Exchange/DynamicPopup/Framework/Data/DataPoint",
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "marginLeft": 4,
+        "marginRight": 4
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

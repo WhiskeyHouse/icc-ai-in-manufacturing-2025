@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "color": "var(--neutral-90)",
+      "fontSize": "15px",
+      "fontWeight": "bold",
+      "textAlign": "center"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "custom": {
+    "deviceName": "Utility XFR1A",
+    "popupTitle": "Site 1 - Data Hall 1 - Section 1 - XFR 1A"
+  },
+  "params": {
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/XFR/XFR1A"
+  },
+  "propConfig": {
+    "custom.deviceName": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "transforms": [
+          {
+            "code": "\treturn \u0027Utility {name}\u0027.format(name \u003d value.rsplit(\"/\",1)[1])",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.popupTitle": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}/Info/PopupTitle"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 52,
+      "width": 124
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "DeviceName"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/singleline/equipment/common/base"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\tviewPath \u003d \"Exchange/DataCenter/Faceplates/XfrFp\"\n\ttagPath \u003d self.view.params.tagPath\n\tpopupTitle \u003d self.view.custom.popupTitle\n\tviewParams \u003d {\"tagPath\": tagPath}\n\n\tpayload \u003d {\n\t\t  \u0027command\u0027 : \u0027openPopup\u0027\n\t\t, \u0027self\u0027: self\n\t\t, \u0027event\u0027: event\n\t\t, \u0027parameters\u0027: {\n\t\t\t\u0027id\u0027 : tagPath\n\t\t\t, \u0027view\u0027: viewPath\n\t\t\t, \u0027params\u0027: viewParams\n\t\t\t, \u0027title\u0027 : popupTitle\n\t\t\t, \u0027resizable\u0027: False\n\t\t\t, \u0027modal\u0027: True\n\t\t\t, \u0027showCloseIcon\u0027: False\n\t\t}\n\t}\n\t\n\tsystem.perspective.sendMessage(\u0027pan-zoom-iframe-clicked\u0027, payload, scope \u003d \u0027session\u0027)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "justify": "space-evenly",
+      "style": {
+        "classes": "exchange/datacenter/singleline/equipment/device/off exchange/datacenter/framework/clickable",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,107 @@
+repo_name: WhiskeyHouse/whk-services-deployments
+report_id: 4752b292cceed4123ac321ce4bbe42b7
+version: 0.1
+repo_type: Public
+timestamp: '2024-03-14T01:27:55+00:00'
+requested_by: pmannion2
+provider: github
+branch: main
+detected_tools_count: 8
+tools:
+- name: Node.js
+  description: A platform built on Chrome's JavaScript runtime for easily building
+    fast, scalable network applications
+  website_url: http://nodejs.org/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
+  detection_source_url: https://github.com/WhiskeyHouse/whk-services-deployments/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Patrick Mannion
+  last_updated_on: 2024-03-11 15:28:12.000000000 Z
+- name: Kafka
+  description: Distributed, fault tolerant, high throughput pub-sub messaging system
+  website_url: http://kafka.apache.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Message Queue
+  image_url: https://img.stackshare.io/service/1063/kazUJooF_400x400.jpg
+  detection_source_url: https://github.com/WhiskeyHouse/whk-services-deployments/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Patrick Mannion
+  last_updated_on: 2024-03-11 20:16:01.000000000 Z
+- name: Kafka REST
+  description: A RESTful interface to a Kafka cluster
+  website_url: https://github.com/confluentinc/kafka-rest
+  version: 7.3.1
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Kafka Tools
+  image_url: https://img.stackshare.io/service/8938/default_952e19080b823dcfc14ef0508ae6a783d35224f6.png
+  detection_source_url: https://github.com/WhiskeyHouse/whk-services-deployments/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Patrick Mannion
+  last_updated_on: 2024-03-11 20:16:01.000000000 Z
+- name: PostgreSQL
+  description: A powerful, open source object-relational database system
+  website_url: http://www.postgresql.org/
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1028/ASOhU5xJ.png
+  detection_source_url: https://github.com/WhiskeyHouse/whk-services-deployments/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Patrick Mannion
+  last_updated_on: 2024-03-04 22:35:48.000000000 Z
+- name: Redis
+  description: Open source (BSD licensed), in-memory data structure store
+  website_url: http://redis.io/
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: In-Memory Databases
+  image_url: https://img.stackshare.io/service/1031/default_cbce472cd134adc6688572f999e9122b9657d4ba.png
+  detection_source_url: https://github.com/WhiskeyHouse/whk-services-deployments/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Patrick Mannion
+  last_updated_on: 2024-03-04 22:17:52.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/WhiskeyHouse/whk-services-deployments
+  detection_source: Repo Metadata
+- name: cURL
+  description: Command Line Tool and Library for Transferring Data With URLs
+  website_url: http://curl.haxx.se/
+  open_source: true
+  hosted_saas: false
+  category: Assets and Media
+  sub_category: File Transfer
+  image_url: https://img.stackshare.io/service/6552/curl-logo.png
+  detection_source_url: https://github.com/WhiskeyHouse/whk-services-deployments/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Patrick Mannion
+  last_updated_on: 2024-03-04 22:17:52.000000000 Z
+- name: Shell
+  description: A shell is a text-based terminal, used for manipulating programs and
+    files. Shell scripts typically manage program execution.
+  website_url: https://en.wikipedia.org/wiki/Shell_script
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/WhiskeyHouse/whk-services-deployments
+  detection_source: Repo Metadata

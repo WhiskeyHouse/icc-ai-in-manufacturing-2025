@@ -1,0 +1,86 @@
+{
+  "custom": {},
+  "params": {
+    "heatmap": "Site1-DataHall1-Section1",
+    "tagName": "Temperature"
+  },
+  "propConfig": {
+    "params.heatmap": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "DesktopMain"
+        },
+        "position": {
+          "size": "large"
+        },
+        "propConfig": {
+          "props.params.heatmap": {
+            "binding": {
+              "config": {
+                "path": "view.params.heatmap"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tagName": {
+            "binding": {
+              "config": {
+                "path": "view.params.tagName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Heatmap/Desktop/DesktopMain"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MobileMain"
+        },
+        "propConfig": {
+          "props.params.heatmap": {
+            "binding": {
+              "config": {
+                "path": "view.params.heatmap"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tagName": {
+            "binding": {
+              "config": {
+                "path": "view.params.tagName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Heatmap/Mobile/MobileMain"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "breakpoint": 1200
+    },
+    "type": "ia.container.breakpt"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF00",
+      "borderColor": "var(--neutral-30)",
+      "borderTopLeftRadius": "10px",
+      "borderTopRightRadius": "10px",
+      "borderBottomLeftRadius": "10px",
+      "borderBottomRightRadius": "10px",
+      "color": "var(--label)",
+      "fontFamily": "Roboto",
+      "fontSize": "13px",
+      "padding": "0.15vmin"
+    }
+  }
+}

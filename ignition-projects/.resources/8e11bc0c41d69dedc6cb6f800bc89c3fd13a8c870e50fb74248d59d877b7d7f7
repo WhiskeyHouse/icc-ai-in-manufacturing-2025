@@ -1,0 +1,99 @@
+{
+  "custom": {
+    "iconPath": [
+      "",
+      "material/warning",
+      "",
+      "material/notification_important",
+      ""
+    ],
+    "stylePath": [
+      "",
+      "exchange/datacenter/singleline/equipment/common/alarmPriority/low",
+      "",
+      "exchange/datacenter/singleline/equipment/common/alarmPriority/high",
+      ""
+    ]
+  },
+  "params": {
+    "basis": "30px",
+    "priority": 3
+  },
+  "propConfig": {
+    "custom.iconPath": {
+      "persistent": true
+    },
+    "custom.stylePath": {
+      "persistent": true
+    },
+    "params.basis": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.priority": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 40,
+      "width": 40
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "path": "view.params.basis"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "view.custom.iconPath"
+              },
+              "transforms": [
+                {
+                  "expression": "if({view.params.priority} !\u003d \"\", {value}[{view.params.priority}], \"\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "view.custom.stylePath"
+              },
+              "transforms": [
+                {
+                  "expression": "if({view.params.priority} !\u003d \"\", {value}[{view.params.priority}], \"\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "DesktopMain"
+        },
+        "position": {
+          "size": "large"
+        },
+        "props": {
+          "path": "Exchange/DataCenter/SingleLine/Desktop/DesktopMain"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MobileMain"
+        },
+        "props": {
+          "path": "Exchange/DataCenter/SingleLine/Mobile/MobileMain"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.breakpt"
+  }
+}

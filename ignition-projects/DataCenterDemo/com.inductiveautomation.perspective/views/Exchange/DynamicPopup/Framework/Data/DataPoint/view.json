@@ -1,0 +1,156 @@
+{
+  "custom": {
+    "documentation": null,
+    "engUnit": null,
+    "label": null,
+    "type": null,
+    "value": null
+  },
+  "params": {
+    "tagPath": ""
+  },
+  "propConfig": {
+    "custom.documentation": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.Documentation"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.engUnit": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.engUnit"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.label": {
+      "binding": {
+        "config": {
+          "struct": {
+            "documentation": "{view.custom.documentation}",
+            "tagPath": "{view.params.tagPath}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\treturn value[\u0027documentation\u0027] if len(value[\u0027documentation\u0027]) \u003e 0 else value[\u0027tagPath\u0027].rsplit(\"/\", 1)[1]",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.type": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.dataType"
+        },
+        "transforms": [
+          {
+            "code": "\tdataType \u003d str(value)\n\tviewPathMap \u003d {\n\t\t\"Float8\": \"Numeric\",\n\t\t\"Float4\": \"Numeric\",\n\t\t\"Int4\": \"Numeric\",\n\t\t\"Int8\": \"Numeric\",\n\t\t\"Boolean\": \"String\",\n\t\t\"String\": \"String\"\n\t}\n\treturn viewPathMap.get(dataType)",
+            "type": "script"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.value": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 46,
+      "width": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Numeric"
+        },
+        "propConfig": {
+          "props.params.engUnit": {
+            "binding": {
+              "config": {
+                "path": "view.custom.engUnit"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.label": {
+            "binding": {
+              "config": {
+                "path": "view.custom.label"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.value": {
+            "binding": {
+              "config": {
+                "path": "view.custom.value"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "expression": "\"Exchange/DynamicPopup/Framework/Data/\" + {view.custom.type}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

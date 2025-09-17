@@ -1,0 +1,254 @@
+{
+  "custom": {},
+  "params": {
+    "simpleGauges": {
+      "first": {
+        "arc": {
+          "color": "var(--callToAction)",
+          "width": 30
+        },
+        "arcBackground": {
+          "color": "var(--neutral-50)",
+          "opacity": 0.2
+        },
+        "endAngle": 405,
+        "label": {
+          "color": "var(--callToAction)",
+          "maxDecimal": 4,
+          "offsetX": 0,
+          "offsetY": 0,
+          "size": "10px",
+          "units": "",
+          "visible": false
+        },
+        "numberFormat": "###0.#",
+        "pathToTag": "Input/SystemInputRealPower",
+        "startAngle": 135,
+        "title": "REAL"
+      },
+      "second": {
+        "arc": {
+          "color": "var(--callToAction)",
+          "width": 30
+        },
+        "arcBackground": {
+          "color": "var(--neutral-50)",
+          "opacity": 0.2
+        },
+        "endAngle": 405,
+        "label": {
+          "color": "var(--callToAction)",
+          "maxDecimal": 4,
+          "offsetX": 0,
+          "offsetY": 0,
+          "size": "10px",
+          "units": "",
+          "visible": false
+        },
+        "numberFormat": "###0.00",
+        "pathToTag": "Input/SystemInputPowerFactor",
+        "startAngle": 135,
+        "title": "FACTOR"
+      },
+      "third": {
+        "arc": {
+          "color": "var(--callToAction)",
+          "width": 30
+        },
+        "arcBackground": {
+          "color": "var(--neutral-50)",
+          "opacity": 0.2
+        },
+        "endAngle": 405,
+        "label": {
+          "color": "var(--callToAction)",
+          "maxDecimal": 4,
+          "offsetX": 0,
+          "offsetY": 0,
+          "size": "10px",
+          "units": "",
+          "visible": false
+        },
+        "numberFormat": "###0.#",
+        "pathToTag": "Input/SystemInputFrequency",
+        "startAngle": 135,
+        "title": "FREQUENCY"
+      }
+    },
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/UPS/UPS1A",
+    "title": "INPUT POWER"
+  },
+  "propConfig": {
+    "params.simpleGauges": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 144,
+      "width": 439
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Real"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "props.params": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "simpleGauge": "{view.params.simpleGauges.first}",
+                      "tagPath": "{view.params.tagPath}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tsimpleGauge \u003d value.get(\u0027simpleGauge\u0027)\n\t\n\tparentParamKeys \u003d [\u0027numberFormat\u0027, \u0027title\u0027, \u0027pathToTag\u0027]\n\t\n\tsimpleGaugeParams \u003d {key: theValue for key, theValue in simpleGauge.iteritems() if key not in parentParamKeys}\n\t\n\tparentParams \u003d {\u0027tagPath\u0027: \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d simpleGauge.get(\u0027pathToTag\u0027)),\n\t\t\t\t\t\t\u0027title\u0027: simpleGauge.get(\u0027title\u0027), \u0027numberFormat\u0027: simpleGauge.get(\u0027numberFormat\u0027), \u0027simpleGauge\u0027: simpleGaugeParams}\n\t\n\treturn parentParams",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              }
+            },
+            "props": {
+              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Factor"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "props.params": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "simpleGauge": "{view.params.simpleGauges.second}",
+                      "tagPath": "{view.params.tagPath}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tsimpleGauge \u003d value.get(\u0027simpleGauge\u0027)\n\t\n\tparentParamKeys \u003d [\u0027numberFormat\u0027, \u0027title\u0027, \u0027pathToTag\u0027]\n\t\n\tsimpleGaugeParams \u003d {key: theValue for key, theValue in simpleGauge.iteritems() if key not in parentParamKeys}\n\t\n\tparentParams \u003d {\u0027tagPath\u0027: \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d simpleGauge.get(\u0027pathToTag\u0027)),\n\t\t\t\t\t\t\u0027title\u0027: simpleGauge.get(\u0027title\u0027), \u0027numberFormat\u0027: simpleGauge.get(\u0027numberFormat\u0027), \u0027simpleGauge\u0027: simpleGaugeParams}\n\t\n\treturn parentParams",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              }
+            },
+            "props": {
+              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Frequency"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "props.params": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "simpleGauge": "{view.params.simpleGauges.third}",
+                      "tagPath": "{view.params.tagPath}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tsimpleGauge \u003d value.get(\u0027simpleGauge\u0027)\n\t\n\tparentParamKeys \u003d [\u0027numberFormat\u0027, \u0027title\u0027, \u0027pathToTag\u0027]\n\t\n\tsimpleGaugeParams \u003d {key: theValue for key, theValue in simpleGauge.iteritems() if key not in parentParamKeys}\n\t\n\tparentParams \u003d {\u0027tagPath\u0027: \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d simpleGauge.get(\u0027pathToTag\u0027)),\n\t\t\t\t\t\t\u0027title\u0027: simpleGauge.get(\u0027title\u0027), \u0027numberFormat\u0027: simpleGauge.get(\u0027numberFormat\u0027), \u0027simpleGauge\u0027: simpleGaugeParams}\n\t\n\treturn parentParams",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              }
+            },
+            "props": {
+              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Metrics"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "justify": "space-evenly",
+          "style": {
+            "overflow": "hidden",
+            "row-gap": "27.5px"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "gap": "7.5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

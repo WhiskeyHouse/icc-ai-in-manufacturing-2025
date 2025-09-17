@@ -1,0 +1,8 @@
+{
+  "base": {
+    "style": {
+      "color": "var(--callToAction)",
+      "textAlign": "right"
+    }
+  }
+}

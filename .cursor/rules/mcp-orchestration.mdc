@@ -1,0 +1,37 @@
+# MCP Orchestration Rules for Agentic Ignition Development
+
+## Rule 1: Authentication-First Development Flow
+Always establish Ignition authentication via Playwright MCP before any project operations:
+1. **Authenticate first**: Use Playwright MCP to log into Ignition Gateway (`admin` + password from `secrets/`)
+2. **Validate access**: Navigate to target project URL to confirm authentication worked
+3. **Then operate**: Use Ignition MCP for project operations and Linter MCP for validation
+4. **Session scope**: Each development session requires fresh authentication - no persistence between MCP sessions
+
+## Rule 2: Validate-Then-Deploy Pattern
+Structure all Ignition development with validation gates:
+1. **Lint before deploy**: Use Ignition Linter MCP to validate components/scripts before any Gateway operations
+2. **Test in browser**: Use Playwright MCP to verify deployed changes render correctly in Perspective
+3. **Fail fast**: Stop development flow immediately if linting fails - fix issues before proceeding
+4. **Document state**: Take Playwright screenshots of working states for debugging future issues
+
+## Core MCP Integration Points
+- **Ignition MCP**: Project structure, component creation, script deployment
+- **Playwright MCP**: Authentication, visual validation, user interaction testing  
+- **Linter MCP**: Code quality gates, Perspective component validation, best practices enforcement
+
+## Authentication Sequence (Required for each session)
+```javascript
+// Navigate and authenticate
+mcp_playwright_browser_navigate({ url: "http://localhost:9088/app/home" })
+mcp_playwright_browser_click({ element: "Log In", ref: "text='Log In'" })
+mcp_playwright_browser_type({ element: "username", ref: "input[name='username']", text: "admin" })
+mcp_playwright_browser_press_key({ key: "Enter" })
+mcp_playwright_browser_wait_for({ time: 2 })
+mcp_playwright_browser_type({ element: "password", ref: "input[type='password']", text: "password_from_secrets" })
+mcp_playwright_browser_press_key({ key: "Enter" })
+```
+---
+description:
+globs:
+alwaysApply: true
+---

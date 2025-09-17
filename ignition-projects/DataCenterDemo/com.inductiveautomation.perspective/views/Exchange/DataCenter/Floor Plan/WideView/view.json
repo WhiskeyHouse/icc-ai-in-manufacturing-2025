@@ -1,0 +1,69 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1560
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "DataHall1Kpis"
+        },
+        "position": {
+          "basis": "350px"
+        },
+        "props": {
+          "params": {
+            "dataHallPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/DataHall"
+          },
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/KpiDataHall"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "FloorPlanSvg"
+        },
+        "position": {
+          "basis": "800px",
+          "grow": 8
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/FloorPlanColumn"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DataHall2Kpis"
+        },
+        "position": {
+          "basis": "350px"
+        },
+        "props": {
+          "params": {
+            "dataHallPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall2/DataHall"
+          },
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/KpiDataHall"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "center",
+      "style": {
+        "classes": "exchange/datacenter/floor-plan/root-container",
+        "gap": "20px"
+      },
+      "wrap": "wrap"
+    },
+    "type": "ia.container.flex"
+  }
+}

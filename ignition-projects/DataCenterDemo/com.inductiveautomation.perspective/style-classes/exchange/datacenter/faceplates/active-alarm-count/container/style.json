@@ -1,0 +1,23 @@
+{
+  "base": {
+    "style": {
+      "borderColor": "var(--neutral-30)",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "borderTopLeftRadius": "7.5px",
+      "borderTopRightRadius": "7.5px",
+      "borderBottomLeftRadius": "7.5px",
+      "borderBottomRightRadius": "7.5px",
+      "padding": "10px"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "var(--neutral-20)",
+        "cursor": "pointer"
+      }
+    }
+  ]
+}

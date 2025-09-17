@@ -1,0 +1,90 @@
+# Environment Variables Configuration
+# Copy this file to .env and update with your values
+
+# Ignition Gateway Configuration
+IGNITION_VERSION=8.3.0-rc1
+GATEWAY_ADMIN_USERNAME=admin
+# Set to true to skip the commissioning wizard on first startup
+GATEWAY_SKIP_COMMISSIONING=true
+
+# MQTT Broker Configuration
+MQTT_PORT=1883
+MQTT_WS_PORT=8083
+MQTT_WEB_UI_PORT=18083
+MQTT_ADMIN_USER=admin
+MQTT_ADMIN_PASSWORD=public
+
+# Database Configuration
+DB_HOST=db
+DB_PORT=5432
+DB_USER=admin
+DB_PASSWORD=password
+MES_DB_NAME=whk-mes
+
+# Vector Database Configuration
+VECTOR_DB_PORT=5433
+
+# Redis Configuration  
+REDIS_PORT=6379
+REDIS_PASSWORD=redis_password
+REDIS_TTL=5000
+
+# MongoDB Configuration
+MONGO_PORT=27017
+
+# Grafana Configuration
+GRAFANA_ADMIN_USER=admin
+GRAFANA_ADMIN_PASSWORD=admin
+
+# Kong API Gateway
+KONG_INBOUND_PROXY_LISTEN=0.0.0.0
+KONG_INBOUND_SSL_PROXY_LISTEN=0.0.0.0
+KONG_DATABASE=off
+KONG_PG_DATABASE=kong
+KONG_PG_USER=kong
+KONG_USER=kong
+KONG_PROXY_LISTEN=0.0.0.0:8000
+KONG_ADMIN_LISTEN=0.0.0.0:8011
+KONG_ADMIN_GUI_LISTEN=0.0.0.0:8012
+KONG_PREFIX=/var/run/kong
+
+# Backend Configuration
+BACKEND_HOST=localhost
+BACKEND_KONG_PORT=8000
+
+# LLama Index Service
+LLAMA_INDEX_PORT=8085
+OPENAI_API_KEY=your_openai_api_key_here
+DEFAULT_OPENAI_MODEL=gpt-4o-mini
+EMBED_MODEL=text-embedding-ada-002
+BATCH_SIZE=10
+MAX_RETRIES=5
+INITIAL_BACKOFF=1
+MAX_BACKOFF=60
+MIN_BATCH_DELAY=0.5
+MAX_BATCH_DELAY=2.0
+MIN_TABLE_DELAY=5
+MAX_TABLE_DELAY=15
+ENV=development
+
+# Ignition API Configuration
+IGNITION_API_ENABLED=true
+IGNITION_DEPLOYMENT_MODE=development
+IGNITION_BACKUP_ENABLED=true
+IGNITION_VERSION_CONTROL=true
+
+# Ignition Deployment Mode Configuration
+IGNITION_DEPLOYMENT_MODES_ENABLED=true
+IGNITION_MODE_SWITCHING_RESTART=true
+IGNITION_DEPLOYMENT_JSON_CONFIG=true
+DEPLOYMENT_ENVIRONMENT=development
+
+# Netdata Configuration (optional)
+NETDATA_CLAIM_TOKEN=
+NETDATA_CLAIM_URL=https://app.netdata.cloud
+NETDATA_CLAIM_ROOMS=
+
+# Additional Configuration
+HOSTNAME=localhost
+
+

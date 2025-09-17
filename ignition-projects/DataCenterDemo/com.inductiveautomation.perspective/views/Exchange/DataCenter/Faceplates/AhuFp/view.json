@@ -1,0 +1,2059 @@
+{
+  "custom": {
+    "currentTheme": "dark",
+    "gap": "5px",
+    "largeGap": "27.5px",
+    "popupId": "ahuPopup-[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/AHU/AHU1"
+  },
+  "params": {
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/AHU/AHU1"
+  },
+  "propConfig": {
+    "custom.currentTheme": {
+      "binding": {
+        "config": {
+          "path": "session.props.theme"
+        },
+        "transforms": [
+          {
+            "code": "\treturn \u0027light\u0027 if \u0027light\u0027 in value else \u0027dark\u0027",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.gap": {
+      "persistent": true
+    },
+    "custom.largeGap": {
+      "persistent": true
+    },
+    "custom.popupId": {
+      "binding": {
+        "config": {
+          "expression": "concat(\u0027ahuPopup-\u0027, {view.params.tagPath})"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 700,
+      "width": 1132
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.states": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currentTheme"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn [\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/on exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"ON\",\n    \"value\": 1\n  },\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/off exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"OFF\",\n    \"value\": 0\n  }\n]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Status/IsAhuRunning"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "Exchange/DataCenter/Framework/Data/Status"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "StatusContainer"
+                },
+                "position": {
+                  "basis": "210px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "DrainCycle"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.states": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currentTheme"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn [\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/on exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"DRAIN CYCLE ACTIVE\",\n    \"value\": 1\n  },\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/off exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"DRAIN CYCLE INACTIVE\",\n    \"value\": 0\n  }\n]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Status/IsDrainCycleActive"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "Exchange/DataCenter/Framework/Data/Status"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "LeakDetected"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.states": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currentTheme"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn [\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/on exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"LEAKS DETECTED\",\n    \"value\": 1\n  },\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/off exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"NO LEAKS DETECTED\",\n    \"value\": 0\n  }\n]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Status/IsLeakDetected"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "Exchange/DataCenter/Framework/Data/Status"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "DrainCycleAndLeakDetected"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "gap": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "ActiveAlarmCount"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.activeAlarmCount": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Status/ActiveAlarmCount"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "equipment": "AHU",
+                        "toggle": false
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/ActiveAlarmCount"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "ActiveAlarmCountContainer"
+                },
+                "position": {
+                  "basis": "210px",
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "center"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "AlarmStatusTable"
+                },
+                "position": {
+                  "basis": "900px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "../ActiveAlarmCountContainer/ActiveAlarmCount.props.params.toggle"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.filters.active.conditions.source": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.tagPath"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \u0027]\u0027 in value:\n\t\t# Tag provider is in the path, remove it.\n\t\ttagPath \u003d value.split(\u0027]\u0027)[1]\n\telse:\n\t\ttagPath \u003d value\n\t\t\n\treturn \u0027*{tagPath}*\u0027.format(tagPath \u003d tagPath)",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "columns": {
+                    "active": {
+                      "activeTime": {
+                        "strictWidth": true,
+                        "width": 145
+                      },
+                      "displayPath": {
+                        "width": 600
+                      },
+                      "name": {
+                        "width": 50
+                      },
+                      "priority": {
+                        "width": 80
+                      },
+                      "source": {
+                        "enabled": false
+                      },
+                      "state": {
+                        "enabled": false
+                      }
+                    }
+                  },
+                  "filters": {
+                    "active": {
+                      "conditions": {}
+                    }
+                  },
+                  "responsive": {
+                    "breakpoint": 700,
+                    "enabled": true
+                  },
+                  "style": {
+                    "minHeight": "420px"
+                  }
+                },
+                "type": "ia.display.alarmstatustable"
+              }
+            ],
+            "meta": {
+              "name": "Status"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.theme": {
+                "binding": {
+                  "config": {
+                    "path": "session.props.theme"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn \u0027light\u0027 if \u0027light\u0027 in value else \u0027dark\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.style.row-gap": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.largeGap"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignItems": "center",
+              "justify": "space-around",
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section",
+                "overflow": "hidden"
+              },
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Title"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+                          },
+                          "text": "COOLING"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "CoolingPump"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.params.states": {
+                                "binding": {
+                                  "config": {
+                                    "path": "view.custom.currentTheme"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "code": "\treturn [\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/on exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"COOLING PUMP ON\",\n    \"value\": 1\n  },\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/off exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"COOLING PUMP OFF\",\n    \"value\": 0\n  }\n]",
+                                      "type": "script"
+                                    }
+                                  ],
+                                  "type": "property"
+                                }
+                              },
+                              "props.params.value": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "tagPath": "{view.params.tagPath}"
+                                    },
+                                    "tagPath": "{tagPath}/Cooling/IsCoolingPumpOn"
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "path": "Exchange/DataCenter/Framework/Data/Status"
+                            },
+                            "type": "ia.display.view"
+                          },
+                          {
+                            "meta": {
+                              "name": "EconomizerMode"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.params.states": {
+                                "binding": {
+                                  "config": {
+                                    "path": "view.custom.currentTheme"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "code": "\treturn [\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/on exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"ECONOMIZER MODE ON\",\n    \"value\": 1\n  },\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/off exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"ECONOMIZER MODE OFF\",\n    \"value\": 0\n  }\n]",
+                                      "type": "script"
+                                    }
+                                  ],
+                                  "type": "property"
+                                }
+                              },
+                              "props.params.value": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "tagPath": "{view.params.tagPath}"
+                                    },
+                                    "tagPath": "{tagPath}/Cooling/IsUnitInEconomizerMode"
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "path": "Exchange/DataCenter/Framework/Data/Status"
+                            },
+                            "type": "ia.display.view"
+                          },
+                          {
+                            "meta": {
+                              "name": "EvaporativeCoolingMode"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.params.states": {
+                                "binding": {
+                                  "config": {
+                                    "path": "view.custom.currentTheme"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "code": "\treturn [\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/on exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"EVAPORATIVE COOLING MODE ON\",\n    \"value\": 1\n  },\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/off exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"EVAPORATIVE COOLING MODE OFF\",\n    \"value\": 0\n  }\n]",
+                                      "type": "script"
+                                    }
+                                  ],
+                                  "type": "property"
+                                }
+                              },
+                              "props.params.value": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "tagPath": "{view.params.tagPath}"
+                                    },
+                                    "tagPath": "{tagPath}/Cooling/IsEvaporativeCoolingActive"
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "path": "Exchange/DataCenter/Framework/Data/Status"
+                            },
+                            "type": "ia.display.view"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Metrics"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "direction": "column",
+                          "justify": "center",
+                          "style": {
+                            "gap": "10px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "MetricsContainer"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": "7.5px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Title"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/primary"
+                          },
+                          "text": "WATER LEVEL ALARMS"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Low"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.params.states": {
+                                "binding": {
+                                  "config": {
+                                    "path": "view.custom.currentTheme"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "code": "\treturn [\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/error exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"IS LOW\",\n    \"value\": 1\n  },\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/off exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"NOT LOW\",\n    \"value\": 0\n  }\n]",
+                                      "type": "script"
+                                    }
+                                  ],
+                                  "type": "property"
+                                }
+                              },
+                              "props.params.value": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "tagPath": "{view.params.tagPath}"
+                                    },
+                                    "tagPath": "{tagPath}/Cooling/IsCoolingWaterLevelLow"
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "path": "Exchange/DataCenter/Framework/Data/Status"
+                            },
+                            "type": "ia.display.view"
+                          },
+                          {
+                            "meta": {
+                              "name": "High"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.params.states": {
+                                "binding": {
+                                  "config": {
+                                    "path": "view.custom.currentTheme"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "code": "\treturn [\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/error exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"IS HIGH\",\n    \"value\": 1\n  },\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ahu/status/generic/{theme}/off exchange/datacenter/faceplates/ahu/status/base exchange/datacenter/faceplates/ahu/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"NOT HIGH\",\n    \"value\": 0\n  }\n]",
+                                      "type": "script"
+                                    }
+                                  ],
+                                  "type": "property"
+                                }
+                              },
+                              "props.params.value": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "tagPath": "{view.params.tagPath}"
+                                    },
+                                    "tagPath": "{tagPath}/Cooling/IsCoolingWaterLevelHigh"
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "path": "Exchange/DataCenter/Framework/Data/Status"
+                            },
+                            "type": "ia.display.view"
+                          }
+                        ],
+                        "meta": {
+                          "name": "LowAndHigh"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "space-evenly"
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "WaterLevelAlarms"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": "7.5px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Cooling"
+                },
+                "position": {
+                  "basis": "285px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/datacenter/faceplates/section",
+                    "gap": "25px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+                      },
+                      "text": "FAN"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "FanSpeed"
+                        },
+                        "position": {
+                          "basis": "130px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.tagPath} + \u0027/Fan/FanSpeedFeedback\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "numberFormat": "###0.00",
+                            "simpleGauge": {
+                              "arc": {
+                                "color": "var(--callToAction)",
+                                "width": 30
+                              },
+                              "arcBackground": {
+                                "color": "var(--neutral-50)",
+                                "opacity": 0.2
+                              },
+                              "endAngle": 405,
+                              "label": {
+                                "color": "var(--callToAction)",
+                                "maxDecimal": 4,
+                                "offsetX": 0,
+                                "offsetY": 0,
+                                "size": "10px",
+                                "units": "",
+                                "visible": false
+                              },
+                              "startAngle": 135
+                            },
+                            "title": "FAN SPEED"
+                          },
+                          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "Title"
+                                },
+                                "position": {
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "style": {
+                                    "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/primary"
+                                  },
+                                  "text": "SUPPLY AIR\nSTATIC PRESSURE"
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "Value"
+                                },
+                                "position": {
+                                  "shrink": 0
+                                },
+                                "propConfig": {
+                                  "props.params.units": {
+                                    "binding": {
+                                      "config": {
+                                        "fallbackDelay": 2.5,
+                                        "mode": "indirect",
+                                        "references": {
+                                          "tagPath": "{view.params.tagPath}"
+                                        },
+                                        "tagPath": "{tagPath}/Fan/SupplyAirStaticPressure.EngUnit"
+                                      },
+                                      "type": "tag"
+                                    }
+                                  },
+                                  "props.params.value": {
+                                    "binding": {
+                                      "config": {
+                                        "fallbackDelay": 2.5,
+                                        "mode": "indirect",
+                                        "references": {
+                                          "tagPath": "{view.params.tagPath}"
+                                        },
+                                        "tagPath": "{tagPath}/Fan/SupplyAirStaticPressure"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "expression": "numberFormat({value}, \u0027###.00\u0027)",
+                                          "type": "expression"
+                                        }
+                                      ],
+                                      "type": "tag"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "params": {
+                                    "baseClass": "exchange/datacenter/framework/data/base"
+                                  },
+                                  "path": "Exchange/DataCenter/Framework/Data/Value"
+                                },
+                                "type": "ia.display.view"
+                              }
+                            ],
+                            "meta": {
+                              "name": "SupplyAirStaticPressure"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "direction": "column"
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "Title"
+                                },
+                                "position": {
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "style": {
+                                    "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/primary"
+                                  },
+                                  "text": "AIR FILTER DIFF\nPRESSURE"
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "Value"
+                                },
+                                "position": {
+                                  "shrink": 0
+                                },
+                                "propConfig": {
+                                  "props.params.units": {
+                                    "binding": {
+                                      "config": {
+                                        "fallbackDelay": 2.5,
+                                        "mode": "indirect",
+                                        "references": {
+                                          "tagPath": "{view.params.tagPath}"
+                                        },
+                                        "tagPath": "{tagPath}/Status/AirFilterDifferentialPressure.EngUnit"
+                                      },
+                                      "type": "tag"
+                                    }
+                                  },
+                                  "props.params.value": {
+                                    "binding": {
+                                      "config": {
+                                        "fallbackDelay": 2.5,
+                                        "mode": "indirect",
+                                        "references": {
+                                          "tagPath": "{view.params.tagPath}"
+                                        },
+                                        "tagPath": "{tagPath}/Status/AirFilterDifferentialPressure"
+                                      },
+                                      "type": "tag"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "params": {
+                                    "baseClass": "exchange/datacenter/framework/data/base"
+                                  },
+                                  "path": "Exchange/DataCenter/Framework/Data/Value"
+                                },
+                                "type": "ia.display.view"
+                              }
+                            ],
+                            "meta": {
+                              "name": "AirFilterDiffPressure"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "direction": "column"
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Pressure"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "direction": "column",
+                          "justify": "center",
+                          "style": {
+                            "gap": "25px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Metrics"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "space-evenly"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Fan"
+                },
+                "position": {
+                  "basis": "275px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/datacenter/faceplates/section",
+                    "gap": "7.5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+                      },
+                      "text": "DAMPERS"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "60px",
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/primary exchange/datacenter/faceplates/section-title/left-aligned"
+                              },
+                              "text": "INTAKE"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "Value"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "shrink": 0
+                                },
+                                "propConfig": {
+                                  "props.text": {
+                                    "binding": {
+                                      "config": {
+                                        "fallbackDelay": 2.5,
+                                        "mode": "indirect",
+                                        "references": {
+                                          "tagPath": "{view.params.tagPath}"
+                                        },
+                                        "tagPath": "{tagPath}/Dampers/OutsideAirDamperFeedback"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "formatType": "numeric",
+                                          "formatValue": "#,##0.#",
+                                          "type": "format"
+                                        }
+                                      ],
+                                      "type": "tag"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "style": {
+                                    "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/value"
+                                  }
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "Units"
+                                },
+                                "position": {
+                                  "basis": "12px",
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "style": {
+                                    "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/units"
+                                  },
+                                  "text": "%"
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "basis": "42px",
+                              "shrink": 0
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Intake"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "center"
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "60px",
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/primary exchange/datacenter/faceplates/section-title/left-aligned"
+                              },
+                              "text": "BYPASS"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "Value"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "shrink": 0
+                                },
+                                "propConfig": {
+                                  "props.text": {
+                                    "binding": {
+                                      "config": {
+                                        "fallbackDelay": 2.5,
+                                        "mode": "indirect",
+                                        "references": {
+                                          "tagPath": "{view.params.tagPath}"
+                                        },
+                                        "tagPath": "{tagPath}/Dampers/BypassDamperFeedback"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "formatType": "numeric",
+                                          "formatValue": "#,##0.#",
+                                          "type": "format"
+                                        }
+                                      ],
+                                      "type": "tag"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "style": {
+                                    "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/value"
+                                  }
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "Units"
+                                },
+                                "position": {
+                                  "basis": "12px",
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "style": {
+                                    "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/units"
+                                  },
+                                  "text": "%"
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "basis": "42px",
+                              "shrink": 0
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Bypass"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "center"
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "60px",
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/primary exchange/datacenter/faceplates/section-title/left-aligned"
+                              },
+                              "text": "RETURN"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "Value"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "shrink": 0
+                                },
+                                "propConfig": {
+                                  "props.text": {
+                                    "binding": {
+                                      "config": {
+                                        "fallbackDelay": 2.5,
+                                        "mode": "indirect",
+                                        "references": {
+                                          "tagPath": "{view.params.tagPath}"
+                                        },
+                                        "tagPath": "{tagPath}/Dampers/ReturnAirDamperFeedback"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "formatType": "numeric",
+                                          "formatValue": "#,##0.#",
+                                          "type": "format"
+                                        }
+                                      ],
+                                      "type": "tag"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "style": {
+                                    "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/value"
+                                  }
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "Units"
+                                },
+                                "position": {
+                                  "basis": "12px",
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "style": {
+                                    "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/units"
+                                  },
+                                  "text": "%"
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "basis": "42px",
+                              "shrink": 0
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Return"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "center"
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Metrics"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": "15px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Dampers"
+                },
+                "position": {
+                  "basis": "200px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/datacenter/faceplates/section",
+                    "gap": "7.5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "CoolingFanAndDampers"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.gap": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.gap"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+                  },
+                  "text": "TEMPERATURES"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "SupplyAir"
+                        },
+                        "position": {
+                          "basis": "115px"
+                        },
+                        "propConfig": {
+                          "props.params.tagPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.tagPath} + \u0027/Temperature/SupplyAirTemperature\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "maiBasis": "155px",
+                            "movingAnalogIndicator": {
+                              "alarms": {
+                                "inactiveRangeColor": "var(--neutral-60)",
+                                "level1": {
+                                  "highHigh": null,
+                                  "lowLow": null,
+                                  "rangeColor": "var(--error)"
+                                },
+                                "level2": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--warningSecondary)"
+                                }
+                              },
+                              "defaultRangeColor": "var(--neutral-10)",
+                              "desired": {
+                                "high": 22.8,
+                                "low": 19.2,
+                                "rangeColor": "var(--callToAction)"
+                              },
+                              "indicator": {
+                                "color": "var(--label)",
+                                "reverse": false,
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-100)",
+                                  "width": 0
+                                }
+                              },
+                              "interlocks": {
+                                "high": null,
+                                "low": null,
+                                "rangeColor": "var(--neutral-100)"
+                              },
+                              "label": {
+                                "format": "#,##0",
+                                "position": {
+                                  "applyOffsetsOnlyWhenLabelVisible": true,
+                                  "horizontalOffset": 1,
+                                  "verticalOffset": 1
+                                },
+                                "style": {
+                                  "classes": "",
+                                  "fill": "var(--neutral-100)",
+                                  "fontSize": 4
+                                },
+                                "visible": false
+                              },
+                              "rangesBar": {
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-50)",
+                                  "width": 0.2
+                                },
+                                "verticalDisplay": true
+                              },
+                              "setpoint": {
+                                "color": "var(--neutral-10)",
+                                "stroke": {
+                                  "color": "var(--info)",
+                                  "width": 0.5
+                                },
+                                "value": null
+                              }
+                            },
+                            "numberFormat": "###0.00",
+                            "title": "SUPPLY AIR\nTEMP"
+                          },
+                          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "MixedAir"
+                        },
+                        "position": {
+                          "basis": "115px"
+                        },
+                        "propConfig": {
+                          "props.params.tagPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.tagPath} + \u0027/Temperature/MixedAirTemperature\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "maiBasis": "155px",
+                            "movingAnalogIndicator": {
+                              "alarms": {
+                                "inactiveRangeColor": "var(--neutral-60)",
+                                "level1": {
+                                  "highHigh": null,
+                                  "lowLow": null,
+                                  "rangeColor": "var(--error)"
+                                },
+                                "level2": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--warningSecondary)"
+                                }
+                              },
+                              "defaultRangeColor": "var(--neutral-10)",
+                              "desired": {
+                                "high": 15.6,
+                                "low": 14.4,
+                                "rangeColor": "var(--callToAction)"
+                              },
+                              "indicator": {
+                                "color": "var(--label)",
+                                "reverse": false,
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-100)",
+                                  "width": 0
+                                }
+                              },
+                              "interlocks": {
+                                "high": null,
+                                "low": null,
+                                "rangeColor": "var(--neutral-100)"
+                              },
+                              "label": {
+                                "format": "#,##0",
+                                "position": {
+                                  "applyOffsetsOnlyWhenLabelVisible": true,
+                                  "horizontalOffset": 1,
+                                  "verticalOffset": 1
+                                },
+                                "style": {
+                                  "classes": "",
+                                  "fill": "var(--neutral-100)",
+                                  "fontSize": 4
+                                },
+                                "visible": false
+                              },
+                              "rangesBar": {
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-50)",
+                                  "width": 0.2
+                                },
+                                "verticalDisplay": true
+                              },
+                              "setpoint": {
+                                "color": "var(--neutral-10)",
+                                "stroke": {
+                                  "color": "var(--info)",
+                                  "width": 0.5
+                                },
+                                "value": null
+                              }
+                            },
+                            "numberFormat": "###0.00",
+                            "title": "MIXED AIR\nTEMP"
+                          },
+                          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "ReturnAir"
+                        },
+                        "position": {
+                          "basis": "115px"
+                        },
+                        "propConfig": {
+                          "props.params.tagPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.tagPath} + \u0027/Temperature/ReturnAirTemperature\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "maiBasis": "155px",
+                            "movingAnalogIndicator": {
+                              "alarms": {
+                                "inactiveRangeColor": "var(--neutral-60)",
+                                "level1": {
+                                  "highHigh": null,
+                                  "lowLow": null,
+                                  "rangeColor": "var(--error)"
+                                },
+                                "level2": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--warningSecondary)"
+                                }
+                              },
+                              "defaultRangeColor": "var(--neutral-10)",
+                              "desired": {
+                                "high": 33.4,
+                                "low": 28.6,
+                                "rangeColor": "var(--callToAction)"
+                              },
+                              "indicator": {
+                                "color": "var(--label)",
+                                "reverse": false,
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-100)",
+                                  "width": 0
+                                }
+                              },
+                              "interlocks": {
+                                "high": null,
+                                "low": null,
+                                "rangeColor": "var(--neutral-100)"
+                              },
+                              "label": {
+                                "format": "#,##0",
+                                "position": {
+                                  "applyOffsetsOnlyWhenLabelVisible": true,
+                                  "horizontalOffset": 1,
+                                  "verticalOffset": 1
+                                },
+                                "style": {
+                                  "classes": "",
+                                  "fill": "var(--neutral-100)",
+                                  "fontSize": 4
+                                },
+                                "visible": false
+                              },
+                              "rangesBar": {
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-50)",
+                                  "width": 0.2
+                                },
+                                "verticalDisplay": true
+                              },
+                              "setpoint": {
+                                "color": "var(--neutral-10)",
+                                "stroke": {
+                                  "color": "var(--info)",
+                                  "width": 0.5
+                                },
+                                "value": null
+                              }
+                            },
+                            "numberFormat": "###0.00",
+                            "title": "RETURN AIR\nTEMP"
+                          },
+                          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FirstMetricsContainer"
+                    },
+                    "position": {
+                      "basis": "295px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "center"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "DataHallWetBulb"
+                        },
+                        "position": {
+                          "basis": "115px"
+                        },
+                        "propConfig": {
+                          "props.params.tagPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.tagPath} + \u0027/Temperature/DataHallWetBulbTemp\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "maiBasis": "155px",
+                            "movingAnalogIndicator": {
+                              "alarms": {
+                                "inactiveRangeColor": "var(--neutral-60)",
+                                "level1": {
+                                  "highHigh": null,
+                                  "lowLow": null,
+                                  "rangeColor": "var(--error)"
+                                },
+                                "level2": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--warningSecondary)"
+                                }
+                              },
+                              "defaultRangeColor": "var(--neutral-10)",
+                              "desired": {
+                                "high": 80,
+                                "low": 20,
+                                "rangeColor": "var(--callToAction)"
+                              },
+                              "indicator": {
+                                "color": "var(--label)",
+                                "reverse": false,
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-100)",
+                                  "width": 0
+                                }
+                              },
+                              "interlocks": {
+                                "high": null,
+                                "low": null,
+                                "rangeColor": "var(--neutral-100)"
+                              },
+                              "label": {
+                                "format": "#,##0",
+                                "position": {
+                                  "applyOffsetsOnlyWhenLabelVisible": true,
+                                  "horizontalOffset": 1,
+                                  "verticalOffset": 1
+                                },
+                                "style": {
+                                  "classes": "",
+                                  "fill": "var(--neutral-100)",
+                                  "fontSize": 4
+                                },
+                                "visible": false
+                              },
+                              "rangesBar": {
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-50)",
+                                  "width": 0.2
+                                },
+                                "verticalDisplay": true
+                              },
+                              "setpoint": {
+                                "color": "var(--neutral-10)",
+                                "stroke": {
+                                  "color": "var(--info)",
+                                  "width": 0.5
+                                },
+                                "value": null
+                              }
+                            },
+                            "numberFormat": "###0.00",
+                            "title": "DATA HALL WET\nBULB TEMP"
+                          },
+                          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "OutsideAir"
+                        },
+                        "position": {
+                          "basis": "115px"
+                        },
+                        "propConfig": {
+                          "props.params.tagPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.tagPath} + \u0027/Temperature/OutsideAirTemperature\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "maiBasis": "155px",
+                            "movingAnalogIndicator": {
+                              "alarms": {
+                                "inactiveRangeColor": "var(--neutral-60)",
+                                "level1": {
+                                  "highHigh": null,
+                                  "lowLow": null,
+                                  "rangeColor": "var(--error)"
+                                },
+                                "level2": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--warningSecondary)"
+                                }
+                              },
+                              "defaultRangeColor": "var(--neutral-10)",
+                              "desired": {
+                                "high": 15.6,
+                                "low": 14.4,
+                                "rangeColor": "var(--callToAction)"
+                              },
+                              "indicator": {
+                                "color": "var(--label)",
+                                "reverse": false,
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-100)",
+                                  "width": 0
+                                }
+                              },
+                              "interlocks": {
+                                "high": null,
+                                "low": null,
+                                "rangeColor": "var(--neutral-100)"
+                              },
+                              "label": {
+                                "format": "#,##0",
+                                "position": {
+                                  "applyOffsetsOnlyWhenLabelVisible": true,
+                                  "horizontalOffset": 1,
+                                  "verticalOffset": 1
+                                },
+                                "style": {
+                                  "classes": "",
+                                  "fill": "var(--neutral-100)",
+                                  "fontSize": 4
+                                },
+                                "visible": false
+                              },
+                              "rangesBar": {
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-50)",
+                                  "width": 0.2
+                                },
+                                "verticalDisplay": true
+                              },
+                              "setpoint": {
+                                "color": "var(--neutral-10)",
+                                "stroke": {
+                                  "color": "var(--info)",
+                                  "width": 0.5
+                                },
+                                "value": null
+                              }
+                            },
+                            "numberFormat": "###0.00",
+                            "title": "OUTSIDE AIR\nTEMP"
+                          },
+                          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "OutsideAirDewPoint"
+                        },
+                        "position": {
+                          "basis": "115px"
+                        },
+                        "propConfig": {
+                          "props.params.tagPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.tagPath} + \u0027/Temperature/OutsideAirDewPoint\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "maiBasis": "155px",
+                            "movingAnalogIndicator": {
+                              "alarms": {
+                                "inactiveRangeColor": "var(--neutral-60)",
+                                "level1": {
+                                  "highHigh": null,
+                                  "lowLow": null,
+                                  "rangeColor": "var(--error)"
+                                },
+                                "level2": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--warningSecondary)"
+                                }
+                              },
+                              "defaultRangeColor": "var(--neutral-10)",
+                              "desired": {
+                                "high": 12.8,
+                                "low": 12.2,
+                                "rangeColor": "var(--callToAction)"
+                              },
+                              "indicator": {
+                                "color": "var(--label)",
+                                "reverse": false,
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-100)",
+                                  "width": 0
+                                }
+                              },
+                              "interlocks": {
+                                "high": null,
+                                "low": null,
+                                "rangeColor": "var(--neutral-100)"
+                              },
+                              "label": {
+                                "format": "#,##0",
+                                "position": {
+                                  "applyOffsetsOnlyWhenLabelVisible": true,
+                                  "horizontalOffset": 1,
+                                  "verticalOffset": 1
+                                },
+                                "style": {
+                                  "classes": "",
+                                  "fill": "var(--neutral-100)",
+                                  "fontSize": 4
+                                },
+                                "visible": false
+                              },
+                              "rangesBar": {
+                                "size": 8,
+                                "stroke": {
+                                  "color": "var(--neutral-50)",
+                                  "width": 0.2
+                                },
+                                "verticalDisplay": true
+                              },
+                              "setpoint": {
+                                "color": "var(--neutral-10)",
+                                "stroke": {
+                                  "color": "var(--info)",
+                                  "width": 0.5
+                                },
+                                "value": null
+                              }
+                            },
+                            "numberFormat": "###0.00",
+                            "title": "OUTSIDE AIR\nDEW POINT"
+                          },
+                          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "SecondMetricsContainer"
+                    },
+                    "position": {
+                      "basis": "295px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "center"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Metrics"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "row-gap": "27.5px"
+                  },
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Temperatures"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section",
+                "gap": "7.5px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Main",
+          "tooltip": {
+            "location": "bottom"
+          }
+        },
+        "position": {
+          "basis": "calc(100% - 55px)",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.gap": {
+            "binding": {
+              "config": {
+                "path": "view.custom.gap"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": true,
+                    "id": "{view.custom.popupId}",
+                    "modal": false,
+                    "overlayDismiss": false,
+                    "resizable": true,
+                    "showCloseIcon": true,
+                    "type": "close",
+                    "viewPath": "",
+                    "viewportBound": false
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "marginBottom": 4,
+                "marginTop": 4
+              },
+              "text": "CLOSE"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Footer"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "domId": "ahuPopup",
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.gap": {
+        "binding": {
+          "config": {
+            "path": "view.custom.gap"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/faceplates/container"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

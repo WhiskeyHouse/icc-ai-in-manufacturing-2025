@@ -1,0 +1,166 @@
+"""
+WebDev POST Handler for Validation API
+Handles POST requests for validation endpoints
+"""
+
+import whk.validation
+import json
+
+def doPost(request, session):
+    """
+    Handle POST requests for validation API
+    
+    Supported endpoints:
+    - /system/webdev/Global/validation/scripts - Validate Jython script
+    - /system/webdev/Global/validation/components - Validate Perspective component
+    """
+    
+    try:
+        # Get the path after /system/webdev/Global/validation
+        path_info = request.get('pathInfo', '')
+        
+        if path_info == '/scripts':
+            # Validate Jython script
+            return handle_script_validation(request)
+            
+        elif path_info == '/components':
+            # Validate Perspective component
+            return handle_component_validation(request)
+            
+        else:
+            # Unknown endpoint
+            return {
+                'json': {
+                    'error': 'Endpoint not found',
+                    'path': path_info,
+                    'available_endpoints': ['/scripts', '/components']
+                },
+                'response_code': 404
+            }
+    
+    except Exception as e:
+        return {
+            'json': {
+                'error': 'Internal server error',
+                'message': str(e)
+            },
+            'response_code': 500
+        }
+
+
+def handle_script_validation(request):
+    """Handle script validation POST request"""
+    try:
+        # Get request body
+        post_data = request.get('postData', '')
+        if not post_data:
+            return {
+                'json': {'error': 'Request body is required'},
+                'response_code': 400
+            }
+        
+        # Parse JSON data
+        try:
+            data = json.loads(post_data)
+        except:
+            return {
+                'json': {'error': 'Invalid JSON in request body'},
+                'response_code': 400
+            }
+        
+        # Validate required fields
+        if 'script' not in data:
+            return {
+                'json': {'error': 'script field is required'},
+                'response_code': 400
+            }
+        
+        script_content = data['script']
+        context = data.get('context', {})
+        session_id = data.get('session_id')
+        
+        # Validate script using rules engine
+        validation_result = whk.validation.validate_script_with_rules_engine(
+            script_content, context
+        )
+        
+        # Create validation session if requested
+        if session_id or data.get('create_session', False):
+            session_data = whk.validation.create_validation_session(
+                'script',
+                script_content,
+                validation_result,
+                context,
+                session_id
+            )
+            validation_result['session'] = session_data
+        
+        return {'json': validation_result}
+        
+    except Exception as e:
+        return {
+            'json': {
+                'error': 'Script validation failed',
+                'message': str(e)
+            },
+            'response_code': 500
+        }
+
+
+def handle_component_validation(request):
+    """Handle component validation POST request"""
+    try:
+        # Get request body
+        post_data = request.get('postData', '')
+        if not post_data:
+            return {
+                'json': {'error': 'Request body is required'},
+                'response_code': 400
+            }
+        
+        # Parse JSON data
+        try:
+            data = json.loads(post_data)
+        except:
+            return {
+                'json': {'error': 'Invalid JSON in request body'},
+                'response_code': 400
+            }
+        
+        # Validate required fields
+        if 'component' not in data:
+            return {
+                'json': {'error': 'component field is required'},
+                'response_code': 400
+            }
+        
+        component_config = data['component']
+        context = data.get('context', {})
+        session_id = data.get('session_id')
+        
+        # Validate component using rules engine
+        validation_result = whk.validation.validate_component_with_rules_engine(
+            component_config, context
+        )
+        
+        # Create validation session if requested
+        if session_id or data.get('create_session', False):
+            session_data = whk.validation.create_validation_session(
+                'component',
+                component_config,
+                validation_result,
+                context,
+                session_id
+            )
+            validation_result['session'] = session_data
+        
+        return {'json': validation_result}
+        
+    except Exception as e:
+        return {
+            'json': {
+                'error': 'Component validation failed',
+                'message': str(e)
+            },
+            'response_code': 500
+        }

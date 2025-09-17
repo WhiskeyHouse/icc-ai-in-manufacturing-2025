@@ -1,0 +1,363 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 56,
+      "width": 260
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "CurrentPage"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "currPath": "{page.props.path}",
+                  "inDesigner": "{session.props.device.userAgent}\u003d\u0027\u003cdesigner\u003e\u0027"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\tcurrPath \u003d value[\u0027currPath\u0027]\n\tinDesigner \u003d value[\u0027inDesigner\u0027]\n\t\n\tif value[\u0027inDesigner\u0027]:\n\t\treturn \u0027Designer\u0027\n\telse:\n\t\tif value[\u0027currPath\u0027] \u003d\u003d \u0027/\u0027:\n\t\t\treturn \u0027Overview\u0027\n\t\telse:\n\t\t\tlabelMap \u003d {\u0027/alarms\u0027: \u0027Alarms \u0027, \u0027/architecture\u0027: \u0027Architecture\u0027, \n\t\t\t\t\u0027/heat-map\u0027: \u0027BMS Heat Map\u0027, \u0027/single-line\u0027: \u0027EPMS Single Line\u0027, \n\t\t\t\t\u0027/trends\u0027: \u0027Trends\u0027, \u0027/scenarios\u0027: \u0027Scenarios\u0027,\n\t\t\t\t\u0027/floor-plan\u0027: \u0027Floor Plan\u0027}\n\t\t\t\n\t\t\treturn labelMap.get(value[\u0027currPath\u0027], \u0027\u0027)",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "--neutral-90",
+            "fontFamily": "Roboto",
+            "fontSize": "24px",
+            "fontWeight": 500
+          },
+          "textStyle": {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\timport os\n\tdemoUrl \u003d os.getenv(\"URL_FRONTEND\")\n\tsystem.perspective.navigate(url\u003ddemoUrl)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "GoToDemo",
+              "tooltip": {
+                "enabled": true,
+                "location": "bottom",
+                "text": "Go to Online Demo"
+              }
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "path": "session.custom.featureFlags.homeButton.value"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "elements": [
+                {
+                  "d": "M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "style": {
+                "classes": "exchange/datacenter/icon-mobile"
+              },
+              "viewBox": "0 -960 960 960"
+            },
+            "type": "ia.shapes.svg"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "ActiveAlarmCount"
+                    },
+                    "position": {
+                      "basis": "20px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "custom.activeAlarmCount": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "direct",
+                            "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/AlarmInfo/ActiveAlarmCount"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "{this.custom.activeAlarmCount} \u003e 0"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.style.classes": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "direct",
+                            "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/AlarmInfo/ActiveAlarmHighestPriority"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tpriorityStyleMap \u003d {\n\t\t\t\t\t\t\t1: \u0027exchange/datacenter/framework/alarmPriority/low\u0027,\n\t\t\t\t\t\t\t3: \u0027exchange/datacenter/framework/alarmPriority/high\u0027\n\t\t\t\t\t\t}\n\t\n\treturn \u0027exchange/datacenter/framework/alarm-count {backgroundStyle}\u0027.format(backgroundStyle \u003d priorityStyleMap.get(value, \u0027exchange/datacenter/framework/alarmPriority/default\u0027))",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.activeAlarmCount"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn value if value \u003c 100 else \u002799+\u0027",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "marginTop": "-4px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "ActiveAlarmCount"
+                },
+                "position": {
+                  "basis": "0px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.marginRight": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({./ActiveAlarmCount.custom.activeAlarmCount} \u003c 10, \u0027-3px\u0027, \r\nif({./ActiveAlarmCount.custom.activeAlarmCount} \u003c 100, \u0027-7.5px\u0027, \u0027-12px\u0027))"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({./ActiveAlarmCount.custom.activeAlarmCount} \u003c 10, \u002720px\u0027, \r\nif({./ActiveAlarmCount.custom.activeAlarmCount} \u003c 100, \u002725px\u0027, \u002730px\u0027))"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "visible",
+                    "zIndex": 2
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "props": {
+                      "elements": [
+                        {
+                          "d": "M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z",
+                          "name": "path",
+                          "type": "path"
+                        }
+                      ],
+                      "style": {
+                        "width": "30px",
+                        "zIndex": 1
+                      },
+                      "viewBox": "0 0 24 24"
+                    },
+                    "type": "ia.shapes.svg"
+                  }
+                ],
+                "meta": {
+                  "name": "Alarms"
+                },
+                "position": {
+                  "basis": "30px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible",
+                    "zIndex": 1
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\u0027/alarms\u0027)\n\tsystem.perspective.openDock(\u0027Footer\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Alarms",
+              "tooltip": {
+                "enabled": true,
+                "location": "bottom",
+                "text": "Navigate to Alarms"
+              }
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "flex-end",
+              "direction": "column",
+              "style": {
+                "classes": "exchange/datacenter/icon-mobile",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.openPopup(\u0027data-center-settings\u0027, \u0027Exchange/DataCenter/Framework/Settings/MainSm\u0027, title \u003d \u0027Settings\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Settings",
+              "tooltip": {
+                "enabled": true,
+                "location": "bottom",
+                "text": "Open Settings"
+              }
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "props": {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "d": "M0,0h24v24H0V0z",
+                      "fill": {
+                        "paint": "transparent"
+                      },
+                      "name": "path",
+                      "type": "path"
+                    },
+                    {
+                      "d": "M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "name": "group",
+                  "type": "group"
+                }
+              ],
+              "style": {
+                "classes": "exchange/datacenter/icon-mobile"
+              },
+              "viewBox": "0 0 24 24"
+            },
+            "type": "ia.shapes.svg"
+          }
+        ],
+        "meta": {
+          "name": "AlarmsSettingsAndDemo"
+        },
+        "position": {
+          "basis": "110px"
+        },
+        "props": {
+          "justify": "space-between",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "space-between",
+      "style": {
+        "classes": "exchange/datacenter/framework/navigation/container exchange/datacenter/framework/navigation/header",
+        "overflow": "hidden",
+        "padding": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

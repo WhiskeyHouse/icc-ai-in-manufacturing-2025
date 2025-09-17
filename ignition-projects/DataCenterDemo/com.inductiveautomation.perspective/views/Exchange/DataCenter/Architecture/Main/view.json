@@ -1,0 +1,2324 @@
+{
+  "custom": {
+    "architecture": {
+      "backends": [
+        {
+          "metrics": [
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Metrics/Database/Active Connections",
+              "hasChildren": false,
+              "name": "Active Connections",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Metrics/Logging/Errors Per Hour",
+              "hasChildren": false,
+              "name": "Errors Per Hour",
+              "tagType": "AtomicTag",
+              "value": 3,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Metrics/Logging/Errors Per Minute",
+              "hasChildren": false,
+              "name": "Errors Per Minute",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Metrics/Sessions/Clients",
+              "hasChildren": false,
+              "name": "Clients",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Metrics/Sessions/Designers",
+              "hasChildren": false,
+              "name": "Designers",
+              "tagType": "AtomicTag",
+              "value": 2,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Metrics/Sessions/Perspective Sessions",
+              "hasChildren": false,
+              "name": "Perspective Sessions",
+              "tagType": "AtomicTag",
+              "value": 10,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Metrics/System/CPU Usage",
+              "hasChildren": false,
+              "name": "CPU Usage",
+              "tagType": "AtomicTag",
+              "value": 9.33,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Metrics/System/Memory Usage",
+              "hasChildren": false,
+              "name": "Memory Usage",
+              "tagType": "AtomicTag",
+              "value": 31.642,
+              "valueSource": "opc"
+            }
+          ],
+          "redundancy": "Master",
+          "redundantMetrics": [
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Metrics/Database/Active Connections",
+              "hasChildren": false,
+              "name": "Active Connections",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Metrics/Logging/Errors Per Hour",
+              "hasChildren": false,
+              "name": "Errors Per Hour",
+              "tagType": "AtomicTag",
+              "value": 3,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Metrics/Logging/Errors Per Minute",
+              "hasChildren": false,
+              "name": "Errors Per Minute",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Metrics/Sessions/Clients",
+              "hasChildren": false,
+              "name": "Clients",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Metrics/Sessions/Designers",
+              "hasChildren": false,
+              "name": "Designers",
+              "tagType": "AtomicTag",
+              "value": 2,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Metrics/Sessions/Perspective Sessions",
+              "hasChildren": false,
+              "name": "Perspective Sessions",
+              "tagType": "AtomicTag",
+              "value": 10,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Metrics/System/CPU Usage",
+              "hasChildren": false,
+              "name": "CPU Usage",
+              "tagType": "AtomicTag",
+              "value": 9.33,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Metrics/System/Memory Usage",
+              "hasChildren": false,
+              "name": "Memory Usage",
+              "tagType": "AtomicTag",
+              "value": 31.642,
+              "valueSource": "opc"
+            }
+          ],
+          "redundantServer": "Backend - Backup",
+          "redundantStatus": [
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/AgentGroup",
+              "hasChildren": false,
+              "name": "AgentGroup",
+              "tagType": "AtomicTag",
+              "value": "Default Group",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/AgentName",
+              "hasChildren": false,
+              "name": "AgentName",
+              "tagType": "AtomicTag",
+              "value": "Backend - Backup",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/BrowserURL",
+              "hasChildren": false,
+              "name": "BrowserURL",
+              "tagType": "AtomicTag",
+              "value": "http://172.31.64.203:8088",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/IsApproved",
+              "hasChildren": false,
+              "name": "IsApproved",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/IsConnected",
+              "hasChildren": false,
+              "name": "IsConnected",
+              "tagType": "AtomicTag",
+              "value": false,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/IsRunning",
+              "hasChildren": false,
+              "name": "IsRunning",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "DateTime",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/LastCommunication",
+              "hasChildren": false,
+              "name": "LastCommunication",
+              "tagType": "AtomicTag",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1736538875813
+                ],
+                "$ts": 1736538875813
+              },
+              "valueSource": "expr"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/LicenseKey",
+              "hasChildren": false,
+              "name": "LicenseKey",
+              "tagType": "AtomicTag",
+              "value": "###-###",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/NodeRole",
+              "hasChildren": false,
+              "name": "NodeRole",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/PlatformEdition",
+              "hasChildren": false,
+              "name": "PlatformEdition",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/RunningState",
+              "hasChildren": false,
+              "name": "RunningState",
+              "tagType": "AtomicTag",
+              "value": "Running",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/RunningStateInt",
+              "hasChildren": false,
+              "name": "RunningStateInt",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/ServerId",
+              "hasChildren": false,
+              "name": "ServerId",
+              "tagType": "AtomicTag",
+              "value": "_0:0:Backend-Backup",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Version",
+              "hasChildren": false,
+              "name": "Version",
+              "tagType": "AtomicTag",
+              "value": "8.1.33",
+              "valueSource": "memory"
+            }
+          ],
+          "server": "Backend - Master",
+          "status": [
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/AgentGroup",
+              "hasChildren": false,
+              "name": "AgentGroup",
+              "tagType": "AtomicTag",
+              "value": "Default Group",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/AgentName",
+              "hasChildren": false,
+              "name": "AgentName",
+              "tagType": "AtomicTag",
+              "value": "Backend - Master",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/BrowserURL",
+              "hasChildren": false,
+              "name": "BrowserURL",
+              "tagType": "AtomicTag",
+              "value": "http://172.31.64.204:8088",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/IsApproved",
+              "hasChildren": false,
+              "name": "IsApproved",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/IsConnected",
+              "hasChildren": false,
+              "name": "IsConnected",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/IsRunning",
+              "hasChildren": false,
+              "name": "IsRunning",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "DateTime",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/LastCommunication",
+              "hasChildren": false,
+              "name": "LastCommunication",
+              "tagType": "AtomicTag",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1736538875786
+                ],
+                "$ts": 1736538875786
+              },
+              "valueSource": "expr"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/LicenseKey",
+              "hasChildren": false,
+              "name": "LicenseKey",
+              "tagType": "AtomicTag",
+              "value": "###-###",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/NodeRole",
+              "hasChildren": false,
+              "name": "NodeRole",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/PlatformEdition",
+              "hasChildren": false,
+              "name": "PlatformEdition",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/RunningState",
+              "hasChildren": false,
+              "name": "RunningState",
+              "tagType": "AtomicTag",
+              "value": "Running",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/RunningStateInt",
+              "hasChildren": false,
+              "name": "RunningStateInt",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/ServerId",
+              "hasChildren": false,
+              "name": "ServerId",
+              "tagType": "AtomicTag",
+              "value": "_0:0:Backend-Master",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Version",
+              "hasChildren": false,
+              "name": "Version",
+              "tagType": "AtomicTag",
+              "value": "8.1.33",
+              "valueSource": "memory"
+            }
+          ],
+          "type": "backends"
+        }
+      ],
+      "frontends": [
+        {
+          "metrics": [
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Database/Active Connections",
+              "hasChildren": false,
+              "name": "Active Connections",
+              "tagType": "AtomicTag",
+              "value": 0,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Logging/Errors Per Hour",
+              "hasChildren": false,
+              "name": "Errors Per Hour",
+              "tagType": "AtomicTag",
+              "value": 3,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Logging/Errors Per Minute",
+              "hasChildren": false,
+              "name": "Errors Per Minute",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Sessions/Clients",
+              "hasChildren": false,
+              "name": "Clients",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Sessions/Designers",
+              "hasChildren": false,
+              "name": "Designers",
+              "tagType": "AtomicTag",
+              "value": 2,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Sessions/Perspective Sessions",
+              "hasChildren": false,
+              "name": "Perspective Sessions",
+              "tagType": "AtomicTag",
+              "value": 10,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/System/CPU Usage",
+              "hasChildren": false,
+              "name": "CPU Usage",
+              "tagType": "AtomicTag",
+              "value": 9.33,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/System/Memory Usage",
+              "hasChildren": false,
+              "name": "Memory Usage",
+              "tagType": "AtomicTag",
+              "value": 31.642,
+              "valueSource": "opc"
+            }
+          ],
+          "redundancy": "Independent",
+          "server": "Frontend 1",
+          "status": [
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/AgentGroup",
+              "hasChildren": false,
+              "name": "AgentGroup",
+              "tagType": "AtomicTag",
+              "value": "Default Group",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/AgentName",
+              "hasChildren": false,
+              "name": "AgentName",
+              "tagType": "AtomicTag",
+              "value": "Frontend 1",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/BrowserURL",
+              "hasChildren": false,
+              "name": "BrowserURL",
+              "tagType": "AtomicTag",
+              "value": "http://172.31.64.205:8088",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/IsApproved",
+              "hasChildren": false,
+              "name": "IsApproved",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/IsConnected",
+              "hasChildren": false,
+              "name": "IsConnected",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/IsRunning",
+              "hasChildren": false,
+              "name": "IsRunning",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "DateTime",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/LastCommunication",
+              "hasChildren": false,
+              "name": "LastCommunication",
+              "tagType": "AtomicTag",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1736538875813
+                ],
+                "$ts": 1736538875813
+              },
+              "valueSource": "expr"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/LicenseKey",
+              "hasChildren": false,
+              "name": "LicenseKey",
+              "tagType": "AtomicTag",
+              "value": "###-###",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/NodeRole",
+              "hasChildren": false,
+              "name": "NodeRole",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/PlatformEdition",
+              "hasChildren": false,
+              "name": "PlatformEdition",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/RunningState",
+              "hasChildren": false,
+              "name": "RunningState",
+              "tagType": "AtomicTag",
+              "value": "Running",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/RunningStateInt",
+              "hasChildren": false,
+              "name": "RunningStateInt",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/ServerId",
+              "hasChildren": false,
+              "name": "ServerId",
+              "tagType": "AtomicTag",
+              "value": "_0:0:Frontend-1",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Version",
+              "hasChildren": false,
+              "name": "Version",
+              "tagType": "AtomicTag",
+              "value": "8.1.33",
+              "valueSource": "memory"
+            }
+          ],
+          "type": "frontends"
+        },
+        {
+          "metrics": [
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/Metrics/Database/Active Connections",
+              "hasChildren": false,
+              "name": "Active Connections",
+              "tagType": "AtomicTag",
+              "value": 0,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/Metrics/Logging/Errors Per Hour",
+              "hasChildren": false,
+              "name": "Errors Per Hour",
+              "tagType": "AtomicTag",
+              "value": 3,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/Metrics/Logging/Errors Per Minute",
+              "hasChildren": false,
+              "name": "Errors Per Minute",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/Metrics/Sessions/Clients",
+              "hasChildren": false,
+              "name": "Clients",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/Metrics/Sessions/Designers",
+              "hasChildren": false,
+              "name": "Designers",
+              "tagType": "AtomicTag",
+              "value": 2,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/Metrics/Sessions/Perspective Sessions",
+              "hasChildren": false,
+              "name": "Perspective Sessions",
+              "tagType": "AtomicTag",
+              "value": 10,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/Metrics/System/CPU Usage",
+              "hasChildren": false,
+              "name": "CPU Usage",
+              "tagType": "AtomicTag",
+              "value": 9.33,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/Metrics/System/Memory Usage",
+              "hasChildren": false,
+              "name": "Memory Usage",
+              "tagType": "AtomicTag",
+              "value": 31.642,
+              "valueSource": "opc"
+            }
+          ],
+          "redundancy": "Independent",
+          "server": "Frontend 2",
+          "status": [
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/AgentGroup",
+              "hasChildren": false,
+              "name": "AgentGroup",
+              "tagType": "AtomicTag",
+              "value": "Default Group",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/AgentName",
+              "hasChildren": false,
+              "name": "AgentName",
+              "tagType": "AtomicTag",
+              "value": "Frontend 2",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/BrowserURL",
+              "hasChildren": false,
+              "name": "BrowserURL",
+              "tagType": "AtomicTag",
+              "value": "http://172.31.64.206:8088",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/IsApproved",
+              "hasChildren": false,
+              "name": "IsApproved",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/IsConnected",
+              "hasChildren": false,
+              "name": "IsConnected",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/IsRunning",
+              "hasChildren": false,
+              "name": "IsRunning",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "DateTime",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/LastCommunication",
+              "hasChildren": false,
+              "name": "LastCommunication",
+              "tagType": "AtomicTag",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1736538875813
+                ],
+                "$ts": 1736538875813
+              },
+              "valueSource": "expr"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/LicenseKey",
+              "hasChildren": false,
+              "name": "LicenseKey",
+              "tagType": "AtomicTag",
+              "value": "###-###",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/NodeRole",
+              "hasChildren": false,
+              "name": "NodeRole",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/PlatformEdition",
+              "hasChildren": false,
+              "name": "PlatformEdition",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/RunningState",
+              "hasChildren": false,
+              "name": "RunningState",
+              "tagType": "AtomicTag",
+              "value": "Running",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/RunningStateInt",
+              "hasChildren": false,
+              "name": "RunningStateInt",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/ServerId",
+              "hasChildren": false,
+              "name": "ServerId",
+              "tagType": "AtomicTag",
+              "value": "_0:0:Frontend-2",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 2/Independent/Version",
+              "hasChildren": false,
+              "name": "Version",
+              "tagType": "AtomicTag",
+              "value": "8.1.33",
+              "valueSource": "memory"
+            }
+          ],
+          "type": "frontends"
+        }
+      ],
+      "ios": [
+        {
+          "metrics": [
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/Metrics/Database/Active Connections",
+              "hasChildren": false,
+              "name": "Active Connections",
+              "tagType": "AtomicTag",
+              "value": 0,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/Metrics/Logging/Errors Per Hour",
+              "hasChildren": false,
+              "name": "Errors Per Hour",
+              "tagType": "AtomicTag",
+              "value": 3,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/Metrics/Logging/Errors Per Minute",
+              "hasChildren": false,
+              "name": "Errors Per Minute",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/Metrics/Sessions/Clients",
+              "hasChildren": false,
+              "name": "Clients",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/Metrics/Sessions/Designers",
+              "hasChildren": false,
+              "name": "Designers",
+              "tagType": "AtomicTag",
+              "value": 2,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/Metrics/Sessions/Perspective Sessions",
+              "hasChildren": false,
+              "name": "Perspective Sessions",
+              "tagType": "AtomicTag",
+              "value": 10,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/Metrics/System/CPU Usage",
+              "hasChildren": false,
+              "name": "CPU Usage",
+              "tagType": "AtomicTag",
+              "value": 9.33,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/Metrics/System/Memory Usage",
+              "hasChildren": false,
+              "name": "Memory Usage",
+              "tagType": "AtomicTag",
+              "value": 31.642,
+              "valueSource": "opc"
+            }
+          ],
+          "redundancy": "Independent",
+          "server": "Edge 1",
+          "status": [
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/AgentGroup",
+              "hasChildren": false,
+              "name": "AgentGroup",
+              "tagType": "AtomicTag",
+              "value": "Default Group",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/AgentName",
+              "hasChildren": false,
+              "name": "AgentName",
+              "tagType": "AtomicTag",
+              "value": "IO 2",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/BrowserURL",
+              "hasChildren": false,
+              "name": "BrowserURL",
+              "tagType": "AtomicTag",
+              "value": "http://172.31.64.207:8088",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/IsApproved",
+              "hasChildren": false,
+              "name": "IsApproved",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/IsConnected",
+              "hasChildren": false,
+              "name": "IsConnected",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/IsRunning",
+              "hasChildren": false,
+              "name": "IsRunning",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "DateTime",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/LastCommunication",
+              "hasChildren": false,
+              "name": "LastCommunication",
+              "tagType": "AtomicTag",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1736538875813
+                ],
+                "$ts": 1736538875813
+              },
+              "valueSource": "expr"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/LicenseKey",
+              "hasChildren": false,
+              "name": "LicenseKey",
+              "tagType": "AtomicTag",
+              "value": "###-###",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/NodeRole",
+              "hasChildren": false,
+              "name": "NodeRole",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/PlatformEdition",
+              "hasChildren": false,
+              "name": "PlatformEdition",
+              "tagType": "AtomicTag",
+              "value": "edge",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/RunningState",
+              "hasChildren": false,
+              "name": "RunningState",
+              "tagType": "AtomicTag",
+              "value": "Running",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/RunningStateInt",
+              "hasChildren": false,
+              "name": "RunningStateInt",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/ServerId",
+              "hasChildren": false,
+              "name": "ServerId",
+              "tagType": "AtomicTag",
+              "value": "_0:0:IO-1",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 1/Independent/Version",
+              "hasChildren": false,
+              "name": "Version",
+              "tagType": "AtomicTag",
+              "value": "8.1.33",
+              "valueSource": "memory"
+            }
+          ],
+          "type": "ios"
+        },
+        {
+          "metrics": [
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/Metrics/Database/Active Connections",
+              "hasChildren": false,
+              "name": "Active Connections",
+              "tagType": "AtomicTag",
+              "value": 0,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/Metrics/Logging/Errors Per Hour",
+              "hasChildren": false,
+              "name": "Errors Per Hour",
+              "tagType": "AtomicTag",
+              "value": 3,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/Metrics/Logging/Errors Per Minute",
+              "hasChildren": false,
+              "name": "Errors Per Minute",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/Metrics/Sessions/Clients",
+              "hasChildren": false,
+              "name": "Clients",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/Metrics/Sessions/Designers",
+              "hasChildren": false,
+              "name": "Designers",
+              "tagType": "AtomicTag",
+              "value": 2,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/Metrics/Sessions/Perspective Sessions",
+              "hasChildren": false,
+              "name": "Perspective Sessions",
+              "tagType": "AtomicTag",
+              "value": 10,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/Metrics/System/CPU Usage",
+              "hasChildren": false,
+              "name": "CPU Usage",
+              "tagType": "AtomicTag",
+              "value": 9.33,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/Metrics/System/Memory Usage",
+              "hasChildren": false,
+              "name": "Memory Usage",
+              "tagType": "AtomicTag",
+              "value": 31.642,
+              "valueSource": "opc"
+            }
+          ],
+          "redundancy": "Independent",
+          "server": "Edge 2",
+          "status": [
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/AgentGroup",
+              "hasChildren": false,
+              "name": "AgentGroup",
+              "tagType": "AtomicTag",
+              "value": "Default Group",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/AgentName",
+              "hasChildren": false,
+              "name": "AgentName",
+              "tagType": "AtomicTag",
+              "value": "IO 2",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/BrowserURL",
+              "hasChildren": false,
+              "name": "BrowserURL",
+              "tagType": "AtomicTag",
+              "value": "http://172.31.64.208:8088",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/IsApproved",
+              "hasChildren": false,
+              "name": "IsApproved",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/IsConnected",
+              "hasChildren": false,
+              "name": "IsConnected",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/IsRunning",
+              "hasChildren": false,
+              "name": "IsRunning",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "DateTime",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/LastCommunication",
+              "hasChildren": false,
+              "name": "LastCommunication",
+              "tagType": "AtomicTag",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1736538875813
+                ],
+                "$ts": 1736538875813
+              },
+              "valueSource": "expr"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/LicenseKey",
+              "hasChildren": false,
+              "name": "LicenseKey",
+              "tagType": "AtomicTag",
+              "value": "###-###",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/NodeRole",
+              "hasChildren": false,
+              "name": "NodeRole",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/PlatformEdition",
+              "hasChildren": false,
+              "name": "PlatformEdition",
+              "tagType": "AtomicTag",
+              "value": "edge",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/RunningState",
+              "hasChildren": false,
+              "name": "RunningState",
+              "tagType": "AtomicTag",
+              "value": "Running",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/RunningStateInt",
+              "hasChildren": false,
+              "name": "RunningStateInt",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/ServerId",
+              "hasChildren": false,
+              "name": "ServerId",
+              "tagType": "AtomicTag",
+              "value": "_0:0:IO-2",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 2/Independent/Version",
+              "hasChildren": false,
+              "name": "Version",
+              "tagType": "AtomicTag",
+              "value": "8.1.33",
+              "valueSource": "memory"
+            }
+          ],
+          "type": "ios"
+        },
+        {
+          "metrics": [
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/Metrics/Database/Active Connections",
+              "hasChildren": false,
+              "name": "Active Connections",
+              "tagType": "AtomicTag",
+              "value": 0,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/Metrics/Logging/Errors Per Hour",
+              "hasChildren": false,
+              "name": "Errors Per Hour",
+              "tagType": "AtomicTag",
+              "value": 3,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/Metrics/Logging/Errors Per Minute",
+              "hasChildren": false,
+              "name": "Errors Per Minute",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/Metrics/Sessions/Clients",
+              "hasChildren": false,
+              "name": "Clients",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/Metrics/Sessions/Designers",
+              "hasChildren": false,
+              "name": "Designers",
+              "tagType": "AtomicTag",
+              "value": 2,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/Metrics/Sessions/Perspective Sessions",
+              "hasChildren": false,
+              "name": "Perspective Sessions",
+              "tagType": "AtomicTag",
+              "value": 10,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/Metrics/System/CPU Usage",
+              "hasChildren": false,
+              "name": "CPU Usage",
+              "tagType": "AtomicTag",
+              "value": 9.33,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/Metrics/System/Memory Usage",
+              "hasChildren": false,
+              "name": "Memory Usage",
+              "tagType": "AtomicTag",
+              "value": 31.642,
+              "valueSource": "opc"
+            }
+          ],
+          "redundancy": "Independent",
+          "server": "Edge 3",
+          "status": [
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/AgentGroup",
+              "hasChildren": false,
+              "name": "AgentGroup",
+              "tagType": "AtomicTag",
+              "value": "Default Group",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/AgentName",
+              "hasChildren": false,
+              "name": "AgentName",
+              "tagType": "AtomicTag",
+              "value": "IO 2",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/BrowserURL",
+              "hasChildren": false,
+              "name": "BrowserURL",
+              "tagType": "AtomicTag",
+              "value": "http://172.31.64.209:8088",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/IsApproved",
+              "hasChildren": false,
+              "name": "IsApproved",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/IsConnected",
+              "hasChildren": false,
+              "name": "IsConnected",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/IsRunning",
+              "hasChildren": false,
+              "name": "IsRunning",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "DateTime",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/LastCommunication",
+              "hasChildren": false,
+              "name": "LastCommunication",
+              "tagType": "AtomicTag",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1736538875813
+                ],
+                "$ts": 1736538875813
+              },
+              "valueSource": "expr"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/LicenseKey",
+              "hasChildren": false,
+              "name": "LicenseKey",
+              "tagType": "AtomicTag",
+              "value": "###-###",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/NodeRole",
+              "hasChildren": false,
+              "name": "NodeRole",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/PlatformEdition",
+              "hasChildren": false,
+              "name": "PlatformEdition",
+              "tagType": "AtomicTag",
+              "value": "edge",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/RunningState",
+              "hasChildren": false,
+              "name": "RunningState",
+              "tagType": "AtomicTag",
+              "value": "Running",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/RunningStateInt",
+              "hasChildren": false,
+              "name": "RunningStateInt",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/ServerId",
+              "hasChildren": false,
+              "name": "ServerId",
+              "tagType": "AtomicTag",
+              "value": "_0:0:IO-2",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 3/Independent/Version",
+              "hasChildren": false,
+              "name": "Version",
+              "tagType": "AtomicTag",
+              "value": "8.1.33",
+              "valueSource": "memory"
+            }
+          ],
+          "type": "ios"
+        },
+        {
+          "metrics": [
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/Metrics/Database/Active Connections",
+              "hasChildren": false,
+              "name": "Active Connections",
+              "tagType": "AtomicTag",
+              "value": 0,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/Metrics/Logging/Errors Per Hour",
+              "hasChildren": false,
+              "name": "Errors Per Hour",
+              "tagType": "AtomicTag",
+              "value": 3,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/Metrics/Logging/Errors Per Minute",
+              "hasChildren": false,
+              "name": "Errors Per Minute",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/Metrics/Sessions/Clients",
+              "hasChildren": false,
+              "name": "Clients",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/Metrics/Sessions/Designers",
+              "hasChildren": false,
+              "name": "Designers",
+              "tagType": "AtomicTag",
+              "value": 2,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/Metrics/Sessions/Perspective Sessions",
+              "hasChildren": false,
+              "name": "Perspective Sessions",
+              "tagType": "AtomicTag",
+              "value": 10,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/Metrics/System/CPU Usage",
+              "hasChildren": false,
+              "name": "CPU Usage",
+              "tagType": "AtomicTag",
+              "value": 9.33,
+              "valueSource": "opc"
+            },
+            {
+              "attributes": "[history]",
+              "dataType": "Float8",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/Metrics/System/Memory Usage",
+              "hasChildren": false,
+              "name": "Memory Usage",
+              "tagType": "AtomicTag",
+              "value": 31.642,
+              "valueSource": "opc"
+            }
+          ],
+          "redundancy": "Independent",
+          "server": "Edge 4",
+          "status": [
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/AgentGroup",
+              "hasChildren": false,
+              "name": "AgentGroup",
+              "tagType": "AtomicTag",
+              "value": "Default Group",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/AgentName",
+              "hasChildren": false,
+              "name": "AgentName",
+              "tagType": "AtomicTag",
+              "value": "IO 2",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/BrowserURL",
+              "hasChildren": false,
+              "name": "BrowserURL",
+              "tagType": "AtomicTag",
+              "value": "http://172.31.64.210:8088",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/IsApproved",
+              "hasChildren": false,
+              "name": "IsApproved",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/IsConnected",
+              "hasChildren": false,
+              "name": "IsConnected",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Boolean",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/IsRunning",
+              "hasChildren": false,
+              "name": "IsRunning",
+              "tagType": "AtomicTag",
+              "value": true,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "DateTime",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/LastCommunication",
+              "hasChildren": false,
+              "name": "LastCommunication",
+              "tagType": "AtomicTag",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1736538875813
+                ],
+                "$ts": 1736538875813
+              },
+              "valueSource": "expr"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/LicenseKey",
+              "hasChildren": false,
+              "name": "LicenseKey",
+              "tagType": "AtomicTag",
+              "value": "###-###",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/NodeRole",
+              "hasChildren": false,
+              "name": "NodeRole",
+              "tagType": "AtomicTag",
+              "value": "",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/PlatformEdition",
+              "hasChildren": false,
+              "name": "PlatformEdition",
+              "tagType": "AtomicTag",
+              "value": "edge",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/RunningState",
+              "hasChildren": false,
+              "name": "RunningState",
+              "tagType": "AtomicTag",
+              "value": "Running",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "Int4",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/RunningStateInt",
+              "hasChildren": false,
+              "name": "RunningStateInt",
+              "tagType": "AtomicTag",
+              "value": 1,
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/ServerId",
+              "hasChildren": false,
+              "name": "ServerId",
+              "tagType": "AtomicTag",
+              "value": "_0:0:IO-2",
+              "valueSource": "memory"
+            },
+            {
+              "attributes": "[]",
+              "dataType": "String",
+              "formatString": "#,##0.##",
+              "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Edge 4/Independent/Version",
+              "hasChildren": false,
+              "name": "Version",
+              "tagType": "AtomicTag",
+              "value": "8.1.33",
+              "valueSource": "memory"
+            }
+          ],
+          "type": "ios"
+        }
+      ]
+    },
+    "viewWidth": 0
+  },
+  "params": {
+    "setup": {
+      "backends": [
+        {
+          "backup": "Backend - Backup",
+          "master": "Backend - Master"
+        }
+      ],
+      "devices": [
+        {
+          "device": "value",
+          "ioServer": "value",
+          "key": "value"
+        }
+      ],
+      "frontends": [
+        "Frontend 1",
+        "Frontend 2"
+      ],
+      "io": [
+        "Edge 1",
+        "Edge 2",
+        "Edge 3",
+        "Edge 4"
+      ],
+      "spoof": true,
+      "spoofFolder": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture"
+    }
+  },
+  "propConfig": {
+    "custom.architecture": {
+      "binding": {
+        "config": {
+          "struct": {
+            "setup": "{view.params.setup}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\t\n\tspoof \u003d value.setup.spoof\n\tspoofFolder \u003d value.setup.spoofFolder\n\n\tif spoof:\n\t\teamFolder \u003d spoofFolder\n\telse:\n\t\teamFolder \u003d \"[System]Gateway/\"\n\t\n\tignitionLevels \u003d [\"frontends\", \"backends\", \"ios\"]\n\tarchitectureLevels \u003d {\"frontends\": value.setup.frontends, \"backends\": value.setup.backends, \"ios\": value.setup.io}\n\tarchitecture \u003d {}\n\n\tfor level in architectureLevels:\n\t\tif level in ignitionLevels:\n\t\t\tarchitecture[level] \u003d []\n\t\t\tif level in [\"backends\"]:\n\t\t\t\tfor backend in architectureLevels[level]:\n\t\t\t\t\tarchitecture[level].append({\"server\":\t\t\tbackend[\"master\"], \n\t\t\t\t\t\t\t\t\t\t\t\t\"redundantServer\":\tbackend[\"backup\"],\n\t\t\t\t\t\t\t\t\t\t\t\t\"type\":\t\t\t\tlevel, \n\t\t\t\t\t\t\t\t\t\t\t\t\"redundancy\":\t\tsystem.tag.browse(path \u003d eamFolder+\"/EAM/Agents/\"+str(backend[\"master\"])+\"/\", \t\t\t\t\tfilter \u003d {\"tagType\":\"folder\"})[0][\"name\"],\n\t\t\t\t\t\t\t\t\t\t\t\t\"status\":\t\t\t[tag for tag in system.tag.browse(path \u003d eamFolder+\"/EAM/Agents/\"+str(backend[\"master\"])+\"/\", filter \u003d {\"tagType\":\"AtomicTag\", \"recursive\": True}) if \u0027Metrics\u0027 not in str(tag[\u0027fullPath\u0027])], \n\t\t\t\t\t\t\t\t\t\t\t\t\"metrics\":\t\t\t[tag for tag in system.tag.browse(path \u003d eamFolder+\"/EAM/Agents/\"+str(backend[\"master\"])+\"/\", filter \u003d {\"tagType\":\"AtomicTag\", \"recursive\": True}) if \u0027Metrics\u0027 in str(tag[\u0027fullPath\u0027])],\n\t\t\t\t\t\t\t\t\t\t\t\t\"redundantStatus\":\t[tag for tag in system.tag.browse(path \u003d eamFolder+\"/EAM/Agents/\"+str(backend[\"backup\"])+\"/\", filter \u003d {\"tagType\":\"AtomicTag\", \"recursive\": True}) if \u0027Metrics\u0027 not in str(tag[\u0027fullPath\u0027])],\n\t\t\t\t\t\t\t\t\t\t\t\t\"redundantMetrics\":\t[tag for tag in system.tag.browse(path \u003d eamFolder+\"/EAM/Agents/\"+str(backend[\"backup\"])+\"/\", filter \u003d {\"tagType\":\"AtomicTag\", \"recursive\": True}) if \u0027Metrics\u0027 in str(tag[\u0027fullPath\u0027])]})\n\t\t\telse:\t\t\t\t\n\t\t\t\tfor count, server in enumerate(architectureLevels[level]):\n\t\t\t\t\tarchitecture[level].append({\"server\":server, \n\t\t\t\t\t\t\t\t\t\t\t\t\"type\":level, \n\t\t\t\t\t\t\t\t\t\t\t\t\"redundancy\":system.tag.browse(eamFolder+\"/EAM/Agents/\"+str(server)+\"/\", filter\u003d{\"tagType\":\"folder\"})[0][\"name\"],\n\t\t\t\t\t\t\t\t\t\t\t\t\"status\":[tag for tag in system.tag.browse(path \u003d eamFolder+\"/EAM/Agents/\"+str(server)+\"/\", filter \u003d {\"tagType\":\"AtomicTag\", \"recursive\": True}) if \u0027Metrics\u0027 not in str(tag[\u0027fullPath\u0027])], \n\t\t\t\t\t\t\t\t\t\t\t\t\"metrics\":[tag for tag in system.tag.browse(path \u003d eamFolder+\"/EAM/Agents/\"+str(server)+\"/\", filter \u003d {\"tagType\":\"AtomicTag\", \"recursive\": True}) if \u0027Metrics\u0027 in str(tag[\u0027fullPath\u0027])]})\n\t\t\t\n\t# Remove whitespace for param naming.\n\tfor item in architecture:\n\t\tif \u0027 \u0027 in item:\n\t\t\tarchitecture[item.replace(\" \", \"\")] \u003d architecture[item]\n\t\t\tdel architecture[item]\n\n\treturn architecture\n\t\t",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.viewWidth": {
+      "binding": {
+        "config": {
+          "path": "page.props.dimensions.viewport.width"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.setup": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 703,
+      "width": 1311
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.sendMessage(messageType\u003d\u0027exchange-datacenter-architecture-server-closepallpopups\u0027, payload\u003d{})\n\tself.meta.visible \u003d False"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "CloseAllPopupsButton",
+          "visible": false
+        },
+        "position": {
+          "basis": "35px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": true,
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": false
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "style": {
+              "backgroundColor": "#FFFFFF00"
+            }
+          },
+          "style": {
+            "backgroundColor": "#FFFFFF00",
+            "color": "var(--neutral-80)",
+            "overflow": "visible",
+            "width": "125px"
+          },
+          "text": "Close All Popups"
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "exchange-datacenter-architecture-server-popupopened",
+              "pageScope": true,
+              "script": "\tself.meta.visible \u003d True",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "ViewCanvas"
+        },
+        "position": {
+          "basis": "770px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "architecture": "{view.custom.architecture}",
+                  "viewHeight": "{page.props.dimensions.primaryView.height}",
+                  "viewWidth": "{view.custom.viewWidth}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\timport copy\n\t\t\t\n\tdef center_images(num_images, image_width, screen_width, height):\n\t    # Calculate the total width of all images\n\t    total_width \u003d num_images * image_width\n\n\t    # Calculate the space to be left on either side of the images\n\t    height_space \u003d float(screen_width - total_width) / 2 \t\t\n\t\n\t    # Calculate the positions where each image should be placed\n\t    positions \u003d []\n\t    current_position \u003d height_space\n\t    for _ in range(num_images):\n\t        # Calculate x coordinate as a percentage\n\t        x_percentage \u003d (float(current_position) / float(screen_width)) * 100\n\t        positions.append((x_percentage, height))  # y coordinate is 0\n\t        current_position +\u003d image_width\n\t\n\t    return positions\n\t\n\tinstance \u003d {\n\t  \"position\": \"absolute\",\n\t  \"top\": \"0px\",\n\t  \"left\": \"0px\",\n\t  \"bottom\": \"auto\",\n\t  \"right\": \"auto\",\n\t  \"zIndex\": \"auto\",\n\t  \"width\": \"auto\",\n\t  \"height\": \"auto\",\n\t  \"viewPath\": \"\",\n\t  \"viewParams\": {},\n\t  \"style\": {\n\t        \"classes\": \"\",\n\t        \"overflow\": \"visible\"\n\t    }\n\t}\n\t\n\tinstances \u003d []\n\n\tfrontendServers \u003d value.architecture.frontends\n\tbackendServers \t\u003d value.architecture.backends\n\tioServers\t\t\u003d value.architecture.ios\n\t\n\tpageViewWidth\t\u003d float(1000 if value.viewWidth in [0, None] else value.viewWidth)\n\tpageViewHeight\t\u003d float(500 if value.viewHeight in [0, None] else value.viewHeight)\n\t\n#\textraSpace \u003d 35 if (pageViewWidth \u003e\u003d 450) else 0\n\textraSpace \u003d 0\n\tfrontendLevel \t\t\u003d extraSpace\n\tbackendLevel\t\t\u003d frontendLevel+295 if value.viewWidth \u003e 450 else frontendLevel+195\n\tfrontendBackendPipe \u003d frontendLevel+203 if value.viewWidth \u003e 450 else frontendLevel+203\n\tbackendIoPipe\t\t\u003d backendLevel+303 if value.viewWidth \u003e 450 else backendLevel+203\n\tioLevel\t\t\t\t\u003d backendLevel+295 if value.viewWidth \u003e 450 else backendLevel+195\n\t\n\t\n#\tserverIconWidth \u003d float(120 if value.viewWidth \u003e 450 else 60)\n#\tbackendIconWidth\u003d float(200 if value.viewWidth \u003e 450 else 140)\n\tserverIconWidth \u003d 240 if value.viewWidth \u003e 800 else 120 if value.viewWidth \u003e 450 else 60\n\tbackendIconWidth\u003d 560 if value.viewWidth \u003e 800 else 280 if value.viewWidth \u003e 450 else 140\n\n\tserverIconHeight\u003d 215\n\n\t# Set up Frontend Server Layer -------------------------------------------------------------------------------------\n\n \tfrontendPositions \u003d center_images(len(frontendServers), serverIconWidth, pageViewWidth, frontendLevel)\n\n\ttotalFrontendWidth \u003d 0\n\n\tfor count, frontend in enumerate(frontendServers):\n\t\tnewInstance \u003d copy.deepcopy(instance)\n\t\tnewInstance[\"width\"] \u003d serverIconWidth\n\t\tnewInstance[\"height\"] \u003d serverIconHeight\n\t\tnewInstance[\"top\"] \u003d frontendPositions[count][1]\n\t\tnewInstance[\"left\"] \u003d str(frontendPositions[count][0]) + \"%\"\n\t\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/IgnitionServer\"\n\t\tnewInstance[\"viewParams\"] \u003d frontendServers[count]\n\t\tnewInstance[\"zIndex\"] \u003d 3\n\t\tinstances.append(newInstance)\n\t\t\n\t\tnewInstance \u003d copy.deepcopy(instance)\n\t\tnewInstance[\"width\"] \u003d serverIconWidth\n\t\tnewInstance[\"height\"] \u003d \"32px\"\n\t\tnewInstance[\"top\"] \u003d frontendPositions[count][1]+20\n\t\tnewInstance[\"left\"] \u003d str(frontendPositions[count][0]) + \"%\"\n\t\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/StatusList\"\n\t\tnewInstance[\"viewParams\"] \u003d frontendServers[count]\n\t\tnewInstance[\"zIndex\"] \u003d 3\n\t\tinstances.append(newInstance)\n\t\t\t\t\n\t\t\n\t\ttotalFrontendWidth +\u003d serverIconWidth\n\t\n#\ttotalFrontendWidth -\u003d serverIconWidth/2\n\t\n\t# Set up Backend Server Layer -------------------------------------------------------------------------------------\n\t\t\t\t\n\tbackendPositions \u003d center_images(len(backendServers), backendIconWidth, pageViewWidth, backendLevel)\n\t\n\ttotalBackendWidth \u003d 0\n\n\tfor count, backend in enumerate(backendServers):\t\n\t\t# Check if there is a db connection:\n\t\tdbConnection \u003d False\n\t\tfor obj in value.architecture.backends[count].metrics:\n\t\t\tif obj.name \u003d\u003d \"Active Connections\":\n\t\t\t\tdbConnection \u003d not (obj.value \u003e 0 | obj.value is None)\n\t\t\t\t\n\t\tnewInstance \u003d copy.deepcopy(instance)\n\t\tnewInstance[\"width\"] \u003d backendIconWidth if not dbConnection else backendIconWidth+150\n\t\tnewInstance[\"height\"] \u003d serverIconHeight+200 if value.viewWidth \u003e 450 else serverIconHeight\n\t\tnewInstance[\"top\"] \u003d backendPositions[count][1]-100 if value.viewWidth \u003e 450 else backendPositions[count][1]\n\t\tnewInstance[\"left\"] \u003d str(backendPositions[count][0]-(150*(50/pageViewWidth) if dbConnection else 0)) + \"%\"\n\t\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/IgnitionServer\"\n\t\tnewInstance[\"viewParams\"] \u003d backendServers[count]\n\t\tnewInstance[\"zIndex\"] \u003d 4\n\t\tinstances.append(newInstance)\n\t\t\n\t\tnewInstance \u003d copy.deepcopy(instance)\n\t\tnewInstance[\"width\"] \u003d backendIconWidth/2.5\n\t\tnewInstance[\"height\"] \u003d \"60px\"\n\t\tnewInstance[\"top\"] \u003d backendPositions[count][1]+55\n\t\tnewInstance[\"left\"] \u003d ((str(backendPositions[count][0]+(1000*(50/pageViewWidth) if dbConnection else 0)-6) + \"%\" if value.viewWidth \u003e 800 else str(backendPositions[count][0]+(600*(50/pageViewWidth) if dbConnection else 0)-6) + \"%\") if value.viewWidth \u003c 2500 else str(backendPositions[count][0]+(1200*(50/pageViewWidth) if dbConnection else 0)-6) + \"%\") if value.viewWidth \u003e\u003d 450 else str(backendPositions[count][0]+(350*(50/pageViewWidth) if dbConnection else 0)-6) + \"%\"\n\t\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/StatusList\"\n\t\tnewInstance[\"viewParams\"] \u003d backendServers[count]\n\t\tnewInstance[\"zIndex\"] \u003d 4\n\t\tinstances.append(newInstance)\n\t\t\n\t\ttotalBackendWidth +\u003d serverIconWidth #if not dbConnection else serverIconWidth+150\n\t\t\n#\ttotalBackendWidth -\u003d (serverIconWidth if not dbConnection else serverIconWidth+200)/2\n\t\n\t# Set up I/O Server Layer -------------------------------------------------------------------------------------\n\t\t\t\t\t\n\tioPositions \u003d center_images(len(ioServers), serverIconWidth, pageViewWidth, ioLevel)\n\n\ttotalIoWidth \u003d 0\n\n\tfor count, io in enumerate(ioServers):\t\n\t\tnewInstance \u003d copy.deepcopy(instance)\n\t\tnewInstance[\"width\"] \u003d serverIconWidth\n\t\tnewInstance[\"height\"] \u003d serverIconHeight\n\t\tnewInstance[\"top\"] \u003d ioPositions[count][1]\n\t\tnewInstance[\"left\"] \u003d str(ioPositions[count][0]) + \"%\"\n\t\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/IgnitionServer\"\n\t\tnewInstance[\"viewParams\"] \u003d ioServers[count]\n\t\tnewInstance[\"zIndex\"] \u003d 3\n\t\tinstances.append(newInstance)\n\t\t\n\t\tnewInstance \u003d copy.deepcopy(instance)\n\t\tnewInstance[\"width\"] \u003d serverIconWidth\n\t\tnewInstance[\"height\"] \u003d \"60px\"\n\t\tnewInstance[\"top\"] \u003d ioPositions[count][1]+120\n\t\tnewInstance[\"left\"] \u003d str(ioPositions[count][0]) + \"%\"\n\t\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/StatusList\"\n\t\tnewInstance[\"viewParams\"] \u003d ioServers[count]\n\t\tnewInstance[\"zIndex\"] \u003d 2\n\t\tinstances.append(newInstance)\n\t\t\n\t\ttotalIoWidth +\u003d serverIconWidth\n\t\n#\ttotalIoWidth -\u003d serverIconWidth/2\t\n\t\n\t# Set up Connection Lines for Frontend to Backend ------------------------------------------------------------------\n\t\t\n#\t# Calculate total width for frontend servers\n#\ttotal_width_frontend \u003d len(frontendServers) * serverIconWidth\n#\t\n#\t# Calculate total width for backend servers\n#\ttotal_width_backend \u003d len(backendServers) * serverIconWidth\n#\t\n\t# Compare and find out which sector has the longest total width\n\tlongestWidth \u003d float(max(totalFrontendWidth, totalBackendWidth))\n\tlargestServerCount \u003d float(max(len(frontendServers), len(backendServers)))\n\t\n\tnewInstance \u003d copy.deepcopy(instance)\n\tnewInstance[\"width\"] \u003d (longestWidth-serverIconWidth)/2\n\tnewInstance[\"height\"] \u003d 4\n\tnewInstance[\"top\"] \u003d frontendBackendPipe\n\tnewInstance[\"left\"] \u003d \"50%\"\n\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/HorizontalPipe\"\n\tnewInstance[\"viewParams\"] \u003d {}\n\tnewInstance[\"zIndex\"] \u003d 1\n\tinstances.append(newInstance)\n\t\n\tnewInstance \u003d copy.deepcopy(instance)\n\tnewInstance[\"width\"] \u003d (longestWidth-serverIconWidth)/2\n\tnewInstance[\"height\"] \u003d 4\n\tnewInstance[\"top\"] \u003d frontendBackendPipe\n\tnewInstance[\"left\"] \u003d \u0027auto\u0027\n\tnewInstance[\"right\"] \u003d \"50%\"\n\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/HorizontalPipe\"\n\tnewInstance[\"viewParams\"] \u003d {}\n\tnewInstance[\"zIndex\"] \u003d 1\n\tinstances.append(newInstance)\n\t\n\t# Set up Connection Lines for Backend to IO ------------------------------------------------------------------\n\t\t\t\n#\t# Calculate total width for frontend servers\n#\ttotal_width_io \u003d len(ioServers) * serverIconWidth\n\t\n\t# Compare and find out which sector has the longest total width\n\tlongestWidth \u003d float(max(totalIoWidth, totalBackendWidth))\n\tlargestServerCount \u003d float(max(len(ioServers), len(backendServers)))\n\n\tnewInstance \u003d copy.deepcopy(instance)\n\tnewInstance[\"width\"] \u003d (longestWidth-serverIconWidth)/2\n\tnewInstance[\"height\"] \u003d 4\n\tnewInstance[\"top\"] \u003d backendIoPipe\n\tnewInstance[\"left\"] \u003d \"50%\"\n\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/HorizontalPipe\"\n\tnewInstance[\"viewParams\"] \u003d {}\n\tnewInstance[\"zIndex\"] \u003d 1\n\tinstances.append(newInstance)\n\t\n\tnewInstance \u003d copy.deepcopy(instance)\n\tnewInstance[\"width\"] \u003d (longestWidth-serverIconWidth)/2\n\tnewInstance[\"height\"] \u003d 4\n\tnewInstance[\"top\"] \u003d backendIoPipe\n\tnewInstance[\"left\"] \u003d \u0027auto\u0027\n\tnewInstance[\"right\"] \u003d \"50%\"\n\tnewInstance[\"viewPath\"] \u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/Icons/HorizontalPipe\"\n\tnewInstance[\"viewParams\"] \u003d {}\n\tnewInstance[\"zIndex\"] \u003d 1\n\tinstances.append(newInstance)\n\t\t\n\t# Set up System Info Slider Instance ----------------------------------------------------------------------------------\t\n\t\t\n\tinfoPopupInstance \u003d copy.deepcopy(instance)\n\tinfoPopupInstance[\"left\"] \t\t\u003d \"auto\"\n\tinfoPopupInstance[\"right\"] \t\t\u003d \"-410px\"\n\tinfoPopupInstance[\"top\"] \t\t\u003d \"0px\"\n\tinfoPopupInstance[\"height\"]\t\t\u003d pageViewHeight-20\n\tinfoPopupInstance[\"width\"]\t\t\u003d \"360px\"\n\tinfoPopupInstance[\"viewPath\"] \t\u003d \"Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/SystemInfo\"\n\tinfoPopupInstance[\"zIndex\"] \u003d 999\n\tinfoPopupInstance[\"style\"] \u003d {\"borderTopLeftRadius\": \"8px\", \"borderBottomLeftRadius\": \"8px\", \"borderTopRightRadius\": \"8px\", \"borderBottomRightRadius\": \"8px\"}\n\tinstances.append(infoPopupInstance)\n\t\n\treturn instances",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.style.marginTop": {
+            "binding": {
+              "config": {
+                "path": "view.custom.viewWidth"
+              },
+              "transforms": [
+                {
+                  "fallback": "0px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "-35px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "defaultStyle": {
+            "overflow": "visible"
+          },
+          "style": {
+            "minHeight": "750px",
+            "overflow": "visible"
+          },
+          "transitionSettings": {
+            "duration": "0.25s",
+            "timingFunction": "linear"
+          },
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "exchange-datacenter-architecture-sidebar-open",
+              "pageScope": true,
+              "script": "\n\tserver\t\t\t\u003d payload[\"server\"]\n\tmetrics \t\t\u003d payload[\"metrics\"]\n\tstatus \t\t\t\u003d payload[\"status\"]\n\tredundancy \t\t\u003d payload[\"redundancy\"]\n\tredundantStatus\t\u003d payload[\"redundantStatus\"]\n\tredundantMetrics\u003d payload[\"redundantMetrics\"]\n\n\tself.props.instances[-1][\"viewParams\"] \u003d {\"systemInfo\":{\"server\": server, \"metrics\":metrics, \"status\":status, \"redundancy\":redundancy, \"redundantStatus\":redundantStatus, \"redundantMetrics\":redundantMetrics}}\n\tself.props.instances[-1][\"right\"] \u003d \"0px\"",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "exchange-datacenter-architecture-sidebar-close",
+              "pageScope": true,
+              "script": "\tself.props.instances[-1][\"right\"] \u003d \"-410px\"",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.display.viewcanvas"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/container",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

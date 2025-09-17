@@ -1,0 +1,19 @@
+{
+  "base": {
+    "style": {
+      "borderColor": "var(--neutral-30)",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "borderTopLeftRadius": "10px",
+      "borderTopRightRadius": "10px",
+      "borderBottomLeftRadius": "10px",
+      "borderBottomRightRadius": "10px",
+      "fontFamily": "Roboto",
+      "fontSize": "13px",
+      "fontWeight": "500",
+      "padding": "7.5px",
+      "textAlign": "center",
+      "whiteSpace": "pre"
+    }
+  }
+}

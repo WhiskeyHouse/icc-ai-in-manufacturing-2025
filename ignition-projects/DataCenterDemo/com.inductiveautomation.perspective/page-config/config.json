@@ -1,0 +1,82 @@
+{
+  "pages": {
+    "/": {
+      "title": "Overview",
+      "viewPath": "Exchange/DataCenter/Overview/Main"
+    },
+    "/alarms": {
+      "title": "Alarms",
+      "viewPath": "Exchange/DataCenter/Alarms/Main"
+    },
+    "/architecture": {
+      "title": "Architecture",
+      "viewPath": "Exchange/DataCenter/Architecture/Main"
+    },
+    "/floor-plan": {
+      "title": "",
+      "viewPath": "Exchange/DataCenter/Floor Plan/Main"
+    },
+    "/heat-map": {
+      "title": "Heatmap",
+      "viewPath": "Exchange/DataCenter/Heatmap/Main"
+    },
+    "/heat-map/:heatmap/:tagName": {
+      "title": "Heatmap",
+      "viewPath": "Exchange/DataCenter/Heatmap/Main"
+    },
+    "/scenarios": {
+      "title": "",
+      "viewPath": "Exchange/DataCenter/Scenarios/Main"
+    },
+    "/single-line": {
+      "title": "Single Line",
+      "viewPath": "Exchange/DataCenter/SingleLine/Main"
+    },
+    "/single-line-iframe": {
+      "title": "Single Line",
+      "viewPath": "Exchange/DataCenter/SingleLine/EmbeddedViews/DiagramEmbedded"
+    },
+    "/trends": {
+      "title": "Trends",
+      "viewPath": "Exchange/DataCenter/Trends/Main"
+    }
+  },
+  "sharedDocks": {
+    "bottom": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "Footer",
+        "modal": false,
+        "resizable": false,
+        "show": "onDemand",
+        "size": 64,
+        "viewParams": {
+          "viewParams": {},
+          "viewPath": "Exchange/DataCenter/Framework/Header/Mobile/MobileMainFooter"
+        },
+        "viewPath": "Exchange/DataCenter/Framework/Footer/Main"
+      }
+    ],
+    "cornerPriority": "top-bottom",
+    "top": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "Header",
+        "modal": false,
+        "resizable": false,
+        "show": "visible",
+        "size": 56,
+        "viewParams": {},
+        "viewPath": "Exchange/DataCenter/Framework/Header/Main"
+      }
+    ]
+  }
+}

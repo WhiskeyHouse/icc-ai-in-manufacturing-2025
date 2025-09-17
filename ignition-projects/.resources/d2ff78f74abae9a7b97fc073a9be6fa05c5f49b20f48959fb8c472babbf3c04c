@@ -1,0 +1,201 @@
+"""
+WebDev GET Handler for Validation API
+Handles GET requests for validation endpoints
+"""
+
+import json
+import system
+
+def doGet(request, session):
+    """
+    Handle GET requests for validation API
+    
+    Supported endpoints:
+    - /system/webdev/Global/validation (no pathInfo) - API documentation
+    - /system/webdev/Global/validation/health - Health check
+    - /system/webdev/Global/validation/sessions - List all sessions
+    - /system/webdev/Global/validation/sessions/{id} - Get specific session
+    - /system/webdev/Global/validation/samples/good - Get good example script
+    - /system/webdev/Global/validation/samples/bad - Get bad example script
+    """
+    
+    try:
+        # Get the path after /system/webdev/Global/validation
+        path_info = request.get('pathInfo', '')
+        
+        if not path_info or path_info == '/':
+            # Root endpoint - return API documentation
+            api_info = {
+                'service': 'WHK Validation API',
+                'version': '1.0.0',
+                'description': 'REST API for Jython script and Perspective component validation',
+                'endpoints': {
+                    'GET /health': 'Check service health',
+                    'GET /sessions': 'List all validation sessions',
+                    'GET /sessions/{id}': 'Get specific validation session',
+                    'GET /samples/good': 'Get good example script',
+                    'GET /samples/bad': 'Get bad example script',
+                    'POST /scripts': 'Validate Jython script',
+                    'POST /components': 'Validate Perspective component',
+                    'PATCH /sessions/{id}': 'Update validation session'
+                },
+                'integration': {
+                    'rules_engine': 'http://host.docker.internal:8087',
+                    'project': 'Global (inheritable)',
+                    'module': 'whk.validation'
+                }
+            }
+            return {'html': '<pre>' + json.dumps(api_info, indent=2) + '</pre>'}
+        
+        elif path_info == '/health':
+            # Health check endpoint
+            try:
+                # Test connection to rules engine
+                response = system.net.httpGet("http://host.docker.internal:8087/health", connectTimeout=5000, readTimeout=5000)
+                rules_engine_status = "online" if response else "offline"
+            except:
+                rules_engine_status = "offline"
+            
+            health_status = {
+                "status": "healthy",
+                "timestamp": str(system.date.now()),
+                "services": {
+                    "rules_engine": rules_engine_status,
+                    "webdev": "online"
+                }
+            }
+            return {'html': '<pre>' + json.dumps(health_status, indent=2) + '</pre>'}
+        
+        elif path_info == '/sessions':
+            # List all validation sessions - placeholder implementation
+            sessions = []  # TODO: Implement session storage
+            return {
+                'html': '<pre>' + json.dumps({
+                    'sessions': sessions,
+                    'total': len(sessions),
+                    'message': 'Session storage not yet implemented'
+                }, indent=2) + '</pre>'
+            }
+        
+        elif path_info.startswith('/sessions/'):
+            # Get specific validation session - placeholder implementation
+            session_id = path_info.replace('/sessions/', '').strip()
+            
+            if not session_id:
+                return {
+                    'html': '<pre>' + json.dumps({'error': 'Session ID is required'}, indent=2) + '</pre>'
+                }
+            
+            # TODO: Implement session retrieval
+            return {
+                'html': '<pre>' + json.dumps({
+                    'error': 'Session not found', 
+                    'session_id': session_id, 
+                    'message': 'Session storage not yet implemented'
+                }, indent=2) + '</pre>'
+            }
+        
+        elif path_info == '/samples/good':
+            # Return good example script
+            try:
+                good_script = get_sample_script('good')
+                return {
+                    'html': '<h1>Good Example Script</h1><pre>' + good_script + '</pre>'
+                }
+            except Exception as e:
+                return {
+                    'html': '<pre>' + json.dumps({'error': 'Could not load good example script', 'message': str(e)}, indent=2) + '</pre>'
+                }
+        
+        elif path_info == '/samples/bad':
+            # Return bad example script
+            try:
+                bad_script = get_sample_script('bad')
+                return {
+                    'html': '<h1>Bad Example Script</h1><pre>' + bad_script + '</pre>'
+                }
+            except Exception as e:
+                return {
+                    'html': '<pre>' + json.dumps({'error': 'Could not load bad example script', 'message': str(e)}, indent=2) + '</pre>'
+                }
+        
+        else:
+            # Unknown endpoint
+            return {
+                'html': '<pre>' + json.dumps({
+                    'error': 'Endpoint not found',
+                    'path': path_info,
+                    'available_endpoints': ['/health', '/sessions', '/sessions/{id}', '/samples/good', '/samples/bad']
+                }, indent=2) + '</pre>'
+            }
+    
+    except Exception as e:
+        return {
+            'html': '<pre>' + json.dumps({
+                'error': 'Internal server error',
+                'message': str(e)
+            }, indent=2) + '</pre>'
+        }
+
+
+def get_sample_script(script_type):
+    """Load sample script content from the script library"""
+    try:
+        if script_type == 'good':
+            # Import and return the good example
+            import whk.test_scripts.good_example as good_example
+            import inspect
+            return inspect.getsource(good_example)
+        elif script_type == 'bad':
+            # Import and return the bad example
+            import whk.test_scripts.bad_example as bad_example
+            import inspect
+            return inspect.getsource(bad_example)
+        else:
+            raise ValueError("Unknown script type: " + str(script_type))
+    except Exception as e:
+        # Fallback: try to read the files directly
+        if script_type == 'good':
+            return """# WHK Production Script - Good Example
+# Follows all WHK standards and best practices
+
+from com.inductiveautomation.ignition.common.util import LoggerEx
+from java.util import Date
+import system
+
+# Initialize WHK logger
+logger = LoggerEx.newBuilder().name("WHK.Production").build()
+
+def process_batch_safely():
+    # Safe batch processing with proper error handling
+    try:
+        batch_tags = ["[default]Batch/Current/ID", "[default]Batch/Current/Recipe"]
+        values = system.tag.readBlocking(batch_tags)
+        if values is None or len(values) != len(batch_tags):
+            logger.error("Failed to read batch tags")
+            return False
+        # Process with proper error handling and audit trail
+        return True
+    except Exception as e:
+        logger.error("Error processing batch: {}".format(str(e)))
+        return False
+"""
+        else:
+            return """# Bad Script Example - Multiple validation violations
+# This script intentionally violates WHK standards
+
+import system
+
+def unsafe_batch_process():
+    # No error handling - VIOLATION SCRIPT-001
+    batch_id = system.tag.read("[default]Batch/Current/ID").value
+    
+    # Basic print instead of proper WHK logging - VIOLATION SCRIPT-002
+    print("Starting batch " + str(batch_id))
+    
+    # Unsafe tag write without writeBlocking - VIOLATION SCRIPT-003
+    system.tag.write(["[default]Batch/Current/Status"], ["Processing"])
+    
+    # No audit trail for production operation - VIOLATION SCRIPT-004
+    # No proper return values or status checking
+"""

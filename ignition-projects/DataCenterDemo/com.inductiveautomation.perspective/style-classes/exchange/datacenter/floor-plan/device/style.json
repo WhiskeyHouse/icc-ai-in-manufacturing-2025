@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "cursor": "pointer",
+      "stroke": "var(--neutral-100)",
+      "strokeWidth": "2px"
+    }
+  }
+}

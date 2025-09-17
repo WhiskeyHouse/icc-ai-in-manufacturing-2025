@@ -1,0 +1,12 @@
+{
+  "base": {
+    "style": {
+      "color": "var(--label)",
+      "fontFamily": "Roboto",
+      "fontSize": "20px",
+      "fontWeight": "500",
+      "textAlign": "center",
+      "whiteSpace": "pre-wrap"
+    }
+  }
+}

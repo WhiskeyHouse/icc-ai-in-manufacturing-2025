@@ -1,0 +1,94 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1344,
+      "width": 986
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FloorPlanSvg"
+        },
+        "position": {
+          "basis": "min(74.68vw, 85vh)",
+          "shrink": 0
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/SvgFloorplan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "DataHall1Kpis"
+            },
+            "position": {
+              "basis": "350px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "dataHallPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/DataHall"
+              },
+              "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/KpiDataHall",
+              "style": {
+                "maxWidth": "550px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "DataHall2Kpis"
+            },
+            "position": {
+              "basis": "350px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "dataHallPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall2/DataHall"
+              },
+              "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/KpiDataHall",
+              "style": {
+                "maxWidth": "550px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Kpis"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "justify": "space-evenly",
+          "style": {
+            "gap": "20px"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/floor-plan/root-container",
+        "gap": "20px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

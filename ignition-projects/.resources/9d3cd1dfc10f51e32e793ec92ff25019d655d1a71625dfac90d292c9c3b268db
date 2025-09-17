@@ -1,0 +1,43 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 521.157,
+      "width": 1084.611
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Diagram"
+        },
+        "position": {
+          "height": "100%",
+          "width": "100%"
+        },
+        "props": {
+          "path": "Exchange/DataCenter/SingleLine/EmbeddedViews/Diagram",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewHeight": true,
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "var(--neutral-10)",
+        "overflow": "hidden",
+        "touch-action": "none"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

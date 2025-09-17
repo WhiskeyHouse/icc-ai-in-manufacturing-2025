@@ -1,0 +1,129 @@
+{
+  "custom": {},
+  "params": {
+    "isNumeric": false,
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/Details/Location",
+    "title": "Location"
+  },
+  "propConfig": {
+    "params.isNumeric": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 117,
+      "width": 451
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/overview/simple-gauge/title exchange/datacenter/overview/title"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CurrentValue"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "custom.currentValue": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "tagPath": "{view.params.tagPath}"
+                },
+                "tagPath": "{tagPath}"
+              },
+              "type": "tag"
+            }
+          },
+          "custom.engUnits": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "tagPath": "{view.params.tagPath}"
+                },
+                "tagPath": "{tagPath}.engUnit"
+              },
+              "type": "tag"
+            }
+          },
+          "custom.formatString": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "tagPath": "{view.params.tagPath}"
+                },
+                "tagPath": "{tagPath}.formatString"
+              },
+              "type": "tag"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.isNumeric},\r\nif({this.custom.engUnits}\u003d\u0027%\u0027,\r\nnumberFormat(100.0 * {this.custom.currentValue}, {this.custom.formatString}) + {this.custom.engUnits},\r\nnumberFormat({this.custom.currentValue}, {this.custom.formatString}) + {this.custom.engUnits}),\r\n{this.custom.currentValue})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/overview/label-and-value/current-value"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/overview/container"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

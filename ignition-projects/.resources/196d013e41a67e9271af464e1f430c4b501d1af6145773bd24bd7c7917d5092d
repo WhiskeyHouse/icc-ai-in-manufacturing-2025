@@ -1,0 +1,110 @@
+"""
+WebDev GET Handler for Validation API
+Handles GET requests for validation endpoints
+"""
+
+import json
+import system
+
+def doGet(request, session):
+    """
+    Handle GET requests for validation API
+    
+    Supported endpoints:
+    - /system/webdev/Global/validation (no pathInfo) - API documentation
+    - /system/webdev/Global/validation/health - Health check
+    - /system/webdev/Global/validation/sessions - List all sessions
+    - /system/webdev/Global/validation/sessions/{id} - Get specific session
+    """
+    
+    try:
+        # Get the path after /system/webdev/Global/validation
+        path_info = request.get('pathInfo', '')
+        
+        if not path_info or path_info == '/':
+            # Root endpoint - return API documentation
+            api_info = {
+                'service': 'WHK Validation API',
+                'version': '1.0.0',
+                'description': 'REST API for Jython script and Perspective component validation',
+                'endpoints': {
+                    'GET /health': 'Check service health',
+                    'GET /sessions': 'List all validation sessions',
+                    'GET /sessions/{id}': 'Get specific validation session',
+                    'POST /scripts': 'Validate Jython script',
+                    'POST /components': 'Validate Perspective component',
+                    'PATCH /sessions/{id}': 'Update validation session'
+                },
+                'integration': {
+                    'rules_engine': 'http://host.docker.internal:8087',
+                    'project': 'Global (inheritable)',
+                    'module': 'whk.validation'
+                }
+            }
+            return {'html': '<pre>' + json.dumps(api_info, indent=2) + '</pre>'}
+        
+        elif path_info == '/health':
+            # Health check endpoint - simple implementation
+            try:
+                # Test connection to rules engine
+                response = system.net.httpGet("http://host.docker.internal:8087/health", connectTimeout=5000, readTimeout=5000)
+                rules_engine_status = "online" if response else "offline"
+            except:
+                rules_engine_status = "offline"
+            
+            health_status = {
+                "status": "healthy",
+                "timestamp": str(system.date.now()),
+                "services": {
+                    "rules_engine": rules_engine_status,
+                    "webdev": "online"
+                }
+            }
+            return {'html': '<pre>' + json.dumps(health_status, indent=2) + '</pre>'}
+        
+        elif path_info == '/sessions':
+            # List all validation sessions - placeholder implementation
+            sessions = []  # TODO: Implement session storage
+            return {
+                'json': {
+                    'sessions': sessions,
+                    'total': len(sessions),
+                    'message': 'Session storage not yet implemented'
+                }
+            }
+        
+        elif path_info.startswith('/sessions/'):
+            # Get specific validation session - placeholder implementation
+            session_id = path_info.replace('/sessions/', '').strip()
+            
+            if not session_id:
+                return {
+                    'json': {'error': 'Session ID is required'},
+                    'response_code': 400
+                }
+            
+            # TODO: Implement session retrieval
+            return {
+                'json': {'error': 'Session not found', 'session_id': session_id, 'message': 'Session storage not yet implemented'},
+                'response_code': 404
+            }
+        
+        else:
+            # Unknown endpoint
+            return {
+                'json': {
+                    'error': 'Endpoint not found',
+                    'path': path_info,
+                    'available_endpoints': ['/health', '/sessions', '/sessions/{id}']
+                },
+                'response_code': 404
+            }
+    
+    except Exception as e:
+        return {
+            'json': {
+                'error': 'Internal server error',
+                'message': str(e)
+            },
+            'response_code': 500
+        }

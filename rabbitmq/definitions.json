@@ -1,0 +1,49 @@
+{
+  "rabbit_version": "3.8.9",
+  "users": [
+    {
+      "name": "user",
+      "password_hash": "a8621T1RoRw73nfoyv4fFSeCxeUqE+UU2hKp41sMK8s=",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "user",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "federation-upstream",
+      "value": {
+        "uri": "amqp://mmhzkfhn:39sZRQmbghRNZaAiWi_if6Q_LydjrIcH@fly.rmq.cloudamqp.com/mmhzkfhn",
+        "ack-mode": "on-confirm",
+        "trust-user-id": false
+      },
+      "vhost": "/",
+      "component": "federation-upstream"
+    }
+  ],
+  "policies": [
+    {
+      "vhost": "/",
+      "name": "federation-policy",
+      "pattern": "^federated\\.",
+      "definition": {
+        "federation-upstream-set": "all"
+      },
+      "priority": 0,
+      "apply-to": "all"
+    }
+  ]
+}

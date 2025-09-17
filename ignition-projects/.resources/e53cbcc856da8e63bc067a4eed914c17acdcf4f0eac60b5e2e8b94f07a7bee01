@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "color": "var(--callToAction)",
+      "fontWeight": "bold",
+      "textAlign": "right",
+      "fill": "var(--callToAction)"
+    }
+  }
+}

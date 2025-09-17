@@ -1,0 +1,18 @@
+{
+  "base": {
+    "style": {
+      "borderBottomColor": "var(--neutral-30)",
+      "borderBottomStyle": "double",
+      "borderBottomWidth": "6px",
+      "borderLeftColor": "var(--neutral-30)",
+      "borderLeftStyle": "none",
+      "borderLeftWidth": "1px",
+      "borderRightColor": "var(--neutral-30)",
+      "borderRightStyle": "none",
+      "borderRightWidth": "1px",
+      "borderTopColor": "var(--neutral-30)",
+      "borderTopStyle": "double",
+      "borderTopWidth": "6px"
+    }
+  }
+}

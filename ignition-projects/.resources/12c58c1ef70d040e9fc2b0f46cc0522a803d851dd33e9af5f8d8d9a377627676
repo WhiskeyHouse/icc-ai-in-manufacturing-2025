@@ -1,0 +1,842 @@
+{
+  "custom": {
+    "tagName": "LVSWG1B"
+  },
+  "params": {
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/LVSWG/LVSWG1B"
+  },
+  "propConfig": {
+    "custom.tagName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.name"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 584,
+      "width": 469
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.tagName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/faceplates/circuit-breaker/title"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "ActiveAlarmCount"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.activeAlarmCount": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Status/ActiveAlarmCount"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "equipment": "LV SWITCHGEAR",
+                    "toggle": false
+                  },
+                  "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/ActiveAlarmCount"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "ActiveAlarmCountContainer"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "justify": "center"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "AlarmStatusTable"
+            },
+            "position": {
+              "basis": "400px",
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "../ActiveAlarmCountContainer/ActiveAlarmCount.props.params.toggle"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.filters.active.conditions.source": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.tagPath"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif \u0027]\u0027 in value:\n\t\t# Tag provider is in the path, remove it.\n\t\ttagPath \u003d value.split(\u0027]\u0027)[1]\n\telse:\n\t\ttagPath \u003d value\n\t\t\n\treturn \u0027*{tagPath}*\u0027.format(tagPath \u003d tagPath)",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "columns": {
+                "active": {
+                  "activeTime": {
+                    "strictWidth": true,
+                    "width": 145
+                  },
+                  "displayPath": {
+                    "width": 600
+                  },
+                  "name": {
+                    "width": 50
+                  },
+                  "priority": {
+                    "width": 80
+                  },
+                  "source": {
+                    "enabled": false
+                  },
+                  "state": {
+                    "enabled": false
+                  }
+                }
+              },
+              "filters": {
+                "active": {
+                  "conditions": {}
+                }
+              },
+              "responsive": {
+                "breakpoint": 700,
+                "enabled": true
+              },
+              "style": {
+                "height": "420px"
+              }
+            },
+            "type": "ia.display.alarmstatustable"
+          }
+        ],
+        "meta": {
+          "name": "Alarms"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "row-gap": "27.5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+              },
+              "text": "BREAKERS"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "UtilityBreaker"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.closed": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Utility/IsUtilityMainBreakerClosed"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "custom.maintenance": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Utility/IsUtilityMainBreakerInMaintenanceMode"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "custom.status": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "closed": "{this.custom.closed}",
+                          "maintenance": "{this.custom.maintenance}",
+                          "tripped": "{this.custom.tripped}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027maintenance\u0027]:\n\t\treturn \u0027maintenance\u0027\n\telif value[\u0027tripped\u0027]:\n\t\treturn \u0027tripped\u0027\n\telse:\n\t\tif value[\u0027closed\u0027]:\n\t\t\treturn \u0027closed\u0027\n\t\telse:\n\t\t\treturn \u0027open\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "custom.tripped": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Utility/IsUtilityMainBreakerTripped"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "path": "this.custom.status"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "states": [
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/closed exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "UTILITY MAIN BREAKER CLOSED",
+                        "value": "closed"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/open exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "UTILITY MAIN BREAKER OPEN",
+                        "value": "open"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/open exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "UTILITY MAIN BREAKER IN MAINTENANCE",
+                        "value": "maintenance"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/tripped exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "UTILITY MAIN BREAKER TRIPPED",
+                        "value": "tripped"
+                      }
+                    ]
+                  },
+                  "path": "Exchange/DataCenter/Framework/Data/Status"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "LoadBreaker"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.status": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "statusmcbn": "{this.custom.statusmcbn}",
+                          "tripped": "{this.custom.tripped}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027tripped\u0027]:\n\t\treturn \u0027tripped\u0027\n\telse:\n\t\tif value[\u0027statusmcbn\u0027]:\n\t\t\treturn \u0027closed\u0027\n\t\telse:\n\t\t\treturn \u0027open\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "custom.statusmcbn": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Load/LoadBreakerStatusMcbN"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "custom.tripped": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Load/LoadBreakerTrippedMcbN"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "path": "this.custom.status"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "states": [
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/closed exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "LOAD BREAKER CLOSED",
+                        "value": "closed"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/open exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "LOAD BREAKER OPEN",
+                        "value": "open"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/tripped exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "LOAD BREAKER TRIPPED",
+                        "value": "tripped"
+                      }
+                    ]
+                  },
+                  "path": "Exchange/DataCenter/Framework/Data/Status"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "GenMainBreaker"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.closed": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Gen/IsGeneratorMainBreakerClosed"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "custom.maintenance": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Gen/IsGeneratorMainBreakerInMaintenanceMode"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "custom.status": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "closed": "{this.custom.closed}",
+                          "maintenance": "{this.custom.maintenance}",
+                          "tripped": "{this.custom.tripped}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027maintenance\u0027]:\n\t\treturn \u0027maintenance\u0027\n\telif value[\u0027tripped\u0027]:\n\t\treturn \u0027tripped\u0027\n\telse:\n\t\tif value[\u0027closed\u0027]:\n\t\t\treturn \u0027closed\u0027\n\t\telse:\n\t\t\treturn \u0027open\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "custom.tripped": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Gen/IsGeneratorMainBreakerTripped"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "path": "this.custom.status"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "states": [
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/closed exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "GEN MAIN BREAKER CLOSED",
+                        "value": "closed"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/open exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "GEN MAIN BREAKER OPEN",
+                        "value": "open"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/open exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "GEN MAIN BREAKER IN MAINTENANCE",
+                        "value": "maintenance"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/tripped exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "GEN MAIN BREAKER TRIPPED",
+                        "value": "tripped"
+                      }
+                    ]
+                  },
+                  "path": "Exchange/DataCenter/Framework/Data/Status"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Values"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "7.5px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Breakers"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "border": "none",
+            "classes": "exchange/datacenter/faceplates/section",
+            "gap": "7.5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+              },
+              "text": "POWER"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "ControlPower"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.isControlPowerOn": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Status/IsControlPowerOn"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "path": "this.custom.isControlPowerOn"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "states": [
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/lvswg/status/generic/on exchange/datacenter/faceplates/lvswg/status/base exchange/datacenter/faceplates/lvswg/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "CONTROL POWER ON",
+                        "value": true
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/lvswg/status/generic/off exchange/datacenter/faceplates/lvswg/status/base exchange/datacenter/faceplates/lvswg/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "CONTROL POWER OFF",
+                        "value": false
+                      }
+                    ]
+                  },
+                  "path": "Exchange/DataCenter/Framework/Data/Status"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Values"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "7.5px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Power"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "border": "none",
+            "classes": "exchange/datacenter/faceplates/section",
+            "gap": "7.5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+              },
+              "text": "SURGE PROTECTION"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "UtilitySurgeProtection"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.isSurgeProtectionHealthy": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Utility/IsUtilitySurgeProtectionDeviceHealthy"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "path": "this.custom.isSurgeProtectionHealthy"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "states": [
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/lvswg/status/generic/on exchange/datacenter/faceplates/lvswg/status/base exchange/datacenter/faceplates/lvswg/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "UTILITY HEALTHY",
+                        "value": true
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/lvswg/status/generic/off exchange/datacenter/faceplates/lvswg/status/base exchange/datacenter/faceplates/lvswg/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "UTILITY NOT HEALTHY",
+                        "value": false
+                      }
+                    ]
+                  },
+                  "path": "Exchange/DataCenter/Framework/Data/Status"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "GeneratorHealthy"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.isSurgeProtectionHealthy": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Gen/IsGeneratorSurgeProtectionDeviceHealthy"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "path": "this.custom.isSurgeProtectionHealthy"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "states": [
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/lvswg/status/generic/on exchange/datacenter/faceplates/lvswg/status/base exchange/datacenter/faceplates/lvswg/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "GENERATOR HEALTHY",
+                        "value": true
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/lvswg/status/generic/off exchange/datacenter/faceplates/lvswg/status/base exchange/datacenter/faceplates/lvswg/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "GENERATOR NOT HEALTHY",
+                        "value": false
+                      }
+                    ]
+                  },
+                  "path": "Exchange/DataCenter/Framework/Data/Status"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Values"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "7.5px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "SurgeProtection"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "border": "none",
+            "classes": "exchange/datacenter/faceplates/section",
+            "gap": "7.5px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/faceplates/container",
+        "gap": "15px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "custom": {
+    "status": {
+      "style": "exchange/datacenter/overview/data-hall-performance-grade/status exchange/datacenter/overview/data-hall-performance-grade/statuses/optimal",
+      "text": "OPTIMAL"
+    }
+  },
+  "params": {
+    "location": {
+      "dataHall": 1,
+      "section": 1
+    },
+    "status": "OPTIMAL"
+  },
+  "propConfig": {
+    "custom.status": {
+      "binding": {
+        "config": {
+          "path": "view.params.status"
+        },
+        "transforms": [
+          {
+            "code": "\t# Define style class used on status label.\n\tstatusLabelStyle \u003d \u0027exchange/datacenter/overview/data-hall-performance-grade/status\u0027\n\t\n\t# Define base style class path for the different statuses.\n\tbaseStylePath \u003d \u0027exchange/datacenter/overview/data-hall-performance-grade/statuses\u0027\n\t\n\t# Get status text.\n\tstatusText \u003d value\n\t\n\treturn {\u0027text\u0027: statusText, \u0027style\u0027: \u0027{labelStyle} {baseStylePath}/{status}\u0027.format(\n\t\tlabelStyle \u003d statusLabelStyle, baseStylePath \u003d baseStylePath, status \u003d statusText.lower().replace(\u0027 \u0027, \u0027-\u0027))}",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.location": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.status": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 53,
+      "width": 191
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "SectionNumber"
+        },
+        "position": {
+          "basis": "11px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.location.section"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/overview/data-hall-performance-grade/section-number"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "SectionStatus"
+        },
+        "position": {
+          "basis": "150px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "view.custom.status.style"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.status.text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {}
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "gap": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

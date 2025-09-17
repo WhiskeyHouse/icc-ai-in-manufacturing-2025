@@ -1,0 +1,637 @@
+{
+  "custom": {
+    "alarms": {
+      "inactiveRangeColor": "var(--neutral-60)",
+      "level1": {
+        "highHigh": null,
+        "lowLow": null,
+        "rangeColor": "var(--error)"
+      },
+      "level2": {
+        "high": null,
+        "low": null,
+        "rangeColor": "var(--warningSecondary)"
+      }
+    },
+    "defaultRangeColor": "var(--neutral-10)",
+    "desired": {
+      "high": 60,
+      "low": 40,
+      "rangeColor": "var(--callToAction)"
+    },
+    "interlocks": {
+      "high": null,
+      "low": null,
+      "rangeColor": "var(--neutral-100)"
+    },
+    "label": {
+      "format": "#,##0",
+      "position": {
+        "applyOffsetsOnlyWhenLabelVisible": true,
+        "horizontalOffset": 1,
+        "verticalOffset": 1
+      },
+      "style": {
+        "classes": "",
+        "fill": "var(--neutral-100)",
+        "fontSize": 4
+      },
+      "visible": false
+    },
+    "maxValue": 100,
+    "minValue": 0,
+    "processValue": {
+      "normalized": 50,
+      "raw": 50
+    },
+    "rangesBar": {
+      "size": 8,
+      "stroke": {
+        "color": "var(--neutral-50)",
+        "width": 0.3
+      },
+      "verticalDisplay": true
+    },
+    "secondIndicator": {},
+    "startPosition": 0,
+    "svgElements": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "viewBox": "-4.65 -2.59807621135 17.3 105.196152423"
+  },
+  "params": {
+    "alarms": {
+      "inactiveRangeColor": "var(--neutral-60)",
+      "level1": {
+        "highHigh": null,
+        "lowLow": null,
+        "rangeColor": "var(--error)"
+      },
+      "level2": {
+        "high": null,
+        "low": null,
+        "rangeColor": "var(--warningSecondary)"
+      }
+    },
+    "defaultRangeColor": "var(--neutral-10)",
+    "desired": {
+      "high": 60,
+      "low": 40,
+      "rangeColor": "var(--callToAction)"
+    },
+    "indicator": {
+      "color": "var(--label)",
+      "reverse": false,
+      "size": 4.5,
+      "stroke": {
+        "color": "var(--neutral-100)",
+        "width": 0
+      }
+    },
+    "interlocks": {
+      "high": null,
+      "low": null,
+      "rangeColor": "var(--neutral-100)"
+    },
+    "label": {
+      "format": "#,##0",
+      "position": {
+        "applyOffsetsOnlyWhenLabelVisible": true,
+        "horizontalOffset": 1,
+        "verticalOffset": 1
+      },
+      "style": {
+        "classes": "",
+        "fill": "var(--neutral-100)",
+        "fontSize": 4
+      },
+      "visible": false
+    },
+    "maxValue": 100,
+    "minValue": 0,
+    "processValue": 50,
+    "rangesBar": {
+      "size": 8,
+      "stroke": {
+        "color": "var(--neutral-50)",
+        "width": 0.3
+      },
+      "verticalDisplay": true
+    },
+    "secondIndicator": {
+      "color": "var(--warning)",
+      "processValue": null
+    },
+    "setpoint": {
+      "color": "var(--neutral-10)",
+      "stroke": {
+        "color": "var(--info)",
+        "width": 0.5
+      },
+      "value": null
+    }
+  },
+  "propConfig": {
+    "custom.alarms": {
+      "binding": {
+        "config": {
+          "struct": {
+            "alarms": "{view.params.alarms}",
+            "maxValue": "{view.custom.maxValue}",
+            "minValue": "{view.custom.minValue}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\talarms \u003d value.get(\u0027alarms\u0027)\n\t\n\tinactiveRangeColor \u003d alarms.get(\u0027inactiveRangeColor\u0027)\n\t\n\tlevel1 \u003d alarms.get(\u0027level1\u0027)\n\t\n\tif level1 !\u003d None:\n\t\tlevel1RangeColor \u003d level1.get(\u0027rangeColor\u0027)\n\t\thighHigh \u003d exchange.svgMovingAnalogIndicator.validate.handleNullableNumericParam(level1.get(\u0027highHigh\u0027), None)\n\t\t\n\t\tif highHigh !\u003d None:\n\t\t\thighHigh \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(highHigh, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\t\t\t\n\t\tlowLow \u003d exchange.svgMovingAnalogIndicator.validate.handleNullableNumericParam(level1.get(\u0027lowLow\u0027), None)\n\t\t\n\t\tif lowLow !\u003d None:\n\t\t\tlowLow \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(lowLow, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\telse:\n\t\tlevel1RangeColor \u003d None\n\t\thighHigh \u003d None\n\t\tlowLow \u003d None\n\t\t\n\tlevel2 \u003d alarms.get(\u0027level2\u0027)\n\t\n\tif level2 !\u003d None:\n\t\tlevel2RangeColor \u003d level2.get(\u0027rangeColor\u0027)\n\t\thigh \u003d exchange.svgMovingAnalogIndicator.validate.handleNullableNumericParam(level2.get(\u0027high\u0027), None)\n\t\t\n\t\tif high !\u003d None:\n\t\t\thigh \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(high, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\t\t\t\n\t\tlow \u003d exchange.svgMovingAnalogIndicator.validate.handleNullableNumericParam(level2.get(\u0027low\u0027), None)\n\t\t\n\t\tif low !\u003d None:\n\t\t\tlow \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(low, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\telse:\n\t\tlevel2RangeColor \u003d None\n\t\thigh \u003d None\n\t\tlow \u003d None\n\t\t\n\treturn {\u0027level1\u0027: {\u0027rangeColor\u0027: level1RangeColor, \u0027lowLow\u0027: lowLow, \u0027highHigh\u0027: highHigh},\n\t\t\t\u0027level2\u0027: {\u0027rangeColor\u0027: level2RangeColor, \u0027low\u0027: low, \u0027high\u0027: high},\n\t\t\t\u0027inactiveRangeColor\u0027: inactiveRangeColor}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.defaultRangeColor": {
+      "binding": {
+        "config": {
+          "path": "view.params.defaultRangeColor"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.desired": {
+      "binding": {
+        "config": {
+          "struct": {
+            "desired": "{view.params.desired}",
+            "maxValue": "{view.custom.maxValue}",
+            "minValue": "{view.custom.minValue}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tdesired \u003d value.get(\u0027desired\u0027)\n\t\n\trangeColor \u003d desired.get(\u0027rangeColor\u0027)\n\tlow \u003d exchange.svgMovingAnalogIndicator.validate.handleNullableNumericParam(desired.get(\u0027low\u0027), None)\n\thigh \u003d exchange.svgMovingAnalogIndicator.validate.handleNullableNumericParam(desired.get(\u0027high\u0027), None)\n\t\n\tif low !\u003d None:\n\t\tlow \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(low, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\t\n\tif high !\u003d None:\n\t\thigh \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(high, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\t\n\treturn {\u0027low\u0027: low, \u0027high\u0027: high, \u0027rangeColor\u0027: rangeColor}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.indicator": {
+      "binding": {
+        "config": {
+          "path": "view.params.indicator"
+        },
+        "transforms": [
+          {
+            "code": "\tfallbackStrokeWidth \u003d 0\n\t\n\tsize \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(value.get(\u0027size\u0027), 6, 1)\n\treverse \u003d exchange.svgMovingAnalogIndicator.validate.handleBoolParam(value.get(\u0027reverse\u0027))\n\t\n\tcolor \u003d value.get(\u0027color\u0027)\n\tstroke \u003d value.get(\u0027stroke\u0027)\n\t\n\tif stroke !\u003d None:\n\t\tstrokeWidth \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(stroke.get(\u0027width\u0027), fallbackStrokeWidth, 0)\n\t\tstrokeColor \u003d stroke.get(\u0027color\u0027)\n\telse:\n\t\tstrokeWidth \u003d fallbackStrokeWidth\n\t\tstrokeColor \u003d None\n\t\n\treturn {\u0027size\u0027: size, \u0027color\u0027: color, \u0027reverse\u0027: reverse, \u0027stroke\u0027: {\u0027color\u0027: strokeColor, \u0027width\u0027: strokeWidth}}",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.interlocks": {
+      "binding": {
+        "config": {
+          "struct": {
+            "interlocks": "{view.params.interlocks}",
+            "maxValue": "{view.custom.maxValue}",
+            "minValue": "{view.custom.minValue}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tinterlocks \u003d value.get(\u0027interlocks\u0027)\n\t\n\trangeColor \u003d interlocks.get(\u0027rangeColor\u0027)\n\tlow \u003d exchange.svgMovingAnalogIndicator.validate.handleNullableNumericParam(interlocks.get(\u0027low\u0027), None)\n\thigh \u003d exchange.svgMovingAnalogIndicator.validate.handleNullableNumericParam(interlocks.get(\u0027high\u0027), None)\n\t\n\tif low !\u003d None:\n\t\tlow \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(low, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\t\n\tif high !\u003d None:\n\t\thigh \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(high, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\t\n\treturn {\u0027low\u0027: low, \u0027high\u0027: high, \u0027rangeColor\u0027: rangeColor}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.label": {
+      "binding": {
+        "config": {
+          "path": "view.params.label"
+        },
+        "transforms": [
+          {
+            "code": "\tformat \u003d value.get(\u0027format\u0027)\n\tstyle \u003d value.get(\u0027style\u0027)\n\t\n\tif style \u003d\u003d None:\n\t\t# Style for label not included. Return default font size of 4.\n\t\tstyle \u003d {\u0027fontSize\u0027: 4}\n\telse:\n\t\tif \u0027fontSize\u0027 in style:\n\t\t\tfontSize \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(style.get(\u0027fontSize\u0027), 4)\n\t\telse:\n\t\t\t# Style included but font size missing. Using default 4.\n\t\t\tfontSize \u003d 4\n\t\t\n\t\tstyle \u003d {objKey: objValue for objKey, objValue in style.items()}\n\t\tstyle[\u0027fontSize\u0027] \u003d fontSize\n\t\t\n\t# Get the position settings.\n\tposition \u003d value.get(\u0027position\u0027)\n\t\n\tif position \u003d\u003d None:\n\t\t# Distance from indicator settings not included. Return default values.\n\t\tposition \u003d {\u0027verticalOffset\u0027: 1, \u0027horizontalOffset\u0027: 1, \u0027applyOffsetsOnlyWhenLabelVisible\u0027: True}\n\telse:\n\t\tverticalOffset \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(position.get(\u0027verticalOffset\u0027), 1)\n\t\thorizontalOffset \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(position.get(\u0027horizontalOffset\u0027), 1)\n\t\tapplyOffsetsOnlyWhenLabelVisible \u003d exchange.svgMovingAnalogIndicator.validate.handleBoolParam(position.get(\u0027applyOffsetsOnlyWhenLabelVisible\u0027))\n\t\t\n\t\tposition \u003d {\u0027verticalOffset\u0027: verticalOffset, \u0027horizontalOffset\u0027: horizontalOffset, \u0027applyOffsetsOnlyWhenLabelVisible\u0027: applyOffsetsOnlyWhenLabelVisible}\n\t\n\tvisible \u003d exchange.svgMovingAnalogIndicator.validate.handleBoolParam(value.get(\u0027visible\u0027))\n\n\treturn {\u0027format\u0027: format, \u0027visible\u0027: visible, \u0027position\u0027: position, \u0027style\u0027: style}",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.maxValue": {
+      "binding": {
+        "config": {
+          "path": "view.params.maxValue"
+        },
+        "transforms": [
+          {
+            "code": "\tfallbackValue \u003d 100\n\t\n\treturn exchange.svgMovingAnalogIndicator.validate.handleNumericParam(value, fallbackValue)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.minValue": {
+      "binding": {
+        "config": {
+          "path": "view.params.minValue"
+        },
+        "transforms": [
+          {
+            "code": "\tfallbackValue \u003d 0\n\t\n\treturn exchange.svgMovingAnalogIndicator.validate.handleNumericParam(value, fallbackValue)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.processValue": {
+      "binding": {
+        "config": {
+          "struct": {
+            "maxValue": "{view.custom.maxValue}",
+            "minValue": "{view.custom.minValue}",
+            "processValue": "{view.params.processValue}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tfallbackValue \u003d 50\n\t\n\tprocessValue \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(value.get(\u0027processValue\u0027), fallbackValue)\n\t\n\tnormalizedValue \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(processValue, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\t\n\treturn {\u0027raw\u0027: processValue, \u0027normalized\u0027: normalizedValue}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.rangesBar": {
+      "binding": {
+        "config": {
+          "path": "view.params.rangesBar"
+        },
+        "transforms": [
+          {
+            "code": "\tfallbackStroke \u003d 0.5\n\t\n\tsize \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(value.get(\u0027size\u0027), 6, 1)\n\tverticalDisplay \u003d exchange.svgMovingAnalogIndicator.validate.handleBoolParam(value.get(\u0027verticalDisplay\u0027))\n\t\n\tstroke \u003d value.get(\u0027stroke\u0027)\n\t\n\tif stroke !\u003d None:\n\t\tstrokeWidth \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(stroke.get(\u0027width\u0027), fallbackStroke, 0)\n\t\tstrokeColor \u003d stroke.get(\u0027color\u0027)\n\telse:\n\t\tstrokeWidth \u003d fallbackStroke\n\t\tstrokeColor \u003d None\n\t\n\treturn {\u0027size\u0027: size, \u0027verticalDisplay\u0027: verticalDisplay, \u0027stroke\u0027: {\u0027color\u0027: strokeColor, \u0027width\u0027: strokeWidth}}",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.secondIndicator": {
+      "binding": {
+        "config": {
+          "struct": {
+            "max": "{view.custom.maxValue}",
+            "min": "{view.custom.minValue}",
+            "secondIndicator": "{view.params.secondIndicator}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tsecondIndicator \u003d value.get(\u0027secondIndicator\u0027)\n\t\n\tif secondIndicator.get(\u0027processValue\u0027) \u003d\u003d None:\n\t\treturn {}\n\telse:\n\t\tcolor \u003d secondIndicator.get(\u0027color\u0027)\n\t\t\n\t\tminValue \u003d value.get(\u0027min\u0027)\n\t\tmaxValue \u003d value.get(\u0027max\u0027)\n\t\t\n\t\tfallbackValue \u003d 50\n\t\t\n\t\tprocessValue \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(secondIndicator.get(\u0027processValue\u0027), fallbackValue)\n\t\tnormalizedValue \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(processValue, minValue, maxValue)\n\t\t\n\t\treturn {\u0027raw\u0027: processValue, \u0027normalized\u0027: normalizedValue, \u0027color\u0027: color}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.setpoint": {
+      "binding": {
+        "config": {
+          "struct": {
+            "maxValue": "{view.custom.maxValue}",
+            "minValue": "{view.custom.minValue}",
+            "setpoint": "{view.params.setpoint}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tfallbackStrokeWidth \u003d 0.5\n\t\n\tsetpoint \u003d value.get(\u0027setpoint\u0027)\n\t\n\tcolor \u003d setpoint.get(\u0027color\u0027)\n\tsetpointValue \u003d exchange.svgMovingAnalogIndicator.validate.handleNullableNumericParam(setpoint.get(\u0027value\u0027), None)\n\t\n\tif setpointValue !\u003d None:\n\t\tsetpointValue \u003d exchange.svgMovingAnalogIndicator.create.normalizeValue(setpointValue, value.get(\u0027minValue\u0027), value.get(\u0027maxValue\u0027))\n\t\n\tstroke \u003d setpoint.get(\u0027stroke\u0027)\n\t\n\tif stroke !\u003d None:\n\t\tstrokeWidth \u003d exchange.svgMovingAnalogIndicator.validate.handleNumericParam(stroke.get(\u0027width\u0027), fallbackStrokeWidth, 0)\n\t\tstrokeColor \u003d stroke.get(\u0027color\u0027)\n\telse:\n\t\tstrokeWidth \u003d fallbackStrokeWidth\n\t\tstrokeColor \u003d None\n\t\t\n\treturn {\u0027value\u0027: setpointValue, \u0027color\u0027: color, \u0027stroke\u0027: {\u0027color\u0027: strokeColor, \u0027width\u0027: strokeWidth}}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.startPosition": {
+      "binding": {
+        "config": {
+          "struct": {
+            "indicator": "{view.custom.indicator}",
+            "labelPosition": "{view.custom.label.position}",
+            "labelVisible": "{view.custom.label.visible}",
+            "rangesBarSize": "{view.custom.rangesBar.size}",
+            "rangesBarStrokeWidth": "{view.custom.rangesBar.stroke.width}",
+            "verticalDisplay": "{view.custom.rangesBar.verticalDisplay}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tindicator \u003d value.get(\u0027indicator\u0027)\n\n\tindicatorSize \u003d indicator.get(\u0027size\u0027)\n\treverseIndicator \u003d indicator.get(\u0027reverse\u0027)\n\tindicatorStrokeWidth \u003d indicator.get(\u0027stroke\u0027).get(\u0027width\u0027)\n\t\n\trangesBarStrokeWidth \u003d value.get(\u0027rangesBarStrokeWidth\u0027)\n\trangesBarSize \u003d value.get(\u0027rangesBarSize\u0027)\n\tverticalDisplay \u003d value.get(\u0027verticalDisplay\u0027)\n\t\n\tlabelVisible \u003d value.get(\u0027labelVisible\u0027)\n\tlabelPosition \u003d value.get(\u0027labelPosition\u0027)\n\t\n\treturn exchange.svgMovingAnalogIndicator.create.getStartPosition(rangesBarStrokeWidth, indicatorSize, rangesBarSize, reverseIndicator, verticalDisplay,\n\t\tindicatorStrokeWidth, labelVisible, labelPosition)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.svgElements": {
+      "persistent": true
+    },
+    "custom.svgElements[0]": {
+      "binding": {
+        "config": {
+          "struct": {
+            "defaultRangeColor": "{view.custom.defaultRangeColor}",
+            "desired": "{view.custom.desired}",
+            "rangesBar": "{view.custom.rangesBar}",
+            "startPosition": "{view.custom.startPosition}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tdesired \u003d value.get(\u0027desired\u0027)\n\t\n\tdesiredLow \u003d desired.get(\u0027low\u0027)\n\tdesiredHigh \u003d desired.get(\u0027high\u0027)\n\t\n\trangesBar \u003d value.get(\u0027rangesBar\u0027)\n\t\n\tverticalDisplay \u003d rangesBar.get(\u0027verticalDisplay\u0027)\n\trangesBarSize \u003d rangesBar.get(\u0027size\u0027)\n\t\n\tstroke \u003d rangesBar.get(\u0027stroke\u0027)\n\t\n\tstrokeWidth \u003d stroke.get(\u0027width\u0027)\n\tstrokeColor \u003d stroke.get(\u0027color\u0027)\n\t\n\tdefaultRangeColor \u003d value.get(\u0027defaultRangeColor\u0027)\n\tdesiredRangeColor \u003d desired.get(\u0027rangeColor\u0027)\n\t\n\tstartPosition \u003d value.get(\u0027startPosition\u0027)\n\t\n\treturn exchange.svgMovingAnalogIndicator.create.createRangesBar(desiredLow, desiredHigh, verticalDisplay, \n\t\t\tstrokeWidth, strokeColor, defaultRangeColor, desiredRangeColor, rangesBarSize, startPosition)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.svgElements[1]": {
+      "binding": {
+        "config": {
+          "struct": {
+            "indicator": "{view.custom.indicator}",
+            "label": "{view.custom.label}",
+            "processValue": "{view.custom.processValue.normalized}",
+            "rangesBar": "{view.custom.rangesBar}",
+            "startPosition": "{view.custom.startPosition}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tindicator \u003d value.get(\u0027indicator\u0027)\n\trangesBar \u003d value.get(\u0027rangesBar\u0027)\n\t\n\tprocessValue \u003d value.get(\u0027processValue\u0027)\n\t\n\tstartPosition \u003d value.get(\u0027startPosition\u0027)\n\t\n\tverticalDisplay \u003d rangesBar.get(\u0027verticalDisplay\u0027)\n\treverseIndicator \u003d indicator.get(\u0027reverse\u0027)\n\trangesBarStrokeWidth \u003d rangesBar.get(\u0027stroke\u0027).get(\u0027width\u0027)\n\trangesBarSize \u003d rangesBar.get(\u0027size\u0027)\n\t\n\tcolor \u003d indicator.get(\u0027color\u0027)\n\tsize \u003d indicator.get(\u0027size\u0027)\n\t\n\tstroke \u003d indicator.get(\u0027stroke\u0027)\n\tstrokeWidth \u003d stroke.get(\u0027width\u0027)\n\tstrokeColor \u003d stroke.get(\u0027color\u0027)\n\t\n\tlabel \u003d value.get(\u0027label\u0027)\n\t\n\tlabelVisible \u003d label.get(\u0027visible\u0027)\n\tlabelPosition \u003d label.get(\u0027position\u0027)\n\t\n\treturn exchange.svgMovingAnalogIndicator.create.createIndicator(processValue, startPosition, color, size, strokeWidth, strokeColor, \n\t\t\tverticalDisplay, reverseIndicator, rangesBarStrokeWidth, rangesBarSize, labelVisible, labelPosition)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.svgElements[2]": {
+      "binding": {
+        "config": {
+          "struct": {
+            "alarms": "{view.custom.alarms}",
+            "processValue": "{view.custom.processValue.normalized}",
+            "rangesBar": "{view.custom.rangesBar}",
+            "startPosition": "{view.custom.startPosition}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tprocessValue \u003d value.get(\u0027processValue\u0027)\n\t\n\talarms \u003d value.get(\u0027alarms\u0027)\n\tlevel2 \u003d alarms.get(\u0027level2\u0027)\n\tlevel1 \u003d alarms.get(\u0027level1\u0027)\n\t\n\tlowAlarm \u003d level2.get(\u0027low\u0027)\n\thighAlarm \u003d level2.get(\u0027high\u0027)\n\tlowLowAlarm \u003d level1.get(\u0027lowLow\u0027)\n\thighHighAlarm \u003d level1.get(\u0027highHigh\u0027)\n\t\n\tinactiveAlarmColor \u003d alarms.get(\u0027inactiveRangeColor\u0027)\n\tlevel1AlarmColor \u003d level1.get(\u0027rangeColor\u0027)\n\tlevel2AlarmColor \u003d level2.get(\u0027rangeColor\u0027)\n\t\n\trangesBar \u003d value.get(\u0027rangesBar\u0027)\n\t\n\tverticalDisplay \u003d rangesBar.get(\u0027verticalDisplay\u0027)\n\t\n\tstroke \u003d rangesBar.get(\u0027stroke\u0027)\n\tstrokeWidth \u003d stroke.get(\u0027width\u0027)\n\tstrokeColor \u003d stroke.get(\u0027color\u0027)\n\trangesBarSize \u003d rangesBar.get(\u0027size\u0027)\n\t\n\tstartPosition \u003d value.get(\u0027startPosition\u0027)\n\t\n\treturn exchange.svgMovingAnalogIndicator.create.createAlarmRects(processValue, lowAlarm, lowLowAlarm, \n\t\t\thighAlarm, highHighAlarm, verticalDisplay, strokeWidth, strokeColor, inactiveAlarmColor, \n\t\t\tlevel1AlarmColor, level2AlarmColor, rangesBarSize, startPosition)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.svgElements[3]": {
+      "binding": {
+        "config": {
+          "struct": {
+            "interlocks": "{view.custom.interlocks}",
+            "rangesBar": "{view.custom.rangesBar}",
+            "startPosition": "{view.custom.startPosition}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tinterlocks \u003d value.get(\u0027interlocks\u0027)\n\t\n\tlowInterlock \u003d interlocks.get(\u0027low\u0027)\n\thighInterlock \u003d interlocks.get(\u0027high\u0027)\n\t\n\trangesBar \u003d value.get(\u0027rangesBar\u0027)\n\t\n\tverticalDisplay \u003d rangesBar.get(\u0027verticalDisplay\u0027)\n\t\n\tstroke \u003d rangesBar.get(\u0027stroke\u0027)\n\t\n\tstrokeWidth \u003d stroke.get(\u0027width\u0027)\n\tstrokeColor \u003d stroke.get(\u0027color\u0027)\n\t\n\tinterlockColor \u003d interlocks.get(\u0027rangeColor\u0027)\n\t\n\trangesBarSize \u003d rangesBar.get(\u0027size\u0027)\n\t\n\tstartPosition \u003d value.get(\u0027startPosition\u0027)\n\t\n\treturn exchange.svgMovingAnalogIndicator.create.createInterlockRects(lowInterlock, highInterlock, interlockColor, verticalDisplay, \n\t\t\tstrokeWidth, strokeColor, rangesBarSize, startPosition)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.svgElements[4]": {
+      "binding": {
+        "config": {
+          "struct": {
+            "indicatorSize": "{view.custom.indicator.size}",
+            "indicatorStrokeWidth": "{view.custom.indicator.stroke.width}",
+            "label": "{view.custom.label}",
+            "rangesBar": "{view.custom.rangesBar}",
+            "reverseIndicator": "{view.custom.indicator.reverse}",
+            "setpoint": "{view.custom.setpoint}",
+            "startPosition": "{view.custom.startPosition}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tsetpoint \u003d value.get(\u0027setpoint\u0027)\n\t\n\tsetpointValue \u003d setpoint.get(\u0027value\u0027)\n\t\n\trangesBar \u003d value.get(\u0027rangesBar\u0027)\n\t\n\tverticalDisplay \u003d rangesBar.get(\u0027verticalDisplay\u0027)\n\treverseIndicator \u003d value.get(\u0027reverseIndicator\u0027)\n\trangesBarStrokeWidth \u003d rangesBar.get(\u0027stroke\u0027).get(\u0027width\u0027)\n\t\n\tstroke \u003d setpoint.get(\u0027stroke\u0027)\n\t\n\tstrokeWidth \u003d stroke.get(\u0027width\u0027)\n\tstrokeColor \u003d stroke.get(\u0027color\u0027)\n\t\n\tsetpointColor \u003d setpoint.get(\u0027color\u0027)\n\t\n\tindicatorSize \u003d value.get(\u0027indicatorSize\u0027)\n\trangesBarSize \u003d rangesBar.get(\u0027size\u0027)\n\tstartPosition \u003d value.get(\u0027startPosition\u0027)\n\t\n\tindicatorStrokeWidth \u003d value.get(\u0027indicatorStrokeWidth\u0027)\n\t\n\tlabel \u003d value.get(\u0027label\u0027)\n\t\n\tlabelVisible \u003d label.get(\u0027visible\u0027)\n\tlabelPosition \u003d label.get(\u0027position\u0027)\n\t\n\treturn exchange.svgMovingAnalogIndicator.create.createSetpoint(setpointValue, setpointColor, verticalDisplay, \n\t\t\treverseIndicator, strokeWidth, strokeColor, indicatorSize, rangesBarSize, startPosition, rangesBarStrokeWidth, \n\t\t\tindicatorStrokeWidth, labelVisible, labelPosition)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.svgElements[5]": {
+      "binding": {
+        "config": {
+          "struct": {
+            "formattedValue": "numberFormat({view.custom.processValue.raw}, {view.custom.label.format})",
+            "indicatorSize": "{view.custom.indicator.size}",
+            "indicatorStrokeWidth": "{view.custom.indicator.stroke.width}",
+            "labelStyle": "{view.custom.label.style}",
+            "labelVisible": "{view.custom.label.visible}",
+            "position": "{view.custom.label.position}",
+            "processValue": "{view.custom.processValue}",
+            "rangesBar": "{view.custom.rangesBar}",
+            "reverseIndicator": "{view.custom.indicator.reverse}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tif value.get(\u0027labelVisible\u0027):\n\t\tprocessValueObj \u003d value.get(\u0027processValue\u0027)\n\t\t\n\t\tprocessValue \u003d processValueObj.get(\u0027raw\u0027)\n\t\t\n\t\tnormalizedValue \u003d processValueObj.get(\u0027normalized\u0027)\n\t\t\n\t\tformattedValue \u003d value.get(\u0027formattedValue\u0027)\n\t\t\n\t\tlabelStyle \u003d value.get(\u0027labelStyle\u0027)\n\t\t\n\t\trangesBar \u003d value.get(\u0027rangesBar\u0027)\n\t\t\n\t\tverticalDisplay \u003d rangesBar.get(\u0027verticalDisplay\u0027)\n\t\treverseIndicator \u003d value.get(\u0027reverseIndicator\u0027)\n\t\trangesBarStrokeWidth \u003d rangesBar.get(\u0027stroke\u0027).get(\u0027width\u0027)\n\t\t\n\t\tposition \u003d value.get(\u0027position\u0027)\n\t\t\n\t\tindicatorSize \u003d value.get(\u0027indicatorSize\u0027)\n\t\trangesBarSize \u003d rangesBar.get(\u0027size\u0027)\n\t\t\n\t\tindicatorStrokeWidth \u003d value.get(\u0027indicatorStrokeWidth\u0027)\n\t\t\n\t\treturn exchange.svgMovingAnalogIndicator.create.createLabel(processValue, normalizedValue, formattedValue, labelStyle, \n\t\t\t\tposition, verticalDisplay, reverseIndicator, rangesBarStrokeWidth, indicatorSize, rangesBarSize, indicatorStrokeWidth)\n\telse:\n\t\treturn {}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.svgElements[6]": {
+      "binding": {
+        "config": {
+          "struct": {
+            "indicator": "{view.custom.indicator}",
+            "label": "{view.custom.label}",
+            "rangesBar": "{view.custom.rangesBar}",
+            "secondIndicator": "{view.custom.secondIndicator}",
+            "startPosition": "{view.custom.startPosition}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tsecondIndicator \u003d value.get(\u0027secondIndicator\u0027)\n\t\n\tif len(secondIndicator.keys()) \u003d\u003d 0:\n\t\treturn {}\n\telse:\n\t\tindicator \u003d value.get(\u0027indicator\u0027)\n\t\trangesBar \u003d value.get(\u0027rangesBar\u0027)\n\t\t\n\t\tprocessValue \u003d secondIndicator.get(\u0027normalized\u0027)\n\t\t\n\t\tstartPosition \u003d value.get(\u0027startPosition\u0027)\n\t\t\n\t\tverticalDisplay \u003d rangesBar.get(\u0027verticalDisplay\u0027)\n\t\treverseIndicator \u003d indicator.get(\u0027reverse\u0027)\n\t\trangesBarStrokeWidth \u003d rangesBar.get(\u0027stroke\u0027).get(\u0027width\u0027)\n\t\trangesBarSize \u003d rangesBar.get(\u0027size\u0027)\n\t\t\n\t\tcolor \u003d secondIndicator.get(\u0027color\u0027)\n\t\tsize \u003d indicator.get(\u0027size\u0027)\n\t\t\n\t\tstroke \u003d indicator.get(\u0027stroke\u0027)\n\t\tstrokeWidth \u003d stroke.get(\u0027width\u0027)\n\t\tstrokeColor \u003d stroke.get(\u0027color\u0027)\n\t\t\n\t\tlabel \u003d value.get(\u0027label\u0027)\n\t\t\n\t\tlabelVisible \u003d label.get(\u0027visible\u0027)\n\t\tlabelPosition \u003d label.get(\u0027position\u0027)\n\t\t\n\t\treturn exchange.svgMovingAnalogIndicator.create.createIndicator(processValue, startPosition, color, size, strokeWidth, strokeColor, \n\t\t\t\tverticalDisplay, reverseIndicator, rangesBarStrokeWidth, rangesBarSize, labelVisible, labelPosition)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.viewBox": {
+      "binding": {
+        "config": {
+          "struct": {
+            "indicatorSize": "{view.custom.indicator.size}",
+            "indicatorStrokeWidth": "{view.custom.indicator.stroke.width}",
+            "label": "{view.custom.label}",
+            "rangesBar": "{view.custom.rangesBar}",
+            "startPosition": "{view.custom.startPosition}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\trangesBar \u003d value.get(\u0027rangesBar\u0027)\n\t\n\tstartPosition \u003d value.get(\u0027startPosition\u0027)\n\t\n\tverticalDisplay \u003d rangesBar.get(\u0027verticalDisplay\u0027)\n\trangesBarStrokeWidth \u003d rangesBar.get(\u0027stroke\u0027).get(\u0027width\u0027)\n\t\n\tindicatorSize \u003d value.get(\u0027indicatorSize\u0027)\n\trangesBarSize \u003d rangesBar.get(\u0027size\u0027)\n\t\n\tindicatorStrokeWidth \u003d value.get(\u0027indicatorStrokeWidth\u0027)\n\t\n\tlabel \u003d value.get(\u0027label\u0027)\n\t\n\tlabelVisible \u003d label.get(\u0027visible\u0027)\n\tlabelPosition \u003d label.get(\u0027position\u0027)\n\t\n\treturn exchange.svgMovingAnalogIndicator.create.createViewBox(verticalDisplay, startPosition, rangesBarStrokeWidth, \n\t\t\tindicatorSize, rangesBarSize, indicatorStrokeWidth, labelVisible, labelPosition)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "params.alarms": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.defaultRangeColor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.desired": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.indicator": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.interlocks": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.maxValue": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.minValue": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.processValue": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rangesBar": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.secondIndicator": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.setpoint": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 478,
+      "width": 114
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Svg"
+        },
+        "position": {
+          "basis": "201px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.elements": {
+            "binding": {
+              "config": {
+                "path": "view.custom.svgElements"
+              },
+              "transforms": [
+                {
+                  "code": "\t# Only return non-null svg elems.\n\treturn [svgElem for svgElem in value if svgElem !\u003d None]",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.viewBox": {
+            "binding": {
+              "config": {
+                "path": "view.custom.viewBox"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

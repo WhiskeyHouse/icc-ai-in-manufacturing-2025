@@ -1,0 +1,15 @@
+{
+  "base": {
+    "style": {
+      "borderTopLeftRadius": "25px",
+      "borderTopRightRadius": "25px",
+      "borderBottomLeftRadius": "25px",
+      "borderBottomRightRadius": "25px",
+      "color": "var(--neutral-10)",
+      "fontFamily": "monospace",
+      "fontSize": "14px",
+      "fontWeight": "bold",
+      "textAlign": "center"
+    }
+  }
+}

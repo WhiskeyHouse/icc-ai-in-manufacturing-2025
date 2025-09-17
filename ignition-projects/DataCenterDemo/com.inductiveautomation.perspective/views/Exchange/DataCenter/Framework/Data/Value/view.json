@@ -1,0 +1,82 @@
+{
+  "custom": {},
+  "params": {
+    "baseClass": "exchange/datacenter/framework/data/base",
+    "units": "°C",
+    "value": 25
+  },
+  "propConfig": {
+    "params.baseClass": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.units": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 31,
+      "width": 213
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Markdown"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.source": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "units": "{view.params.units}",
+                  "value": "{view.params.value}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\tif value.get(\u0027units\u0027) \u003d\u003d \u0027%\u0027:\n\t\tspaceBetween \u003d \u0027\u0027\n\telse:\n\t\tspaceBetween \u003d \u0027 \u0027 if len(value.get(\u0027units\u0027)) \u003e 0 else \u0027\u0027\n\t\n\treturn \u0027\u003chtml\u003e\u003cspan style\u003d\"color:var(--callToAction)\"\u003e\u0027 + str(value[\u0027value\u0027]) + \u0027\u003c/span\u003e\u0027 + spaceBetween + \u0027\u003cspan style\u003d\"color:var(--label);font-weight:400\"\u003e\u0027 + value[\u0027units\u0027] + \u0027\u003c/span\u003e\u003c/html\u003e\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "view.params.baseClass"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "markdown": {
+            "escapeHtml": false
+          },
+          "style": {}
+        },
+        "type": "ia.display.markdown"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

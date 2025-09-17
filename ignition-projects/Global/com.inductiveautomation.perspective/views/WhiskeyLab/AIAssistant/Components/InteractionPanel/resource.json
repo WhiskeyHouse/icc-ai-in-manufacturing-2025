@@ -1,0 +1,16 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "view.json"
+  ],
+  "attributes": {
+    "lastModificationSignature": "interaction_panel_component",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2025-09-17T12:00:00Z"
+    }
+  }
+}

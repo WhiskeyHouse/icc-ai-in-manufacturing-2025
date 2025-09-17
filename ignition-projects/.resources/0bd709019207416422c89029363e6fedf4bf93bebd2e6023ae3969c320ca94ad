@@ -1,0 +1,141 @@
+{
+  "custom": {},
+  "params": {
+    "inputs": {
+      "bottomPduName": "PDUB",
+      "bottomPduPath": "PDUB",
+      "topPduName": "PDUA",
+      "topPduPath": "PDUA"
+    }
+  },
+  "propConfig": {
+    "params.inputs": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 844,
+      "width": 113
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Rack"
+        },
+        "position": {
+          "height": "auto",
+          "width": "100%",
+          "y": 32
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-20)",
+            "bottom": 32,
+            "classes": "exchange/datacenter/heatmap/server-rack",
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tviewPath \u003d \"Exchange/DataCenter/Faceplates/PduFp\"\n\ttagPath \u003d self.view.params.inputs.topPduPath\n\tdeviceName \u003d self.view.params.inputs.topPduName\n\tisMobile \u003d self.page.props.dimensions.viewport.width \u003c self.session.custom.breakpoint\n\tviewParams \u003d {\"tagPath\": tagPath, \"mobile\": isMobile}\n\t\n\tif isMobile:\n\t\tmobilePosition \u003d {\"width\": \"100%\", \"height\": \"100%\"}\n\t\tsystem.perspective.openPopup(tagPath, viewPath, params\u003dviewParams, title\u003ddeviceName, position\u003dmobilePosition, showCloseIcon\u003dFalse, resizable\u003dFalse, draggable\u003dFalse, modal\u003dTrue)\n\telse:\n\t\tsystem.perspective.openPopup(tagPath, viewPath, params\u003dviewParams, title\u003ddeviceName, showCloseIcon\u003dFalse, resizable\u003dFalse, draggable\u003dFalse, modal\u003dTrue)\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "TopPdu"
+        },
+        "position": {
+          "height": 32,
+          "width": "100%"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.inputs.topPduName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/heatmap/floorplan-borders exchange/datacenter/framework/clickable",
+            "overflow": "hidden",
+            "overflowX": "hidden",
+            "overflowY": "hidden"
+          },
+          "textStyle": {
+            "fontSize": "10pt"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tviewPath \u003d \"Exchange/DataCenter/Faceplates/PduFp\"\n\ttagPath \u003d self.view.params.inputs.bottomPduPath\n\tdeviceName \u003d self.view.params.inputs.bottomPduName\n\tisMobile \u003d self.page.props.dimensions.viewport.width \u003c self.session.custom.breakpoint\n\tviewParams \u003d {\"tagPath\": tagPath, \"mobile\": isMobile}\n\t\n\tif isMobile:\n\t\tmobilePosition \u003d {\"width\": \"100%\", \"height\": \"100%\"}\n\t\tsystem.perspective.openPopup(tagPath, viewPath, params\u003dviewParams, title\u003ddeviceName, position\u003dmobilePosition, showCloseIcon\u003dFalse, resizable\u003dFalse, draggable\u003dFalse, modal\u003dTrue)\n\telse:\n\t\tsystem.perspective.openPopup(tagPath, viewPath, params\u003dviewParams, title\u003ddeviceName, showCloseIcon\u003dFalse, resizable\u003dFalse, draggable\u003dFalse, modal\u003dTrue)\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "BottomPdu"
+        },
+        "position": {
+          "height": 32,
+          "width": "100%",
+          "y": "auto"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.inputs.bottomPduName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "bottom": 0,
+            "classes": "exchange/datacenter/heatmap/floorplan-borders exchange/datacenter/framework/clickable",
+            "overflow": "hidden",
+            "overflowX": "hidden",
+            "overflowY": "hidden"
+          },
+          "textStyle": {
+            "fontSize": "10pt"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

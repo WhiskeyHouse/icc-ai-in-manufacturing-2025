@@ -1,0 +1,79 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 402,
+      "width": 239
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "ThemeTitle"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/framework/settings/title"
+          },
+          "text": "Theme"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "ThemeSelection"
+        },
+        "position": {
+          "basis": "180px",
+          "grow": 1
+        },
+        "props": {
+          "alignItems": "flex-start",
+          "elementPosition": {
+            "basis": "170px"
+          },
+          "instances": [
+            {
+              "theme": "dark"
+            },
+            {
+              "theme": "dark-cool"
+            },
+            {
+              "theme": "dark-warm"
+            },
+            {
+              "theme": "light"
+            },
+            {
+              "theme": "light-cool"
+            },
+            {
+              "theme": "light-warm"
+            }
+          ],
+          "path": "Exchange/DataCenter/Framework/Settings/EmbeddedViews/ThemeInstance",
+          "useDefaultViewWidth": false,
+          "wrap": "wrap"
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/container",
+        "padding": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

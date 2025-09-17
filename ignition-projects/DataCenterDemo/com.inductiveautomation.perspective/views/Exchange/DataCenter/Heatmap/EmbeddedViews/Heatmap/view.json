@@ -1,0 +1,2999 @@
+{
+  "custom": {
+    "aisleTemplate": {
+      "alarms": [
+        null,
+        null,
+        null
+      ],
+      "ambientValue": 25,
+      "config": {
+        "highColor": {
+          "a": 1,
+          "b": 0,
+          "g": 0,
+          "r": 255
+        },
+        "highSetpoint": 32,
+        "lowColor": {
+          "a": 1,
+          "b": 255,
+          "g": 0,
+          "r": 0
+        },
+        "lowSetpoint": 18,
+        "showLabels": true
+      },
+      "isColdAisle": true,
+      "name": "TBD",
+      "units": "%",
+      "values": [
+        18,
+        25,
+        32
+      ]
+    },
+    "alarm": {
+      "alarmName": null,
+      "sensorList": "CA2S1,CA2S2,CA2S3,HA3S1,CA4S1,CA4S2,CA4S3,HA4S1,CA5S1,HA5S2,CA6S3,HA6S1,HA6S2",
+      "sensorMap": [
+        [
+          "None",
+          "None",
+          "None"
+        ],
+        [
+          "None",
+          "None",
+          "None"
+        ],
+        [
+          43.83554556764591,
+          43.61065548519964,
+          43.689450664292
+        ],
+        [
+          "None",
+          "None",
+          "None"
+        ],
+        [
+          "None",
+          "None",
+          "None"
+        ],
+        [
+          23.34504674323256,
+          "None",
+          "None"
+        ],
+        [
+          43.27873761474694,
+          43.79866073697194,
+          43.05387573541896
+        ],
+        [
+          23.219562790832796,
+          "None",
+          "None"
+        ],
+        [
+          43.858801436560796,
+          "None",
+          "None"
+        ],
+        [
+          "None",
+          23.312600513333607,
+          "None"
+        ],
+        [
+          "None",
+          "None",
+          43.33861470112513
+        ],
+        [
+          23.184007252099086,
+          23.728908675453496,
+          "None"
+        ]
+      ],
+      "tagName": "Temperature",
+      "time": null
+    },
+    "alarmDataset": {
+      "$": [
+        "ds",
+        192,
+        1741983161281
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "Time",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "TagName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "AlarmName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "Aisles",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "Sensors",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "SensorList",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "SensorMap",
+          "type": "String"
+        }
+      ]
+    },
+    "heatmap": {},
+    "history": {
+      "aisleInstances": [
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": true,
+            "name": "CA1",
+            "units": "°C",
+            "values": [
+              18.86033029861271,
+              21.373516127130074,
+              22.868461962412987
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU1B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1B",
+            "topPduName": "PDU1A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU1A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": false,
+            "name": "HA1",
+            "units": "°C",
+            "values": [
+              41.636319126067605,
+              43.17976591909806,
+              43.89767281033682
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU2B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU2B",
+            "topPduName": "PDU2A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU2A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": true,
+            "name": "CA2",
+            "units": "°C",
+            "values": [
+              21.256801564490047,
+              21.238349973237536,
+              22.13108293206753
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU3B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU3B",
+            "topPduName": "PDU3A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU3A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": false,
+            "name": "HA2",
+            "units": "°C",
+            "values": [
+              39.837689755936,
+              38.35021646050452,
+              41.12695054640492
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU4B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU4B",
+            "topPduName": "PDU4A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU4A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": true,
+            "name": "CA3",
+            "units": "°C",
+            "values": [
+              21.421555454731493,
+              20.400089658144527,
+              21.32300066807395
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU5B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU5B",
+            "topPduName": "PDU5A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU5A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": false,
+            "name": "HA3",
+            "units": "°C",
+            "values": [
+              41.03723680321896,
+              39.445624695108236,
+              38.349659352331635
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU6B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU6B",
+            "topPduName": "PDU6A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU6A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": true,
+            "name": "CA4",
+            "units": "°C",
+            "values": [
+              21.858177030502183,
+              18.75346842208691,
+              21.313452685733516
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU7B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU7B",
+            "topPduName": "PDU7A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU7A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": false,
+            "name": "HA4",
+            "units": "°C",
+            "values": [
+              42.72676244805907,
+              38.143691200592365,
+              43.157214351541704
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU8B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU8B",
+            "topPduName": "PDU8A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU8A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": true,
+            "name": "CA5",
+            "units": "°C",
+            "values": [
+              23.130960131301354,
+              20.816418105718974,
+              18.454872082574944
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU9B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU9B",
+            "topPduName": "PDU9A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU9A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": false,
+            "name": "HA5",
+            "units": "°C",
+            "values": [
+              43.58107406141152,
+              41.859689432468514,
+              41.08096610156612
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU10B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU10B",
+            "topPduName": "PDU10A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU10A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": true,
+            "name": "CA6",
+            "units": "°C",
+            "values": [
+              23.523969957747312,
+              22.68441159500495,
+              22.765795617464626
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU11B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU11B",
+            "topPduName": "PDU11A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU11A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": false,
+            "name": "HA6",
+            "units": "°C",
+            "values": [
+              40.64945043119387,
+              38.58731423016753,
+              43.39206950613676
+            ]
+          },
+          "isAisle": true
+        },
+        {
+          "inputs": {
+            "bottomPduName": "PDU12B",
+            "bottomPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU12B",
+            "topPduName": "PDU12A",
+            "topPduPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/PDU/PDU12A"
+          },
+          "isAisle": false
+        },
+        {
+          "inputs": {
+            "alarms": [
+              null,
+              null,
+              null
+            ],
+            "ambientValue": 21,
+            "config": {
+              "highColor": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 255
+              },
+              "highSetpoint": 24,
+              "lowColor": {
+                "a": 1,
+                "b": 255,
+                "g": 0,
+                "r": 0
+              },
+              "lowSetpoint": 18,
+              "midColor": {
+                "a": 1,
+                "b": 50,
+                "g": 50,
+                "r": 50
+              },
+              "showLabels": true
+            },
+            "isColdAisle": true,
+            "name": "CA7",
+            "units": "°C",
+            "values": [
+              23.371085774977644,
+              20.25221985643668,
+              20.410958619958656
+            ]
+          },
+          "isAisle": true
+        }
+      ],
+      "calcTimeMs": 25,
+      "data": [
+        [
+          18.86033029861271,
+          21.373516127130074,
+          22.868461962412987
+        ],
+        [
+          41.636319126067605,
+          43.17976591909806,
+          43.89767281033682
+        ],
+        [
+          21.256801564490047,
+          21.238349973237536,
+          22.13108293206753
+        ],
+        [
+          39.837689755936,
+          38.35021646050452,
+          41.12695054640492
+        ],
+        [
+          21.421555454731493,
+          20.400089658144527,
+          21.32300066807395
+        ],
+        [
+          41.03723680321896,
+          39.445624695108236,
+          38.349659352331635
+        ],
+        [
+          21.858177030502183,
+          18.75346842208691,
+          21.313452685733516
+        ],
+        [
+          42.72676244805907,
+          38.143691200592365,
+          43.157214351541704
+        ],
+        [
+          23.130960131301354,
+          20.816418105718974,
+          18.454872082574944
+        ],
+        [
+          43.58107406141152,
+          41.859689432468514,
+          41.08096610156612
+        ],
+        [
+          23.523969957747312,
+          22.68441159500495,
+          22.765795617464626
+        ],
+        [
+          40.64945043119387,
+          38.58731423016753,
+          43.39206950613676
+        ],
+        [
+          23.371085774977644,
+          20.25221985643668,
+          20.410958619958656
+        ]
+      ],
+      "index": 600,
+      "indexTimestamp": {
+        "$": [
+          "ts",
+          192,
+          1741983172308
+        ],
+        "$ts": 1741983171000
+      },
+      "retrievedAt": {
+        "$": [
+          "ts",
+          192,
+          1741983172308
+        ],
+        "$ts": 1741983172308
+      }
+    },
+    "showAllSensorTypes": false,
+    "slider": {
+      "minutesBack": 10,
+      "pollAlarms": true,
+      "range": {
+        "max": 1741983171000,
+        "min": 1741982571000
+      },
+      "time": 1741983171000,
+      "timeDelayed": "value",
+      "timeSlider": 1741983171000
+    },
+    "tagName": {
+      "options": [
+        {
+          "label": "Humidity",
+          "value": "Humidity"
+        },
+        {
+          "label": "Temperature",
+          "value": "Temperature"
+        }
+      ]
+    },
+    "temperature": {}
+  },
+  "params": {
+    "heatmap": "Site1-DataHall1-Section1",
+    "isPopup": false,
+    "tagName": "Temperature"
+  },
+  "propConfig": {
+    "custom.aisleTemplate": {
+      "persistent": true
+    },
+    "custom.aisleTemplate.config.midColor": {
+      "binding": {
+        "config": {
+          "path": "session.props.theme"
+        },
+        "transforms": [
+          {
+            "fallback": {
+              "a": 1,
+              "b": 0,
+              "g": 0,
+              "r": 0
+            },
+            "inputType": "scalar",
+            "mappings": [
+              {
+                "input": "dark",
+                "output": {
+                  "a": 1,
+                  "b": 50,
+                  "g": 50,
+                  "r": 50
+                }
+              },
+              {
+                "input": "dark-cool",
+                "output": {
+                  "a": 1,
+                  "b": 42,
+                  "g": 39,
+                  "r": 33
+                }
+              },
+              {
+                "input": "dark-warm",
+                "output": {
+                  "a": 1,
+                  "b": 37,
+                  "g": 37,
+                  "r": 39
+                }
+              },
+              {
+                "input": "light",
+                "output": {
+                  "a": 1,
+                  "b": 244,
+                  "g": 244,
+                  "r": 244
+                }
+              },
+              {
+                "input": "light-cool",
+                "output": {
+                  "a": 1,
+                  "b": 230,
+                  "g": 225,
+                  "r": 221
+                }
+              },
+              {
+                "input": "light-warm",
+                "output": {
+                  "a": 1,
+                  "b": 223,
+                  "g": 224,
+                  "r": 229
+                }
+              }
+            ],
+            "outputType": "document",
+            "type": "map"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.alarm": {
+      "persistent": true
+    },
+    "custom.alarmDataset": {
+      "binding": {
+        "config": {
+          "struct": {
+            "alarmDataset": "tag({view.custom.heatmap.folder} + \u0027/Alarms/Alarms\u0027)",
+            "showAllSensorTypes": "{view.custom.showAllSensorTypes}",
+            "tagName": "{view.params.tagName}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tif value.showAllSensorTypes:\n\t\treturn value.alarmDataset\n\telse:\n\t\trowIndices \u003d [i for i in xrange(value.alarmDataset.getRowCount()) if value.alarmDataset.getValueAt(i, \u0027TagName\u0027) !\u003d value.tagName]\n\t\treturn system.dataset.deleteRows(value.alarmDataset, rowIndices)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.dropdown.tagConfig": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "heatmapFolder": "{view.custom.heatmap.folder}"
+          },
+          "tagPath": "{heatmapFolder}/Summary/Tags/Configs"
+        },
+        "transforms": [
+          {
+            "expression": "{value}[{view.params.tagName}]",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      }
+    },
+    "custom.heatmap": {
+      "persistent": true
+    },
+    "custom.heatmap.folder": {
+      "binding": {
+        "config": {
+          "struct": {
+            "heatmap": "{view.params.heatmap}",
+            "udtList": "{view.custom.heatmap.udtList}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tfor i in xrange(value.udtList.getRowCount()):\n\t\tif value.udtList.getValueAt(i, \u0027name\u0027) \u003d\u003d value.heatmap:\n\t\t\treturn value.udtList.getValueAt(i, \u0027path\u0027)\n\treturn None",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.heatmap.options": {
+      "binding": {
+        "config": {
+          "path": "view.custom.heatmap.udtList"
+        },
+        "transforms": [
+          {
+            "expression": "columnRearrange({value},\u0027name\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.heatmap.udtList": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "direct",
+          "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/HeatmapOrchestrator/TagList/UdtList"
+        },
+        "type": "tag"
+      }
+    },
+    "custom.history": {
+      "binding": {
+        "config": {
+          "struct": {
+            "alarm": "{view.custom.alarm}",
+            "heatmapFolder": "{view.custom.heatmap.folder}",
+            "showLabels": "{view.custom.aisleTemplate.config.showLabels}",
+            "tagConfig": "{view.custom.tagName.tagConfig}",
+            "themeChange": "{view.custom.aisleTemplate.config.midColor}",
+            "time": "{view.custom.slider.time}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tstartTime \u003d system.date.now()\n\t\n\t# read in needed tags\n\ttags \u003d system.tag.readBlocking(\n\t\t[\n\t\t\t\u0027%s/History/History\u0027 % value.heatmapFolder\n\t\t\t,\u0027%s/Tags/Tags\u0027 % value.heatmapFolder\n\t\t]\n\t)\n\thistoryDataset \u003d tags[0].value\n\ttagsDataset \u003d tags[1].value\n\t\n\t# find index in history dataset\n\tindex \u003d None\n\tif self.custom.slider.time \u003e\u003d self.custom.slider.range.max:\n\t\tindex \u003d historyDataset.getRowCount() - 1\n\telse:\n\t\tfor i in xrange(historyDataset.getRowCount()):\n\t\t\tif system.date.toMillis(historyDataset.getValueAt(i,0)) \u003d\u003d value.time:\n\t\t\t\tindex \u003d i\n\t\t\t\tbreak\n\n\t# if index exists parse into object format\n\tdata \u003d []\n\trowInfo \u003d []\n\tif index:\n\t\tlastAisle \u003d None\n\t\tfor i in xrange(tagsDataset.getRowCount()):\n\t\t\tif str(tagsDataset.getValueAt(i,0)).endswith(value.tagConfig.name):\n\t\t\t\tcurrentAisle \u003d tagsDataset.getValueAt(i,\u0027aisle\u0027)\n\t\t\t\tdsValue \u003d historyDataset.getValueAt(index, i + 1)\n\t\t\t\tif currentAisle \u003d\u003d lastAisle:\n\t\t\t\t\tdata[-1].append(dsValue)\n\t\t\t\telse:\n\t\t\t\t\tdata.append([dsValue])\n\t\t\t\t\trowInfo.append((tagsDataset.getValueAt(i,\u0027aisleName\u0027), tagsDataset.getValueAt(i,\u0027isCold\u0027)))\n\t\t\t\t\n\t\t\t\tlastAisle \u003d currentAisle\n\t\n\t# transform data into view instances\n\taisleInstances \u003d []\n\tfor i, (row, info) in enumerate(zip(data, rowInfo)):\n\t\ttemplate \u003d system.util.jsonDecode(system.util.jsonEncode(self.custom.aisleTemplate))\n\t\ttemplate[\u0027config\u0027][\u0027highSetpoint\u0027] \u003d value.tagConfig.engHigh\n\t\ttemplate[\u0027config\u0027][\u0027lowSetpoint\u0027] \u003d value.tagConfig.engLow\n\t\ttemplate[\u0027ambientValue\u0027] \u003d (value.tagConfig.engHigh + value.tagConfig.engLow) / 2.0\n\t\ttemplate[\u0027values\u0027] \u003d row\n\t\ttemplate[\u0027units\u0027] \u003d value.tagConfig.engUnit\n\t\ttemplate[\u0027name\u0027] \u003d info[0]\n\t\ttemplate[\u0027isColdAisle\u0027] \u003d info[1]\n\t\tif value.time \u003d\u003d value.alarm.time:\n\t\t\ttemplate[\u0027alarms\u0027] \u003d value.alarm.sensorMap[i]\n\t\t\t\n\t\t# append rack view\n\t\tif i \u003e 0:\n\t\t\taisleInstances.append({\u0027inputs\u0027:{\n\t\t\t\t\"bottomPduName\": \"PDU%dB\" % i,\n\t\t\t\t\"bottomPduPath\": value.heatmapFolder.replace(\u0027Heatmap/Summary\u0027,\"PDU/PDU%dB\" % i),\n\t\t\t\t\"topPduName\": \"PDU%dA\" % i,\n\t\t\t\t\"topPduPath\": value.heatmapFolder.replace(\u0027Heatmap/Summary\u0027,\"PDU/PDU%dA\" % i)\n\t\t\t\t},\u0027isAisle\u0027: False})\n\t\t\t\t\n\t\t# append aisle view\n\t\taisleInstances.append({\u0027inputs\u0027:template,\u0027isAisle\u0027: True})\n\t\n\t# output\n\treturn {\n\t\t\u0027index\u0027:index\n\t\t,\u0027retrievedAt\u0027: system.date.now()\n\t\t,\u0027indexTimestamp\u0027: system.date.fromMillis(value.time)\n\t\t,\u0027data\u0027: data\n\t\t,\u0027aisleInstances\u0027: aisleInstances\n\t\t,\u0027calcTimeMs\u0027:system.date.millisBetween(startTime, system.date.now())\n\t}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.showAllSensorTypes": {
+      "persistent": true
+    },
+    "custom.slider": {
+      "persistent": true
+    },
+    "custom.slider.enableLive": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.slider.timeSlider}\u003e\u003d{view.custom.slider.range.max}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.slider.timestamp": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "direct",
+          "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/HeatmapOrchestrator/Clock"
+        },
+        "type": "tag"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value is not None:\n\t\tmaxTime \u003d system.date.toMillis(currentValue.value)/1000*1000\n\t\tminTime \u003d maxTime - float(self.custom.slider.minutesBack) * 60000\n\t\t\n\t\tif self.custom.slider.timeSlider \u003e\u003d self.custom.slider.range.max:\n\t\t\tself.custom.slider.time \u003d maxTime\n\t\t\tself.custom.slider.timeSlider \u003d maxTime\n\t\telif self.custom.slider.timeSlider \u003d\u003d self.custom.slider.range.min:\n\t\t\tif self.custom.slider.time \u003e self.custom.slider.timeSlider:\n\t\t\t\tself.custom.slider.time \u003d self.custom.slider.timeSlider\n\t\telif self.custom.slider.timeSlider \u003e self.custom.slider.range.min:\n\t\t\tif self.custom.slider.time !\u003d self.custom.slider.timeSlider:\n\t\t\t\tself.custom.slider.time \u003d self.custom.slider.timeSlider\n\t\t\t\n\t\tself.custom.slider.range \u003d {\u0027max\u0027:maxTime, \u0027min\u0027: minTime}"
+      }
+    },
+    "custom.tagName": {
+      "persistent": true
+    },
+    "custom.tagName.options": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "heatmapFolder": "{view.custom.heatmap.folder}"
+          },
+          "tagPath": "{heatmapFolder}/Tags/Configs"
+        },
+        "transforms": [
+          {
+            "code": "\treturn [\n\t\t{\"value\": i, \"label\": i}\n\t\tfor i in sorted(value.keys())\n\t]",
+            "type": "script"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tagName.tagConfig": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "heatmapFolder": "{view.custom.heatmap.folder}"
+          },
+          "tagPath": "{heatmapFolder}/Tags/Configs"
+        },
+        "transforms": [
+          {
+            "expression": "{value}[{view.params.tagName}]",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      }
+    },
+    "custom.temperature": {
+      "persistent": true
+    },
+    "custom.temperature.coldHistory": {
+      "binding": {
+        "config": {
+          "path": "view.custom.temperature.coldPath"
+        },
+        "transforms": [
+          {
+            "code": "\treturn [{\n\t\t\u0027aggregate\u0027: \u0027Average\u0027\n\t\t,\u0027alias\u0027: \u0027Average Cold\u0027\n\t\t,\u0027path\u0027: value\n\t}]",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.temperature.coldPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.heatmap.folder} + \u0027/Aggregate/ColdAisleTemperature/Output/Mean\u0027"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.temperature.hotHistory": {
+      "binding": {
+        "config": {
+          "path": "view.custom.temperature.hotPath"
+        },
+        "transforms": [
+          {
+            "code": "\treturn [{\n\t\t\u0027aggregate\u0027: \u0027Average\u0027\n\t\t,\u0027alias\u0027: \u0027Average Hot\u0027\n\t\t,\u0027path\u0027: value\n\t}]",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.temperature.hotPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.heatmap.folder} + \u0027/Aggregate/HotAisleTemperature/Output/Mean\u0027"
+        },
+        "type": "expr"
+      }
+    },
+    "params.heatmap": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.isPopup": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1105
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tsystem.perspective.navigate(\u0027/heat-map/%s/%s\u0027 % (self.props.value, self.view.params.tagName))"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Heatmap"
+                    },
+                    "position": {
+                      "basis": "200px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.options": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.heatmap.options"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.value": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.heatmap"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "dropdownOptionStyle": {
+                        "classes": "exchange/datacenter/framework/dropdown"
+                      },
+                      "style": {
+                        "classes": "exchange/datacenter/framework/dropdown"
+                      }
+                    },
+                    "type": "ia.input.dropdown"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tsystem.perspective.navigate(\u0027/heat-map/%s/%s\u0027 % (self.view.params.heatmap, self.props.value))"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Tag"
+                    },
+                    "position": {
+                      "basis": "200px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.options": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.tagName.options"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.value": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.tagName"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "dropdownOptionStyle": {
+                        "classes": "exchange/datacenter/framework/dropdown"
+                      },
+                      "style": {
+                        "classes": "exchange/datacenter/framework/dropdown"
+                      }
+                    },
+                    "type": "ia.input.dropdown"
+                  }
+                ],
+                "meta": {
+                  "name": "HeatmapSelection"
+                },
+                "position": {
+                  "basis": "600px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "50px",
+                  "grow": 1
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "TemperatureLabels"
+                },
+                "position": {
+                  "basis": "162px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.selected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.aisleTemplate.config.showLabels"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "label": {
+                    "position": "left",
+                    "text": "Show Labels"
+                  }
+                },
+                "type": "ia.input.toggle-switch"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Value1"
+                    },
+                    "position": {
+                      "height": 1,
+                      "width": 0.2
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "numberFormat({view.custom.tagName.tagConfig.engLow},\u0027#\u0027) + \u0027 \u0027 + {view.custom.tagName.tagConfig.engUnit}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/heatmap/temperature-label",
+                        "opacity": "0.8"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value2"
+                    },
+                    "position": {
+                      "height": 1,
+                      "width": 0.2,
+                      "x": 0.4
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "numberFormat(mean({view.custom.tagName.tagConfig.engLow}, {view.custom.tagName.tagConfig.engHigh}),\u0027#\u0027) + \u0027 \u0027 + {view.custom.tagName.tagConfig.engUnit}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/heatmap/temperature-label",
+                        "opacity": "0.8"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value3"
+                    },
+                    "position": {
+                      "height": 1,
+                      "width": 0.2,
+                      "x": 0.8
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "numberFormat({view.custom.tagName.tagConfig.engHigh},\u0027#\u0027) + \u0027 \u0027 + {view.custom.tagName.tagConfig.engUnit}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/heatmap/temperature-label",
+                        "opacity": "0.8"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Legend"
+                },
+                "position": {
+                  "basis": "260px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.background": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.aisleTemplate.config"
+                      },
+                      "transforms": [
+                        {
+                          "code": "#\toutput \u003d \u0027linear-gradient(to right, rgba(0.0, 0.0, 255.0, 1.0), rgba(25.0, 25.0, 152.5, 1.0), rgba(50.0, 50.0, 50.0, 1.0), rgba(152.5, 25.0, 25.0, 1.0), rgba(255.0, 0.0, 0.0, 1.0))\u0027\n\tgradient \u003d \u0027linear-gradient(to right, rgba(%s, %s, %s, %s), rgba(%s, %s, %s, %s), rgba(%s, %s, %s, %s))\u0027\n\toutput \u003d gradient % (\n\t\tvalue.lowColor.r, value.lowColor.g, value.lowColor.b, value.lowColor.a,\n\t\tvalue.midColor.r, value.midColor.g, value.midColor.b, value.midColor.a,\n\t\tvalue.highColor.r, value.highColor.g, value.highColor.b, value.highColor.a\n\t)\n\treturn output",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "mode": "percent",
+                  "style": {
+                    "borderBottomLeftRadius": 4,
+                    "borderBottomRightRadius": 4,
+                    "borderTopLeftRadius": 4,
+                    "borderTopRightRadius": 4,
+                    "box-sizing": "border-box",
+                    "padding": 4
+                  }
+                },
+                "type": "ia.container.coord"
+              }
+            ],
+            "meta": {
+              "name": "Header"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "FlexRepeater"
+                    },
+                    "position": {
+                      "basis": "2200px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.instances": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.history.aisleInstances"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "elementPosition": {
+                        "basis": "100px"
+                      },
+                      "path": "Exchange/DataCenter/Heatmap/EmbeddedViews/RackOrAisle",
+                      "style": {
+                        "overflow": "visible"
+                      },
+                      "useDefaultViewHeight": false,
+                      "useDefaultViewWidth": false
+                    },
+                    "type": "ia.display.flex-repeater"
+                  }
+                ],
+                "meta": {
+                  "name": "Heatmap"
+                },
+                "position": {
+                  "height": 1,
+                  "width": 1
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Floorplan"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "mode": "percent",
+              "style": {
+                "margin": 4
+              }
+            },
+            "type": "ia.container.coord"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Marker1"
+                    },
+                    "position": {
+                      "height": "100%",
+                      "width": "10%"
+                    },
+                    "propConfig": {
+                      "meta.visible": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.slider.time} \u003e\u003d {view.custom.slider.range.min}"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "dateFormat({view.custom.slider.range.max} - 1*{view.custom.slider.minutesBack}*60000, \"HH:mm:ss\")"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "borderLeftColor": "var(--neutral-50)",
+                        "borderLeftStyle": "solid",
+                        "borderLeftWidth": 2,
+                        "color": "var(--neutral-60)",
+                        "fontSize": "1em",
+                        "overflow": "visible",
+                        "paddingLeft": 4,
+                        "textAlign": "left"
+                      },
+                      "textStyle": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Marker2"
+                    },
+                    "position": {
+                      "height": "100%",
+                      "width": "10%",
+                      "x": "23%"
+                    },
+                    "propConfig": {
+                      "meta.visible": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.slider.time} \u003e\u003d {view.custom.slider.range.min}"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "dateFormat({view.custom.slider.range.max} - 0.67*{view.custom.slider.minutesBack}*60000, \"HH:mm:ss\")"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "borderRightColor": "var(--neutral-50)",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": 2,
+                        "color": "var(--neutral-60)",
+                        "fontSize": "1em",
+                        "overflow": "visible",
+                        "paddingRight": 4,
+                        "textAlign": "right"
+                      },
+                      "textStyle": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Marker3"
+                    },
+                    "position": {
+                      "height": "100%",
+                      "width": "10%",
+                      "x": "57%"
+                    },
+                    "propConfig": {
+                      "meta.visible": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.slider.time} \u003e\u003d {view.custom.slider.range.min}"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "dateFormat({view.custom.slider.range.max} - 0.33*{view.custom.slider.minutesBack}*60000, \"HH:mm:ss\")"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "borderRightColor": "var(--neutral-50)",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": 2,
+                        "color": "var(--neutral-60)",
+                        "fontSize": "1em",
+                        "overflow": "visible",
+                        "paddingRight": 4,
+                        "textAlign": "right"
+                      },
+                      "textStyle": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Live"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--neutral-60)",
+                            "fontSize": "1em",
+                            "overflow": "visible",
+                            "textAlign": "right"
+                          },
+                          "text": "Live",
+                          "textStyle": {
+                            "overflow": "visible"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Icon"
+                        },
+                        "position": {
+                          "basis": "16px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.color": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.slider.enableLive"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": "--neutral-40",
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": true,
+                                      "output": "--indicator"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "path": "material/brightness_1"
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "Marker4"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "expression": "dateFormat({view.custom.slider.range.max}, \"HH:mm:ss\")"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "borderRightColor": "var(--neutral-50)",
+                            "borderRightStyle": "solid",
+                            "borderRightWidth": 2,
+                            "color": "var(--neutral-60)",
+                            "fontSize": "1em",
+                            "overflow": "visible",
+                            "paddingRight": 4,
+                            "textAlign": "right"
+                          },
+                          "textStyle": {
+                            "overflow": "visible"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onPointerUp": {
+                          "config": {
+                            "script": "\tself.view.custom.slider.timeSlider \u003d self.view.custom.slider.range.max"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "LastMarker"
+                    },
+                    "position": {
+                      "height": "100%",
+                      "width": "auto",
+                      "x": "auto"
+                    },
+                    "props": {
+                      "style": {
+                        "cursor": "pointer",
+                        "right": 0
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "BottomLabels"
+                },
+                "position": {
+                  "height": 0.4,
+                  "width": 1,
+                  "y": 0.6
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.coord"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Current"
+                    },
+                    "position": {
+                      "height": "100%",
+                      "width": "68px"
+                    },
+                    "propConfig": {
+                      "position.x": {
+                        "binding": {
+                          "config": {
+                            "expression": "\u0027calc(min(100% - \u0027 + {this.position.width} + \u0027, \u0027+\r\nnumberFormat(\r\n\tmax(\r\n\t\t({view.custom.slider.time}-{view.custom.slider.range.min})\r\n\t\t\t/({view.custom.slider.range.max}-{view.custom.slider.range.min})*100\r\n\t,0)\r\n\t,\"#0.0\u0027%\u0027\")\r\n+\u0027)\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "dateFormat({view.custom.slider.time}, \"HH:mm:ss\")"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "var(--neutral-50)",
+                        "borderBottomLeftRadius": 4,
+                        "borderBottomRightRadius": 4,
+                        "borderTopLeftRadius": 4,
+                        "borderTopRightRadius": 4,
+                        "color": "var(--neutral-80)",
+                        "marginLeft": -3,
+                        "overflow": "visible",
+                        "textAlign": "center",
+                        "transition": "all 250ms linear"
+                      },
+                      "textStyle": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "TopLabels"
+                },
+                "position": {
+                  "height": 0.4,
+                  "width": 1
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.coord"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onPointerDown": {
+                      "config": {
+                        "script": "\tself.view.custom.alarm.time \u003d None\n\tself.view.custom.alarm.alarmName \u003d None\n\t\n\ttry:\n\t\tself.parent.parent.getChild(\"Footer\").getChild(\"Table\").props.selection.selectedColumn \u003d None\n\t\tself.parent.parent.getChild(\"Footer\").getChild(\"Table\").props.selection.selectedRow \u003d None\n\texcept:\n\t\tpass"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Slider"
+                },
+                "position": {
+                  "height": 0.5,
+                  "width": 1,
+                  "y": 0.25
+                },
+                "propConfig": {
+                  "props.max": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.slider.range.max"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.min": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.slider.range.min"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.trackColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.slider.enableLive}"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "var(--qual-2)",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": true,
+                              "output": "var(--indicator)"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "expr"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.slider.timeSlider"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "labels": {
+                    "interval": 200000
+                  },
+                  "step": 1000
+                },
+                "type": "ia.input.slider"
+              }
+            ],
+            "meta": {
+              "name": "SliderContainer"
+            },
+            "position": {
+              "basis": "60px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "!{view.params.isPopup}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "mode": "percent",
+              "style": {
+                "backgroundColor": "var(--neutral-30)",
+                "borderBottomLeftRadius": 8,
+                "borderBottomRightRadius": 8,
+                "borderTopLeftRadius": 8,
+                "borderTopRightRadius": 8,
+                "overflow": "visible",
+                "padding": 4,
+                "paddingLeft": 10,
+                "paddingRight": 10
+              }
+            },
+            "type": "ia.container.coord"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "AverageHot"
+                    },
+                    "position": {
+                      "basis": "80px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "hotPath": "{view.custom.temperature.hotPath}"
+                            },
+                            "tagPath": "{hotPath}"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "engUnit": "°C",
+                        "label": "Current Average Hot Aisle"
+                      },
+                      "path": "Exchange/DataCenter/Framework/Data/Numeric",
+                      "style": {
+                        "marginLeft": 16,
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "SparklineHot"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.points": {
+                        "binding": {
+                          "config": {
+                            "avoidScanClassValidation": true,
+                            "dateRange": {
+                              "mostRecent": "10",
+                              "mostRecentUnits": "MIN"
+                            },
+                            "enableValueCache": true,
+                            "ignoreBadQuality": false,
+                            "polling": {
+                              "enabled": true,
+                              "rate": "5"
+                            },
+                            "preventInterpolation": false,
+                            "returnFormat": "Wide",
+                            "returnSize": {
+                              "type": "RAW"
+                            },
+                            "tags": "{view.custom.temperature.hotHistory}",
+                            "valueFormat": "DATASET"
+                          },
+                          "type": "tag-history"
+                        }
+                      }
+                    },
+                    "props": {
+                      "width": 2
+                    },
+                    "type": "ia.display.sparkline"
+                  },
+                  {
+                    "meta": {
+                      "name": "Spacer"
+                    },
+                    "position": {
+                      "basis": "4px",
+                      "shrink": 0
+                    },
+                    "type": "ia.container.coord"
+                  },
+                  {
+                    "meta": {
+                      "name": "AverageCold"
+                    },
+                    "position": {
+                      "basis": "80px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "coldPath": "{view.custom.temperature.coldPath}"
+                            },
+                            "tagPath": "{coldPath}"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "engUnit": "°C",
+                        "label": "Current Average Cold Aisle"
+                      },
+                      "path": "Exchange/DataCenter/Framework/Data/Numeric",
+                      "style": {
+                        "marginLeft": 16,
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "SparklineCold"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.points": {
+                        "binding": {
+                          "config": {
+                            "avoidScanClassValidation": true,
+                            "dateRange": {
+                              "mostRecent": "10",
+                              "mostRecentUnits": "MIN"
+                            },
+                            "enableValueCache": true,
+                            "ignoreBadQuality": false,
+                            "polling": {
+                              "enabled": true,
+                              "rate": "5"
+                            },
+                            "preventInterpolation": false,
+                            "returnFormat": "Wide",
+                            "returnSize": {
+                              "type": "RAW"
+                            },
+                            "tags": "{view.custom.temperature.coldHistory}",
+                            "valueFormat": "DATASET"
+                          },
+                          "type": "tag-history"
+                        }
+                      }
+                    },
+                    "props": {
+                      "width": 2
+                    },
+                    "type": "ia.display.sparkline"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "ShowAllSensorTypes"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.selected": {
+                            "binding": {
+                              "config": {
+                                "bidirectional": true,
+                                "path": "view.custom.showAllSensorTypes"
+                              },
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "label": {
+                            "position": "left",
+                            "text": "Show All Sensor Types"
+                          }
+                        },
+                        "type": "ia.input.toggle-switch"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "flex-end"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Left"
+                },
+                "position": {
+                  "basis": "350px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onRowClick": {
+                      "config": {
+                        "script": "\tsystem.perspective.print(str(event))\n\tself.view.custom.slider.timeSlider \u003d event.value.Time\n\tself.view.custom.alarm \u003d {\n\t\t \u0027time\u0027: event.value.Time\n\t\t,\u0027alarmName\u0027: event.value.AlarmName\n\t\t,\u0027tagName\u0027: event.value.TagName\n\t\t,\u0027sensorMap\u0027: system.util.jsonDecode(event.value.SensorMap)\n\t\t,\u0027sensorList\u0027: event.value.SensorList\n\t}\n\tsystem.perspective.navigate(\u0027/heat-map/%s/%s\u0027 % (self.view.params.heatmap, event.value.TagName))"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Table"
+                },
+                "position": {
+                  "basis": "800px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.alarmDataset"
+                      },
+                      "type": "property"
+                    },
+                    "onChange": {
+                      "enabled": null,
+                      "script": "\tcol \u003d None\n\trow \u003d None\n\t\n\tds \u003d currentValue.value\n\tif ds is not None and self.view.custom.alarm.time !\u003d None and self.view.custom.alarm.alarmName !\u003d None and self.view.custom.alarm.tagName !\u003d None:\n\t\tfor i in range(ds.getRowCount()):\n\t\t\tif (\n\t\t\t\tlong(self.view.custom.alarm.time) \u003d\u003d system.date.toMillis(ds.getValueAt(i,\u0027Time\u0027)) \n\t\t\t\tand self.view.custom.alarm.alarmName \u003d\u003d ds.getValueAt(i,\u0027AlarmName\u0027)\n\t\t\t\tand self.view.custom.alarm.tagName \u003d\u003d ds.getValueAt(i,\u0027TagName\u0027)\n\t\t\t\t):\n\t\t\t\tcol \u003d \u0027Time\u0027\n\t\t\t\trow \u003d i\n\t\t\t\tbreak\n\n\tself.props.selection.selectedColumn \u003d col\n\tself.props.selection.selectedRow \u003d row"
+                    }
+                  }
+                },
+                "props": {
+                  "columns": [
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                      "editable": false,
+                      "field": "Time",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "descending",
+                      "sortable": false,
+                      "strictWidth": true,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": 150
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                      "editable": false,
+                      "field": "TagName",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "descending",
+                      "sortable": false,
+                      "strictWidth": true,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": 150
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "AlarmName",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": "Alarm Name"
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": true,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": 150
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Aisles",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": true,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": 80
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Sensors",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": true,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": 80
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "SensorList",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": "Sensor List"
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "SensorMap",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": ""
+                    }
+                  ],
+                  "pager": {
+                    "bottom": false
+                  },
+                  "style": {
+                    "marginLeft": 8,
+                    "marginRight": 8
+                  }
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "name": "Footer"
+            },
+            "position": {
+              "basis": "200px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "!{view.params.isPopup}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "height": 1,
+          "width": 1
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.0606,
+      "y": 0.0077
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "backgroundClip": "border-box",
+        "backgroundColor": "var(--neutral-20)",
+        "padding": 8
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

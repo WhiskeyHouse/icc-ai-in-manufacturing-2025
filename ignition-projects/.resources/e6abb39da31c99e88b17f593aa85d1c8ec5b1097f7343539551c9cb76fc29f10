@@ -1,0 +1,1270 @@
+{
+  "custom": {
+    "gap": "10px"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.gap": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "CompositePerformanceIndex"
+                },
+                "position": {
+                  "basis": "252px",
+                  "grow": 1
+                },
+                "props": {
+                  "params": {
+                    "fontSize": "33px",
+                    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/AverageCompositePerformanceIndex"
+                  },
+                  "path": "Exchange/DataCenter/Overview/EmbeddedViews/SimpleGauge"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "DataHallPerformanceGrade"
+                },
+                "position": {
+                  "basis": "514px",
+                  "grow": 2
+                },
+                "props": {
+                  "params": {
+                    "site": "[DataCenterDemo]Exchange/DataCenterDemo/Site1"
+                  },
+                  "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/Main"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Column1"
+            },
+            "position": {
+              "basis": "240px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.gap": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.gap"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Location"
+                    },
+                    "position": {
+                      "basis": "64.8571429px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "params": {
+                        "isNumeric": false,
+                        "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/Details/Location",
+                        "title": "Location"
+                      },
+                      "path": "Exchange/DataCenter/Overview/EmbeddedViews/LabelAndValue"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "DevicesOnline"
+                    },
+                    "position": {
+                      "basis": "64.8571429px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "params": {
+                        "isNumeric": true,
+                        "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/Details/DevicesOnline",
+                        "title": "Devices Online"
+                      },
+                      "path": "Exchange/DataCenter/Overview/EmbeddedViews/LabelAndValue"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "HaMeanTemp"
+                    },
+                    "position": {
+                      "basis": "64.8571429px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "params": {
+                        "isNumeric": true,
+                        "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/HaMeanTemperature",
+                        "title": "Hot Aisle Mean Temp"
+                      },
+                      "path": "Exchange/DataCenter/Overview/EmbeddedViews/LabelAndValue"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "HaMaxTemp"
+                    },
+                    "position": {
+                      "basis": "64.8571429px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "params": {
+                        "isNumeric": true,
+                        "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/HottestHaTemperature",
+                        "title": "Hot Aisle Max Temp"
+                      },
+                      "path": "Exchange/DataCenter/Overview/EmbeddedViews/LabelAndValue"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "OutdoorDryBulbTemp"
+                    },
+                    "position": {
+                      "basis": "64.8571429px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "params": {
+                        "isNumeric": true,
+                        "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/OutdoorDryBulbTemperature",
+                        "title": "Outdoor Dry Bulb Temp"
+                      },
+                      "path": "Exchange/DataCenter/Overview/EmbeddedViews/LabelAndValue"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "OutdoorRelativeHumidity"
+                    },
+                    "position": {
+                      "basis": "64.8571429px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "params": {
+                        "isNumeric": true,
+                        "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/OutdoorRelativeHumidity",
+                        "title": "Outdoor Relative Humidity"
+                      },
+                      "path": "Exchange/DataCenter/Overview/EmbeddedViews/LabelAndValue"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "AlarmCount"
+                    },
+                    "position": {
+                      "basis": "64.8571429px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "params": {
+                        "isNumeric": true,
+                        "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/Details/24HrAlarmCount",
+                        "title": "24HR Alarm Count"
+                      },
+                      "path": "Exchange/DataCenter/Overview/EmbeddedViews/LabelAndValue"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Metrics"
+                },
+                "position": {
+                  "basis": "514px",
+                  "grow": 2
+                },
+                "propConfig": {
+                  "props.style.gap": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.gap"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Column2"
+            },
+            "position": {
+              "basis": "240px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Kpis"
+        },
+        "position": {
+          "basis": "220px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.gap": {
+            "binding": {
+              "config": {
+                "path": "view.custom.gap"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "CoolingCapacity"
+            },
+            "position": {
+              "basis": "430px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "currentValueBasis": "auto",
+                "movingAnalogIndicator": {
+                  "alarms": {
+                    "inactiveRangeColor": "var(--neutral-60)",
+                    "level1": {
+                      "highHigh": null,
+                      "lowLow": null,
+                      "rangeColor": "var(--error)"
+                    },
+                    "level2": {
+                      "high": null,
+                      "low": null,
+                      "rangeColor": "var(--warningSecondary)"
+                    }
+                  },
+                  "defaultRangeColor": "var(--neutral-10)",
+                  "desired": {
+                    "high": 0.63,
+                    "low": 0.57,
+                    "rangeColor": "var(--callToAction)"
+                  },
+                  "indicator": {
+                    "color": "var(--label)",
+                    "reverse": false,
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-100)",
+                      "width": 0
+                    }
+                  },
+                  "interlocks": {
+                    "high": null,
+                    "low": null,
+                    "rangeColor": "var(--neutral-100)"
+                  },
+                  "label": {
+                    "format": "#,##0",
+                    "position": {
+                      "applyOffsetsOnlyWhenLabelVisible": true,
+                      "horizontalOffset": 1,
+                      "verticalOffset": 1
+                    },
+                    "style": {
+                      "classes": "",
+                      "fill": "var(--neutral-100)",
+                      "fontSize": 4
+                    },
+                    "visible": false
+                  },
+                  "rangesBar": {
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-50)",
+                      "width": 0.2
+                    },
+                    "verticalDisplay": true
+                  },
+                  "setpoint": {
+                    "color": "var(--neutral-10)",
+                    "stroke": {
+                      "color": "var(--info)",
+                      "width": 0.5
+                    },
+                    "value": null
+                  }
+                },
+                "numberFormat": "#,##0.00",
+                "rangesSelected": [
+                  "24HR",
+                  "7DAY"
+                ],
+                "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/CoolingCapacity",
+                "title": "Cooling Capacity",
+                "trend": {
+                  "desired": {
+                    "high": 0.63,
+                    "low": 0.57
+                  },
+                  "lineColor": "var(--callToAction)"
+                }
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Main"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "PowerUsageEffectiveness"
+            },
+            "position": {
+              "basis": "430px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "currentValueBasis": "auto",
+                "movingAnalogIndicator": {
+                  "alarms": {
+                    "inactiveRangeColor": "var(--neutral-60)",
+                    "level1": {
+                      "highHigh": null,
+                      "lowLow": null,
+                      "rangeColor": "var(--error)"
+                    },
+                    "level2": {
+                      "high": null,
+                      "low": null,
+                      "rangeColor": "var(--warningSecondary)"
+                    }
+                  },
+                  "defaultRangeColor": "var(--neutral-10)",
+                  "desired": {
+                    "high": 1.806,
+                    "low": 1.224,
+                    "rangeColor": "var(--callToAction)"
+                  },
+                  "indicator": {
+                    "color": "var(--label)",
+                    "reverse": false,
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-100)",
+                      "width": 0
+                    }
+                  },
+                  "interlocks": {
+                    "high": null,
+                    "low": null,
+                    "rangeColor": "var(--neutral-100)"
+                  },
+                  "label": {
+                    "format": "#,##0",
+                    "position": {
+                      "applyOffsetsOnlyWhenLabelVisible": true,
+                      "horizontalOffset": 1,
+                      "verticalOffset": 1
+                    },
+                    "style": {
+                      "classes": "",
+                      "fill": "var(--neutral-100)",
+                      "fontSize": 4
+                    },
+                    "visible": false
+                  },
+                  "rangesBar": {
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-50)",
+                      "width": 0.2
+                    },
+                    "verticalDisplay": true
+                  },
+                  "setpoint": {
+                    "color": "var(--neutral-10)",
+                    "stroke": {
+                      "color": "var(--info)",
+                      "width": 0.5
+                    },
+                    "value": null
+                  }
+                },
+                "numberFormat": "#,##0.00",
+                "rangesSelected": [
+                  "24HR",
+                  "7DAY"
+                ],
+                "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/PowerUsageEffectiveness",
+                "title": "Power Usage Effectiveness (PUE)",
+                "trend": {
+                  "desired": {
+                    "high": 1.806,
+                    "low": 1.224
+                  },
+                  "lineColor": "var(--callToAction)"
+                }
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Main"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "TotalFacilityLoad"
+            },
+            "position": {
+              "basis": "430px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "currentValueBasis": "115px",
+                "movingAnalogIndicator": {
+                  "alarms": {
+                    "inactiveRangeColor": "var(--neutral-60)",
+                    "level1": {
+                      "highHigh": null,
+                      "lowLow": null,
+                      "rangeColor": "var(--error)"
+                    },
+                    "level2": {
+                      "high": null,
+                      "low": null,
+                      "rangeColor": "var(--warningSecondary)"
+                    }
+                  },
+                  "defaultRangeColor": "var(--neutral-10)",
+                  "desired": {
+                    "high": 8720,
+                    "low": 7280,
+                    "rangeColor": "var(--callToAction)"
+                  },
+                  "indicator": {
+                    "color": "var(--label)",
+                    "reverse": false,
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-100)",
+                      "width": 0
+                    }
+                  },
+                  "interlocks": {
+                    "high": null,
+                    "low": null,
+                    "rangeColor": "var(--neutral-100)"
+                  },
+                  "label": {
+                    "format": "#,##0",
+                    "position": {
+                      "applyOffsetsOnlyWhenLabelVisible": true,
+                      "horizontalOffset": 1,
+                      "verticalOffset": 1
+                    },
+                    "style": {
+                      "classes": "",
+                      "fill": "var(--neutral-100)",
+                      "fontSize": 4
+                    },
+                    "visible": false
+                  },
+                  "rangesBar": {
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-50)",
+                      "width": 0.2
+                    },
+                    "verticalDisplay": true
+                  },
+                  "setpoint": {
+                    "color": "var(--neutral-10)",
+                    "stroke": {
+                      "color": "var(--info)",
+                      "width": 0.5
+                    },
+                    "value": null
+                  }
+                },
+                "numberFormat": "#,##0.0",
+                "rangesSelected": [
+                  "24HR",
+                  "7DAY"
+                ],
+                "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/ItLoadMw",
+                "title": "IT Load (MW)",
+                "trend": {
+                  "desired": {
+                    "high": 8720,
+                    "low": 7280
+                  },
+                  "lineColor": "var(--callToAction)"
+                }
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Main"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "UpsCapacity"
+            },
+            "position": {
+              "basis": "430px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "currentValueBasis": "auto",
+                "movingAnalogIndicator": {
+                  "alarms": {
+                    "inactiveRangeColor": "var(--neutral-60)",
+                    "level1": {
+                      "highHigh": null,
+                      "lowLow": null,
+                      "rangeColor": "var(--error)"
+                    },
+                    "level2": {
+                      "high": null,
+                      "low": null,
+                      "rangeColor": "var(--warningSecondary)"
+                    }
+                  },
+                  "defaultRangeColor": "var(--neutral-10)",
+                  "desired": {
+                    "high": 0.944,
+                    "low": 0.836,
+                    "rangeColor": "var(--callToAction)"
+                  },
+                  "indicator": {
+                    "color": "var(--label)",
+                    "reverse": false,
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-100)",
+                      "width": 0
+                    }
+                  },
+                  "interlocks": {
+                    "high": null,
+                    "low": null,
+                    "rangeColor": "var(--neutral-100)"
+                  },
+                  "label": {
+                    "format": "#,##0",
+                    "position": {
+                      "applyOffsetsOnlyWhenLabelVisible": true,
+                      "horizontalOffset": 1,
+                      "verticalOffset": 1
+                    },
+                    "style": {
+                      "classes": "",
+                      "fill": "var(--neutral-100)",
+                      "fontSize": 4
+                    },
+                    "visible": false
+                  },
+                  "rangesBar": {
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-50)",
+                      "width": 0.2
+                    },
+                    "verticalDisplay": true
+                  },
+                  "setpoint": {
+                    "color": "var(--neutral-10)",
+                    "stroke": {
+                      "color": "var(--info)",
+                      "width": 0.5
+                    },
+                    "value": null
+                  }
+                },
+                "numberFormat": "#,##0.00",
+                "rangesSelected": [
+                  "24HR",
+                  "7DAY"
+                ],
+                "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/UpsCapacity",
+                "title": "UPS Capacity",
+                "trend": {
+                  "desired": {
+                    "high": 0.944,
+                    "low": 0.836
+                  },
+                  "lineColor": "var(--callToAction)"
+                }
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Main"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "WaterUsageEffectiveness"
+            },
+            "position": {
+              "basis": "430px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "currentValueBasis": "auto",
+                "movingAnalogIndicator": {
+                  "alarms": {
+                    "inactiveRangeColor": "var(--neutral-60)",
+                    "level1": {
+                      "highHigh": null,
+                      "lowLow": null,
+                      "rangeColor": "var(--error)"
+                    },
+                    "level2": {
+                      "high": null,
+                      "low": null,
+                      "rangeColor": "var(--warningSecondary)"
+                    }
+                  },
+                  "defaultRangeColor": "var(--neutral-10)",
+                  "desired": {
+                    "high": 8.04,
+                    "low": 2.16,
+                    "rangeColor": "var(--callToAction)"
+                  },
+                  "indicator": {
+                    "color": "var(--label)",
+                    "reverse": false,
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-100)",
+                      "width": 0
+                    }
+                  },
+                  "interlocks": {
+                    "high": null,
+                    "low": null,
+                    "rangeColor": "var(--neutral-100)"
+                  },
+                  "label": {
+                    "format": "#,##0",
+                    "position": {
+                      "applyOffsetsOnlyWhenLabelVisible": true,
+                      "horizontalOffset": 1,
+                      "verticalOffset": 1
+                    },
+                    "style": {
+                      "classes": "",
+                      "fill": "var(--neutral-100)",
+                      "fontSize": 4
+                    },
+                    "visible": false
+                  },
+                  "rangesBar": {
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-50)",
+                      "width": 0.2
+                    },
+                    "verticalDisplay": true
+                  },
+                  "setpoint": {
+                    "color": "var(--neutral-10)",
+                    "stroke": {
+                      "color": "var(--info)",
+                      "width": 0.5
+                    },
+                    "value": null
+                  }
+                },
+                "numberFormat": "#,##0.00",
+                "rangesSelected": [
+                  "7DAY",
+                  "30DAY"
+                ],
+                "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/WaterUsageEffectiveness",
+                "title": "Water Usage Effectiveness (WUE)",
+                "trend": {
+                  "desired": {
+                    "high": 8.04,
+                    "low": 2.16
+                  },
+                  "lineColor": "var(--callToAction)"
+                }
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Main"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "ColdAisleAverageTemp"
+            },
+            "position": {
+              "basis": "430px",
+              "grow": 1
+            },
+            "propConfig": {
+              "custom.slaCaHigh": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/DataHall/SlaCaHighTemp"
+                  },
+                  "type": "tag"
+                }
+              },
+              "custom.slaCaLow": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/DataHall/SlaCaLowTemp"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.params.movingAnalogIndicator.desired.high": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.slaCaHigh"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.movingAnalogIndicator.desired.low": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.slaCaLow"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.trend.desired.high": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.slaCaHigh"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.trend.desired.low": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.slaCaLow"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "currentValueBasis": "auto",
+                "movingAnalogIndicator": {
+                  "alarms": {
+                    "inactiveRangeColor": "var(--neutral-60)",
+                    "level1": {
+                      "highHigh": null,
+                      "lowLow": null,
+                      "rangeColor": "var(--error)"
+                    },
+                    "level2": {
+                      "high": null,
+                      "low": null,
+                      "rangeColor": "var(--warningSecondary)"
+                    }
+                  },
+                  "defaultRangeColor": "var(--neutral-10)",
+                  "desired": {
+                    "rangeColor": "var(--callToAction)"
+                  },
+                  "indicator": {
+                    "color": "var(--label)",
+                    "reverse": false,
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-100)",
+                      "width": 0
+                    }
+                  },
+                  "interlocks": {
+                    "high": null,
+                    "low": null,
+                    "rangeColor": "var(--neutral-100)"
+                  },
+                  "label": {
+                    "format": "#,##0",
+                    "position": {
+                      "applyOffsetsOnlyWhenLabelVisible": true,
+                      "horizontalOffset": 1,
+                      "verticalOffset": 1
+                    },
+                    "style": {
+                      "classes": "",
+                      "fill": "var(--neutral-100)",
+                      "fontSize": 4
+                    },
+                    "visible": false
+                  },
+                  "rangesBar": {
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-50)",
+                      "width": 0.2
+                    },
+                    "verticalDisplay": true
+                  },
+                  "setpoint": {
+                    "color": "var(--neutral-10)",
+                    "stroke": {
+                      "color": "var(--info)",
+                      "width": 0.5
+                    },
+                    "value": null
+                  }
+                },
+                "numberFormat": "#,##0.0",
+                "rangesSelected": [
+                  "24HR",
+                  "7DAY"
+                ],
+                "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/DataHall/CaMeanTemperature",
+                "title": "Cold Aisle Average Temp",
+                "trend": {
+                  "desired": {},
+                  "lineColor": "var(--callToAction)"
+                }
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Main"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "CarbonUsageEffectiveness"
+            },
+            "position": {
+              "basis": "430px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "currentValueBasis": "auto",
+                "movingAnalogIndicator": {
+                  "alarms": {
+                    "inactiveRangeColor": "var(--neutral-60)",
+                    "level1": {
+                      "highHigh": null,
+                      "lowLow": null,
+                      "rangeColor": "var(--error)"
+                    },
+                    "level2": {
+                      "high": null,
+                      "low": null,
+                      "rangeColor": "var(--warningSecondary)"
+                    }
+                  },
+                  "defaultRangeColor": "var(--neutral-10)",
+                  "desired": {
+                    "high": 1.98,
+                    "low": 1.62,
+                    "rangeColor": "var(--callToAction)"
+                  },
+                  "indicator": {
+                    "color": "var(--label)",
+                    "reverse": false,
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-100)",
+                      "width": 0
+                    }
+                  },
+                  "interlocks": {
+                    "high": null,
+                    "low": null,
+                    "rangeColor": "var(--neutral-100)"
+                  },
+                  "label": {
+                    "format": "#,##0",
+                    "position": {
+                      "applyOffsetsOnlyWhenLabelVisible": true,
+                      "horizontalOffset": 1,
+                      "verticalOffset": 1
+                    },
+                    "style": {
+                      "classes": "",
+                      "fill": "var(--neutral-100)",
+                      "fontSize": 4
+                    },
+                    "visible": false
+                  },
+                  "rangesBar": {
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-50)",
+                      "width": 0.2
+                    },
+                    "verticalDisplay": true
+                  },
+                  "setpoint": {
+                    "color": "var(--neutral-10)",
+                    "stroke": {
+                      "color": "var(--info)",
+                      "width": 0.5
+                    },
+                    "value": null
+                  }
+                },
+                "numberFormat": "#,##0.00",
+                "rangesSelected": [
+                  "7DAY",
+                  "30DAY"
+                ],
+                "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/CarbonUsageEffectiveness",
+                "title": "Carbon Usage Effectiveness (CUE)",
+                "trend": {
+                  "desired": {
+                    "high": 1.98,
+                    "low": 1.62
+                  },
+                  "lineColor": "var(--callToAction)"
+                }
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Main"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "EnergyEfficiencyRatio"
+            },
+            "position": {
+              "basis": "430px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "currentValueBasis": "auto",
+                "movingAnalogIndicator": {
+                  "alarms": {
+                    "inactiveRangeColor": "var(--neutral-60)",
+                    "level1": {
+                      "highHigh": null,
+                      "lowLow": null,
+                      "rangeColor": "var(--error)"
+                    },
+                    "level2": {
+                      "high": null,
+                      "low": null,
+                      "rangeColor": "var(--warningSecondary)"
+                    }
+                  },
+                  "defaultRangeColor": "var(--neutral-10)",
+                  "desired": {
+                    "high": 8.1,
+                    "low": 7.8,
+                    "rangeColor": "var(--callToAction)"
+                  },
+                  "indicator": {
+                    "color": "var(--label)",
+                    "reverse": false,
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-100)",
+                      "width": 0
+                    }
+                  },
+                  "interlocks": {
+                    "high": null,
+                    "low": null,
+                    "rangeColor": "var(--neutral-100)"
+                  },
+                  "label": {
+                    "format": "#,##0",
+                    "position": {
+                      "applyOffsetsOnlyWhenLabelVisible": true,
+                      "horizontalOffset": 1,
+                      "verticalOffset": 1
+                    },
+                    "style": {
+                      "classes": "",
+                      "fill": "var(--neutral-100)",
+                      "fontSize": 4
+                    },
+                    "visible": false
+                  },
+                  "rangesBar": {
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-50)",
+                      "width": 0.2
+                    },
+                    "verticalDisplay": true
+                  },
+                  "setpoint": {
+                    "color": "var(--neutral-10)",
+                    "stroke": {
+                      "color": "var(--info)",
+                      "width": 0.5
+                    },
+                    "value": null
+                  }
+                },
+                "numberFormat": "#,##0.000",
+                "rangesSelected": [
+                  "24HR",
+                  "7DAY"
+                ],
+                "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/EnergyEfficiencyRatio",
+                "title": "Energy Efficiency Ratio",
+                "trend": {
+                  "desired": {
+                    "high": 8.1,
+                    "low": 7.8
+                  },
+                  "lineColor": "var(--callToAction)"
+                }
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Main"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "ColdAisleMaximumTemp"
+            },
+            "position": {
+              "basis": "430px",
+              "grow": 1
+            },
+            "propConfig": {
+              "custom.slaCaHigh": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/DataHall/SlaCaHighTemp"
+                  },
+                  "type": "tag"
+                }
+              },
+              "custom.slaCaLow": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/DataHall/SlaCaLowTemp"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.params.movingAnalogIndicator.desired.high": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.slaCaHigh"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.movingAnalogIndicator.desired.low": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.slaCaLow"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.trend.desired.high": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.slaCaHigh"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.trend.desired.low": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.slaCaLow"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "currentValueBasis": "auto",
+                "movingAnalogIndicator": {
+                  "alarms": {
+                    "inactiveRangeColor": "var(--neutral-60)",
+                    "level1": {
+                      "highHigh": null,
+                      "lowLow": null,
+                      "rangeColor": "var(--error)"
+                    },
+                    "level2": {
+                      "high": null,
+                      "low": null,
+                      "rangeColor": "var(--warningSecondary)"
+                    }
+                  },
+                  "defaultRangeColor": "var(--neutral-10)",
+                  "desired": {
+                    "rangeColor": "var(--callToAction)"
+                  },
+                  "indicator": {
+                    "color": "var(--label)",
+                    "reverse": false,
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-100)",
+                      "width": 0
+                    }
+                  },
+                  "interlocks": {
+                    "high": null,
+                    "low": null,
+                    "rangeColor": "var(--neutral-100)"
+                  },
+                  "label": {
+                    "format": "#,##0",
+                    "position": {
+                      "applyOffsetsOnlyWhenLabelVisible": true,
+                      "horizontalOffset": 1,
+                      "verticalOffset": 1
+                    },
+                    "style": {
+                      "classes": "",
+                      "fill": "var(--neutral-100)",
+                      "fontSize": 4
+                    },
+                    "visible": false
+                  },
+                  "rangesBar": {
+                    "size": 5,
+                    "stroke": {
+                      "color": "var(--neutral-50)",
+                      "width": 0.2
+                    },
+                    "verticalDisplay": true
+                  },
+                  "setpoint": {
+                    "color": "var(--neutral-10)",
+                    "stroke": {
+                      "color": "var(--info)",
+                      "width": 0.5
+                    },
+                    "value": null
+                  }
+                },
+                "numberFormat": "#,##0.0",
+                "rangesSelected": [
+                  "24HR",
+                  "7DAY"
+                ],
+                "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/DataHall/HottestCaTemperature",
+                "title": "Cold Aisle Maximum Temp",
+                "trend": {
+                  "desired": {},
+                  "lineColor": "var(--callToAction)"
+                }
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Main"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "KpiTrends"
+        },
+        "position": {
+          "basis": "1040px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.style.gap": {
+            "binding": {
+              "config": {
+                "path": "view.custom.gap"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.gap": {
+        "binding": {
+          "config": {
+            "path": "view.custom.gap"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "row-reverse",
+      "style": {
+        "padding": "10px"
+      },
+      "wrap": "wrap"
+    },
+    "type": "ia.container.flex"
+  }
+}

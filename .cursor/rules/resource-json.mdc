@@ -1,0 +1,78 @@
+---
+description: Ensure resource.json files are created for Ignition assets
+globs:
+  - "ignition-projects/**/*.py"
+  - "ignition-projects/**/view.json"
+  - "ignition-projects/**/*.sql"
+alwaysApply: true
+---
+
+# Resource JSON Requirements for Ignition Assets
+
+## Overview
+Every Ignition asset directory (leaf directory containing code files) MUST have a `resource.json` file. This file is required for:
+- Python script modules
+- Perspective views
+- WebDev resources
+- Global properties
+- Any other Ignition project assets
+
+## Important Rules
+1. **Only leaf directories** should have `resource.json` files
+2. **Never add `resource.json`** to intermediate directories
+3. A leaf directory is one that contains asset files (`.py`, `.json`, `.sql`, etc.) but no subdirectories with assets
+
+## Standard Format
+```json
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 2,
+    "lastModificationSignature": "SHA256_HASH",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2025-09-16T18:26:15Z"
+    }
+  }
+}
+```
+
+## File List Rules
+The `files` array should include:
+- All Python files (`.py`)
+- View definition files (`view.json`)
+- Data files (`.bin`, `.sql`)
+- Web resource files (`.html`, `.css`, `.js`)
+
+The `files` array should NOT include:
+- `resource.json` itself
+- `project.json`
+- System files (`.DS_Store`, `Thumbs.db`)
+
+## Automation
+Use the `ensure-resource-json.py` script to automatically:
+- Scan for asset directories missing `resource.json`
+- Create properly formatted `resource.json` files
+- Update existing files when asset files change
+
+Run: `python3 ensure-resource-json.py --path ignition-projects`
+
+## Directory Structure Guidelines
+
+### Leaf vs Intermediate Directories
+- **Leaf directories**: Contain actual asset files (`.py`, `.json`, etc.) and should have `resource.json`
+- **Intermediate directories**: Only contain subdirectories and should NOT have `resource.json`
+
+### Code File Placement
+- **Never place `code.py`** in directories that contain subdirectories
+- Code files should only exist in leaf directories alongside their `resource.json`
+- If a directory has both subdirectories and code files, restructure to separate concerns
+
+### Example Structure
+

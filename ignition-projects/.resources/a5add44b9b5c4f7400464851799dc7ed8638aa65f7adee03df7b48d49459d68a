@@ -1,0 +1,66 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "MobileMain"
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Architecture/Mobile/MobileMain"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DesktopMain"
+        },
+        "position": {
+          "size": "large"
+        },
+        "props": {
+          "params": {
+            "setup": {
+              "backends": [
+                {
+                  "backup": "Backend - Backup",
+                  "master": "Backend - Master"
+                }
+              ],
+              "devices": [
+                {
+                  "device": "value",
+                  "ioServer": "value",
+                  "key": "value"
+                }
+              ],
+              "frontends": [
+                "Frontend 1",
+                "Frontend 2"
+              ],
+              "io": [
+                "IO 1",
+                "IO 2",
+                "IO 3",
+                "IO 4"
+              ],
+              "spoof": true,
+              "spoofFolder": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/"
+            }
+          },
+          "path": "Exchange/DataCenter/Architecture/Desktop/DesktopMain"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "breakpoint": 1800
+    },
+    "type": "ia.container.breakpt"
+  }
+}

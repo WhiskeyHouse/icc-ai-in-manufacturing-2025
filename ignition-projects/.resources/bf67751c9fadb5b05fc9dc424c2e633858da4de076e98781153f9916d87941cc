@@ -1,0 +1,82 @@
+{
+  "custom": {},
+  "params": {
+    "mobile": false,
+    "priorityFolders": [
+      "Status"
+    ],
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/XFR/XFR1A"
+  },
+  "propConfig": {
+    "params.mobile": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.priorityFolders": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 620,
+      "width": 611
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "DynamicPopup"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.mobile": {
+            "binding": {
+              "config": {
+                "path": "view.params.mobile"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.priorityFolders": {
+            "binding": {
+              "config": {
+                "path": "view.params.priorityFolders"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.tagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "loading": {
+            "order": "with-parent"
+          },
+          "path": "Exchange/DynamicPopup/DynamicPopup"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

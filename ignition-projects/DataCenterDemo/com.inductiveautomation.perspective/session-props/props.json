@@ -1,0 +1,901 @@
+{
+  "custom": {
+    "alarmsPage": {
+      "currentTab": "alarmStatus",
+      "journal": {
+        "columns": {
+          "ackNotes": {
+            "enabled": false,
+            "order": 12,
+            "sort": "none",
+            "strictWidth": false,
+            "width": ""
+          },
+          "ackUser": {
+            "enabled": false,
+            "order": 11,
+            "sort": "none",
+            "strictWidth": false,
+            "width": ""
+          },
+          "displayPath": {
+            "enabled": false,
+            "order": 7,
+            "sort": "none",
+            "strictWidth": false,
+            "width": 200
+          },
+          "eventId": {
+            "enabled": false,
+            "order": 1,
+            "sort": "none",
+            "strictWidth": false,
+            "width": 200
+          },
+          "eventState": {
+            "enabled": true,
+            "order": 4,
+            "sort": "none",
+            "strictWidth": false,
+            "width": 110
+          },
+          "eventTime": {
+            "enabled": true,
+            "order": 0,
+            "sort": "descending",
+            "strictWidth": false,
+            "width": 150
+          },
+          "eventValue": {
+            "enabled": false,
+            "order": 9,
+            "sort": "none",
+            "strictWidth": false,
+            "width": 150
+          },
+          "isSystemEvent": {
+            "enabled": false,
+            "order": 10,
+            "sort": "none",
+            "strictWidth": false,
+            "width": 200
+          },
+          "label": {
+            "enabled": true,
+            "order": 8,
+            "sort": "none",
+            "strictWidth": false,
+            "width": ""
+          },
+          "name": {
+            "enabled": true,
+            "order": 2,
+            "sort": "none",
+            "strictWidth": false,
+            "width": 200
+          },
+          "priority": {
+            "enabled": true,
+            "order": 5,
+            "sort": "none",
+            "strictWidth": false,
+            "width": 100
+          },
+          "source": {
+            "enabled": true,
+            "order": 3,
+            "sort": "none",
+            "strictWidth": false,
+            "width": 150
+          },
+          "state": {
+            "enabled": false,
+            "order": 6,
+            "sort": "none",
+            "strictWidth": false,
+            "width": 150
+          }
+        },
+        "dateRange": {
+          "historical": {
+            "endDate": null,
+            "startDate": null
+          },
+          "mode": "realtime",
+          "realtime": {
+            "interval": 8,
+            "unit": "hours"
+          }
+        },
+        "filter": {
+          "events": {
+            "acked": true,
+            "active": true,
+            "cleared": true,
+            "disabled": false,
+            "enabled": false,
+            "system": false
+          },
+          "priorities": {
+            "critical": true,
+            "diagnostic": false,
+            "high": true,
+            "low": true,
+            "medium": true
+          },
+          "text": ""
+        }
+      },
+      "status": {
+        "columns": {
+          "active": {
+            "ackNotes": {
+              "enabled": false,
+              "order": 15,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "ackPipeline": {
+              "enabled": false,
+              "order": 16,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "ackTime": {
+              "enabled": false,
+              "order": 13,
+              "sort": "none",
+              "strictWidth": false,
+              "width": 150
+            },
+            "ackUser": {
+              "enabled": false,
+              "order": 14,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "activePipeline": {
+              "enabled": false,
+              "order": 17,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "activeTime": {
+              "enabled": true,
+              "order": 0,
+              "sort": "none",
+              "strictWidth": false,
+              "width": 150
+            },
+            "clearPipeline": {
+              "enabled": false,
+              "order": 19,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "clearTime": {
+              "enabled": false,
+              "order": 18,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "deadband": {
+              "enabled": false,
+              "order": 20,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "displayPath": {
+              "enabled": true,
+              "order": 1,
+              "sort": "none",
+              "strictWidth": false,
+              "width": 200
+            },
+            "eventId": {
+              "enabled": false,
+              "order": 7,
+              "sort": "none",
+              "strictWidth": false,
+              "width": 150
+            },
+            "eventValue": {
+              "enabled": false,
+              "order": 8,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "isAcked": {
+              "enabled": false,
+              "order": 11,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "isActive": {
+              "enabled": false,
+              "order": 10,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "isClear": {
+              "enabled": false,
+              "order": 12,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "label": {
+              "enabled": true,
+              "order": 5,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "name": {
+              "enabled": true,
+              "order": 6,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "notes": {
+              "enabled": false,
+              "order": 9,
+              "sort": "none",
+              "strictWidth": false,
+              "width": ""
+            },
+            "priority": {
+              "enabled": false,
+              "order": 2,
+              "sort": "descending",
+              "strictWidth": false,
+              "width": 150
+            },
+            "source": {
+              "enabled": false,
+              "order": 4,
+              "sort": "none",
+              "strictWidth": false,
+              "width": 200
+            },
+            "state": {
+              "enabled": true,
+              "order": 3,
+              "sort": "descending",
+              "strictWidth": false,
+              "width": ""
+            }
+          },
+          "shelved": {
+            "expires": {
+              "enabled": true,
+              "order": 0,
+              "sort": "descending",
+              "strictWidth": false,
+              "width": 100
+            },
+            "shelvedBy": {
+              "enabled": true,
+              "order": 1,
+              "sort": "none",
+              "strictWidth": false,
+              "width": 100
+            },
+            "sourcePath": {
+              "enabled": true,
+              "order": 2,
+              "sort": "none",
+              "strictWidth": false,
+              "width": 200
+            }
+          }
+        },
+        "filters": {
+          "active": {
+            "priorities": {
+              "critical": true,
+              "diagnostic": false,
+              "high": true,
+              "low": true,
+              "medium": true
+            },
+            "states": {
+              "activeAcked": true,
+              "activeUnacked": true,
+              "clearAcked": false,
+              "clearUnacked": true
+            },
+            "text": ""
+          },
+          "shelved": {
+            "text": ""
+          }
+        }
+      }
+    },
+    "breakpoint": 1200,
+    "featureFlags": {
+      "homeButton": {
+        "description": "Show home buttons for navigating back to the Public Demo Features project",
+        "value": false
+      }
+    },
+    "powerChart": {
+      "axes": [
+        {
+          "color": "#757A7F",
+          "dataFormat": "0,0.##",
+          "grid": {
+            "color": "",
+            "dashArray": 0,
+            "opacity": 0.9,
+            "style": {
+              "classes": ""
+            },
+            "visible": false
+          },
+          "label": {
+            "font": {
+              "color": "#757A7F",
+              "size": 10
+            },
+            "offset": 0,
+            "style": {
+              "classes": ""
+            },
+            "text": ""
+          },
+          "name": "Default",
+          "position": "left",
+          "range": {
+            "auto": true,
+            "max": "",
+            "min": ""
+          },
+          "style": {
+            "classes": ""
+          },
+          "tick": {
+            "color": "#757A7F",
+            "count": "Auto",
+            "label": {
+              "font": {
+                "color": "#757A7F",
+                "size": 10
+              },
+              "format": "Auto",
+              "style": {
+                "classes": ""
+              }
+            },
+            "style": {
+              "classes": ""
+            }
+          },
+          "width": 60
+        }
+      ],
+      "config": {
+        "measureOfTime": "hours",
+        "mode": "realtime",
+        "rangeEndDate": {
+          "$": [
+            "ts",
+            0,
+            1736540617578
+          ],
+          "$ts": 1736540137555
+        },
+        "rangeStartDate": {
+          "$": [
+            "ts",
+            0,
+            1736540617578
+          ],
+          "$ts": 1736511817555
+        },
+        "unitOfTime": 8,
+        "visibility": {
+          "showTagBrowser": false
+        }
+      },
+      "dataColumns": {
+        "penControl": {
+          "average": true,
+          "axis": false,
+          "currentValue": true,
+          "maximum": true,
+          "minimum": true,
+          "plot": false,
+          "xTrace": true
+        },
+        "rangeSelection": {
+          "average": true,
+          "delta": true,
+          "first": true,
+          "last": true,
+          "lcl": true,
+          "maximum": true,
+          "median": true,
+          "minimum": true,
+          "standardDeviation": true,
+          "sum": true,
+          "ucl": true
+        }
+      },
+      "interaction": {
+        "annotation": {
+          "dot": {
+            "color": "#757A7F",
+            "opacity": 1,
+            "radius": 3,
+            "style": {
+              "classes": ""
+            },
+            "visible": true
+          },
+          "infoBox": {
+            "dateFormat": "YYYY/MM/DD",
+            "fill": {
+              "color": "#FAFAFB",
+              "opacity": 0.9
+            },
+            "font": {
+              "color": "",
+              "size": 11,
+              "style": {
+                "classes": ""
+              }
+            },
+            "icon": {
+              "fill": {
+                "color": "#929597",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#929597",
+                "dashArray": 0,
+                "opacity": 0,
+                "width": 0
+              },
+              "style": {
+                "classes": ""
+              }
+            },
+            "showTime": true,
+            "stroke": {
+              "color": "#757A7F",
+              "dashArray": 0,
+              "opacity": 0.9,
+              "width": 1
+            },
+            "style": {
+              "classes": ""
+            },
+            "timeFormat": "h:mm A",
+            "visible": true,
+            "width": "auto"
+          },
+          "line": {
+            "color": "#757A7F",
+            "dashArray": 0,
+            "opacity": 0.9,
+            "style": {
+              "classes": ""
+            },
+            "visible": true,
+            "width": 1
+          }
+        },
+        "chartZoomLevel": 1,
+        "fullscreen": false,
+        "mode": "xTrace",
+        "panAndZoom": {
+          "freeRange": false
+        },
+        "rangeBrush": {
+          "active": {
+            "color": "#0C7BB3",
+            "opacity": 0.3,
+            "style": {
+              "classes": ""
+            }
+          },
+          "inactive": {
+            "color": "#757A7F",
+            "opacity": 0.3,
+            "style": {
+              "classes": ""
+            }
+          },
+          "values": []
+        },
+        "rangeZoomLevel": 1,
+        "xTrace": {
+          "infoBox": {
+            "dataFormat": "0,0.##",
+            "dateFormat": "YYYY/MM/DD",
+            "fill": {
+              "color": "var(--neutral-20)",
+              "opacity": 0.8
+            },
+            "font": {
+              "color": "var(--label)",
+              "size": 11,
+              "style": {
+                "classes": ""
+              }
+            },
+            "showTime": true,
+            "stroke": {
+              "color": "var(--label)",
+              "dashArray": 0,
+              "opacity": 0.5,
+              "width": 1
+            },
+            "style": {
+              "classes": ""
+            },
+            "timeFormat": "HH:mm:ss",
+            "visible": true,
+            "width": "auto"
+          },
+          "line": {
+            "color": "#757A7F",
+            "dashArray": 0,
+            "opacity": 0.5,
+            "style": {
+              "classes": ""
+            },
+            "visible": true,
+            "width": 1
+          },
+          "values": []
+        }
+      },
+      "pens": [
+        {
+          "axis": "Default",
+          "data": {
+            "aggregateMode": "default"
+          },
+          "display": {
+            "breakLine": true,
+            "interpolation": "curveLinear",
+            "radius": 3,
+            "styles": {
+              "highlighted": {
+                "fill": {
+                  "color": "var(--qual-5)",
+                  "opacity": 1
+                },
+                "stroke": {
+                  "color": "var(--qual-5)",
+                  "dashArray": 0,
+                  "opacity": 1,
+                  "width": 2
+                }
+              },
+              "muted": {
+                "fill": {
+                  "color": "var(--qual-5)",
+                  "opacity": 0.4
+                },
+                "stroke": {
+                  "color": "var(--qual-5)",
+                  "dashArray": 0,
+                  "opacity": 0.4,
+                  "width": 2
+                }
+              },
+              "normal": {
+                "fill": {
+                  "color": "var(--qual-5)",
+                  "opacity": 0.8
+                },
+                "stroke": {
+                  "color": "var(--qual-5)",
+                  "dashArray": 0,
+                  "opacity": 1,
+                  "width": 2
+                }
+              },
+              "selected": {
+                "fill": {
+                  "color": "var(--qual-5)",
+                  "opacity": 1
+                },
+                "stroke": {
+                  "color": "var(--qual-5)",
+                  "dashArray": 0,
+                  "opacity": 1,
+                  "width": 2
+                }
+              }
+            },
+            "type": "line"
+          },
+          "enabled": true,
+          "name": "Power Usage Effectiveness",
+          "plot": 0,
+          "selectable": true,
+          "visible": true
+        },
+        {
+          "axis": "Default",
+          "data": {
+            "aggregateMode": "default"
+          },
+          "display": {
+            "breakLine": true,
+            "interpolation": "curveLinear",
+            "radius": 3,
+            "styles": {
+              "highlighted": {
+                "fill": {
+                  "color": "var(--qual-2)",
+                  "opacity": 1
+                },
+                "stroke": {
+                  "color": "var(--qual-2)",
+                  "dashArray": 0,
+                  "opacity": 1,
+                  "width": 2
+                }
+              },
+              "muted": {
+                "fill": {
+                  "color": "var(--qual-2)",
+                  "opacity": 0.4
+                },
+                "stroke": {
+                  "color": "var(--qual-2)",
+                  "dashArray": 0,
+                  "opacity": 0.4,
+                  "width": 2
+                }
+              },
+              "normal": {
+                "fill": {
+                  "color": "var(--qual-2)",
+                  "opacity": 0.8
+                },
+                "stroke": {
+                  "color": "var(--qual-2)",
+                  "dashArray": 0,
+                  "opacity": 1,
+                  "width": 2
+                }
+              },
+              "selected": {
+                "fill": {
+                  "color": "var(--qual-2)",
+                  "opacity": 1
+                },
+                "stroke": {
+                  "color": "var(--qual-2)",
+                  "dashArray": 0,
+                  "opacity": 1,
+                  "width": 2
+                }
+              }
+            },
+            "type": "line"
+          },
+          "enabled": true,
+          "name": "Water Usage Effectiveness",
+          "plot": 1,
+          "selectable": true,
+          "visible": true
+        },
+        {
+          "axis": "Default",
+          "data": {
+            "aggregateMode": "default"
+          },
+          "display": {
+            "breakLine": true,
+            "interpolation": "curveLinear",
+            "radius": 3,
+            "styles": {
+              "highlighted": {
+                "fill": {
+                  "color": "var(--qual-7)",
+                  "opacity": 1
+                },
+                "stroke": {
+                  "color": "var(--qual-7)",
+                  "dashArray": 0,
+                  "opacity": 1,
+                  "width": 2
+                }
+              },
+              "muted": {
+                "fill": {
+                  "color": "var(--qual-7)",
+                  "opacity": 0.4
+                },
+                "stroke": {
+                  "color": "var(--qual-7)",
+                  "dashArray": 0,
+                  "opacity": 0.4,
+                  "width": 2
+                }
+              },
+              "normal": {
+                "fill": {
+                  "color": "var(--qual-7)",
+                  "opacity": 0.8
+                },
+                "stroke": {
+                  "color": "var(--qual-7)",
+                  "dashArray": 0,
+                  "opacity": 1,
+                  "width": 2
+                }
+              },
+              "selected": {
+                "fill": {
+                  "color": "var(--qual-7)",
+                  "opacity": 1
+                },
+                "stroke": {
+                  "color": "var(--qual-7)",
+                  "dashArray": 0,
+                  "opacity": 1,
+                  "width": 2
+                }
+              }
+            },
+            "type": "line"
+          },
+          "enabled": true,
+          "name": "Carbon Usage Effectiveness",
+          "plot": 2,
+          "selectable": true,
+          "visible": true
+        }
+      ],
+      "plots": [
+        {
+          "color": "var(--neutral-10)",
+          "markers": [],
+          "relativeWeight": 1,
+          "style": {
+            "classes": ""
+          }
+        },
+        {
+          "color": "var(--neutral-10)",
+          "markers": [],
+          "relativeWeight": 1,
+          "style": {
+            "classes": ""
+          }
+        },
+        {
+          "color": "var(--neutral-10)",
+          "markers": [],
+          "relativeWeight": 1,
+          "style": {
+            "classes": ""
+          }
+        }
+      ]
+    }
+  },
+  "propConfig": {
+    "custom.gatewayName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "direct",
+          "tagPath": "[System]Gateway/SystemName"
+        },
+        "type": "tag"
+      }
+    },
+    "custom.powerChart.pens[0].data.source": {
+      "binding": {
+        "config": {
+          "expression": "\"histprov:DataCenter:/drv:\" + {session.custom.gatewayName} + \":DataCenterDemo:/tag:exchange/datacenterdemo/site1/site/powerusageeffectiveness\""
+        },
+        "type": "expr"
+      }
+    },
+    "custom.powerChart.pens[1].data.source": {
+      "binding": {
+        "config": {
+          "expression": "\"histprov:DataCenter:/drv:\" + {session.custom.gatewayName} + \":DataCenterDemo:/tag:exchange/datacenterdemo/site1/site/waterusageeffectiveness\""
+        },
+        "type": "expr"
+      }
+    },
+    "custom.powerChart.pens[2].data.source": {
+      "binding": {
+        "config": {
+          "expression": "\"histprov:DataCenter:/drv:\" + {session.custom.gatewayName} + \":DataCenterDemo:/tag:exchange/datacenterdemo/site1/site/carbonusageeffectiveness\""
+        },
+        "type": "expr"
+      }
+    },
+    "custom.projectName": {
+      "binding": {
+        "config": {
+          "expression": "runScript(\"system.util.getProjectName\", 0)"
+        },
+        "type": "expr"
+      }
+    },
+    "props.auth": {
+      "access": "PRIVATE",
+      "persistent": false
+    },
+    "props.device.accelerometer": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.identifier": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.timezone": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.type": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.userAgent": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.gateway": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.geolocation.data": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.geolocation.permissionGranted": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.host": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.id": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.lastActivity": {
+      "access": "SYSTEM",
+      "persistent": false
+    }
+  },
+  "props": {
+    "address": "172.18.0.2",
+    "appBar": {
+      "togglePosition": "hidden"
+    },
+    "device": {},
+    "geolocation": {},
+    "locale": "en-US",
+    "theme": "dark",
+    "timeZoneId": "America/Los_Angeles"
+  }
+}

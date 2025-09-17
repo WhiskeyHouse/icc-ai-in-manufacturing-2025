@@ -1,0 +1,269 @@
+{
+  "custom": {
+    "alarmFilter": "**"
+  },
+  "params": {
+    "mobile": false,
+    "priorityFolders": [],
+    "tagPath": ""
+  },
+  "propConfig": {
+    "custom.alarmFilter": {
+      "binding": {
+        "config": {
+          "expression": "\"*\" + substring({view.params.tagPath}, indexOf({view.params.tagPath}, \"]\") + 1) + \"*\""
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.mobile": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.priorityFolders": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 795,
+      "width": 1124
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "AlarmStatusTable"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.mobile}, \"25%\", \"200px\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.filters.active.conditions.source": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.alarmFilter"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "columns": {
+                "active": {
+                  "activeTime": {
+                    "strictWidth": true
+                  },
+                  "displayPath": {
+                    "strictWidth": true,
+                    "width": 700
+                  },
+                  "priority": {
+                    "strictWidth": true,
+                    "width": 80
+                  },
+                  "source": {
+                    "enabled": false
+                  },
+                  "state": {
+                    "enabled": false
+                  }
+                }
+              },
+              "enableShelve": false,
+              "enableUnshelve": false,
+              "filters": {
+                "active": {
+                  "conditions": {},
+                  "states": {
+                    "clearUnacked": false
+                  }
+                }
+              },
+              "pager": {
+                "enabled": false
+              },
+              "toolbar": {
+                "enableActiveTab": false,
+                "enableConfiguration": false,
+                "enableFilter": false,
+                "enableFilterResults": false,
+                "enablePreFilters": false,
+                "enableShelvedTab": false
+              }
+            },
+            "type": "ia.display.alarmstatustable"
+          },
+          {
+            "meta": {
+              "name": "Points"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.mobile}, \"auto\", \"498px\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "position.shrink": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.mobile}, 0, 1)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.instances": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "priorityFolders": "{view.params.priorityFolders}",
+                      "tagPath": "{view.params.tagPath}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\ttagPath \u003d value.tagPath\n\tpriorityFolders \u003d value.priorityFolders\n\t\n\tif tagPath \u003d\u003d \"\":\n\t\treturn []\n\n\tfolders \u003d {str(tag.get(\"fullPath\")).rsplit(\"/\",1)[1]: tag.get(\"fullPath\") for tag in system.tag.browse(tagPath)}\n\t\n\tpriorityInstances \u003d [{\"folderPath\": folders[priorityFolder]} for priorityFolder in priorityFolders if priorityFolder in folders]\n\tnonPriorityInstances \u003d [{\"folderPath\": fullPath} for folder, fullPath in folders.items() if folder not in priorityFolders]\n\t\n\treturn priorityInstances + nonPriorityInstances",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              },
+              "props.wrap": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.mobile}, \"nowrap\", \"wrap\")"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "alignItems": "center",
+              "direction": "column",
+              "elementPosition": {
+                "basis": "auto",
+                "grow": 0
+              },
+              "loading": {
+                "order": "with-parent"
+              },
+              "path": "Exchange/DynamicPopup/Framework/Data/DataBucket",
+              "useDefaultViewHeight": false
+            },
+            "type": "ia.display.flex-repeater"
+          }
+        ],
+        "meta": {
+          "name": "Data"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": true,
+                    "id": "{view.params.tagPath}",
+                    "modal": false,
+                    "overlayDismiss": false,
+                    "resizable": true,
+                    "showCloseIcon": true,
+                    "type": "close",
+                    "viewPath": "",
+                    "viewportBound": false
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "marginBottom": 4,
+                "marginTop": 4
+              },
+              "text": "Close"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Footer"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.mobile}, \"60px\", \"50px\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "--neutral-10"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

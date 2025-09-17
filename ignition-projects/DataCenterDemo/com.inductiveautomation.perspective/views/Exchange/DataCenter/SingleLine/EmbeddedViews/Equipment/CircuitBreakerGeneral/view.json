@@ -1,0 +1,327 @@
+{
+  "custom": {
+    "alarmPriority": 1,
+    "closed": true,
+    "deviceName": "Breaker1A",
+    "display": "open",
+    "normally": {
+      "display": true,
+      "value": "N.C."
+    },
+    "tripped": false
+  },
+  "params": {
+    "reverse": false,
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/Breaker/Breaker1A",
+    "unmanaged": false,
+    "vertical": true
+  },
+  "propConfig": {
+    "custom.alarmPriority": {
+      "persistent": true
+    },
+    "custom.closed": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}/Status/IsBreakerClosed"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceName": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.rsplit(\"/\",1)[1]",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.normally": {
+      "persistent": true
+    },
+    "custom.status": {
+      "binding": {
+        "config": {
+          "struct": {
+            "closed": "{view.custom.closed}",
+            "tripped": "{view.custom.tripped}",
+            "unmanaged": "{view.params.unmanaged}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tif value[\u0027unmanaged\u0027]:\n\t\treturn \u0027unmanaged\u0027\n\telse:\t\n\t\tif value[\u0027tripped\u0027]:\n\t\t\treturn \u0027tripped\u0027\n\t\telse:\n\t\t\tif value[\u0027closed\u0027]:\n\t\t\t\treturn \u0027closed\u0027\n\t\t\telse:\n\t\t\t\treturn \u0027open\u0027",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.tripped": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}/Status/IsBreakerTripped"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.reverse": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.unmanaged": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.vertical": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 98,
+      "width": 59
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Status"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.status"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn value.upper()",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Normally"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.normally.display"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.normally.value"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-70)"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Status"
+        },
+        "position": {
+          "basis": "14px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.unmanaged}\u003dFalse"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "overflow": "visible",
+            "user-select": "none"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "clipPathUnits": "userSpaceOnUse",
+                  "elements": [
+                    {
+                      "d": "M 0,1224.0599 H 792 V 0.05994 H 0 Z",
+                      "id": "path8065-4",
+                      "name": "path8065-4",
+                      "transform": "translate(-5.0000006e-7,2.1000001e-5)",
+                      "type": "path"
+                    }
+                  ],
+                  "id": "clipPath8065-6",
+                  "name": "clipPath8065-6",
+                  "type": "clipPath"
+                }
+              ],
+              "id": "defs1",
+              "name": "defs1",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m 406.06201,669.22406 c -0.014,0.91895 -0.76999,1.64996 -1.68698,1.63593 -0.89801,-0.0129 -1.62302,-0.73798 -1.63602,-1.63593",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "CB",
+                  "name": "CB",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "width": "0.3"
+                  },
+                  "transform": "matrix(0,0.35277777,0.35277777,0,-216.88691,-138.3434)",
+                  "type": "path"
+                }
+              ],
+              "id": "layer1",
+              "name": "layer1",
+              "transform": "translate(-19.147545,-3.6810532)",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "overflow": "visible"
+          },
+          "viewBox": "0 0 0.68302281 1.2781138"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\tif not self.view.params.unmanaged:\n\t\tsystem.perspective.openPopup(self.view.params.tagPath, \u0027Exchange/DataCenter/Faceplates/CircuitBreaker\u0027, params \u003d {\u0027tagPath\u0027: self.view.params.tagPath}, title \u003d self.view.custom.deviceName, resizable \u003d True)\n\t\tpayload \u003d {\n\t\t\t  \u0027command\u0027 : \u0027openPopup\u0027\n\t\t\t, \u0027self\u0027: self\n\t\t\t, \u0027event\u0027: event\n\t\t\t, \u0027parameters\u0027: {\n\t\t\t\t\u0027id\u0027 : self.view.params.tagPath\n\t\t\t\t, \u0027view\u0027:\u0027Exchange/DataCenter/Faceplates/CircuitBreaker\u0027\n\t\t\t\t, \u0027params\u0027: {\u0027tagPath\u0027: self.view.params.tagPath}\n\t\t\t\t, \u0027title\u0027 : self.view.custom.deviceName\n\t\t\t\t, \u0027resizable\u0027 : True\n\t\t\t}\n\t\t}\n\t\tsystem.perspective.sendMessage(\u0027pan-zoom-iframe-clicked\u0027, payload, scope \u003d \u0027session\u0027)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root",
+      "tooltip": {
+        "location": "top",
+        "text": "Breaker is unmanaged"
+      }
+    },
+    "propConfig": {
+      "meta.tooltip.enabled": {
+        "binding": {
+          "config": {
+            "expression": "{view.params.unmanaged}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.direction": {
+        "binding": {
+          "config": {
+            "struct": {
+              "reverse": "{view.params.reverse}",
+              "vertical": "{view.params.vertical}"
+            },
+            "waitOnAll": true
+          },
+          "transforms": [
+            {
+              "code": "\tif value[\u0027vertical\u0027]:\n\t\treturn \u0027row-reverse\u0027 if value[\u0027reverse\u0027] else \u0027row\u0027\n\telse:\n\t\treturn \u0027column\u0027 if value[\u0027reverse\u0027] else \u0027column-reverse\u0027",
+              "type": "script"
+            }
+          ],
+          "type": "expr-struct"
+        }
+      },
+      "props.style.classes": {
+        "binding": {
+          "config": {
+            "path": "view.custom.status"
+          },
+          "transforms": [
+            {
+              "code": "\tif value !\u003d \u0027unmanaged\u0027:\t\n\t\treturn \u0027exchange/datacenter/singleline/equipment/breaker/base exchange/datacenter/singleline/equipment/common/base exchange/datacenter/framework/clickable exchange/datacenter/singleline/equipment/breaker/{status}\u0027.format(status \u003d value)\n\telse:\n\t\treturn \u0027exchange/datacenter/singleline/equipment/breaker/base exchange/datacenter/singleline/equipment/common/base exchange/datacenter/singleline/equipment/breaker/{status}\u0027.format(status \u003d value)",
+              "type": "script"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

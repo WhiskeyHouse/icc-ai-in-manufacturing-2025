@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--neutral-20)",
+      "color": "var(--neutral-100)",
+      "fontWeight": "500"
+    }
+  }
+}

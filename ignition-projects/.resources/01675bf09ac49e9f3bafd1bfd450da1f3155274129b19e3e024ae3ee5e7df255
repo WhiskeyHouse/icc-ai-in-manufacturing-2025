@@ -1,0 +1,38 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 161
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "4px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "backgroundColor": "var(--neutral-70)"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "justify": "center"
+    },
+    "type": "ia.container.flex"
+  }
+}

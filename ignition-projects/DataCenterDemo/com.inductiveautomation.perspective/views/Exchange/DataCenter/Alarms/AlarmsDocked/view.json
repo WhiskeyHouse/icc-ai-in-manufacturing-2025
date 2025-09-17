@@ -1,0 +1,159 @@
+{
+  "custom": {},
+  "params": {
+    "alarmSearch": ""
+  },
+  "propConfig": {
+    "params.alarmSearch": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 278
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "props": {
+              "style": {
+                "color": "--neutral-90",
+                "fontFamily": "Roboto",
+                "fontSize": "20px",
+                "fontWeight": 500
+              },
+              "text": "Alarm Status"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.sendMessage(\u0027toggle-alarms\u0027, {})"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close",
+              "tooltip": {
+                "location": "top"
+              }
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "elements": [
+                {
+                  "d": "m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "style": {
+                "classes": "exchange/datacenter/icon",
+                "width": "40px"
+              },
+              "viewBox": "0 -960 960 960"
+            },
+            "type": "ia.shapes.svg"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "45px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "space-between",
+          "style": {
+            "paddingLeft": "10px",
+            "paddingRight": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "AlarmStatusTable"
+        },
+        "position": {
+          "basis": "400px",
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{session.custom.alarmsPage.currentTab} \u003d \u0027alarmStatus\u0027"
+              },
+              "enabled": false,
+              "type": "expr"
+            }
+          },
+          "props.filters.active.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.alarmSearch"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "columns": {
+            "active": {
+              "label": {
+                "enabled": true
+              },
+              "priority": {
+                "enabled": false
+              },
+              "source": {
+                "enabled": false
+              }
+            }
+          },
+          "filters": {
+            "active": {
+              "conditions": {
+                "source": "*DataCenterDemo*"
+              }
+            }
+          },
+          "style": {
+            "borderRadius": "0px",
+            "classes": "exchange/datacenter/alarms/section",
+            "padding": "0px"
+          }
+        },
+        "type": "ia.display.alarmstatustable"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "--neutral-20"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

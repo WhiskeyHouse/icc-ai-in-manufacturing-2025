@@ -1,0 +1,25 @@
+{
+  "base": {
+    "style": {
+      "borderBottomColor": "#FFFFFF00",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "3px",
+      "color": "var(--neutral-70)",
+      "cursor": "pointer",
+      "fontFamily": "Roboto",
+      "fontSize": "17px",
+      "fontWeight": "400",
+      "paddingLeft": "10px",
+      "paddingRight": "10px",
+      "fill": "var(--neutral-70)"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "var(--neutral-20)"
+      }
+    }
+  ]
+}

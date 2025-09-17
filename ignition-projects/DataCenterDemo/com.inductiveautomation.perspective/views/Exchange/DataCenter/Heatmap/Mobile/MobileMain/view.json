@@ -1,0 +1,64 @@
+{
+  "custom": {},
+  "params": {
+    "heatmap": "Site1-DataHall1-Section1",
+    "tagName": "Temperature"
+  },
+  "propConfig": {
+    "params.heatmap": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 400
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Heatmap"
+        },
+        "position": {
+          "basis": "1400px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.heatmap": {
+            "binding": {
+              "config": {
+                "path": "view.params.heatmap"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tagName": {
+            "binding": {
+              "config": {
+                "path": "view.params.tagName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "isPopup": false
+          },
+          "path": "Exchange/DataCenter/Heatmap/EmbeddedViews/Heatmap"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

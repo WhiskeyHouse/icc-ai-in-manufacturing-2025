@@ -1,0 +1,906 @@
+{
+  "rabbit_version": "3.13.4",
+  "rabbitmq_version": "3.13.4",
+  "product_name": "RabbitMQ",
+  "product_version": "3.13.4",
+  "users": [
+    {
+      "name": "user",
+      "password_hash": "Hv84cl3Xz4rH9igUhL3aVG6afIxBEwPoTOPoyzUQHy7OtbcA",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": [
+        "administrator"
+      ],
+      "limits": {}
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/",
+      "description": "Default virtual host",
+      "tags": [],
+      "metadata": {
+        "description": "Default virtual host",
+        "tags": []
+      }
+    }
+  ],
+  "permissions": [
+    {
+      "user": "user",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [],
+  "parameters": [
+    {
+      "value": {
+        "ack-mode": "on-confirm",
+        "dest-add-forward-headers": true,
+        "dest-exchange": "shovel.wh.whk01.distillery01.lot",
+        "dest-protocol": "amqp091",
+        "dest-uri": "amqp://mmhzkfhn:39sZRQmbghRNZaAiWi_if6Q_LydjrIcH@fly.rmq.cloudamqp.com/mmhzkfhn",
+        "reconnect-delay": 30,
+        "src-delete-after": "never",
+        "src-exchange": "wh.whk01.distillery01.lot",
+        "src-protocol": "amqp091",
+        "src-uri": "amqp://"
+      },
+      "vhost": "/",
+      "component": "shovel",
+      "name": "wms-rmq-lot"
+    },
+    {
+      "value": {
+        "ack-mode": "on-confirm",
+        "dest-add-forward-headers": true,
+        "dest-exchange": "shovel.wh.whk01.distillery01.vendor",
+        "dest-protocol": "amqp091",
+        "dest-uri": "amqp://mmhzkfhn:39sZRQmbghRNZaAiWi_if6Q_LydjrIcH@fly.rmq.cloudamqp.com/mmhzkfhn",
+        "reconnect-delay": 30,
+        "src-delete-after": "never",
+        "src-exchange": "wh.whk01.distillery01.vendor",
+        "src-protocol": "amqp091",
+        "src-uri": "amqp://"
+      },
+      "vhost": "/",
+      "component": "shovel",
+      "name": "wms-rmq-vendor"
+    },
+    {
+      "value": {
+        "ack-mode": "on-confirm",
+        "exchange": "wh.whk01.distillery01.itemreceipt",
+        "trust-user-id": false,
+        "uri": "amqp://mmhzkfhn:39sZRQmbghRNZaAiWi_if6Q_LydjrIcH@fly.rmq.cloudamqp.com/mmhzkfhn"
+      },
+      "vhost": "/",
+      "component": "federation-upstream",
+      "name": "WMW-RMQ-ItemReceipt"
+    },
+    {
+      "value": {
+        "ack-mode": "on-confirm",
+        "dest-add-forward-headers": false,
+        "dest-exchange": "shovel.wh.whk01.distillery01.customer",
+        "dest-protocol": "amqp091",
+        "dest-uri": "amqp://mmhzkfhn:39sZRQmbghRNZaAiWi_if6Q_LydjrIcH@fly.rmq.cloudamqp.com/mmhzkfhn",
+        "reconnect-delay": 30,
+        "src-delete-after": "never",
+        "src-exchange": "wh.whk01.distillery01.customer",
+        "src-protocol": "amqp091",
+        "src-uri": "amqp://"
+      },
+      "vhost": "/",
+      "component": "shovel",
+      "name": "wms-rmq-customer"
+    },
+    {
+      "value": {
+        "ack-mode": "on-confirm",
+        "dest-add-forward-headers": false,
+        "dest-exchange": "shovel.wh.whk01.distillery01.item",
+        "dest-protocol": "amqp091",
+        "dest-uri": "amqp://mmhzkfhn:39sZRQmbghRNZaAiWi_if6Q_LydjrIcH@fly.rmq.cloudamqp.com/mmhzkfhn",
+        "src-delete-after": "never",
+        "src-exchange": "wh.whk01.distillery01.item",
+        "src-protocol": "amqp091",
+        "src-uri": "amqp://"
+      },
+      "vhost": "/",
+      "component": "shovel",
+      "name": "wms-rmq"
+    },
+    {
+      "value": {
+        "ack-mode": "on-confirm",
+        "dest-add-forward-headers": true,
+        "dest-exchange": "shovel.wh.whk01.distillery01.purchaseorder",
+        "dest-protocol": "amqp091",
+        "dest-uri": "amqp://mmhzkfhn:39sZRQmbghRNZaAiWi_if6Q_LydjrIcH@fly.rmq.cloudamqp.com/mmhzkfhn",
+        "reconnect-delay": 30,
+        "src-delete-after": "never",
+        "src-exchange": "wh.whk01.distillery01.purchaseorder",
+        "src-protocol": "amqp091",
+        "src-uri": "amqp://"
+      },
+      "vhost": "/",
+      "component": "shovel",
+      "name": "wms-rmq-purchaseorder"
+    },
+    {
+      "value": {
+        "ack-mode": "on-confirm",
+        "dest-add-forward-headers": true,
+        "dest-exchange": "shovel.wh.whk01.distillery01.scheduleorder",
+        "dest-protocol": "amqp091",
+        "dest-uri": "amqp://mmhzkfhn:39sZRQmbghRNZaAiWi_if6Q_LydjrIcH@fly.rmq.cloudamqp.com/mmhzkfhn",
+        "reconnect-delay": 30,
+        "src-delete-after": "never",
+        "src-exchange": "wh.whk01.distillery01.scheduleorder",
+        "src-protocol": "amqp091",
+        "src-uri": "amqp://"
+      },
+      "vhost": "/",
+      "component": "shovel",
+      "name": "wms-rmq-scheduleorder"
+    }
+  ],
+  "global_parameters": [
+    {
+      "name": "internal_cluster_id",
+      "value": "rabbitmq-cluster-id-aoOqCHozD0TErogxWfvbRQ"
+    }
+  ],
+  "policies": [
+    {
+      "vhost": "/",
+      "name": "wh.whk01.distillery01.itemreceipt",
+      "pattern": "wh.whk.distillery01.itemreceipt",
+      "apply-to": "exchanges",
+      "definition": {
+        "federation-upstream-set": "all"
+      },
+      "priority": 0
+    }
+  ],
+  "queues": [
+    {
+      "name": "whk-cmms",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "whk-wms",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "whk-recipe-routing",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "whk-erpi",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "wh.whk01.distillery01.scheduleorder",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.batch",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.schedulequeue",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.account",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.itemgroup",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.equipmentphase",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.item",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "shovel.whk01.distillery01.productionorder",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "shovel.whk01.distillery01.scheduleorder",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.productionorderunitprocedure",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.purchaseorder",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.productionschedule",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.bom",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.lot",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.barrelreceipt",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.bomitem",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.vendor",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.kit",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.asset",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.customer",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.operation",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.unitprocedure",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.itemreceipt",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.barrelevent",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.barrel",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.productionorder",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.salesorder",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "shovel.whk01.distillery01.lot",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.inventory",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "wh.whk01.distillery01.inventorytransfer",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "shovel.whk01.distillery01.lot",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "shovel.whk01.distillery01.productionorder",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "shovel.whk01.distillery01.scheduleorder",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.account",
+      "vhost": "/",
+      "destination": "whk-cmms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.asset",
+      "vhost": "/",
+      "destination": "whk-recipe-routing",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.barrel",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.barrel",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.barrelevent",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.barrelevent",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.barrelreceipt",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.barrelreceipt",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.bom",
+      "vhost": "/",
+      "destination": "whk-recipe-routing",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.bomitem",
+      "vhost": "/",
+      "destination": "whk-recipe-routing",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.customer",
+      "vhost": "/",
+      "destination": "whk-recipe-routing",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.customer",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.equipmentphase",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.equipmentphase",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.inventory",
+      "vhost": "/",
+      "destination": "whk-cmms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.inventory",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.inventory",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.inventorytransfer",
+      "vhost": "/",
+      "destination": "whk-cmms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.inventorytransfer",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.inventorytransfer",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.item",
+      "vhost": "/",
+      "destination": "whk-cmms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.item",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.item",
+      "vhost": "/",
+      "destination": "whk-recipe-routing",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.itemgroup",
+      "vhost": "/",
+      "destination": "whk-cmms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.itemreceipt",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.itemreceipt",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.kit",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.kit",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.lot",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.lot",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.operation",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.operation",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.productionorderunitprocedure",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.productionorderunitprocedure",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.productionschedule",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.productionschedule",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.purchaseorder",
+      "vhost": "/",
+      "destination": "whk-cmms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.purchaseorder",
+      "vhost": "/",
+      "destination": "whk-recipe-routing",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.purchaseorder",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.salesorder",
+      "vhost": "/",
+      "destination": "whk-cmms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.salesorder",
+      "vhost": "/",
+      "destination": "whk-recipe-routing",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.salesorder",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.scheduleorder",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.scheduleorder",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.schedulequeue",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.schedulequeue",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.unitprocedure",
+      "vhost": "/",
+      "destination": "whk-erpi",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.unitprocedure",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.vendor",
+      "vhost": "/",
+      "destination": "whk-cmms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.vendor",
+      "vhost": "/",
+      "destination": "whk-recipe-routing",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "wh.whk01.distillery01.vendor",
+      "vhost": "/",
+      "destination": "whk-wms",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    }
+  ]
+}

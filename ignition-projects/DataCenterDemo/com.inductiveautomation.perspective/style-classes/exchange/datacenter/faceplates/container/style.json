@@ -1,0 +1,8 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--neutral-10)",
+      "padding": "5px"
+    }
+  }
+}

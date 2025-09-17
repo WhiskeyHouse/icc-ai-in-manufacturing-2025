@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "fontFamily": "Roboto",
+      "fontSize": "14px",
+      "fontWeight": "500"
+    }
+  }
+}

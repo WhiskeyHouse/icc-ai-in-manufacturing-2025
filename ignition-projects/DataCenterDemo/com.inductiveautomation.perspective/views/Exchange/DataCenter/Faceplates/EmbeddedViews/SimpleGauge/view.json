@@ -1,0 +1,244 @@
+{
+  "custom": {
+    "currentValue": 1396.860687818572,
+    "engHigh": 1700,
+    "engLow": 400,
+    "engUnits": "kW"
+  },
+  "params": {
+    "displayLabel": true,
+    "numberFormat": "#,##0.#",
+    "simpleGauge": {
+      "arc": {
+        "color": "var(--callToAction)",
+        "width": 30
+      },
+      "arcBackground": {
+        "color": "var(--neutral-50)",
+        "opacity": 0.2
+      },
+      "endAngle": 405,
+      "label": {
+        "color": "var(--callToAction)",
+        "maxDecimal": 4,
+        "offsetX": 0,
+        "offsetY": 0,
+        "size": "10px",
+        "units": "",
+        "visible": false
+      },
+      "startAngle": 135,
+      "wrapUnits": false
+    },
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/UPS/UPS1A/Input/SystemInputRealPower",
+    "title": "REAL"
+  },
+  "propConfig": {
+    "custom.currentValue": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.engHigh": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.engHigh"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.engLow": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.engLow"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.engUnits": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.engUnit"
+        },
+        "transforms": [
+          {
+            "code": "\tif value not in [\u0027n/a\u0027, None]:\n\t\treturn value\n\telse:\n\t\treturn \u0027\u0027",
+            "type": "script"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.displayLabel": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.numberFormat": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.simpleGauge": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 259,
+      "width": 277
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/primary"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "SimpleGauge"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "currentValue": "{view.custom.currentValue}",
+                  "maxValue": "{view.custom.engHigh}",
+                  "minValue": "{view.custom.engLow}",
+                  "simpleGauge": "{view.params.simpleGauge}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\tsimpleGaugeParams \u003d {\u0027value\u0027: value.get(\u0027currentValue\u0027), \u0027minValue\u0027: value.get(\u0027minValue\u0027),\n\t\t\t\u0027maxValue\u0027: value.get(\u0027maxValue\u0027)}\n\t\t\t\n\tsimpleGaugeParams.update(value.get(\u0027simpleGauge\u0027))\n\t\n\treturn simpleGaugeParams",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/SimpleGauge/SimpleGauge",
+          "style": {
+            "paddingLeft": "10px",
+            "paddingRight": "10px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Value"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.displayLabel"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.units": {
+            "binding": {
+              "config": {
+                "path": "view.custom.engUnits"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.value": {
+            "binding": {
+              "config": {
+                "expression": "numberFormat({view.custom.currentValue}, {view.params.numberFormat})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "baseClass": "exchange/datacenter/framework/data/base"
+          },
+          "path": "Exchange/DataCenter/Framework/Data/Value"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "gap": "5px",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

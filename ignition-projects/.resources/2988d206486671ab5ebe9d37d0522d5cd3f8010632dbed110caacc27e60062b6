@@ -1,0 +1,226 @@
+{
+  "custom": {
+    "selected": false
+  },
+  "params": {
+    "theme": "light"
+  },
+  "propConfig": {
+    "custom.selected": {
+      "binding": {
+        "config": {
+          "expression": "{session.props.theme}\u003d{view.params.theme}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.theme": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 50,
+      "width": 156
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Radio Button"
+            },
+            "position": {
+              "basis": "25px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.elements[0].d": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.selected},\r\n\u0027M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z\u0027,\r\n\u0027M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.fill.paint": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.selected},\r\n\u0027var(--callToAction)\u0027,\r\n\u0027var(--neutral-50)\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "elements": [
+                {
+                  "type": "path"
+                }
+              ],
+              "fill": {},
+              "style": {
+                "marginRight": "5px",
+                "maxWidth": "25px",
+                "minWidth": "25px"
+              },
+              "viewBox": "0 0 24 24"
+            },
+            "type": "ia.shapes.svg"
+          },
+          {
+            "meta": {
+              "name": "Theme Name"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.selected},\r\n\u0027--neutral-100\u0027,\r\n\u0027--neutral-60\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.fontWeight": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.selected},\r\n450,\r\n400)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.theme"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# Replace \u0027-\u0027 and capitalize.\n\treturn value.replace(\u0027-\u0027, \u0027 \u0027).title()",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/label",
+                "fontSize": "14px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Radio Button and Theme Name"
+        },
+        "props": {
+          "style": {
+            "marginRight": "7.5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Theme Preview"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.background-color": {
+            "binding": {
+              "config": {
+                "expression": "case({view.params.theme},\r\n\u0027light\u0027, \u0027#BDBDBD\u0027,\r\n\u0027dark\u0027, \u0027#A1A1A1\u0027,\r\n\u0027light-cool\u0027, \u0027#A2A9B0\u0027,\r\n\u0027light-warm\u0027, \u0027#ADA8A8\u0027,\r\n\u0027dark-cool\u0027, \u0027#878D96\u0027,\r\n\u0027dark-warm\u0027, \u0027#8F8B8B\u0027,\r\n\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.background-image": {
+            "binding": {
+              "config": {
+                "expression": "case({view.params.theme},\r\n\u0027light\u0027, \u0027linear-gradient(45deg, #BDBDBD 0%, #F4F4F4 100%)\u0027,\r\n\u0027dark\u0027, \u0027linear-gradient(45deg, #A1A1A1 0%, #5E5E5E 100%)\u0027,\r\n\u0027light-cool\u0027, \u0027linear-gradient(45deg, #A2A9B0 0%, #DDE1E6 100%)\u0027,\r\n\u0027light-warm\u0027, \u0027linear-gradient(45deg, #ADA8A8 0%, #E5E0DF 100%)\u0027,\r\n\u0027dark-cool\u0027, \u0027linear-gradient(45deg, #878D96 0%, #4D5358 100%)\u0027,\r\n\u0027dark-warm\u0027, \u0027linear-gradient(45deg, #8F8B8B 0%, #565151 100%)\u0027,\r\n\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "borderRadius": "10px",
+            "box-shadow": "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+            "maxHeight": "30px",
+            "maxWidth": "30px",
+            "minHeight": "30px"
+          },
+          "viewBox": "0 0 48 48"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\tself.session.props.theme \u003d self.view.params.theme"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.backgroundColor": {
+        "binding": {
+          "config": {
+            "expression": "if({view.custom.selected},\r\n\u0027--neutral-30\u0027,\r\n\u0027#FFFFFF00\u0027)"
+          },
+          "type": "expr"
+        }
+      },
+      "props.style.borderStyle": {
+        "binding": {
+          "config": {
+            "expression": "if({view.custom.selected},\r\n\u0027solid\u0027,\r\n\u0027none\u0027)"
+          },
+          "type": "expr"
+        }
+      },
+      "props.style.cursor": {
+        "binding": {
+          "config": {
+            "expression": "if({view.custom.selected},\r\n\u0027\u0027,\r\n\u0027pointer\u0027)"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "alignItems": "center",
+      "justify": "space-between",
+      "style": {
+        "borderColor": "--callToAction",
+        "borderRadius": "10px",
+        "borderWidth": "2px",
+        "overflow": "hidden",
+        "padding": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

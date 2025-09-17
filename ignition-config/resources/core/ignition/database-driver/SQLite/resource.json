@@ -1,0 +1,13 @@
+{
+  "scope": "A",
+  "description": "Driver for the popular embedded database system.",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "uuid": "a6688670-ae67-4ee2-a273-65731b704367"
+  }
+}

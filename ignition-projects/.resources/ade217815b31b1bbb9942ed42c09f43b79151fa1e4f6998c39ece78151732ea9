@@ -1,0 +1,70 @@
+def doGet(request, session):
+    path_info = request.get('pathInfo', '')
+    
+    if not path_info or path_info == '/':
+        return {'html': '''
+<h1>WHK Validation API</h1>
+<p>Status: Online</p>
+<h2>Available Endpoints:</h2>
+<ul>
+<li><a href="/system/webdev/Global/validation/health">GET /health</a> - Check service health</li>
+<li><a href="/system/webdev/Global/validation/samples/good">GET /samples/good</a> - Get good example script</li>
+<li><a href="/system/webdev/Global/validation/samples/bad">GET /samples/bad</a> - Get bad example script</li>
+<li>POST /scripts - Validate Jython script</li>
+<li>POST /components - Validate Perspective component</li>
+</ul>
+        '''}
+    
+    elif path_info == '/health':
+        return {'html': '''
+<h1>Health Check</h1>
+<p>WebDev Status: <span style="color: green;">Online</span></p>
+<p>Rules Engine: <span style="color: orange;">Checking...</span></p>
+        '''}
+    
+    elif path_info == '/samples/good':
+        return {'html': '''
+<h1>Good Example Script</h1>
+<pre style="background: #f5f5f5; padding: 10px; border-radius: 5px;">
+# WHK Production Script - Good Example
+from com.inductiveautomation.ignition.common.util import LoggerEx
+import system
+
+logger = LoggerEx.newBuilder().name("WHK.Production").build()
+
+def process_batch_safely():
+    try:
+        batch_tags = ["[default]Batch/Current/ID"]
+        values = system.tag.readBlocking(batch_tags)
+        if values is None:
+            logger.error("Failed to read batch tags")
+            return False
+        logger.info("Batch processing completed successfully")
+        return True
+    except Exception as e:
+        logger.error("Error: {}".format(str(e)))
+        return False
+</pre>
+        '''}
+    
+    elif path_info == '/samples/bad':
+        return {'html': '''
+<h1>Bad Example Script</h1>
+<pre style="background: #ffe6e6; padding: 10px; border-radius: 5px;">
+# Bad Script Example - Multiple violations
+import system
+
+def unsafe_batch_process():
+    # No error handling - VIOLATION SCRIPT-001
+    batch_id = system.tag.read("[default]Batch/Current/ID").value
+    
+    # Basic print instead of proper logging - VIOLATION SCRIPT-002
+    print("Starting batch " + str(batch_id))
+    
+    # Unsafe tag write without writeBlocking - VIOLATION SCRIPT-003
+    system.tag.write(["[default]Batch/Current/Status"], ["Processing"])
+</pre>
+        '''}
+    
+    else:
+        return {'html': '<h1>Endpoint not found</h1><p>Path: ' + str(path_info) + '</p>'}

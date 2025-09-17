@@ -1,0 +1,541 @@
+{
+  "custom": {
+    "angles": {
+      "endAngle": 360,
+      "startAngle": 180
+    },
+    "arc": {},
+    "arcBackground": {},
+    "label": {},
+    "radius": 50,
+    "svg": {
+      "d": "M -50.0 6.12323399574e-15 A 50 50 0 0 1 \t50.0 -1.22464679915e-14 L 41.1111111111 -1.00693181263e-14 A 41.1111111111 41.1111111111 \t0 0 0 -41.1111111111 5.03465906316e-15 L -50.0 6.12323399574e-15",
+      "viewBox": "-50 -50 100.0 50.0"
+    },
+    "values": {
+      "maxValue": 100,
+      "minValue": 0,
+      "value": 0
+    }
+  },
+  "params": {
+    "arc": {
+      "color": "#77B6D8",
+      "width": 20
+    },
+    "arcBackground": {
+      "color": "#77B6D8",
+      "opacity": 0.2
+    },
+    "endAngle": 360,
+    "label": {
+      "color": "var(--label)",
+      "maxDecimal": 4,
+      "offsetX": 0,
+      "offsetY": 0,
+      "size": 25,
+      "units": "",
+      "visible": true
+    },
+    "maxValue": 100,
+    "minValue": 0,
+    "startAngle": 180,
+    "value": 0
+  },
+  "propConfig": {
+    "custom.angles": {
+      "binding": {
+        "config": {
+          "struct": {
+            "endAngle": "{view.params.endAngle}",
+            "startAngle": "{view.params.startAngle}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tstartAngle \u003d 180.0 if value[\u0027startAngle\u0027] \u003d\u003d None else value[\u0027startAngle\u0027]\n\tendAngle \u003d 360.0 if value[\u0027endAngle\u0027] \u003d\u003d None else value[\u0027endAngle\u0027]\n\t\n\tif not isinstance(startAngle, (int, long, float)) or isinstance(startAngle,bool):\n\t\t# startAngle is not numeric, default it to 180.\n\t\tstartAngle \u003d 180.0\n\t\n\tif not isinstance(endAngle, (int, long, float)) or isinstance(endAngle,bool):\n\t\t# endAngle is not numeric, default it to 360.\n\t\tendAngle \u003d 360.0\n\t\n\treturn {\u0027startAngle\u0027: startAngle, \u0027endAngle\u0027: endAngle}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.arc": {
+      "persistent": true
+    },
+    "custom.arc.calculatedPath": {
+      "binding": {
+        "config": {
+          "struct": {
+            "arcWidth": "{view.params.arc.width}",
+            "endAngle": "{view.custom.angles.endAngle}",
+            "maxValue": "{view.custom.values.maxValue}",
+            "minValue": "{view.custom.values.minValue}",
+            "radius": "{view.custom.radius}",
+            "startAngle": "{view.custom.angles.startAngle}",
+            "value": "{view.custom.values.value}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\t# Define start angle, end angle, radius, and arc width.\n\tstartAngle \u003d value[\u0027startAngle\u0027]\n\tendAngle \u003d value[\u0027endAngle\u0027]\n\tradius \u003d value[\u0027radius\u0027]\n\tarcWidth \u003d value[\u0027arcWidth\u0027] / 2.25\n\t\n\t# Get the current, min, and max values.\n\tcurrentValue \u003d float(value[\u0027value\u0027])\n\tminValue \u003d float(value[\u0027minValue\u0027])\n\tmaxValue \u003d float(value[\u0027maxValue\u0027])\n\t\n\t# If currentValue is outside of the range, either set it\n\t# to min or max.\n\tif currentValue \u003c minValue:\n\t\tcurrentValue \u003d minValue\n\telif currentValue \u003e maxValue:\n\t\tcurrentValue \u003d maxValue\n\t\n\t# Get difference between max and min.\n\tdifference \u003d maxValue - minValue\n\t\n\tif difference \u003e 0:\n\t\t# Get percent of value in the range.\n\t\tres \u003d ((currentValue - minValue)/difference)\n\telse:\n\t\tres \u003d 0.0\n\t\n\t# Get the total degree range.\n\tdegreeRange \u003d endAngle - startAngle\n\t\n\t# Get percent of degree range and then add start angle\n\t# to get the end angle.\n\tcalculatedEndAngle \u003d (res * degreeRange) + startAngle\n\t\n\t# Call describeArc to get the svg path.\n\treturn self.getChild(\"root\").describeArc(radius,startAngle,calculatedEndAngle,arcWidth,getViewBox\u003dFalse)[\u0027d\u0027]",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.arc.color": {
+      "binding": {
+        "config": {
+          "path": "view.params.arc.color"
+        },
+        "type": "property"
+      }
+    },
+    "custom.arc.width": {
+      "binding": {
+        "config": {
+          "path": "view.params.arc.width"
+        },
+        "transforms": [
+          {
+            "code": "\tarcWidth \u003d 20 if value \u003d\u003d None else value\n\t\n\tif not isinstance(arcWidth, (int, long, float)) or isinstance(arcWidth,bool):\n\t\t# arcWidth is not numeric, default it to 20.\n\t\tarcWidth \u003d 20\n\t\t\n\tif arcWidth \u003c\u003d 0:\n\t\t# arcWidth cannot be 0 or less, default it to 20.\n\t\tarcWidth \u003d 20\n\t\t\n\treturn arcWidth",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.arcBackground": {
+      "persistent": true
+    },
+    "custom.arcBackground.color": {
+      "binding": {
+        "config": {
+          "path": "view.params.arcBackground.color"
+        },
+        "type": "property"
+      }
+    },
+    "custom.arcBackground.opacity": {
+      "binding": {
+        "config": {
+          "path": "view.params.arcBackground.opacity"
+        },
+        "transforms": [
+          {
+            "code": "\t# Default opacity to 0.2 if it is null.\n\topacity \u003d 0.2 if value \u003d\u003d None else value\n\t\n\tif not isinstance(opacity, (int, long, float)) or isinstance(opacity,bool):\n\t\t# Opacity is not numeric, default it to 0.2.\n\t\topacity \u003d 0.2\n\t\t\n\tif opacity \u003c 0 or opacity \u003e 1:\n\t\topacity \u003d 0.2\n\t\n\treturn opacity",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.label": {
+      "persistent": true
+    },
+    "custom.label.color": {
+      "binding": {
+        "config": {
+          "path": "view.params.label.color"
+        },
+        "type": "property"
+      }
+    },
+    "custom.label.displayValue": {
+      "binding": {
+        "config": {
+          "struct": {
+            "maxDecimal": "{view.params.label.maxDecimal}",
+            "units": "{view.params.label.units}",
+            "value": "{view.custom.values.value}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\t# Get the units.\n\tunits \u003d \u0027\u0027 if value[\u0027units\u0027] \u003d\u003d None else str(value[\u0027units\u0027]).strip()\n\t\n\t# Get max decimal (default to -1 if it is null).\n\tmaxDecimal \u003d -1 if value[\u0027maxDecimal\u0027] \u003d\u003d None else value[\u0027maxDecimal\u0027]\n\t\n\tif not isinstance(maxDecimal, (int, long, float)) or isinstance(maxDecimal,bool):\n\t\t# maxDecimal is not numeric, default it to 4.\n\t\tmaxDecimal \u003d 4\n\t\t\n\t# Get the value.\n\tif isinstance(value[\u0027value\u0027], (int, long)):\n\t\t# Since the value is int/long, do not need\n\t\t# to utilize maxDecimal.\n\t\tdisplayValue \u003d value[\u0027value\u0027]\n\telse:\n\t\tif maxDecimal !\u003d -1:\n\t\t\tdisplayValue \u003d round(value[\u0027value\u0027],maxDecimal)\n\t\telse:\n\t\t\t# maxDecimal is null. Display the full value.\n\t\t\tdisplayValue \u003d value[\u0027value\u0027]\n\t\n\tif len(units) \u003e 0:\n\t\t# Add the units at the end (if units are specified).\n\t\treturn \u0027{value} {units}\u0027.format(value\u003ddisplayValue,units\u003dunits)\n\telse:\n\t\treturn displayValue",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.label.offsetX": {
+      "binding": {
+        "config": {
+          "path": "view.params.label.offsetX"
+        },
+        "transforms": [
+          {
+            "code": "\t# If value is null, default to 0.\n\tif value \u003d\u003d None:\n\t\treturn 0\n\telse:\n\t\tif isinstance(value, (int, long, float)) and not isinstance(value, bool):\n\t\t\t# offsetX is numeric, return it.\n\t\t\treturn value\n\t\telse:\n\t\t\toffsetX \u003d str(value)\n\t\t\t\n\t\t\t# Utilize a regular expression to find\n\t\t\t# the first number in the offsetX string.\n\t\t\timport re\n\t\t\tres \u003d re.search(r\u0027\\d+(?:\\.\\d+)?\u0027, offsetX)\n\t\t\t\n\t\t\tif res \u003d\u003d None:\n\t\t\t\t# Number not found in offsetX string.\n\t\t\t\t# Default to 0.\n\t\t\t\treturn 0\n\t\t\telse:\n\t\t\t\t# Number found, return it.\n\t\t\t\treturn float(res.group())",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.label.offsetY": {
+      "binding": {
+        "config": {
+          "path": "view.params.label.offsetY"
+        },
+        "transforms": [
+          {
+            "code": "\t# If value is null, default to 0.\n\tif value \u003d\u003d None:\n\t\treturn 0\n\telse:\n\t\tif isinstance(value, (int, long, float)) and not isinstance(value, bool):\n\t\t\t# offsetY is numeric, return it.\n\t\t\treturn value\n\t\telse:\n\t\t\toffsetY \u003d str(value)\n\t\t\t\n\t\t\t# Utilize a regular expression to find\n\t\t\t# the first number in the offsetY string.\n\t\t\timport re\n\t\t\tres \u003d re.search(r\u0027\\d+(?:\\.\\d+)?\u0027, offsetY)\n\t\t\t\n\t\t\tif res \u003d\u003d None:\n\t\t\t\t# Number not found in offsetY string.\n\t\t\t\t# Default to 0.\n\t\t\t\treturn 0\n\t\t\telse:\n\t\t\t\t# Number found, return it.\n\t\t\t\treturn float(res.group())",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.label.size": {
+      "binding": {
+        "config": {
+          "path": "view.params.label.size"
+        },
+        "transforms": [
+          {
+            "code": "\t# If value is null, default to 25px.\n\tif value \u003d\u003d None:\n\t\treturn \u002725px\u0027\n\telse:\n\t\tif isinstance(value, (int, long, float)) and not isinstance(value, bool):\n\t\t\t# Size is numeric, return it.\n\t\t\treturn value\n\t\telse:\n\t\t\tfontSize \u003d str(value)\n\t\t\t\n\t\t\t# Utilize a regular expression to find\n\t\t\t# the first number in the fontSize string.\n\t\t\timport re\n\t\t\tres \u003d re.search(r\u0027\\d+(?:\\.\\d+)?\u0027, fontSize)\n\t\t\t\n\t\t\tif res \u003d\u003d None:\n\t\t\t\t# Number not found in fontSize string.\n\t\t\t\t# Default to 25px.\n\t\t\t\treturn \u002725px\u0027\n\t\t\telse:\n\t\t\t\t# Number found, return it.\n\t\t\t\treturn float(res.group())",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.label.translate": {
+      "binding": {
+        "config": {
+          "struct": {
+            "offsetX": "{view.params.label.offsetX}",
+            "offsetY": "{view.params.label.offsetY}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\t# Default to 0 if either are null.\n\toffsetX \u003d 0 if value[\u0027offsetX\u0027] \u003d\u003d None else value[\u0027offsetX\u0027]\n\toffsetY \u003d 0 if value[\u0027offsetY\u0027] \u003d\u003d None else value[\u0027offsetY\u0027]\n\t\n\t# Translate the label based on the offsets.\n\treturn \u0027translate({offsetX}px,{offsetY}px)\u0027.format(offsetX\u003doffsetX, offsetY\u003doffsetY)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "custom.radius": {
+      "persistent": true
+    },
+    "custom.svg": {
+      "binding": {
+        "config": {
+          "struct": {
+            "arcWidth": "{view.params.arc.width}",
+            "endAngle": "{view.custom.angles.endAngle}",
+            "radius": "{view.custom.radius}",
+            "startAngle": "{view.custom.angles.startAngle}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\t# Get start angle, end angle, radius, and arc width.\n\tstartAngle \u003d value[\u0027startAngle\u0027]\n\tendAngle \u003d value[\u0027endAngle\u0027]\n\tradius \u003d value[\u0027radius\u0027]\n\tarcWidth \u003d value[\u0027arcWidth\u0027] / 2.25\n\t\n\tif startAngle !\u003d None and endAngle !\u003d None:\n\t\tif not isinstance(startAngle, (int, long, float)) or isinstance(startAngle,bool):\n\t\t\t# startAngle is not numeric, default it to 180.\n\t\t\tstartAngle \u003d 180.0\n\t\tif not isinstance(endAngle, (int, long, float)) or isinstance(endAngle,bool):\n\t\t\t# endAngle is not numeric, default it to 360.\n\t\t\tendAngle \u003d 360.0\n\telse:\n\t\tstartAngle \u003d 180.0\n\t\tendAngle \u003d 360.0\n\t\n\t# Call describeArc to get the svg path.\n\tres \u003d self.getChild(\"root\").describeArc(radius,startAngle,endAngle,arcWidth)\n\t\n\treturn res",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.values": {
+      "binding": {
+        "config": {
+          "struct": {
+            "maxValue": "{view.params.maxValue}",
+            "minValue": "{view.params.minValue}",
+            "value": "{view.params.value}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tminValue \u003d 0.0 if value[\u0027minValue\u0027] \u003d\u003d None else value[\u0027minValue\u0027]\n\tmaxValue \u003d 100.0 if value[\u0027maxValue\u0027] \u003d\u003d None else value[\u0027maxValue\u0027]\n\tvalue \u003d 0.0 if value[\u0027value\u0027] \u003d\u003d None else value[\u0027value\u0027]\n\t\n\tif not isinstance(minValue, (int, long, float)) or isinstance(minValue,bool):\n\t\t# minValue is not numeric, default it to 0.\n\t\tminValue \u003d 0.0\n\t\t\n\tif not isinstance(maxValue, (int, long, float)) or isinstance(maxValue,bool):\n\t\t# maxValue is not numeric, default it to 100.\n\t\tmaxValue \u003d 100.0\n\t\t\n\tif not isinstance(value, (int, long, float)) or isinstance(value,bool):\n\t\t# value is not numeric, attempt to cast it.\n\t\ttry:\n\t\t\timport math.floor as floor\n\t\t\n\t\t\tvalue \u003d float(value)\n\t\t\n\t\t\tif floor(value) \u003d\u003d value:\n\t\t\t\t# The value is an integer.\n\t\t\t\tvalue \u003d int(value)\n\t\texcept:\n\t\t\tvalue \u003d 0.0\n\t\t\n\tif minValue \u003e maxValue:\n\t\tminValue \u003d 0.0\n\t\tmaxValue \u003d 0.0\n\t\t\n\treturn {\u0027value\u0027: value, \u0027minValue\u0027: minValue, \u0027maxValue\u0027: maxValue}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "params.arc": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.arcBackground": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.endAngle": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.maxValue": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.minValue": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.startAngle": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 265,
+      "width": 408
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Simple Guage"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.elements[0].d": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.svg.d}"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d None:\n\t\treturn \u0027\u0027\n\telse:\n\t\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].fill.opacity": {
+            "binding": {
+              "config": {
+                "path": "view.custom.arcBackground.opacity"
+              },
+              "type": "property"
+            }
+          },
+          "props.elements[0].fill.paint": {
+            "binding": {
+              "config": {
+                "path": "view.custom.arcBackground.color"
+              },
+              "type": "property"
+            }
+          },
+          "props.elements[0].stroke-opacity": {
+            "binding": {
+              "config": {
+                "path": "view.custom.arcBackground.opacity"
+              },
+              "type": "property"
+            }
+          },
+          "props.elements[1].d": {
+            "binding": {
+              "config": {
+                "path": "view.custom.arc.calculatedPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.elements[1].fill.paint": {
+            "binding": {
+              "config": {
+                "path": "view.custom.arc.color"
+              },
+              "type": "property"
+            }
+          },
+          "props.viewBox": {
+            "binding": {
+              "config": {
+                "path": "view.custom.svg"
+              },
+              "transforms": [
+                {
+                  "code": "\tsvgObj \u003d {\u0027viewBox\u0027: \u0027\u0027} if value \u003d\u003d None else value\n\t\n\treturn svgObj.get(\u0027viewBox\u0027,\u0027\u0027)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "fill": {},
+              "name": "path",
+              "style": {},
+              "type": "path"
+            },
+            {
+              "fill": {},
+              "name": "path",
+              "style": {},
+              "type": "path"
+            }
+          ]
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Value"
+        },
+        "position": {
+          "basis": "0px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.label.visible"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "path": "view.custom.label.color"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.custom.label.size"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.transform": {
+            "binding": {
+              "config": {
+                "path": "view.custom.label.translate"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.label.displayValue"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "bottom": "50%",
+            "position": "relative",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#FFFFFF00",
+        "overflow": "hidden"
+      }
+    },
+    "scripts": {
+      "customMethods": [
+        {
+          "name": "describeArc",
+          "params": [
+            "radius",
+            "startAngle",
+            "endAngle",
+            "arcWidth",
+            "getViewBox\u003dTrue"
+          ],
+          "script": "\t\"\"\"\n\tCreates a path that represents a simple radial gauge. The \n\t\tviewbox will also be returned if getViewBox\u003dTrue.\n\t\t\n\tArgs:\n\t\tradius: Radius of the large arc.\n\t\tstartAngle: Radial position for the start of the gauge.\n\t\tendAngle: Radial position for the end of the gauge.\n\t\tarcWidth: Width of the line (in pixels) that represents\n\t\t\tthe gauge when width and height equal 215px and no\n\t\t\tpadding is applied to the Style.\n\t\tgetViewBox: Determines if the viewBox is returned.\n\t\n\tReturns:\n\t\tPath (d) for the gauge.\n\t\tViewbox for the svg (if getViewBox\u003dTrue).\n\t\"\"\"\t\n\timport math\n\t\n\t# If range exceeds 360, then default start and end angle.\n\tif abs(endAngle - startAngle) \u003e\u003d 360:\n\t\tstartAngle \u003d 0.0\n\t\tendAngle \u003d 360.0\n\t\n\t# Calculate the start point of the large arc.\n\txStartLarge \u003d radius * math.cos(math.radians(startAngle))\n\tyStartLarge \u003d radius * math.sin(math.radians(startAngle))\n\t\n\t# Calculate the end point of the large arc.\n\txEndLarge \u003d radius * math.cos(math.radians(endAngle))\n\tyEndLarge \u003d radius * math.sin(math.radians(endAngle))\n\t\n\t# Set the large-arc-flag.\n\tlargeArc \u003d 1 if abs(endAngle - startAngle) \u003e 180 else 0\n\t\n\t# Set the sweep-flag for the large arc.\n\tsweepLarge \u003d 1 if endAngle \u003e startAngle else 0\n\t\n\t# Set the sweep-flag for the small arc.\n\tsweepSmall \u003d 0 if endAngle \u003e startAngle else 1\n\t\n\t# Calculate the radius for the smaller arc.\n\tsmallRadius \u003d radius - arcWidth\n\t\n\t# Calculate the start point of the small arc.\n\txStartSmall \u003d smallRadius * math.cos(math.radians(startAngle))\n\tyStartSmall \u003d smallRadius * math.sin(math.radians(startAngle))\n\t\n\t# Calculate the end point of the small arc.\n\txEndSmall \u003d smallRadius * math.cos(math.radians(endAngle))\n\tyEndSmall \u003d smallRadius * math.sin(math.radians(endAngle))\n\t\n\t# Create the path.\n\td \u003d \u0027M {xStartLarge} {yStartLarge} A {radius} {radius} 0 {largeArc} {sweepLarge} \\\n\t{xEndLarge} {yEndLarge} L {xEndSmall} {yEndSmall} A {smallRadius} {smallRadius} \\\n\t0 {largeArc} {sweepSmall} {xStartSmall} {yStartSmall} L {xStartLarge} {yStartLarge}\u0027.format( \\\n\txStartLarge\u003dxStartLarge, yStartLarge\u003dyStartLarge, radius\u003dradius, largeArc\u003dlargeArc, \\\n\txEndLarge\u003dxEndLarge, yEndLarge\u003dyEndLarge, xEndSmall\u003dxEndSmall, yEndSmall\u003dyEndSmall, \\\n\tsmallRadius\u003dsmallRadius, xStartSmall\u003dxStartSmall, yStartSmall\u003dyStartSmall, \n\tsweepLarge\u003dsweepLarge, sweepSmall\u003dsweepSmall)\n\t\n\tif getViewBox:\n\t\t# Get the viewbox for the gauge.\n\t\tviewBox \u003d self.getViewBox(startAngle, endAngle, xStartLarge, yStartLarge, xEndLarge, yEndLarge, xStartSmall, yStartSmall, xEndSmall, yEndSmall, radius)\n\t\t\n\t\treturn {\u0027d\u0027: d, \u0027viewBox\u0027: viewBox}\n\telse:\n\t\treturn {\u0027d\u0027: d, \u0027viewBox\u0027: None}"
+        },
+        {
+          "name": "getViewBox",
+          "params": [
+            "startAngle",
+            "endAngle",
+            "xStartLarge",
+            "yStartLarge",
+            "xEndLarge",
+            "yEndLarge",
+            "xStartSmall",
+            "yStartSmall",
+            "xEndSmall",
+            "yEndSmall",
+            "radius"
+          ],
+          "script": "\t\"\"\"\n\tCreates the viewBox for the gauge based on the start/end\n\t\tangles and the start/end coordinates of the large and\n\t\tsmall arc.\n\t\t\n\tArgs:\n\t\tstartAngle: Radial position for the start of the gauge.\n\t\tendAngle: Radial position for the end of the gauge.\n\t\txStartLarge: X-coordinate of the start of the large arc.\n\t\tyStartLarge: Y-coordinate of the start of the large arc.\n\t\txEndLarge: X-coordinate of the end of the large arc.\n\t\tyEndLarge: Y-coordinate of the end of the large arc.\n\t\txStartSmall: X-coordinate of the start of the small arc.\n\t\tyStartSmall: Y-coordinate of the start of the small arc.\n\t\txEndSmall: X-coordinate of the end of the small arc.\n\t\tyEndSmall: Y-coordinate of the end of the small arc.\n\t\tradius: Radius of the large arc.\n\t\n\tReturns:\n\t\tViewbox for the svg.\n\t\"\"\"\t\t\n\t# Figure out which quadrants the gauge is in.\n\tstartQuadrant \u003d self.getQuadrant(xStartLarge,yStartLarge)\n\tendQuadrant \u003d self.getQuadrant(xEndLarge,yEndLarge)\t\n\tquadrants \u003d self.getArcQuadrants(startQuadrant, endQuadrant, startAngle, endAngle)\n\t\n\t# Utilize the quadrants to figure out which parts\n\t# of the x-axis and y-axis the gauge crosses.\n\tcrossings \u003d self.getCrossings(startQuadrant, endQuadrant, quadrants)\n\t\n\t# Get the min/max x/y coordinates of the gauge.\n\tminXCoord \u003d min(xStartLarge, xEndLarge, xStartSmall, xEndSmall)\n\tminYCoord \u003d min(yStartLarge, yEndLarge, yStartSmall, yEndSmall)\n\tmaxXCoord \u003d max(xStartLarge, xEndLarge, xStartSmall, xEndSmall)\n\tmaxYCoord \u003d max(yStartLarge, yEndLarge, yStartSmall, yEndSmall)\n\t\n\t# Set min/max x/y for the viewbox.\n\txMin \u003d -radius if \u0027x-\u0027 in crossings else minXCoord\n\tyMin \u003d -radius if \u0027y-\u0027 in crossings else minYCoord\n\txMax \u003d radius if \u0027x+\u0027 in crossings else maxXCoord\n\tyMax \u003d radius if \u0027y+\u0027 in crossings else maxYCoord\n\t\n\t# Calculate width and height for the viewbox.\n\tviewBoxWidth \u003d xMax - xMin\n\tviewBoxHeight \u003d yMax - yMin\n\t\n\t# Create the viewbox for the large arc.\n\tviewBox \u003d \"{0} {1} {2} {3}\".format(xMin, yMin, viewBoxWidth, viewBoxHeight)\n\t\n\treturn viewBox"
+        },
+        {
+          "name": "getQuadrant",
+          "params": [
+            "x",
+            "y"
+          ],
+          "script": "\t\"\"\"\n\tFigures out which quadrant the point (x,y) is located in.\n\t\tUses the SVG coordinate system.\n\t\t\n\tArgs:\n\t\tx: X-coordinate of the point.\n\t\ty: y-coordinate of the poin.\n\t\n\tReturns:\n\t\tQuadrant that contains the point.\n\t\"\"\"\t\n\tif x \u003e\u003d 0 and y \u003e\u003d 0:\n\t\treturn 1\n\telif x \u003c 0 and y \u003e\u003d 0:\n\t\treturn 2\n\telif x \u003c 0 and y \u003c 0:\n\t\treturn 3\n\telif x \u003e\u003d 0 and y \u003c 0:\n\t\treturn 4"
+        },
+        {
+          "name": "getArcQuadrants",
+          "params": [
+            "startQuadrant",
+            "endQuadrant",
+            "startAngle",
+            "endAngle"
+          ],
+          "script": "\t\"\"\"\n\tUtilizes the start/end quadrants of the gauge to figure out which \n\t\tquadrants (if any) that the gauge had to travel through to go \n\t\tfrom the start quadrant to the end quadrant.\n\t\t\n\tArgs:\n\t\tstartQuadrant: Quadrant that contains the start of the gauge.\n\t\tendQuadrant: Quadrant that contains the end of the gauge.\n\t\tstartAngle: Radial position for the start of the gauge.\n\t\tendAngle: Radial position for the end of the gauge.\n\t\n\tReturns:\n\t\tList of quadrants that the gauge is in.\n\t\"\"\"\t\t\n\t\n\tquadrants \u003d []\n\t\n\tif endAngle \u003e startAngle:\n\t\tif endQuadrant \u003e startQuadrant:\n\t\t\tquadrants \u003d range(startQuadrant + 1, endQuadrant)\n\t\telif endQuadrant \u003c startQuadrant:\n\t\t\tquadrants \u003d range(startQuadrant + 1, 5) + range(1, endQuadrant)\n\t\telse:\n\t\t\tif abs(endAngle - startAngle) \u003e 90:\n\t\t\t\tquadrants \u003d range(startQuadrant + 1, 5) + range(1, endQuadrant)\n\telse:\n\t\tif endQuadrant \u003c startQuadrant:\n\t\t\tquadrants \u003d range(endQuadrant + 1, startQuadrant)\n\t\telif endQuadrant \u003e startQuadrant:\n\t\t\tquadrants \u003d range(endQuadrant + 1, 5) + range(1, startQuadrant)\n\t\telse:\n\t\t\tif abs(endAngle - startAngle) \u003e 90:\n\t\t\t\tquadrants \u003d range(endQuadrant + 1, 5) + range(1, startQuadrant)\n\t\n\treturn quadrants"
+        },
+        {
+          "name": "getCrossings",
+          "params": [
+            "startQuadrant",
+            "endQuadrant",
+            "passedQuadrants"
+          ],
+          "script": "\t\"\"\"\n\tUtilize the quadrants info to figure out which parts of the\n\t\tx-axis and y-axis the gauge crosses.\n\t\t\n\tArgs:\n\t\tstartQuadrant: Quadrant where the gauge starts.\n\t\tendQuadrant: Quadrant where the gauge ends.\n\t\tpassedQuadrants: Quadrants that the gauge is in.\n\t\n\tReturns:\n\t\tList containing which parts of the x-axis/y-axis\n\t\t\tthe gauge crosses.\n\t\"\"\"\t\t\n\t\n\tif startQuadrant \u003d\u003d endQuadrant:\n\t\treturn [] if len(passedQuadrants) \u003d\u003d 0 else [\u0027x-\u0027, \u0027y-\u0027, \u0027x+\u0027, \u0027y+\u0027]\n\telse:\n\t\tif startQuadrant \u003d\u003d 1:\n\t\t\tif endQuadrant \u003d\u003d 2:\n\t\t\t\treturn [\u0027y+\u0027] if len(passedQuadrants) \u003d\u003d 0 else [\u0027x+\u0027, \u0027y-\u0027, \u0027x-\u0027]\n\t\t\telif endQuadrant \u003d\u003d 3:\n\t\t\t\treturn [\u0027y+\u0027, \u0027x-\u0027] if 2 in passedQuadrants else [\u0027x+\u0027, \u0027y-\u0027]\n\t\t\telif endQuadrant \u003d\u003d 4:\n\t\t\t\treturn [\u0027x+\u0027] if len(passedQuadrants) \u003d\u003d 0 else [\u0027y+\u0027, \u0027x-\u0027, \u0027y-\u0027]\n\t\t\t\t\n\t\telif startQuadrant \u003d\u003d 2:\n\t\t\tif endQuadrant \u003d\u003d 1:\n\t\t\t\treturn [\u0027y+\u0027] if len(passedQuadrants) \u003d\u003d 0 else [\u0027x-\u0027, \u0027y-\u0027, \u0027x+\u0027]\n\t\t\telif endQuadrant \u003d\u003d 3:\n\t\t\t\treturn [\u0027x-\u0027] if len(passedQuadrants) \u003d\u003d 0 else [\u0027y+\u0027, \u0027x+\u0027, \u0027y-\u0027]\n\t\t\telif endQuadrant \u003d\u003d 4:\n\t\t\t\treturn [\u0027x-\u0027,\u0027y-\u0027] if 3 in passedQuadrants else [\u0027x+\u0027, \u0027y+\u0027]\n\t\t\t\t\t\n\t\telif startQuadrant \u003d\u003d 3:\n\t\t\tif endQuadrant \u003d\u003d 1:\n\t\t\t\treturn [\u0027y-\u0027, \u0027x+\u0027] if 4 in passedQuadrants else [\u0027x-\u0027, \u0027y+\u0027]\n\t\t\telif endQuadrant \u003d\u003d 2:\n\t\t\t\treturn [\u0027x-\u0027] if len(passedQuadrants) \u003d\u003d 0 else [\u0027y+\u0027, \u0027x+\u0027, \u0027y-\u0027]\n\t\t\telif endQuadrant \u003d\u003d 4:\n\t\t\t\treturn [\u0027y-\u0027] if len(passedQuadrants) \u003d\u003d 0 else [\u0027x-\u0027,\u0027y+\u0027,\u0027x+\u0027]\n\t\t\t\t\n\t\telif startQuadrant \u003d\u003d 4:\n\t\t\tif endQuadrant \u003d\u003d 1:\n\t\t\t\treturn [\u0027x+\u0027] if len(passedQuadrants) \u003d\u003d 0 else [\u0027y-\u0027, \u0027x-\u0027, \u0027y+\u0027]\n\t\t\telif endQuadrant \u003d\u003d 2:\n\t\t\t\treturn [\u0027y-\u0027, \u0027x-\u0027] if 3 in passedQuadrants else [\u0027x+\u0027, \u0027y+\u0027]\n\t\t\telif endQuadrant \u003d\u003d 3:\n\t\t\t\treturn [\u0027y-\u0027] if len(passedQuadrants) \u003d\u003d 0 else [\u0027x+\u0027, \u0027y+\u0027, \u0027x-\u0027]"
+        }
+      ],
+      "extensionFunctions": null,
+      "messageHandlers": []
+    },
+    "type": "ia.container.flex"
+  }
+}

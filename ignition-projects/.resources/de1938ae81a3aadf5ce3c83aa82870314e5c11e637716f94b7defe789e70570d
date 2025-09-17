@@ -1,0 +1,58 @@
+{
+  "custom": {},
+  "params": {
+    "viewParams": {},
+    "viewPath": "Exchange/DataCenter/Framework/Header/Mobile/MobileMainFooter"
+  },
+  "propConfig": {
+    "params.viewParams": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.viewPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 104
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "height": "100%",
+          "width": "100%"
+        },
+        "propConfig": {
+          "props.params": {
+            "binding": {
+              "config": {
+                "path": "view.params.viewParams"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "view.params.viewPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

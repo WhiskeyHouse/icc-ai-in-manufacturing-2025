@@ -1,0 +1,163 @@
+{
+  "custom": {
+    "isSelected": false
+  },
+  "params": {
+    "icon": {
+      "elements": [
+        {
+          "d": "M0 0h24v24H0z",
+          "fill": {
+            "paint": "transparent"
+          },
+          "name": "path",
+          "type": "path"
+        },
+        {
+          "d": "M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z",
+          "name": "path",
+          "type": "path"
+        }
+      ],
+      "viewBox": "0 0 24 24"
+    },
+    "label": "Overview",
+    "path": "Overview"
+  },
+  "propConfig": {
+    "custom.isSelected": {
+      "binding": {
+        "config": {
+          "expression": "{page.props.path}\u003dconcat(\u0027/\u0027, {view.params.path}) \u0026\u0026 {session.props.device.userAgent} !\u003d \u0027\u003cdesigner\u003e\u0027"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.icon": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.path": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 48,
+      "width": 169
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "22px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.elements": {
+            "binding": {
+              "config": {
+                "path": "view.params.icon.elements"
+              },
+              "type": "property"
+            }
+          },
+          "props.viewBox": {
+            "binding": {
+              "config": {
+                "path": "view.params.icon.viewBox"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginRight": "5px",
+            "width": "22px"
+          }
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.label"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\t# Only navigate if this item is not selected.\n\tif not self.view.custom.isSelected:\n\t\t# Get the page to navigate to.\n\t\tpage \u003d self.view.params.path\n\t\t\n\t\t# Navigate to the page.\n\t\tsystem.perspective.navigate(\u0027/{page}\u0027.format(page \u003d page))\n\t\tsystem.perspective.sendMessage(\u0027close-alarms\u0027, {})"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.backgroundColor": {
+        "binding": {
+          "config": {
+            "expression": "if({session.props.theme}\u003d\u0027light\u0027 \u0026\u0026 {view.custom.isSelected},\r\n\u0027#ebebeb\u0027,\r\n\u0027\u0027)"
+          },
+          "type": "expr"
+        }
+      },
+      "props.style.classes": {
+        "binding": {
+          "config": {
+            "expression": "if({view.custom.isSelected},\r\n\u0027exchange/datacenter/framework/navigation/navigation-item/label exchange/datacenter/framework/navigation/navigation-item/selected\u0027,\r\n\u0027exchange/datacenter/framework/navigation/navigation-item/label\u0027)"
+          },
+          "type": "expr"
+        }
+      },
+      "props.style.cursor": {
+        "binding": {
+          "config": {
+            "expression": "if({view.custom.isSelected},\r\n\u0027default\u0027,\r\n\u0027\u0027)"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

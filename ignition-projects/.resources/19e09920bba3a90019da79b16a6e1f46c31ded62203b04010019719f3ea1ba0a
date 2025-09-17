@@ -1,0 +1,13 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--neutral-20)",
+      "borderBottomColor": "var(--callToAction--active)",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "3px",
+      "color": "var(--callToAction--active)",
+      "fontWeight": "400",
+      "fill": "var(--callToAction--active)"
+    }
+  }
+}

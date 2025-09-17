@@ -1,0 +1,71 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 823,
+      "width": 1212
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Pan Zoom View"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "props": {
+          "params": {
+            "controls": {
+              "click": true,
+              "in": true,
+              "out": true,
+              "pan": true,
+              "reset": true,
+              "zoom": true
+            },
+            "customFit": {
+              "duration": 1000,
+              "enabled": true,
+              "scale": 1.63,
+              "x": 654,
+              "y": 193
+            },
+            "panning": false,
+            "transform": {
+              "duration": 1000,
+              "scale": 1.63,
+              "timestamp": {
+                "$": [
+                  "ts",
+                  192,
+                  1699570489380
+                ],
+                "$ts": 1699570489338
+              },
+              "x": 654,
+              "y": 193
+            },
+            "useDefaultSize": true,
+            "viewPath": "Exchange/DataCenter/SingleLine/EmbeddedViews/Diagram"
+          },
+          "path": "Exchange/DataCenter/Framework/Pan Zoom View"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/container"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

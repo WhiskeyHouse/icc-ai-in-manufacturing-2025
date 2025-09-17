@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "description": "Used for testing with docker and CI/CD and .env var",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2025-09-15T16:06:25Z"
+    },
+    "uuid": "a3450208-1f01-419c-8163-98bd537f586a",
+    "lastModificationSignature": "73cacced188dbe471825054769d2ec4fd055283a41dbcf084289090c593235a6",
+    "enabled": true
+  }
+}

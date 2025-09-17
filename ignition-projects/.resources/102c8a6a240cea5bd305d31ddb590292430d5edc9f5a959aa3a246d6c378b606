@@ -1,0 +1,33 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 662
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FloorPlanSvg"
+        },
+        "position": {
+          "basis": "775px",
+          "grow": 1
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/SvgFloorplan"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

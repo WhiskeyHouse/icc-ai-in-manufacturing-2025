@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "calendar.png"
+  ],
+  "attributes": {
+    "width": 32,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "import",
+      "timestamp": "2025-09-17T11:12:43Z"
+    },
+    "size": 1047,
+    "lastModificationSignature": "a615633cc02e5d80ec1b4e4a807707e0f5cc1ac7a3b7a2a7c995131c96ea3460",
+    "height": 32
+  }
+}

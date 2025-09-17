@@ -1,0 +1,2364 @@
+{
+  "custom": {},
+  "params": {
+    "dataHallPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/DataHall"
+  },
+  "propConfig": {
+    "params.dataHallPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 952,
+      "width": 375
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.dataHallPath"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tpathParts \u003d value.split(\u0027/\u0027)\n\t\n\treturn \u0027Data Hall {dhNum}\u0027.format(dhNum \u003d pathParts[3][-1])",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/main"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "DataHallStatus"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.status": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "indirect",
+                    "references": {
+                      "dataHallPath": "{view.params.dataHallPath}"
+                    },
+                    "tagPath": "{dataHallPath}/AverageCompositePerformanceStatus"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/DataHallStatus"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "TitleAndPerformance"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "column",
+          "style": {
+            "gap": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/primary"
+              },
+              "text": "PUE"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                      },
+                      "text": "EER"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "custom.numberFormat": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/EnergyEfficiencyRatio.formatString"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "custom.tagValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/EnergyEfficiencyRatio"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "expression": "numberFormat({this.custom.tagValue}, {this.custom.numberFormat})"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "baseClass": "exchange/datacenter/floor-plan/data-hall-kpi/value/base exchange/datacenter/floor-plan/data-hall-kpi/value/secondary exchange/datacenter/floor-plan/data-hall-kpi/value/bold",
+                        "units": ""
+                      },
+                      "path": "Exchange/DataCenter/Framework/Data/Value"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Eer"
+                },
+                "position": {
+                  "basis": "90px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "SimpleGauge"
+                },
+                "position": {
+                  "basis": "120px"
+                },
+                "propConfig": {
+                  "props.params.maxValue": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/PowerUsageEffectiveness.engHigh"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.minValue": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/PowerUsageEffectiveness.engLow"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/PowerUsageEffectiveness"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "arc": {
+                      "color": "var(--callToAction)",
+                      "width": 30
+                    },
+                    "arcBackground": {
+                      "color": "var(--neutral-50)",
+                      "opacity": 0.2
+                    },
+                    "endAngle": 405,
+                    "label": {
+                      "color": "var(--callToAction)",
+                      "maxDecimal": 2,
+                      "offsetX": 0,
+                      "offsetY": 3,
+                      "size": "26px",
+                      "units": "",
+                      "visible": true
+                    },
+                    "startAngle": 135
+                  },
+                  "path": "Exchange/SimpleGauge/SimpleGauge"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                      },
+                      "text": "24HR Delta"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "custom.engUnits": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/EnergyEfficiencyRatio.engUnit"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "custom.numberFormat": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/EnergyEfficiencyRatio.formatString"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "custom.tagValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/24HourPueDelta"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "numberFormat({this.custom.tagValue}, {this.custom.numberFormat}) + {this.custom.engUnits}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/floor-plan/data-hall-kpi/value/base exchange/datacenter/floor-plan/data-hall-kpi/value/secondary exchange/datacenter/floor-plan/data-hall-kpi/value/good exchange/datacenter/floor-plan/data-hall-kpi/value/bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Delta"
+                },
+                "position": {
+                  "basis": "90px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "RowContainer"
+            },
+            "position": {
+              "basis": "129px",
+              "grow": 1
+            },
+            "props": {
+              "justify": "center"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "PueContainer"
+        },
+        "position": {
+          "basis": "105px"
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                  },
+                  "text": "IT Load"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "SimpleGauge"
+                },
+                "position": {
+                  "basis": "320px"
+                },
+                "propConfig": {
+                  "props.params.label.units": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/ItLoadMw.engUnit"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.maxValue": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/ItLoadMw.engHigh"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.minValue": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/ItLoadMw.engLow"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/ItLoadMw"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "arc": {
+                      "color": "var(--callToAction)",
+                      "width": 30
+                    },
+                    "arcBackground": {
+                      "color": "var(--neutral-50)",
+                      "opacity": 0.2
+                    },
+                    "endAngle": 405,
+                    "label": {
+                      "color": "var(--callToAction)",
+                      "maxDecimal": 2,
+                      "offsetX": 0,
+                      "offsetY": 3,
+                      "size": "13.5px",
+                      "visible": true
+                    },
+                    "startAngle": 135
+                  },
+                  "path": "Exchange/SimpleGauge/SimpleGauge"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "ItLoad"
+            },
+            "position": {
+              "basis": "90px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                  },
+                  "text": "UPS\nCapacity"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "SimpleGauge"
+                },
+                "position": {
+                  "basis": "320px"
+                },
+                "propConfig": {
+                  "props.params.maxValue": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/UpsCapacity.engHigh"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} * 100.0",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.minValue": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/UpsCapacity.engLow"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value}*100.0",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/UpsCapacity"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} * 100.0",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "arc": {
+                      "color": "var(--callToAction)",
+                      "width": 30
+                    },
+                    "arcBackground": {
+                      "color": "var(--neutral-50)",
+                      "opacity": 0.2
+                    },
+                    "endAngle": 405,
+                    "label": {
+                      "color": "var(--callToAction)",
+                      "maxDecimal": 2,
+                      "offsetX": 0,
+                      "offsetY": 3,
+                      "size": "13.5px",
+                      "units": "%",
+                      "visible": true
+                    },
+                    "startAngle": 135
+                  },
+                  "path": "Exchange/SimpleGauge/SimpleGauge"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "UpsCapacity"
+            },
+            "position": {
+              "basis": "90px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                  },
+                  "text": "Cooling\nCapacity"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "SimpleGauge"
+                },
+                "position": {
+                  "basis": "320px"
+                },
+                "propConfig": {
+                  "props.params.maxValue": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/CoolingCapacity.engHigh"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value}*100.0",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.minValue": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/CoolingCapacity.engLow"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value}*100.0",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/CoolingCapacity"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} * 100.0",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "arc": {
+                      "color": "var(--callToAction)",
+                      "width": 30
+                    },
+                    "arcBackground": {
+                      "color": "var(--neutral-50)",
+                      "opacity": 0.2
+                    },
+                    "endAngle": 405,
+                    "label": {
+                      "color": "var(--callToAction)",
+                      "maxDecimal": 2,
+                      "offsetX": 0,
+                      "offsetY": 3,
+                      "size": "13.5px",
+                      "units": "%",
+                      "visible": true
+                    },
+                    "startAngle": 135
+                  },
+                  "path": "Exchange/SimpleGauge/SimpleGauge"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "CoolingCapacity"
+            },
+            "position": {
+              "basis": "90px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Gauges"
+        },
+        "position": {
+          "basis": "118px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "space-evenly"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                  },
+                  "text": "Overridden\nPoints"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Value"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/OverridenPointCount"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/floor-plan/data-hall-kpi/value/base exchange/datacenter/floor-plan/data-hall-kpi/value/primary exchange/datacenter/floor-plan/data-hall-kpi/value/bold"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "OverriddenPoints"
+            },
+            "position": {
+              "basis": "80px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "2.5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                  },
+                  "text": "Active\nAlarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Value"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/ActiveAlarmCount"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/floor-plan/data-hall-kpi/value/base exchange/datacenter/floor-plan/data-hall-kpi/value/primary exchange/datacenter/floor-plan/data-hall-kpi/value/bold"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "ActiveAlarms"
+            },
+            "position": {
+              "basis": "80px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "2.5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                  },
+                  "text": "Devices\nOnline"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Value"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.engUnit": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/Details/DevicesOnline.engUnit"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "custom.numberFormat": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/Details/DevicesOnline.formatString"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "custom.tagValue": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "dataHallPath": "{view.params.dataHallPath}"
+                        },
+                        "tagPath": "{dataHallPath}/Details/DevicesOnline"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.engUnit}\u003d\u0027%\u0027,\r\nnumberFormat(100.0 * {this.custom.tagValue}, {this.custom.numberFormat}) + {this.custom.engUnit},\r\nnumberFormat({this.custom.tagValue}, {this.custom.numberFormat}) + {this.custom.engUnit})"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/floor-plan/data-hall-kpi/value/base exchange/datacenter/floor-plan/data-hall-kpi/value/primary exchange/datacenter/floor-plan/data-hall-kpi/value/bold"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "DevicesOnline"
+            },
+            "position": {
+              "basis": "80px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "2.5px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "OverridenPointsAlarmsAndDevices"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "justify": "space-evenly",
+          "style": {
+            "classes": "exchange/datacenter/floor-plan/data-hall-kpi/container"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                      },
+                      "text": "Hot Aisles"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "SvgMovingAnalogIndicator"
+                    },
+                    "position": {
+                      "basis": "120px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.desired.high": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/SlaCaHighTemp"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.desired.low": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/SlaCaLowTemp"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.maxValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/HaMeanTemperature.engHigh"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.minValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/HaMeanTemperature.engLow"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.processValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/HaMeanTemperature"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.secondIndicator.processValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/HottestHaTemperature"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarms": {
+                          "inactiveRangeColor": "var(--neutral-60)",
+                          "level1": {
+                            "highHigh": null,
+                            "lowLow": null,
+                            "rangeColor": "var(--error)"
+                          },
+                          "level2": {
+                            "high": null,
+                            "low": null,
+                            "rangeColor": "var(--warningSecondary)"
+                          }
+                        },
+                        "defaultRangeColor": "var(--neutral-10)",
+                        "desired": {
+                          "rangeColor": "var(--callToAction)"
+                        },
+                        "indicator": {
+                          "color": "var(--label)",
+                          "reverse": false,
+                          "size": 14,
+                          "stroke": {
+                            "color": "var(--neutral-100)",
+                            "width": 0
+                          }
+                        },
+                        "interlocks": {
+                          "high": null,
+                          "low": null,
+                          "rangeColor": "var(--neutral-100)"
+                        },
+                        "label": {
+                          "format": "#,##0",
+                          "position": {
+                            "applyOffsetsOnlyWhenLabelVisible": true,
+                            "horizontalOffset": 1,
+                            "verticalOffset": 1
+                          },
+                          "style": {
+                            "classes": "",
+                            "fill": "var(--neutral-100)",
+                            "font-size": 4
+                          },
+                          "visible": false
+                        },
+                        "rangesBar": {
+                          "size": 15,
+                          "stroke": {
+                            "color": "var(--neutral-50)",
+                            "width": 0.2
+                          },
+                          "verticalDisplay": true
+                        },
+                        "secondIndicator": {
+                          "color": "var(--qual-10)"
+                        },
+                        "setpoint": {
+                          "color": "var(--neutral-10)",
+                          "stroke": {
+                            "color": "var(--info)",
+                            "width": 0.5
+                          },
+                          "value": null
+                        }
+                      },
+                      "path": "Exchange/SVGMovingAnalogIndicator/SVGMovingAnalogIndicator"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Title"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/aisle-temp"
+                              },
+                              "text": "AVG"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "custom.engUnit": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/HaMeanTemperature.engUnit"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "custom.numberFormat": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/HaMeanTemperature.formatString"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "custom.tagValue": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/HaMeanTemperature"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "numberFormat({this.custom.tagValue}, {this.custom.numberFormat}) + {this.custom.engUnit}"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/value/base exchange/datacenter/floor-plan/data-hall-kpi/value/aisle-temp"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Average"
+                        },
+                        "position": {
+                          "basis": "60px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "direction": "column"
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Title"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/aisle-temp",
+                                "color": "var(--qual-10)"
+                              },
+                              "text": "MAX"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "custom.engUnit": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/HottestHaTemperature.engUnit"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "custom.numberFormat": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/HottestHaTemperature.formatString"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "custom.tagValue": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/HottestHaTemperature"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "numberFormat({this.custom.tagValue}, {this.custom.numberFormat}) + {this.custom.engUnit}"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/value/base exchange/datacenter/floor-plan/data-hall-kpi/value/aisle-temp"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Maximum"
+                        },
+                        "position": {
+                          "basis": "60px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "direction": "column"
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Values"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "center",
+                      "style": {
+                        "gap": "10px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "HotAisles"
+                },
+                "position": {
+                  "basis": "130px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/secondary"
+                      },
+                      "text": "Cold Aisles"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "SvgMovingAnalogIndicator"
+                    },
+                    "position": {
+                      "basis": "120px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.desired.high": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/SlaCaHighTemp"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.desired.low": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/SlaCaLowTemp"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.maxValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/CaMeanTemperature.engHigh"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.minValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/CaMeanTemperature.engLow"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.processValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/CaMeanTemperature"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.params.secondIndicator.processValue": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "dataHallPath": "{view.params.dataHallPath}"
+                            },
+                            "tagPath": "{dataHallPath}/HottestCaTemperature"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarms": {
+                          "inactiveRangeColor": "var(--neutral-60)",
+                          "level1": {
+                            "highHigh": null,
+                            "lowLow": null,
+                            "rangeColor": "var(--error)"
+                          },
+                          "level2": {
+                            "high": null,
+                            "low": null,
+                            "rangeColor": "var(--warningSecondary)"
+                          }
+                        },
+                        "defaultRangeColor": "var(--neutral-10)",
+                        "desired": {
+                          "rangeColor": "var(--callToAction)"
+                        },
+                        "indicator": {
+                          "color": "var(--label)",
+                          "reverse": false,
+                          "size": 14,
+                          "stroke": {
+                            "color": "var(--neutral-100)",
+                            "width": 0
+                          }
+                        },
+                        "interlocks": {
+                          "high": null,
+                          "low": null,
+                          "rangeColor": "var(--neutral-100)"
+                        },
+                        "label": {
+                          "format": "#,##0",
+                          "position": {
+                            "applyOffsetsOnlyWhenLabelVisible": true,
+                            "horizontalOffset": 1,
+                            "verticalOffset": 1
+                          },
+                          "style": {
+                            "classes": "",
+                            "fill": "var(--neutral-100)",
+                            "font-size": 4
+                          },
+                          "visible": false
+                        },
+                        "rangesBar": {
+                          "size": 15,
+                          "stroke": {
+                            "color": "var(--neutral-50)",
+                            "width": 0.2
+                          },
+                          "verticalDisplay": true
+                        },
+                        "secondIndicator": {
+                          "color": "var(--qual-8)"
+                        },
+                        "setpoint": {
+                          "color": "var(--neutral-10)",
+                          "stroke": {
+                            "color": "var(--info)",
+                            "width": 0.5
+                          },
+                          "value": null
+                        }
+                      },
+                      "path": "Exchange/SVGMovingAnalogIndicator/SVGMovingAnalogIndicator"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Title"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/aisle-temp"
+                              },
+                              "text": "AVG"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "custom.engUnit": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/CaMeanTemperature.engUnit"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "custom.numberFormat": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/CaMeanTemperature.formatString"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "custom.tagValue": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/CaMeanTemperature"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "numberFormat({this.custom.tagValue}, {this.custom.numberFormat})  + {this.custom.engUnit}"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/value/base exchange/datacenter/floor-plan/data-hall-kpi/value/aisle-temp"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Average"
+                        },
+                        "position": {
+                          "basis": "60px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "direction": "column"
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Title"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/title/base exchange/datacenter/floor-plan/data-hall-kpi/title/aisle-temp",
+                                "color": "var(--qual-8)"
+                              },
+                              "text": "MAX"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "custom.engUnit": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/HottestCaTemperature.engUnit"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "custom.numberFormat": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/HottestCaTemperature.formatString"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "custom.tagValue": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "dataHallPath": "{view.params.dataHallPath}"
+                                    },
+                                    "tagPath": "{dataHallPath}/HottestCaTemperature"
+                                  },
+                                  "type": "tag"
+                                }
+                              },
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "numberFormat({this.custom.tagValue}, {this.custom.numberFormat})  + {this.custom.engUnit}"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/floor-plan/data-hall-kpi/value/base exchange/datacenter/floor-plan/data-hall-kpi/value/aisle-temp"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Maximum"
+                        },
+                        "position": {
+                          "basis": "60px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "direction": "column"
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Values"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "center",
+                      "style": {
+                        "gap": "10px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "ColdAisles"
+                },
+                "position": {
+                  "basis": "130px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "HotAndColdAisle"
+            },
+            "position": {
+              "basis": "135px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "justify": "space-around",
+              "style": {
+                "marginBottom": "15px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Dropdown"
+                },
+                "position": {
+                  "basis": "93px",
+                  "shrink": 0
+                },
+                "props": {
+                  "dropdownOptionStyle": {
+                    "classes": "exchange/datacenter/kpi-details/trend/dropdown-option"
+                  },
+                  "options": [
+                    {
+                      "label": "24HR",
+                      "value": "24HR"
+                    },
+                    {
+                      "label": "7DAY",
+                      "value": "7DAY"
+                    },
+                    {
+                      "label": "30DAY",
+                      "value": "30DAY"
+                    }
+                  ],
+                  "style": {
+                    "classes": "exchange/datacenter/kpi-details/trend/dropdown-selected-value"
+                  },
+                  "value": "24HR"
+                },
+                "type": "ia.input.dropdown"
+              }
+            ],
+            "meta": {
+              "name": "TimeRange"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "paddingLeft": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "HistoricalData"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.data": {
+                "binding": {
+                  "config": {
+                    "aggregate": "MinMax",
+                    "avoidScanClassValidation": true,
+                    "dateRange": {
+                      "mostRecent": "case({../TimeRange/Dropdown.props.value},\r     \u002724HR\u0027,  24,\r     \u00277DAY\u0027, 168,     \r     \u002730DAY\u0027, 720,     \r     24          \r )",
+                      "mostRecentUnits": "HOUR"
+                    },
+                    "enableValueCache": true,
+                    "ignoreBadQuality": false,
+                    "polling": {
+                      "enabled": true,
+                      "rate": "60"
+                    },
+                    "preventInterpolation": false,
+                    "returnFormat": "Wide",
+                    "returnSize": {
+                      "numRows": "100",
+                      "type": "FIXED"
+                    },
+                    "tags": "{this.custom.historyPens}",
+                    "valueFormat": "DOCUMENT"
+                  },
+                  "type": "tag-history"
+                }
+              },
+              "custom.historyPens": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.dataHallPath"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn [\n  {\n    \"aggregate\": \"LastValue\",\n    \"alias\": \"ColdAisleAvg\",\n    \"path\": \"{pathToDataHall}/CaMeanTemperature\".format(pathToDataHall \u003d value)\n  },\n  {\n    \"aggregate\": \"LastValue\",\n    \"alias\": \"ColdAisleMax\",\n    \"path\": \"{pathToDataHall}/HottestCaTemperature\".format(pathToDataHall \u003d value)\n  },\n  {\n    \"aggregate\": \"LastValue\",\n    \"alias\": \"HotAisleAvg\",\n    \"path\": \"{pathToDataHall}/HaMeanTemperature\".format(pathToDataHall \u003d value)\n  },\n  {\n    \"aggregate\": \"LastValue\",\n    \"alias\": \"HotAisleMax\",\n    \"path\": \"{pathToDataHall}/HottestHaTemperature\".format(pathToDataHall \u003d value)\n  }\n]",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.plots[0].markers[0].value": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "indirect",
+                    "references": {
+                      "dataHallPath": "{view.params.dataHallPath}"
+                    },
+                    "tagPath": "{dataHallPath}/SlaCaLowTemp"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.plots[0].markers[1].value": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "indirect",
+                    "references": {
+                      "dataHallPath": "{view.params.dataHallPath}"
+                    },
+                    "tagPath": "{dataHallPath}/SlaCaHighTemp"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.series[0].data": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.data"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "legend": {
+                "visible": true
+              },
+              "plots": [
+                {
+                  "axes": [
+                    {
+                      "alignment": "left",
+                      "grid": {
+                        "color": "",
+                        "dashArray": 0,
+                        "opacity": 0.9,
+                        "style": {
+                          "classes": ""
+                        },
+                        "visible": false
+                      },
+                      "label": {
+                        "font": {
+                          "color": "",
+                          "size": 10
+                        },
+                        "offset": 0,
+                        "style": {
+                          "classes": ""
+                        },
+                        "text": "",
+                        "visible": true
+                      },
+                      "max": "",
+                      "min": "",
+                      "name": "Data",
+                      "style": {
+                        "classes": ""
+                      },
+                      "tick": {
+                        "color": "",
+                        "count": "Auto",
+                        "label": {
+                          "font": {
+                            "color": "",
+                            "size": 10
+                          },
+                          "format": "Auto",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "style": {
+                          "classes": ""
+                        }
+                      },
+                      "width": 19
+                    }
+                  ],
+                  "markers": [
+                    {
+                      "axis": "Data",
+                      "line": {
+                        "color": "",
+                        "dashArray": 5,
+                        "label": {
+                          "font": {
+                            "color": "",
+                            "size": 10
+                          },
+                          "position": "right",
+                          "style": {
+                            "classes": ""
+                          },
+                          "text": ""
+                        },
+                        "opacity": 0.75,
+                        "style": {
+                          "classes": ""
+                        },
+                        "width": 2
+                      },
+                      "type": "line",
+                      "visible": true
+                    },
+                    {
+                      "axis": "Data",
+                      "line": {
+                        "color": "",
+                        "dashArray": 5,
+                        "label": {
+                          "font": {
+                            "color": "",
+                            "size": 10
+                          },
+                          "position": "right",
+                          "style": {
+                            "classes": ""
+                          },
+                          "text": ""
+                        },
+                        "opacity": 0.75,
+                        "style": {
+                          "classes": ""
+                        },
+                        "width": 2
+                      },
+                      "type": "line",
+                      "visible": true
+                    }
+                  ],
+                  "relativeWeight": 1,
+                  "trends": [
+                    {
+                      "axis": "Data",
+                      "baselines": [],
+                      "breakLine": true,
+                      "columns": [
+                        {
+                          "color": "var(--neutral-50)",
+                          "key": "HotAisleAvg",
+                          "styles": {
+                            "highlighted": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            },
+                            "muted": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": null
+                              }
+                            },
+                            "normal": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            },
+                            "selected": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "color": "var(--qual-10)",
+                          "key": "HotAisleMax",
+                          "styles": {
+                            "highlighted": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            },
+                            "muted": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": null
+                              }
+                            },
+                            "normal": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            },
+                            "selected": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "color": "var(--neutral-100)",
+                          "key": "ColdAisleAvg",
+                          "styles": {
+                            "highlighted": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            },
+                            "muted": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": null
+                              }
+                            },
+                            "normal": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            },
+                            "selected": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "color": "var(--qual-8)",
+                          "key": "ColdAisleMax",
+                          "styles": {
+                            "highlighted": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            },
+                            "muted": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": null
+                              }
+                            },
+                            "normal": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            },
+                            "selected": {
+                              "fill": {
+                                "color": "",
+                                "opacity": null
+                              },
+                              "stroke": {
+                                "color": "",
+                                "dashArray": null,
+                                "opacity": null,
+                                "width": 2
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "interpolation": "curveLinear",
+                      "radius": 2,
+                      "series": "AisleData",
+                      "stack": true,
+                      "type": "line",
+                      "visible": true
+                    }
+                  ]
+                }
+              ],
+              "series": [
+                {
+                  "name": "AisleData"
+                }
+              ],
+              "timeAxis": {
+                "height": 0,
+                "tick": {
+                  "color": "var(--neutral-10)"
+                },
+                "tickCount": 0,
+                "visible": false
+              },
+              "timeRange": {
+                "timeFormat": "HH:mm:ss",
+                "visible": false
+              },
+              "xTrace": {
+                "infoBox": {
+                  "fill": {
+                    "color": "var(--neutral-20)",
+                    "opacity": 0.5
+                  },
+                  "font": {
+                    "color": "var(--neutral-100)",
+                    "style": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  "stroke": {
+                    "color": "var(--label)"
+                  },
+                  "timeFormat": "HH:mm:ss",
+                  "width": "102px"
+                }
+              }
+            },
+            "type": "ia.chart.timeseries"
+          }
+        ],
+        "meta": {
+          "name": "HotAndColdAisle"
+        },
+        "position": {
+          "basis": "280px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/floor-plan/data-hall-kpi/container",
+        "gap": "23px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

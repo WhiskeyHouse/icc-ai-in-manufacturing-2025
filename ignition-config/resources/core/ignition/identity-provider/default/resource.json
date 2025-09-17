@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "description": "Automatically generated Ignition Identity Provider which uses the User Source Profile named \"default\".",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "system-init",
+      "timestamp": "2025-09-14T22:01:50Z"
+    },
+    "uuid": "b96ab3b1-99d4-49f7-9bdc-56e111a8ca10",
+    "lastModificationSignature": "0fedba7ba870cbbcb0cb28d99fa9091b2d4a448cfa0776e4c9a7d60854271139"
+  }
+}

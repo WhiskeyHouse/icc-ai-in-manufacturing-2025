@@ -1,0 +1,228 @@
+"""
+WebDev POST Handler for Validation API
+Handles POST requests for validation endpoints
+"""
+
+import json
+import system
+
+def doPost(request, session):
+    """
+    Handle POST requests for validation API
+    
+    Supported endpoints:
+    - /system/webdev/Global/validation/scripts - Validate Jython script
+    - /system/webdev/Global/validation/components - Validate Perspective component
+    """
+    
+    try:
+        # Get the path after /system/webdev/Global/validation
+        path_info = request.get('pathInfo', '')
+        
+        if path_info == '/scripts':
+            # Validate Jython script
+            return handle_script_validation(request)
+            
+        elif path_info == '/components':
+            # Validate Perspective component
+            return handle_component_validation(request)
+            
+        else:
+            # Unknown endpoint
+            error_response = {
+                'error': 'Endpoint not found',
+                'path': path_info,
+                'available_endpoints': ['/scripts', '/components']
+            }
+            return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+    
+    except Exception as e:
+        error_response = {
+            'error': 'Internal server error',
+            'message': str(e)
+        }
+        return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+
+
+def handle_script_validation(request):
+    """Handle script validation POST request"""
+    try:
+        # Get request body
+        post_data = request.get('postData', '')
+        if not post_data:
+            error_response = {'error': 'Request body is required'}
+            return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+        
+        # Parse JSON data
+        try:
+            data = json.loads(post_data)
+        except:
+            error_response = {'error': 'Invalid JSON in request body'}
+            return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+        
+        # Validate required fields
+        if 'script' not in data:
+            error_response = {'error': 'script field is required'}
+            return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+        
+        script_content = data['script']
+        context = data.get('context', {})
+        
+        # Validate script using rules engine
+        validation_result = validate_script_with_rules_engine(script_content, context)
+        
+        # Format response as HTML for browser viewing
+        response_html = format_validation_result_html(validation_result, script_content)
+        return {'html': response_html}
+        
+    except Exception as e:
+        error_response = {
+            'error': 'Script validation failed',
+            'message': str(e)
+        }
+        return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+
+
+def handle_component_validation(request):
+    """Handle component validation POST request"""
+    try:
+        # Get request body
+        post_data = request.get('postData', '')
+        if not post_data:
+            error_response = {'error': 'Request body is required'}
+            return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+        
+        # Parse JSON data
+        try:
+            data = json.loads(post_data)
+        except:
+            error_response = {'error': 'Invalid JSON in request body'}
+            return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+        
+        # Validate required fields
+        if 'component' not in data:
+            error_response = {'error': 'component field is required'}
+            return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+        
+        component_config = data['component']
+        context = data.get('context', {})
+        
+        # Validate component using rules engine
+        validation_result = validate_component_with_rules_engine(component_config, context)
+        
+        # Format response as HTML for browser viewing
+        response_html = format_validation_result_html(validation_result, component_config)
+        return {'html': response_html}
+        
+    except Exception as e:
+        error_response = {
+            'error': 'Component validation failed',
+            'message': str(e)
+        }
+        return {'html': '<pre>' + json.dumps(error_response, indent=2) + '</pre>'}
+
+
+def validate_script_with_rules_engine(script_content, context=None):
+    """Validate script using the rules engine service"""
+    try:
+        # Prepare request payload
+        payload = {
+            "script": script_content,
+            "context": context or {}
+        }
+        
+        # Call rules engine
+        response = system.net.httpPost(
+            "http://host.docker.internal:8087/validate/script",
+            {"Content-Type": "application/json"},
+            json.dumps(payload)
+        )
+        
+        if response:
+            return json.loads(response)
+        else:
+            return {
+                "valid": False,
+                "error": "No response from rules engine",
+                "violations": [],
+                "score": 0
+            }
+            
+    except Exception as e:
+        return {
+            "valid": False,
+            "error": "Rules engine communication failed: " + str(e),
+            "violations": [],
+            "score": 0
+        }
+
+
+def validate_component_with_rules_engine(component_config, context=None):
+    """Validate component using the rules engine service"""
+    try:
+        # Prepare request payload
+        payload = {
+            "component": component_config,
+            "context": context or {}
+        }
+        
+        # Call rules engine
+        response = system.net.httpPost(
+            "http://host.docker.internal:8087/validate/component",
+            {"Content-Type": "application/json"},
+            json.dumps(payload)
+        )
+        
+        if response:
+            return json.loads(response)
+        else:
+            return {
+                "valid": False,
+                "error": "No response from rules engine",
+                "violations": [],
+                "score": 0
+            }
+            
+    except Exception as e:
+        return {
+            "valid": False,
+            "error": "Rules engine communication failed: " + str(e),
+            "violations": [],
+            "score": 0
+        }
+
+
+def format_validation_result_html(validation_result, content):
+    """Format validation results as HTML for browser viewing"""
+    html = "<h1>Validation Results</h1>"
+    
+    # Status overview
+    status = "PASSED" if validation_result.get("valid", False) else "FAILED"
+    status_color = "green" if validation_result.get("valid", False) else "red"
+    html += "<h2 style='color: " + status_color + "'>Status: " + status + "</h2>"
+    
+    # Score
+    score = validation_result.get("score", 0)
+    html += "<p><strong>Score:</strong> " + str(score) + "/100</p>"
+    
+    # Violations
+    violations = validation_result.get("violations", [])
+    if violations:
+        html += "<h3>Violations Found:</h3><ul>"
+        for violation in violations:
+            html += "<li><strong>" + violation.get("rule_id", "Unknown") + ":</strong> " + violation.get("message", "No message") + "</li>"
+        html += "</ul>"
+    else:
+        html += "<p style='color: green;'>No violations found!</p>"
+    
+    # Error details
+    if "error" in validation_result:
+        html += "<h3 style='color: red;'>Error:</h3><p>" + str(validation_result["error"]) + "</p>"
+    
+    # Original content
+    html += "<h3>Original Content:</h3><pre style='background: #f5f5f5; padding: 10px; border-radius: 5px;'>" + str(content) + "</pre>"
+    
+    # Full response
+    html += "<h3>Full Response:</h3><pre style='background: #f0f0f0; padding: 10px; border-radius: 5px;'>" + json.dumps(validation_result, indent=2) + "</pre>"
+    
+    return html

@@ -1,0 +1,111 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 40,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "ConfidenceContainer"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "gap": "10px",
+            "alignItems": "center"
+          }
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "ConfidenceBar"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "max": 100,
+              "min": 0,
+              "style": {
+                "height": "20px"
+              }
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "type": "tag",
+                  "config": {
+                    "tagPath": "[Global]WhiskeyLab/AI/Confidence",
+                    "fallbackDelay": 2.5
+                  }
+                }
+              },
+              "props.track.fill": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({[Global]WhiskeyLab/AI/Confidence} >= 80, '#27ae60', if({[Global]WhiskeyLab/AI/Confidence} >= 60, '#f39c12', '#e74c3c'))"
+                  }
+                }
+              }
+            },
+            "type": "ia.input.slider"
+          },
+          {
+            "meta": {
+              "name": "ConfidenceValue"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "fontSize": "14px",
+                "fontWeight": "bold",
+                "textAlign": "center"
+              }
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "concat(round({[Global]WhiskeyLab/AI/Confidence}, 0), '%')"
+                  }
+                }
+              },
+              "props.style.color": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({[Global]WhiskeyLab/AI/Confidence} >= 80, '#27ae60', if({[Global]WhiskeyLab/AI/Confidence} >= 60, '#f39c12', '#e74c3c'))"
+                  }
+                }
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "row",
+      "style": {
+        "padding": "5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "custom": {},
+  "params": {
+    "activeAlarmCount": 3,
+    "equipment": "UPS",
+    "toggle": false
+  },
+  "propConfig": {
+    "params.activeAlarmCount": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.equipment": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.toggle": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 54,
+      "width": 265
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "AlarmIcon"
+        },
+        "position": {
+          "basis": "23px",
+          "shrink": 0
+        },
+        "props": {
+          "elements": [
+            {
+              "id": "defs1",
+              "name": "defs1",
+              "type": "defs"
+            },
+            {
+              "d": "m 80,-278 v -80 h 80 v -280 q 0,-83 50,-147.5 50,-64.5 130,-84.5 v -28 q 0,-25 17.5,-42.5 17.5,-17.5 42.5,-17.5 25,0 42.5,17.5 17.5,17.5 17.5,42.5 v 28 q 80,20 130,84.5 50,64.5 50,147.5 v 280 h 80 v 80 z m 320,120 q -33,0 -56.5,-23.5 Q 320,-205 320,-238 h 160 q 0,33 -23.5,56.5 Q 433,-158 400,-158 Z M 0,-638 Q 0,-738 44.5,-821.5 89,-905 164,-960 l 47,64 q -60,44 -95.5,111 Q 80,-718 80,-638 Z m 720,0 q 0,-80 -35.5,-147 Q 649,-852 589,-896 l 47,-64 q 75,55 119.5,138.5 Q 800,-738 800,-638 Z",
+              "id": "path1",
+              "name": "path1",
+              "type": "path"
+            }
+          ],
+          "fill": {
+            "paint": "var(--neutral-40)"
+          },
+          "style": {
+            "width": "23px"
+          },
+          "viewBox": "0 -960 800 801.99997"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Count"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.activeAlarmCount"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn \u0027{count} ACTIVE ALARM{plural}\u0027.format(count \u003d value, plural \u003d \u0027\u0027 if value \u003d\u003d 1 else \u0027S\u0027)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/faceplates/active-alarm-count/label"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\tself.view.params.toggle \u003d not self.view.params.toggle"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root",
+      "tooltip": {
+        "enabled": true,
+        "location": "bottom"
+      }
+    },
+    "propConfig": {
+      "meta.tooltip.text": {
+        "binding": {
+          "config": {
+            "expression": "if({view.params.toggle},\r\n\u0027HIDE ALARM STATUS TABLE\u0027,\r\n\u0027SHOW ALARMS FOR THIS \u0027 + {view.params.equipment})"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "alignItems": "center",
+      "justify": "center",
+      "style": {
+        "classes": "exchange/datacenter/faceplates/active-alarm-count/container",
+        "gap": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

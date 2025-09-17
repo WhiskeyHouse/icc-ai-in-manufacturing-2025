@@ -1,0 +1,57 @@
+/* Direct stylesheet authoring is an advanced feature. Knowledge of CSS required.*/
+/**/
+
+/* ===== Start scrollbar CSS for dark mode ===== */
+
+::-webkit-scrollbar {
+	width: 20px;
+	height: 20px;
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--neutral-40);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--neutral-40);
+}
+
+/* ===== End scrollbar CSS for dark mode ===== */
+
+
+/* Change color of resize bar for docked views */
+.resize-zone[class="resize-zone"] {
+	background-color: var(--neutral-40);
+}
+
+/* Remove box shadow since in dark it is a white glow,
+and looks better without the white glow.*/
+.docked-view.docked-view-bottom.dock-cover-shadow-bottom {
+	box-shadow: none;
+}
+
+/* Change opacity of resize bar for docked views */
+.dock-border.drag-border {
+	opacity: 0.5;
+}
+
+/* custom heatmap animations */
+/**/
+@keyframes fluctuate-blur {
+  0% {
+    filter: blur(8px);
+  }
+  100% {
+    filter: blur(16px);
+  }
+}
+
+/* Min width for resizable ups popup */
+[id*="popup-upsPopup"] {
+	min-width: 350px !important;
+}
+
+/* Min width for resizable ahu popup */
+[id*="popup-ahuPopup"] {
+	min-width: 350px !important;
+}

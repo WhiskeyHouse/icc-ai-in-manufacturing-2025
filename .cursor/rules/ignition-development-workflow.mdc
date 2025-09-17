@@ -1,0 +1,340 @@
+---
+description: Comprehensive Ignition development workflow using MCP tools for linting, scanning, and testing
+globs:
+alwaysApply: true
+---
+
+# Ignition Development Workflow with MCP Tools
+
+This workflow integrates Ignition development with MCP (Model Context Protocol) tools for comprehensive project management, linting, scanning, and testing.
+
+## Available MCP Tools
+
+### 1. Ignition FastMCP (`ignition-fastmcp`)
+- **Purpose**: Direct Ignition Gateway API interactions
+- **Capabilities**: 
+  - Project management (create, delete, modify, scan)
+  - Tag operations (create, read, update, delete)
+  - Gateway configuration
+  - Module management
+- **Connection**: HTTP server at `http://127.0.0.1:8007/mcp`
+
+### 2. Ignition Linter (`ignition-linter`)
+- **Purpose**: Code quality and validation
+- **Capabilities**:
+  - Perspective component validation
+  - Jython script linting
+  - Project-wide analysis
+  - Component JSON schema validation
+- **Connection**: FastMCP Python service
+
+### 3. Playwright MCP (`playwright`)
+- **Purpose**: Browser automation and testing
+- **Capabilities**:
+  - Ignition Gateway UI testing
+  - Perspective project testing
+  - Authentication workflows
+  - Screenshot capture and validation
+- **Connection**: NPX-based service
+
+## Development Workflow Steps
+
+### Phase 1: Planning and Setup
+
+#### 1.1 Define Development Tasks
+```markdown
+- Create TODO list for development objectives
+- Identify target Ignition project(s)
+- Define success criteria and testing requirements
+- Plan component/script structure
+```
+
+#### 1.2 Project Preparation
+```bash
+# Ensure Ignition Gateway is running
+docker compose up -d ignition
+
+# Verify MCP services are available
+# Check .cursor/mcp.json configuration
+```
+
+### Phase 2: Development
+
+#### 2.1 Create/Modify Ignition Assets
+- **Perspective Views**: Create/edit view JSON files
+- **Python Scripts**: Develop script modules with proper structure
+- **Tags**: Define tag structures and bindings
+- **Resources**: Add supporting files (images, data, etc.)
+
+#### 2.2 Ensure Resource JSON Files
+```python
+# Run resource.json validation
+python3 ensure-resource-json.py --path ignition-projects/YourProject
+```
+
+**Key Rules**:
+- Every leaf directory with assets MUST have `resource.json`
+- Only leaf directories should have `resource.json`
+- Include all asset files in the `files` array
+
+### Phase 3: Validation and Linting
+
+#### 3.1 Run Ignition Linter MCP
+```javascript
+// Lint entire project
+mcp_ignition_linter_lint_ignition_project({
+  project_path: "ignition-projects/YourProject",
+  lint_type: "all",
+  verbose: true
+})
+
+// Lint specific components
+mcp_ignition_linter_lint_perspective_components({
+  project_path: "ignition-projects/YourProject",
+  component_type: "perspective-button",
+  verbose: true
+})
+
+// Lint Python scripts
+mcp_ignition_linter_lint_jython_scripts({
+  project_path: "ignition-projects/YourProject",
+  verbose: true
+})
+```
+
+#### 3.2 Validate Individual Components
+```javascript
+// Validate specific component JSON
+mcp_ignition_linter_validate_component_json({
+  component: componentJsonObject,
+  context: "Button component validation"
+})
+
+// Validate script content
+mcp_ignition_linter_validate_script_content({
+  script_content: "def myFunction():\n    return 'Hello World'",
+  context: "Custom script validation"
+})
+```
+
+### Phase 4: Gateway Integration
+
+#### 4.1 Project Scanning
+```javascript
+// Request project scan to refresh Gateway
+mcp_ignition_fastmcp_post_scan_projects({
+  random_string: "trigger_scan"
+})
+
+// Check scan status
+mcp_ignition_fastmcp_get_scan_projects({
+  random_string: "check_status"
+})
+
+// Acquire scan lock if needed
+mcp_ignition_fastmcp_post_scan_lock_projects({
+  random_string: "acquire_lock"
+})
+```
+
+#### 4.2 Project Management
+```javascript
+// List all projects
+mcp_ignition_fastmcp_get_projects_list({
+  random_string: "list_projects"
+})
+
+// Get specific project details
+mcp_ignition_fastmcp_get_projects_find_name({
+  random_string: "project_details"
+})
+
+// Create new project if needed
+mcp_ignition_fastmcp_post_projects({
+  random_string: "create_project"
+})
+```
+
+### Phase 5: Testing with Playwright MCP
+
+#### 5.1 Authentication Setup
+```javascript
+// Navigate to Ignition Gateway
+mcp_playwright_browser_navigate({ 
+  url: "http://localhost:9088/app/home" 
+})
+
+// Perform authentication
+mcp_playwright_browser_click({ 
+  element: "Log In button",
+  ref: "button:has-text('Log In')" 
+})
+
+mcp_playwright_browser_type({ 
+  element: "username field",
+  ref: "input[name='username']",
+  text: "admin" 
+})
+
+mcp_playwright_browser_press_key({ key: "Enter" })
+
+// Wait for password field
+mcp_playwright_browser_wait_for({ time: 2 })
+
+mcp_playwright_browser_type({ 
+  element: "password field",
+  ref: "input[type='password']:visible",
+  text: "your_gateway_password" 
+})
+
+mcp_playwright_browser_press_key({ key: "Enter" })
+```
+
+#### 5.2 Project Testing
+```javascript
+// Navigate to Perspective project
+mcp_playwright_browser_navigate({ 
+  url: "http://localhost:9088/data/perspective/client/YourProject" 
+})
+
+// Take screenshot for validation
+mcp_playwright_browser_take_screenshot({ 
+  filename: "project-state.png",
+  fullPage: true 
+})
+
+// Capture accessibility snapshot
+mcp_playwright_browser_snapshot({
+  random_string: "capture_state"
+})
+
+// Test component interactions
+mcp_playwright_browser_click({ 
+  element: "test button",
+  ref: "button[data-testid='test-button']" 
+})
+```
+
+#### 5.3 Validation Testing
+```javascript
+// Test form interactions
+mcp_playwright_browser_fill_form({
+  fields: [
+    {
+      name: "input field",
+      type: "textbox",
+      ref: "input[name='testField']",
+      value: "test value"
+    }
+  ]
+})
+
+// Wait for expected results
+mcp_playwright_browser_wait_for({ 
+  text: "Success message",
+  time: 5 
+})
+```
+
+## Complete Workflow Example
+
+### Example: Developing a New Perspective View
+
+```javascript
+// 1. Plan the development
+// TODO: Create new button component with click handler
+// TODO: Add validation for user input
+// TODO: Test component in browser
+
+// 2. After creating view files, validate with linter
+mcp_ignition_linter_lint_perspective_components({
+  project_path: "ignition-projects/DemoAIProject",
+  component_type: "perspective-button",
+  verbose: true
+})
+
+// 3. Request project scan to update Gateway
+mcp_ignition_fastmcp_post_scan_projects({
+  random_string: "refresh_project"
+})
+
+// 4. Test with Playwright
+// Authenticate first...
+mcp_playwright_browser_navigate({ 
+  url: "http://localhost:9088/data/perspective/client/DemoAIProject" 
+})
+
+// Test the new component
+mcp_playwright_browser_click({ 
+  element: "new button component",
+  ref: "button:has-text('New Button')" 
+})
+
+// Validate expected behavior
+mcp_playwright_browser_wait_for({ 
+  text: "Expected response",
+  time: 3 
+})
+```
+
+## Best Practices
+
+### Development
+1. **Always run linter** before requesting project scans
+2. **Use descriptive TODO lists** to track development progress
+3. **Validate resource.json files** for all asset directories
+4. **Test incrementally** rather than building large features at once
+
+### Linting
+1. **Run project-wide linting** before major commits
+2. **Validate individual components** during development
+3. **Address linting issues immediately** to prevent accumulation
+4. **Use verbose mode** for detailed feedback during development
+
+### Testing
+1. **Authenticate once per session** and reuse the session
+2. **Take screenshots** at key validation points
+3. **Use specific selectors** rather than generic ones
+4. **Test both positive and negative scenarios**
+
+### Project Management
+1. **Request scans after significant changes** to refresh Gateway state
+2. **Check scan status** before assuming changes are live
+3. **Use project locks** when making bulk changes
+4. **Verify project state** through both MCP and browser testing
+
+## Troubleshooting
+
+### Common Issues
+- **Linter not finding files**: Check project path and file structure
+- **Project scan not updating**: Verify Gateway connectivity and scan lock status
+- **Playwright authentication failing**: Check credentials and wait times
+- **Component validation errors**: Verify JSON structure and required properties
+
+### Debug Commands
+```javascript
+// Check linter status
+mcp_ignition_linter_check_linter_status({
+  random_string: "status_check"
+})
+
+// Check Gateway connectivity
+mcp_ignition_fastmcp_get_activation_is_online({
+  random_string: "connectivity_check"
+})
+
+// Capture current browser state
+mcp_playwright_browser_snapshot({
+  random_string: "debug_snapshot"
+})
+```
+
+## Integration with Existing Tools
+
+This workflow integrates with:
+- **Docker Compose**: For service orchestration
+- **ensure-resource-json.py**: For resource file management  
+- **Demo scripts**: For seeding and testing data
+- **Existing test frameworks**: For comprehensive validation
+
+Follow this workflow to ensure consistent, validated, and tested Ignition development using the full suite of MCP tools.

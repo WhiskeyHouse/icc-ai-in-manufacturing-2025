@@ -1,0 +1,32 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies including curl for health checks
+RUN apt-get update && \
+  apt-get install -y --no-install-recommends \
+  gcc \
+  curl \
+  postgresql-client \
+  build-essential \
+  && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir --upgrade pip && \
+  pip install --no-cache-dir -r requirements.txt && \
+  pip install --no-cache-dir pytest-xdist pytest-cov testcontainers docker
+
+# Create data directories
+RUN mkdir -p /app/storage
+
+# Copy source code and tests
+COPY . .
+
+# Make the test script executable
+RUN chmod +x /app/run_tests.sh
+
+# Command to run tests
+CMD ["./run_tests.sh"] 

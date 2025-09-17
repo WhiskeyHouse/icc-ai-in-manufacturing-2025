@@ -1,0 +1,2 @@
+def doPost(request, session):
+    return {'html': '<h1>POST endpoint working</h1><p>Script validation functionality coming soon...</p>'}

@@ -1,0 +1,100 @@
+{
+  "custom": {
+    "popupTitle": "Site 1 - Data Hall 1 - Section 1 - GEN 1A"
+  },
+  "params": {
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/GEN/GEN1A"
+  },
+  "propConfig": {
+    "custom.popupTitle": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}/Info/PopupTitle"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 202.62,
+      "width": 558.92
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Rect"
+        },
+        "position": {
+          "basis": "300px",
+          "grow": 1
+        },
+        "props": {
+          "elements": [
+            {
+              "height": 202.62,
+              "stroke": {
+                "dasharray": "none",
+                "opacity": 1
+              },
+              "type": "rect",
+              "width": 558.92,
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "style": {
+            "classes": "exchange/datacenter/floor-plan/device exchange/datacenter/floor-plan/devices/gen"
+          },
+          "viewBox": "0 0 560.92 204.62"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\tviewPath \u003d \"Exchange/DataCenter/Faceplates/GenFp\"\n\ttagPath \u003d self.view.params.tagPath\n\tpopupTitle \u003d self.view.custom.popupTitle\n\tisMobile \u003d self.page.props.dimensions.viewport.width \u003c 1200\n\tviewParams \u003d {\"tagPath\": tagPath, \"mobile\": isMobile}\n\t\n\tif isMobile:\n\t\tmobilePosition \u003d {\"width\": \"100%\", \"height\": \"100%\"}\n\t\tsystem.perspective.openPopup(tagPath, viewPath, params\u003dviewParams, title\u003dpopupTitle, position\u003dmobilePosition, showCloseIcon\u003dFalse, resizable\u003dFalse, draggable\u003dFalse, modal\u003dTrue)\n\telse:\n\t\tsystem.perspective.openPopup(tagPath, viewPath, params\u003dviewParams, title\u003dpopupTitle, showCloseIcon\u003dFalse, resizable\u003dFalse, draggable\u003dFalse, modal\u003dTrue)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root",
+      "tooltip": {
+        "enabled": true,
+        "location": "top"
+      }
+    },
+    "propConfig": {
+      "meta.tooltip.text": {
+        "binding": {
+          "config": {
+            "path": "view.custom.popupTitle"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

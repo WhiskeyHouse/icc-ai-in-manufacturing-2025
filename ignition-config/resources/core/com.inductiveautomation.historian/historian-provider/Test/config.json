@@ -1,0 +1,15 @@
+{
+  "profile": {
+    "type": "CoreHistorian"
+  },
+  "settings": {
+    "dataDeduplication": true,
+    "maintenanceSettings": {
+      "directory": "",
+      "maintenanceAge": 6,
+      "maintenanceAgeUnits": "MONTH",
+      "strategy": "PRUNE"
+    },
+    "partitionInterval": "MONTH"
+  }
+}

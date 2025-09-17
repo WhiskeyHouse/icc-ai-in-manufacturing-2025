@@ -1,0 +1,80 @@
+{
+  "custom": {},
+  "params": {
+    "inputs": {
+      "height": "100%",
+      "targetDetailedUrl": "",
+      "targetUrl": "/single-line-iframe",
+      "width": "100%"
+    }
+  },
+  "propConfig": {
+    "params.inputs": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Iframe"
+        },
+        "position": {
+          "height": "100%",
+          "width": "100%"
+        },
+        "propConfig": {
+          "props.src": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "address": "{session.props.gateway.address}",
+                  "inputs": "{view.params.inputs}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\tendpoint \u003d \u0027{gatewayAddress}/system/webdev/{projectName}/exchange/pan-zoom-iframe/html?gatewayAddress\u003d{gatewayAddress}\u0026projectName\u003d{projectName}\u0026targetUrl\u003d{targetUrl}\u0026targetDetailedUrl\u003d{targetDetailedUrl}\u0026height\u003d{height}\u0026width\u003d{width}\u0027\n\tif value[\u0027address\u0027] is None:\n\t\tgatewayAddress \u003d system.util.getGatewayAddress()\n\telse:\n\t\tgatewayAddress \u003d value[\u0027address\u0027]\n\tprops \u003d {\n\t\t\t  \u0027gatewayAddress\u0027: gatewayAddress\n\t\t\t, \u0027projectName\u0027: system.util.getProjectName()\n\t\t\t, \u0027targetUrl\u0027: value[\u0027inputs\u0027][\u0027targetUrl\u0027]\n\t\t\t, \u0027targetDetailedUrl\u0027 : value[\u0027inputs\u0027][\u0027targetDetailedUrl\u0027]\n\t\t\t, \u0027height\u0027: str(value[\u0027inputs\u0027][\u0027height\u0027]).replace(\u0027%\u0027,\u0027%25\u0027)\n\t\t\t, \u0027width\u0027 : str(value[\u0027inputs\u0027][\u0027width\u0027]).replace(\u0027%\u0027,\u0027%25\u0027)\n\t}\n\treturn endpoint.format(**props)",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "touch-action": "none"
+          }
+        },
+        "type": "ia.display.iframe"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "--neutral-10",
+        "touch-action": "none"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "pan-zoom-iframe-clicked",
+          "pageScope": true,
+          "script": "\tif \u0027command\u0027 in payload:\n\t\tif payload[\u0027command\u0027].lower() \u003d\u003d \u0027openpopup\u0027:\n\t\t\tif int(self.page.props.dimensions.viewport.width) \u003c\u003d int(self.session.custom.breakpoint):\n\t\t\t\tpayload[\u0027parameters\u0027][\u0027position\u0027] \u003d {\"width\": \"100%\", \"height\": \"100%\"}\n\t\t\t\tpayload[\u0027parameters\u0027][\u0027params\u0027][\u0027mobile\u0027] \u003d True\n\t\t\t\tpayload[\u0027parameters\u0027][\u0027resizable\u0027] \u003d False\n\t\t\t\tpayload[\u0027parameters\u0027][\u0027draggable\u0027] \u003d False\n\t\t\tsystem.perspective.openPopup(**payload[\u0027parameters\u0027])\t\t\n\t\t\tsystem.perspective.closePopup(payload[\u0027parameters\u0027][\u0027id\u0027], pageId \u003d payload[\u0027self\u0027].view.page.id)",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.coord"
+  }
+}

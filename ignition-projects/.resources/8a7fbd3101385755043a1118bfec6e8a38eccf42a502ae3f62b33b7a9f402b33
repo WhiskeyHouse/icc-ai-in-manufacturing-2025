@@ -1,0 +1,448 @@
+{
+  "custom": {},
+  "params": {
+    "site": "[DataCenterDemo]Exchange/DataCenterDemo/Site1"
+  },
+  "propConfig": {
+    "params.site": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 710,
+      "width": 317
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/overview/data-hall-performance-grade/title exchange/datacenter/overview/title"
+          },
+          "text": "Data Hall Performance Grade"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/overview/data-hall-performance-grade/title exchange/datacenter/overview/title"
+                      },
+                      "text": "DH1 SECTIONS"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Section1"
+                        },
+                        "propConfig": {
+                          "props.params.status": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "site": "{view.params.site}"
+                                },
+                                "tagPath": "{site}/DataHall1/Section1/Section/CompositePerformanceStatus"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "display": {
+                              "statusBackground": "var(--callToAction)",
+                              "statusText": "var(--neutral-10)"
+                            },
+                            "location": {
+                              "dataHall": 1,
+                              "section": 1
+                            }
+                          },
+                          "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/SectionStatus"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Section2"
+                        },
+                        "propConfig": {
+                          "props.params.status": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "site": "{view.params.site}"
+                                },
+                                "tagPath": "{site}/DataHall1/Section2/Section/CompositePerformanceStatus"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "display": {
+                              "statusBackground": "var(--callToAction)",
+                              "statusText": "var(--neutral-10)"
+                            },
+                            "location": {
+                              "dataHall": 1,
+                              "section": 2
+                            }
+                          },
+                          "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/SectionStatus"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Section3"
+                        },
+                        "propConfig": {
+                          "props.params.status": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "site": "{view.params.site}"
+                                },
+                                "tagPath": "{site}/DataHall1/Section3/Section/CompositePerformanceStatus"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "display": {
+                              "statusBackground": "var(--callToAction)",
+                              "statusText": "var(--neutral-10)"
+                            },
+                            "location": {
+                              "dataHall": 1,
+                              "section": 3
+                            }
+                          },
+                          "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/SectionStatus"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Section4"
+                        },
+                        "propConfig": {
+                          "props.params.status": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "site": "{view.params.site}"
+                                },
+                                "tagPath": "{site}/DataHall1/Section4/Section/CompositePerformanceStatus"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "display": {
+                              "statusBackground": "var(--callToAction)",
+                              "statusText": "var(--neutral-10)"
+                            },
+                            "location": {
+                              "dataHall": 1,
+                              "section": 4
+                            }
+                          },
+                          "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/SectionStatus"
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Statuses"
+                    },
+                    "position": {
+                      "basis": "205px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "justify": "space-between"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "DataHall1"
+                },
+                "position": {
+                  "basis": "220px"
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "gap": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/datacenter/overview/data-hall-performance-grade/title exchange/datacenter/overview/title"
+                      },
+                      "text": "DH2 SECTIONS"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Section1"
+                        },
+                        "propConfig": {
+                          "props.params.status": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "site": "{view.params.site}"
+                                },
+                                "tagPath": "{site}/DataHall2/Section1/Section/CompositePerformanceStatus"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "display": {
+                              "statusBackground": "var(--callToAction)",
+                              "statusText": "var(--neutral-10)"
+                            },
+                            "location": {
+                              "dataHall": 1,
+                              "section": 1
+                            }
+                          },
+                          "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/SectionStatus"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Section2"
+                        },
+                        "propConfig": {
+                          "props.params.status": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "site": "{view.params.site}"
+                                },
+                                "tagPath": "{site}/DataHall2/Section2/Section/CompositePerformanceStatus"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "display": {
+                              "statusBackground": "var(--callToAction)",
+                              "statusText": "var(--neutral-10)"
+                            },
+                            "location": {
+                              "dataHall": 1,
+                              "section": 2
+                            }
+                          },
+                          "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/SectionStatus"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Section3"
+                        },
+                        "propConfig": {
+                          "props.params.status": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "site": "{view.params.site}"
+                                },
+                                "tagPath": "{site}/DataHall2/Section3/Section/CompositePerformanceStatus"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "display": {
+                              "statusBackground": "var(--callToAction)",
+                              "statusText": "var(--neutral-10)"
+                            },
+                            "location": {
+                              "dataHall": 1,
+                              "section": 3
+                            }
+                          },
+                          "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/SectionStatus"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Section4"
+                        },
+                        "propConfig": {
+                          "props.params.status": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "site": "{view.params.site}"
+                                },
+                                "tagPath": "{site}/DataHall2/Section4/Section/CompositePerformanceStatus"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "display": {
+                              "statusBackground": "var(--callToAction)",
+                              "statusText": "var(--neutral-10)"
+                            },
+                            "location": {
+                              "dataHall": 1,
+                              "section": 4
+                            }
+                          },
+                          "path": "Exchange/DataCenter/Overview/EmbeddedViews/DataHallPerformanceGrade/SectionStatus"
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Statuses"
+                    },
+                    "position": {
+                      "basis": "205px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "justify": "space-between"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "DataHall2"
+                },
+                "position": {
+                  "basis": "220px"
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "gap": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Sections"
+            },
+            "position": {
+              "basis": "min(245px, 85%)"
+            },
+            "props": {
+              "direction": "column",
+              "justify": "space-evenly",
+              "style": {
+                "gap": "15px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "RowContainer"
+        },
+        "position": {
+          "basis": "494px",
+          "grow": 1
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/overview/container"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

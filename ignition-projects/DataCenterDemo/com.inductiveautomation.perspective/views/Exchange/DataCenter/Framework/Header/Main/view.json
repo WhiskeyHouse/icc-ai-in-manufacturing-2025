@@ -1,0 +1,115 @@
+{
+  "custom": {
+    "dimensions": {
+      "enabled": true,
+      "primaryView": {
+        "height": 0,
+        "scrollLeft": 0,
+        "scrollTop": 0,
+        "width": 0
+      },
+      "screen": {
+        "height": 0,
+        "width": 0
+      },
+      "viewport": {
+        "height": 0,
+        "width": 0
+      }
+    },
+    "footer": {
+      "show": false
+    }
+  },
+  "params": {},
+  "propConfig": {
+    "custom.dimensions": {
+      "binding": {
+        "config": {
+          "path": "page.props.dimensions"
+        },
+        "type": "property"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif self.page.props.path \u003d\u003d \u0027/single-line-iframe\u0027:\n\t\tsystem.perspective.closeDock(\u0027Header\u0027)\n\t\tsystem.perspective.closeDock(\u0027Footer\u0027)\n\telif currentValue.value[\u0027viewport\u0027].value[\u0027width\u0027].value \u003c self.session.custom.breakpoint:\n\t\tsystem.perspective.openDock(\u0027Footer\u0027)\n\t\tconfig \u003d {\n\t\t\t  \u0027viewParams\u0027 : {\u0027viewPath\u0027:\u0027Exchange/DataCenter/Framework/Header/Mobile/MobileMainFooter\u0027}\n\t\t\t, \u0027size\u0027:64\n\t\t\t, \u0027resizable\u0027: False\n\t\t\t, \u0027content\u0027: \u0027push\u0027\n\t\t\t}\n\t\tsystem.perspective.alterDock(\u0027Footer\u0027, config) \n\telif previousValue.value[\u0027viewport\u0027].value[\u0027width\u0027].value \u003c self.session.custom.breakpoint:\n\t\tself.view.custom.footer.show \u003d False\n\t\tsystem.perspective.closeDock(\u0027Footer\u0027)"
+      },
+      "persistent": true
+    },
+    "custom.footer": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 60,
+      "width": 1261
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "DesktopMain"
+            },
+            "position": {
+              "size": "large"
+            },
+            "props": {
+              "path": "Exchange/DataCenter/Framework/Header/Desktop/DesktopMain"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "MobileMain"
+            },
+            "props": {
+              "path": "Exchange/DataCenter/Framework/Header/Mobile/MobileMainHeader"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Breakpoint"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "breakpoint": 1200
+        },
+        "type": "ia.container.breakpt"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "space-between"
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "toggle-alarms",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tif self.view.custom.footer.show:\n\t\tself.view.custom.footer.show \u003d False\n\t\tsystem.perspective.closeDock(\u0027Footer\u0027)\n\telse:\n\t\tself.view.custom.footer.show \u003d True\n\t\tsystem.perspective.openDock(\u0027Footer\u0027)\n\t\t\n\t\tviewParams \u003d {}\n\t\t\n\t\t# See if alarm search text was included in payload.\n\t\tif \u0027alarmSearch\u0027 in payload:\n\t\t\tviewParams[\u0027alarmSearch\u0027] \u003d payload[\u0027alarmSearch\u0027]\n\t\t\n\t\tconfig \u003d {\n\t\t\t\"content\": \"cover\",\n\t\t\t\"resizable\": True,\n\t\t\t\"size\": 375,\n\t\t\t\"viewParams\": {\n\t\t\t\t\"viewPath\": \"Exchange/DataCenter/Alarms/AlarmsDocked\",\n\t\t\t\t\"viewParams\": viewParams\n\t\t\t}\n\t\t}\n\t\tsystem.perspective.alterDock(\u0027Footer\u0027, config)",
+          "sessionScope": false,
+          "viewScope": false
+        },
+        {
+          "messageType": "close-alarms",
+          "pageScope": true,
+          "script": "\tself.view.custom.footer.show \u003d False\n\tsystem.perspective.closeDock(\u0027Footer\u0027)",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

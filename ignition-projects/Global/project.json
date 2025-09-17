@@ -1,0 +1,7 @@
+{
+  "title": "Global",
+  "description": "Global WHK validation and utilities project with WebDev validation endpoints",
+  "enabled": true,
+  "inheritable": false,
+  "parent": ""
+}

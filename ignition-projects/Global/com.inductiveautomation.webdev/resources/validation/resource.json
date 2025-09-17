@@ -1,0 +1,19 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json",
+    "doGet.py",
+    "doPost.py",
+    "doPatch.py"
+  ],
+  "attributes": {
+    "lastModificationSignature": "validation-api-resources",
+    "lastModification": {
+      "actor": "claude",
+      "timestamp": "2025-09-16T14:25:00Z"
+    }
+  }
+}

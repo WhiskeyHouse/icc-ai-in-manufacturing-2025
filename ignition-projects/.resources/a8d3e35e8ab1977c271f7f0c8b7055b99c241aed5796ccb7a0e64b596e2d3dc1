@@ -1,0 +1,244 @@
+{
+  "custom": {
+    "aOrB": "A",
+    "sectionPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1"
+  },
+  "params": {
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/LVSWG/LVSWG1A"
+  },
+  "propConfig": {
+    "custom.aOrB": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value[-1:]",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.sectionPath": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "transforms": [
+          {
+            "code": "\tsectionPath \u003d \u0027\u0027\n\t\n\tpathParts \u003d value.split(\u0027/\u0027)\n\t\n\tfor part in pathParts:\n\t\tsectionPath +\u003d part + \u0027/\u0027\n\t\t\n\t\tif \u0027Section\u0027 in part:\n\t\t\tbreak\n\t\n\treturn sectionPath[:-1]",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 842,
+      "width": 1454
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "DiagramAndBreaker"
+            },
+            "propConfig": {
+              "props.params.tagPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.tagPath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "selectedEquipment": {
+                  "tagPath": "",
+                  "viewPath": ""
+                }
+              },
+              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/DiagramAndBreaker",
+              "style": {
+                "backgroundColor": "var(--neutral-10)",
+                "classes": "exchange/datacenter/faceplates/container"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Pqm1Fp"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "propConfig": {
+              "props.params.tagPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.sectionPath} + \"/PQM/PQM1\" + {view.custom.aOrB}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "showClose": false
+              },
+              "path": "Exchange/DataCenter/Faceplates/PqmFp"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Pqm2Fp"
+            },
+            "position": {
+              "tabIndex": 2
+            },
+            "propConfig": {
+              "props.params.tagPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.sectionPath} + \"/PQM/PQM2\" + {view.custom.aOrB}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "showClose": false
+              },
+              "path": "Exchange/DataCenter/Faceplates/PqmFp"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.tabs": {
+            "binding": {
+              "config": {
+                "path": "view.custom.aOrB"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn [\"LV Switchgear {aB}\".format(aB \u003d value), \"PQM 1{aB}\".format(aB \u003d value), \"PQM 2{aB}\".format(aB \u003d value)]",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "contentStyle": {
+            "borderBottomStyle": "none"
+          },
+          "menuType": "modern",
+          "tabSize": {
+            "width": 140
+          }
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": true,
+                    "id": "{view.params.tagPath}",
+                    "modal": false,
+                    "overlayDismiss": false,
+                    "resizable": true,
+                    "showCloseIcon": true,
+                    "type": "close",
+                    "viewPath": "",
+                    "viewportBound": false
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "marginBottom": 4,
+                "marginTop": 4
+              },
+              "text": "CLOSE"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Footer"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-10)"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "exchange.datacenterDemo.switchSelectedEquipment",
+          "pageScope": true,
+          "script": "\tself.getChild(\"TabContainer\").getChild(\"DiagramAndBreaker\").props.params.selectedEquipment \u003d payload[\u0027selectedEquipment\u0027]",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

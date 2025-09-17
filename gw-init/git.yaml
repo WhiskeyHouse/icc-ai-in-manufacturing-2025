@@ -1,0 +1,65 @@
+- repo_uri: https://github.com/yourorg/global-ignition-project.git
+  repo_branch: master
+  ignition_projectName: Global-Project
+  ignition_userName: your-email@yourorg.com
+  ignition_inheritable: true
+  ignition_parentName: null
+  user_name: your-username
+  user_email: your-email@yourorg.com
+  user_password: <not used>
+  commissioning_importThemes: true
+  commissioning_importTags: true
+  commissioning_importImages: true
+  initDefaultBranch: main
+- repo_uri: https://github.com/yourorg/ignition-reporting.git
+  repo_branch: main
+  ignition_projectName: Reporting
+  ignition_userName: your-email@yourorg.com
+  ignition_inheritable: false
+  ignition_parentName: Global-Project
+  user_name: your-username
+  user_email: your-email@yourorg.com
+  user_password: <not used>
+  commissioning_importThemes: true
+  commissioning_importTags: true
+  commissioning_importImages: true
+  initDefaultBranch: main
+- repo_uri: https://github.com/yourorg/ignition-scada.git
+  repo_branch: main
+  ignition_projectName: Manufacturing_Plant_01
+  ignition_userName: your-email@yourorg.com
+  ignition_inheritable: false
+  ignition_parentName: Global-Project
+  user_name: your-username
+  user_email: your-email@yourorg.com
+  user_password: <not used>
+  commissioning_importThemes: true
+  commissioning_importTags: true
+  commissioning_importImages: true
+  initDefaultBranch: main
+- repo_uri: https://github.com/yourorg/ignition-sparkcore.git
+  repo_branch: main
+  ignition_projectName: SparkCore
+  ignition_userName: your-email@yourorg.com
+  ignition_inheritable: false
+  ignition_parentName: Global-Project
+  user_name: your-username
+  user_email: your-email@yourorg.com
+  user_password: <not used>
+  commissioning_importThemes: true
+  commissioning_importTags: true
+  commissioning_importImages: true
+  initDefaultBranch: main
+- repo_uri: https://github.com/yourorg/ignition-scheduling.git
+  repo_branch: main
+  ignition_projectName: Scheduling
+  ignition_userName: your-email@yourorg.com
+  ignition_inheritable: false
+  ignition_parentName: SparkCore
+  user_name: your-username
+  user_email: your-email@yourorg.com
+  user_password: <not used>
+  commissioning_importThemes: true
+  commissioning_importTags: true
+  commissioning_importImages: true
+  initDefaultBranch: main

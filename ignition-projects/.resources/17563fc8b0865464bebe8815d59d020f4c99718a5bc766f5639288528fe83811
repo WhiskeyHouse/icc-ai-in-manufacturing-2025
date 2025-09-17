@@ -1,0 +1,80 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 40,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "ConfidenceContainer"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "gap": "10px",
+            "alignItems": "center"
+          }
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "ConfidenceBar"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "max": 100,
+              "min": 0,
+              "value": 92,
+              "style": {
+                "height": "20px"
+              },
+              "track": {
+                "fill": "#27ae60"
+              }
+            },
+            "type": "ia.input.slider"
+          },
+          {
+            "meta": {
+              "name": "ConfidenceValue"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "props": {
+              "text": "92%",
+              "style": {
+                "fontSize": "14px",
+                "fontWeight": "bold",
+                "textAlign": "center",
+                "color": "#27ae60"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "row",
+      "style": {
+        "padding": "5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

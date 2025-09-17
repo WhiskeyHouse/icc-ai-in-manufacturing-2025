@@ -1,0 +1,299 @@
+{
+  "custom": {
+    "gradient": {
+      "background": "linear-gradient(to bottom, rgba(50.0, 50.0, 50.0, 1.0), rgba(25.0, 25.0, 152.5, 1.0), rgba(0.0, 0.0, 255.0, 1.0), rgba(50.0, 50.0, 50.0, 1.0), rgba(196.42857142857142, 14.285714285714292, 14.285714285714292, 1.0), rgba(225.71428571428572, 7.142857142857146, 7.142857142857146, 1.0), rgba(255.0, 0.0, 0.0, 1.0), rgba(50.0, 50.0, 50.0, 1.0), rgba(50.0, 50.0, 50.0, 1.0))",
+      "foreground": "linear-gradient(to bottom, rgba(50.0, 50.0, 50.0, 1.0), rgba(25.0, 25.0, 152.5, 1.0), rgba(0.0, 0.0, 255.0, 1.0), rgba(50.0, 50.0, 50.0, 1.0), rgba(196.42857142857142, 14.285714285714292, 14.285714285714292, 1.0), rgba(225.71428571428572, 7.142857142857146, 7.142857142857146, 1.0), rgba(255.0, 0.0, 0.0, 1.0), rgba(50.0, 50.0, 50.0, 1.0), rgba(50.0, 50.0, 50.0, 1.0))",
+      "foregroundStyle": "exchange/datacenter/heatmap/gradient-fade-1"
+    },
+    "labelInstances": [
+      {
+        "instancePosition": {
+          "basis": 0
+        }
+      },
+      {
+        "instanceStyle": {
+          "classes": "exchange/datacenter/heatmap/temperature-label"
+        },
+        "text": "18.0 %"
+      },
+      {
+        "instanceStyle": {
+          "classes": "exchange/datacenter/heatmap/temperature-alarm exchange/datacenter/heatmap/temperature-label"
+        },
+        "text": "30.0 %"
+      },
+      {
+        "instanceStyle": {
+          "classes": "exchange/datacenter/heatmap/temperature-label"
+        },
+        "text": "32.0 %"
+      },
+      {
+        "instancePosition": {
+          "basis": 0
+        }
+      }
+    ]
+  },
+  "params": {
+    "inputs": {
+      "alarms": [
+        "None",
+        30,
+        null
+      ],
+      "ambientValue": 25,
+      "config": {
+        "highColor": {
+          "a": 1,
+          "b": 0,
+          "g": 0,
+          "r": 255
+        },
+        "highSetpoint": 32,
+        "lowColor": {
+          "a": 1,
+          "b": 255,
+          "g": 0,
+          "r": 0
+        },
+        "lowSetpoint": 18,
+        "midColor": {
+          "a": 1,
+          "b": 50,
+          "g": 50,
+          "r": 50
+        },
+        "showLabels": true
+      },
+      "isColdAisle": true,
+      "name": "CA1",
+      "units": "%",
+      "values": [
+        18,
+        25,
+        32
+      ]
+    }
+  },
+  "propConfig": {
+    "custom.gradient": {
+      "persistent": true
+    },
+    "custom.labelInstances": {
+      "persistent": true
+    },
+    "params.inputs": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif len(currentValue.value[\u0027values\u0027].value) \u003c 1:\n\t\treturn\n\t\n\tfrom threading import Timer\n\t\n\tlowTemp \u003d float(currentValue.value[\u0027config\u0027].value[\u0027lowSetpoint\u0027].value)\n\thighTemp \u003d float(currentValue.value[\u0027config\u0027].value[\u0027highSetpoint\u0027].value)\n\tlowColor \u003d (\n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027lowColor\u0027].value[\u0027r\u0027].value), \n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027lowColor\u0027].value[\u0027g\u0027].value), \n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027lowColor\u0027].value[\u0027b\u0027].value),\n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027lowColor\u0027].value[\u0027a\u0027].value)\n\t\t)\n\tmidColor \u003d (\n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027midColor\u0027].value[\u0027r\u0027].value), \n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027midColor\u0027].value[\u0027g\u0027].value), \n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027midColor\u0027].value[\u0027b\u0027].value),\n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027midColor\u0027].value[\u0027a\u0027].value)\n\t\t)\n\thighColor \u003d (\n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027highColor\u0027].value[\u0027r\u0027].value), \n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027highColor\u0027].value[\u0027g\u0027].value), \n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027highColor\u0027].value[\u0027b\u0027].value),\n\t\tfloat(currentValue.value[\u0027config\u0027].value[\u0027highColor\u0027].value[\u0027a\u0027].value)\n\t\t)\n\t\n\tisLows \u003d []\n\tdef getColor(temperature):\n\t\n\t\t# Calculate ratio\n\t\tratio \u003d max(min((temperature - lowTemp) / (highTemp - lowTemp),1.0),0.0)\n\t\t\n\t\t# Interpolate color\n\t\tif ratio \u003c 0.5:\n\t\t\tscale \u003d ratio * 2\n\t\t\tcolor \u003d [low + scale * (high - low) for low, high in zip(lowColor, midColor)]\n\t\t\tisLows.append(True)\n\t\telif ratio \u003d\u003d 0.5:\n\t\t\tcolor \u003d midColor\n\t\t\tisLows.append(None)\n\t\telse:\n\t\t\tscale \u003d (ratio - 0.5) * 2\n\t\t\tcolor \u003d [low + scale * (high - low) for low, high in zip(midColor, highColor)]\n\t\t\tisLows.append(False)\n\t\t\t\n\t\treturn color\n\t\t\n\tdef getMidColor(color1, color2):\n\t\tcolor \u003d [(c1+c2)/2.0 for c1, c2 in zip(color1, color2)]\n\t\treturn color\n\t   \n\tdef makeGradient(temperatures):\n\t\tcolors \u003d [getColor(temp) for temp in temperatures]\n\n\t\t# insert middle points\n\t\tgradients \u003d []\n\t\tfor i in range(len(colors)-1):\n\t\t\tgradients.append(colors[i])\n\t\t\tif isLows[i] !\u003d isLows[i+1] and (isLows[i] and isLows[i+1]) !\u003d None:\n\t\t\t\tgradients.append(midColor)\n\t\t\telse:\n\t\t\t\tgradients.append(getMidColor(colors[i],colors[i+1]))\n\t\tgradients.append(colors[-1])\t\t\t\n\t\t\n\t\tgradient \u003d \u0027linear-gradient(to bottom, \u0027 + \u0027, \u0027.join([\u0027rgba\u0027+str(tuple(color)) for color in gradients]) + \u0027)\u0027\n\t\treturn gradient\n\t\n\t# make labelInstances\n\tvalues \u003d [v.value for v in currentValue.value[\u0027values\u0027].value]\n\talarms \u003d [a.value for a in currentValue.value[\u0027alarms\u0027].value]\n\tlabelInstances \u003d []\n\tlabelInstances.append({\"instancePosition\": {\u0027basis\u0027:0}})\n\tdisplayValues \u003d []\n\t\n\tfor i, val in enumerate(values):\n\t\ttry:\n\t\t\tappendValue \u003d float(alarms[i])\n\t\t\tclasses \u003d \u0027exchange/datacenter/heatmap/temperature-alarm exchange/datacenter/heatmap/temperature-label\u0027\n\t\texcept:\n\t\t\tappendValue \u003d val if val else 0\n\t\t\tclasses \u003d \u0027exchange/datacenter/heatmap/temperature-label\u0027\n\n\t\tdisplayValues.append(appendValue)\n\t\tlabelInstances.append({\n\t\t\t\"instanceStyle\": {\"classes\": classes},\n\t\t\t\"text\": \"%0.1f %s\" % (appendValue, currentValue.value[\u0027units\u0027].value)\n\t\t})\n\n\tlabelInstances.append({\"instancePosition\": {\u0027basis\u0027:0}})\n\t\n\t# add value padding to gradient depending on aisle type\n\tif self.params.inputs.isColdAisle:\n\t\t# cold aisles have ambient temperature on start and end\n\t\taugmentedValues \u003d [currentValue.value[\u0027ambientValue\u0027].value] + displayValues + [currentValue.value[\u0027ambientValue\u0027].value]\n\telse:\n\t\t# hot aisles are enclosed so values should duplicate first and last values\n\t\taugmentedValues \u003d [displayValues[0]] + displayValues + [displayValues[-1]]\n\tnewGradient \u003d makeGradient(augmentedValues)\n\t\n\t# animate transition, change labels after animation\n\tfade1 \u003d \u0027exchange/datacenter/heatmap/gradient-fade-1\u0027\n\tfade2 \u003d \u0027exchange/datacenter/heatmap/gradient-fade-2\u0027\n\t\n\t# write to custom properties\n\tif self.custom.gradient.foregroundStyle !\u003d fade1:\n\t\tself.custom.gradient.foregroundStyle \u003d fade1\n\telse:\n\t\tself.custom.gradient.foregroundStyle \u003d fade2\n\t\n\t\n\tself.custom.gradient.background \u003d newGradient\n\tself.custom.labelInstances \u003d labelInstances\n\t\n\tdef changeForeground():\n\t\tself.custom.gradient.foreground \u003d newGradient\n\tTimer(1, changeForeground).start()"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 844,
+      "width": 113
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Name"
+        },
+        "position": {
+          "height": 32,
+          "width": "100%"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.inputs.name"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "GradientBackground"
+                },
+                "position": {
+                  "height": 1,
+                  "width": 1
+                },
+                "propConfig": {
+                  "props.style.background": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.gradient.background"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.container.coord"
+              },
+              {
+                "meta": {
+                  "name": "GradientForeground"
+                },
+                "position": {
+                  "height": 1,
+                  "width": 1
+                },
+                "propConfig": {
+                  "props.style.background": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.gradient.foreground"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.style.classes": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.gradient.foregroundStyle"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {}
+                },
+                "type": "ia.container.coord"
+              }
+            ],
+            "meta": {
+              "name": "Gradients"
+            },
+            "position": {
+              "height": "100%",
+              "width": "100%"
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.inputs.isColdAisle}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "exchange/datacenter/heatmap/heat-aisle"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "mode": "percent",
+              "style": {
+                "animation-disabled": "fluctuate-blur 1s ease-in-out infinite alternate"
+              }
+            },
+            "type": "ia.container.coord"
+          },
+          {
+            "meta": {
+              "name": "FlexRepeater"
+            },
+            "position": {
+              "height": "100%",
+              "width": "100%"
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.inputs.config.showLabels"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.instances": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.labelInstances"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "elementPosition": {
+                "basis": "auto",
+                "grow": 0,
+                "shrink": 0
+              },
+              "elementStyle": {
+                "box-sizing": "content-box",
+                "margin": "4px"
+              },
+              "justify": "space-between",
+              "path": "Exchange/DataCenter/Heatmap/EmbeddedViews/ValueDisplay",
+              "style": {
+                "overflow": "visible"
+              },
+              "useDefaultViewHeight": false,
+              "useDefaultViewWidth": false
+            },
+            "type": "ia.display.flex-repeater"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "height": "auto",
+          "width": "100%",
+          "y": 32
+        },
+        "props": {
+          "style": {
+            "bottom": 32,
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.coord"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

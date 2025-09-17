@@ -1,0 +1,134 @@
+{
+  "custom": {},
+  "params": {
+    "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Metrics/System/CPU Usage",
+    "name": "value",
+    "value": ""
+  },
+  "propConfig": {
+    "params.fullPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 35,
+      "width": 350
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "StatusCard"
+        },
+        "position": {
+          "basis": "210px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.fullPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.fullPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.fullPath"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn value.split(\"/\")[-1]",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.value": {
+            "binding": {
+              "config": {
+                "path": "view.params.value"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/MetricsLabelCard"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Sparkline"
+        },
+        "position": {
+          "basis": "100px",
+          "grow": 1
+        },
+        "propConfig": {
+          "custom.historyTag": {
+            "binding": {
+              "config": {
+                "path": "view.params.fullPath"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn [{\"alias\":self.view.params.name, \"path\": value, \"aggregate\": \"Minimum\"}]",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.points": {
+            "binding": {
+              "config": {
+                "aggregate": "MinMax",
+                "avoidScanClassValidation": true,
+                "dateRange": {
+                  "mostRecent": "1",
+                  "mostRecentUnits": "HOUR"
+                },
+                "enableValueCache": true,
+                "ignoreBadQuality": false,
+                "polling": {
+                  "enabled": true,
+                  "rate": "60"
+                },
+                "preventInterpolation": false,
+                "returnFormat": "Wide",
+                "returnSize": {
+                  "numRows": "25",
+                  "type": "FIXED"
+                },
+                "tags": "{this.custom.historyTag}",
+                "valueFormat": "DATASET"
+              },
+              "type": "tag-history"
+            }
+          }
+        },
+        "type": "ia.display.sparkline"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

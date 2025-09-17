@@ -1,0 +1,2 @@
+def doGet(request, session):
+    return {'html': '<html><body><h1>WHK Validation API</h1><p>Status: Online</p></body></html>'}

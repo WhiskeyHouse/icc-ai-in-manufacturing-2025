@@ -1,0 +1,39 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "PanZoomIframe"
+        },
+        "position": {
+          "height": "100%",
+          "width": "100%"
+        },
+        "props": {
+          "params": {
+            "inputs": {
+              "height": 521.157,
+              "targetDetailedUrl": "",
+              "targetUrl": "/single-line-iframe",
+              "width": 1084.611
+            }
+          },
+          "path": "Exchange/PanZoomIframe/PanZoomIframe"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "touch-action": "none"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

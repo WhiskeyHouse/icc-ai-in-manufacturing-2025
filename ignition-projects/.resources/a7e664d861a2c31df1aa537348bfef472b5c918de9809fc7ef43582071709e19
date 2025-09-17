@@ -1,0 +1,341 @@
+{
+  "custom": {
+    "gap": "15px"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.gap": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "HeaderBar"
+        },
+        "position": {
+          "basis": "80px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#1a1a2e",
+            "borderRadius": "8px",
+            "padding": "15px 20px"
+          }
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "text": "🥃 AI Whiskey Lab Assistant",
+              "style": {
+                "color": "#ffffff",
+                "fontSize": "28px",
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Clock"
+            },
+            "props": {
+              "format": "MMM dd, yyyy HH:mm:ss",
+              "style": {
+                "color": "#ffd700",
+                "fontSize": "18px",
+                "textAlign": "right"
+              }
+            },
+            "propConfig": {
+              "props.datetime": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "now(1000)"
+                  }
+                }
+              }
+            },
+            "type": "ia.display.datetime"
+          }
+        ],
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "MainContent"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "row",
+          "style": {
+            "gap": "15px"
+          }
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "LeftPanel"
+            },
+            "position": {
+              "basis": "350px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#f8f9fa",
+                "borderRadius": "8px",
+                "padding": "20px",
+                "gap": "15px"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "ProcessTitle"
+                },
+                "props": {
+                  "text": "Process Visualization",
+                  "style": {
+                    "fontSize": "20px",
+                    "fontWeight": "bold",
+                    "color": "#2c3e50",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "TankVisualization"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "path": "WhiskeyLab/AIAssistant/Components/TankVisualization"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "CenterPanel"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#ffffff",
+                "borderRadius": "8px",
+                "padding": "20px",
+                "gap": "15px",
+                "border": "1px solid #e9ecef"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "AILogTitle"
+                },
+                "props": {
+                  "text": "AI Agent Decisions",
+                  "style": {
+                    "fontSize": "20px",
+                    "fontWeight": "bold",
+                    "color": "#2c3e50",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "AILogFeed"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "path": "WhiskeyLab/AIAssistant/Components/AILogFeed"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "RightPanel"
+            },
+            "position": {
+              "basis": "300px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#f8f9fa",
+                "borderRadius": "8px",
+                "padding": "20px",
+                "gap": "15px"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "InteractionTitle"
+                },
+                "props": {
+                  "text": "Operator Interaction",
+                  "style": {
+                    "fontSize": "20px",
+                    "fontWeight": "bold",
+                    "color": "#2c3e50",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "InteractionPanel"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "path": "WhiskeyLab/AIAssistant/Components/InteractionPanel"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "type": "ia.container.flex"
+          }
+        ],
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "StatusBar"
+        },
+        "position": {
+          "basis": "60px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#34495e",
+            "borderRadius": "8px",
+            "padding": "10px 20px"
+          }
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "ConfidenceLabel"
+            },
+            "position": {
+              "basis": "150px",
+              "shrink": 0
+            },
+            "props": {
+              "text": "AI Confidence:",
+              "style": {
+                "color": "#ffffff",
+                "fontSize": "16px",
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "ConfidenceMeter"
+            },
+            "position": {
+              "basis": "200px",
+              "shrink": 0
+            },
+            "props": {
+              "path": "WhiskeyLab/AIAssistant/Components/ConfidenceMeter"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "NextStepLabel"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "text": "Next Step: Monitoring Tank 1 for stability...",
+              "style": {
+                "color": "#ecf0f1",
+                "fontSize": "14px",
+                "textAlign": "right"
+              }
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "type": "tag",
+                  "config": {
+                    "tagPath": "[Global]WhiskeyLab/AI/NextStepPrompt",
+                    "fallbackDelay": 2.5
+                  }
+                }
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.gap": {
+        "binding": {
+          "config": {
+            "path": "view.custom.gap"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "padding": "15px",
+        "backgroundColor": "#ecf0f1"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

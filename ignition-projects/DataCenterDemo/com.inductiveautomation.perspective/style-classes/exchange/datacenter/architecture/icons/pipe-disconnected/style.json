@@ -1,0 +1,20 @@
+{
+  "base": {
+    "style": {}
+  },
+  "variants": [
+    {
+      "pseudo": "active",
+      "animation": {
+        "keyframes": {
+          "0%": {
+            "color": "FFCCCC"
+          },
+          "100%": {
+            "color": "#D90000"
+          }
+        }
+      }
+    }
+  ]
+}

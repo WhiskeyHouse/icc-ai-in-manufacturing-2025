@@ -1,0 +1,511 @@
+#  KONG_DATABASE: ${KONG_DATABASE:-off}
+x-kong-config: &kong-env
+  KONG_DATABASE: ${KONG_DATABASE:-off}
+  KONG_PG_DATABASE: ${KONG_PG_DATABASE:-kong}
+  KONG_PG_HOST: db
+  KONG_PG_USER: ${KONG_PG_USER:-kong}
+  KONG_PG_PASSWORD_FILE: /run/secrets/kong_postgres_password
+
+services:
+  # Add kong api gateway resources
+  kong:
+    build:
+      context: ./kong_config
+      dockerfile: Dockerfile
+    # image: "${KONG_DOCKER_TAG:-kong:latest}"
+    user: "${KONG_USER:-kong}"
+    environment:
+      <<: *kong-env
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+      KONG_PROXY_LISTEN: "${KONG_PROXY_LISTEN:-0.0.0.0:8000}"
+      KONG_ADMIN_LISTEN: "${KONG_ADMIN_LISTEN:-0.0.0.0:8011}"
+      KONG_ADMIN_GUI_LISTEN: "${KONG_ADMIN_GUI_LISTEN:-0.0.0.0:8012}"
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_PREFIX: ${KONG_PREFIX:-/var/run/kong}
+      KONG_DECLARATIVE_CONFIG: "/opt/kong/kong.yaml"
+    #    secrets:
+    #     - kong_postgres_password
+    networks:
+      - whk-network
+    ports:
+      # The following two environment variables default to an insecure value (0.0.0.0)
+      # according to the CIS Security test.
+      - "${KONG_INBOUND_PROXY_LISTEN:-0.0.0.0}:8000:8000/tcp"
+      - "${KONG_INBOUND_SSL_PROXY_LISTEN:-0.0.0.0}:8443:8443/tcp"
+      # Making them mandatory but undefined, like so would be backwards-breaking:
+      # - "${KONG_INBOUND_PROXY_LISTEN?Missing inbound proxy host}:8000:8000/tcp"
+      # - "${KONG_INBOUND_SSL_PROXY_LISTEN?Missing inbound proxy ssl host}:8443:8443/tcp"
+      # Alternative is deactivating check 5.13 in the security bench, if we consider Kong's own config to be enough security here
+
+      - "127.0.0.1:8011:8001/tcp"
+      - "127.0.0.1:8444:8444/tcp"
+      - "127.0.0.1:8012:8002/tcp"
+    healthcheck:
+      test: ["CMD", "kong", "health"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    #        restart: on-failure:5
+    read_only: true
+    volumes:
+      - kong_prefix_vol:${KONG_PREFIX:-/var/run/kong}
+      - kong_tmp_vol:/tmp
+      - ./kong_config:/opt/kong/kong_config:ro
+    security_opt:
+      - no-new-privileges
+
+  # # Add llama-index RAG service
+  llama-index-service:
+    build:
+      context: ./llama-index-service
+      dockerfile: Dockerfile
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DEFAULT_OPENAI_MODEL=${DEFAULT_OPENAI_MODEL:-gpt-4o-mini}
+      - EMBED_MODEL=${EMBED_MODEL:-text-embedding-ada-002}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - MES_DB_NAME=whk-mes
+      - VECTOR_DB_NAME=whk_vectors
+      - VECTOR_DB_HOST=vector-db
+      - VECTOR_DB_PORT=5432
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_TTL=${REDIS_TTL:-5000}
+      - INIT_DB=true
+      - PRELOAD_INDEXES=false
+      - BATCH_SIZE=${BATCH_SIZE:-10}
+      - MAX_RETRIES=${MAX_RETRIES:-5}
+      - INITIAL_BACKOFF=${INITIAL_BACKOFF:-1}
+      - MAX_BACKOFF=${MAX_BACKOFF:-60}
+      - MIN_BATCH_DELAY=${MIN_BATCH_DELAY:-0.5}
+      - MAX_BATCH_DELAY=${MAX_BATCH_DELAY:-2.0}
+      - MIN_TABLE_DELAY=${MIN_TABLE_DELAY:-5}
+      - MAX_TABLE_DELAY=${MAX_TABLE_DELAY:-15}
+      - ENV=${ENV:-development}
+    networks:
+      - whk-network
+    ports:
+      - "${LLAMA_INDEX_PORT:-8085}:8080"
+    volumes:
+      - llama_index_storage:/app/storage
+    depends_on:
+      - db
+      - vector-db
+      - redis
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    restart: unless-stopped
+
+  redis:
+    image: redis:7
+    networks:
+      - whk-network
+    ports:
+      - ${REDIS_PORT}:6379
+    volumes:
+      - redis:/data
+
+  rabbitmq:
+    # image: rabbitmq:3-management
+    build:
+      context: ./rabbitmq
+      dockerfile: Dockerfile
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+      RABBITMQ_MANAGEMENT_ALLOW_WEB_ACCESS: true
+    networks:
+      - whk-network
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      # - ./rabbitmq/definitions.json:/etc/rabbitmq/definitions.json
+      # - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      # - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
+
+      # - ./rabbitmq-plugins/enabled_plugins:/etc/rabbitmq/enabled_plugins
+      # rabbitmq-plugins enable rabbitmq_federation
+      # # Enable the management plugin
+      # management.load_definitions = /etc/rabbitmq/definitions.json
+
+  db:
+    image: postgres:12
+    networks:
+      - whk-network
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./postgres:/docker-entrypoint-initdb.d
+    command: ["postgres", "-c", "wal_level=logical"]
+    healthcheck:
+      test: ["CMD", "psql", "-U", "admin", "-c", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  vector-db:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    networks:
+      - whk-network
+    ports:
+      - ${VECTOR_DB_PORT:-5433}:5432
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: "whk_vectors"
+    volumes:
+      - vector_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        ["CMD", "psql", "-U", "admin", "-d", "whk_vectors", "-c", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mqtt-broker:
+    image: emqx:5.4.0
+    container_name: mqtt-broker
+    ports:
+      - "${MQTT_PORT:-1883}:1883"
+      - "${MQTT_WS_PORT:-8083}:8083"
+      - "${MQTT_WEB_UI_PORT:-18083}:18083"
+    environment:
+      - EMQX_NAME=emqx
+      - EMQX_HOST=mqtt-broker
+      - EMQX_NODE__COOKIE=emqxsecretcookie
+      - EMQX_DASHBOARD__DEFAULT_USERNAME=${MQTT_ADMIN_USER:-admin}
+      - EMQX_DASHBOARD__DEFAULT_PASSWORD=${MQTT_ADMIN_PASSWORD:-public}
+    volumes:
+      - mqtt_data:/opt/emqx/data
+      - mqtt_log:/opt/emqx/log
+    networks:
+      - whk-network
+    # healthcheck disabled - EMQX container lacks curl/nc tools
+    # Service is functional as verified by web interface accessibility
+    restart: unless-stopped
+  k6:
+    image: grafana/k6
+    networks:
+      - whk-network
+    volumes:
+      - ./scripts:/scripts
+    depends_on:
+      - kong
+    command: run /scripts/load-test.js
+
+  # Portainer for Docker management
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    networks:
+      - whk-network
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - portainer_data:/data
+    ports:
+      - "9000:9000"
+      - "9443:9443"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Prometheus for metrics collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    networks:
+      - whk-network
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/etc/prometheus/console_libraries"
+      - "--web.console.templates=/etc/prometheus/consoles"
+      - "--storage.tsdb.retention.time=200h"
+      - "--web.enable-lifecycle"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:9090/",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Node Exporter for system metrics
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    networks:
+      - whk-network
+    ports:
+      - "9100:9100"
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - "--path.procfs=/host/proc"
+      - "--path.rootfs=/rootfs"
+      - "--path.sysfs=/host/sys"
+      - "--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"
+
+  # cAdvisor for container metrics
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    restart: unless-stopped
+    networks:
+      - whk-network
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    devices:
+      - /dev/kmsg:/dev/kmsg
+    privileged: true
+
+  # Grafana for monitoring and dashboards
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    networks:
+      - whk-network
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin}
+      - GF_SECURITY_ALLOW_EMBEDDING=true
+      - GF_AUTH_ANONYMOUS_ENABLED=false
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+      - db
+      - vector-db
+      - redis
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget --no-verbose --tries=1 --spider http://localhost:3000/api/health || exit 1",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Netdata for real-time monitoring with interactive charts
+  netdata:
+    image: netdata/netdata:latest
+    container_name: netdata
+    hostname: netdata-${HOSTNAME:-localhost}
+    restart: unless-stopped
+    networks:
+      - whk-network
+    ports:
+      - "19999:19999"
+    cap_add:
+      - SYS_PTRACE
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      # Host system monitoring
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/passwd:/host/etc/passwd:ro
+      - /etc/group:/host/etc/group:ro
+      - /etc/localtime:/etc/localtime:ro
+      # Netdata configuration and data
+      - netdata_config:/etc/netdata
+      - netdata_lib:/var/lib/netdata
+      - netdata_cache:/var/cache/netdata
+    environment:
+      # Enable Docker container monitoring
+      - NETDATA_CLAIM_TOKEN=${NETDATA_CLAIM_TOKEN:-}
+      - NETDATA_CLAIM_URL=${NETDATA_CLAIM_URL:-https://app.netdata.cloud}
+      - NETDATA_CLAIM_ROOMS=${NETDATA_CLAIM_ROOMS:-}
+      # Docker socket permissions
+      - DOCKER_USR=root
+      # Performance settings
+      - NETDATA_EXTRA_DEB_PACKAGES=lm-sensors
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:19999/api/v1/info"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  ignition:
+    build:
+      context: gw-build
+      dockerfile: Dockerfile
+      args:
+        IGNITION_VERSION: ${IGNITION_VERSION:-8.3.0-rc1}
+        # GIT_USER_TOKEN removed - no longer needed
+        SUPPLEMENTAL_MODULES: "GIT MQTTENGINE MQTTTRANSMISSION MQTTDISTRIBUTOR"
+      secrets:
+        - gateway-admin-password
+    hostname: ignition
+    networks:
+      - whk-network
+    ports:
+      - 9088:8088
+      - 9043:8043
+    environment:
+      - ACCEPT_IGNITION_EULA=Y
+      # GATEWAY_GIT_USER_SECRET_FILE removed - no longer needed
+      - IGNITION_EDITION=standard
+      - GATEWAY_SSL_ENABLED=true
+      # GIT_USER_TOKEN removed - no longer needed
+      - BACKEND_HOST=${BACKEND_HOST}
+      - BACKEND_KONG_PORT=${BACKEND_KONG_PORT}
+      # Gateway Admin Configuration
+      - GATEWAY_ADMIN_USERNAME=${GATEWAY_ADMIN_USERNAME:-admin}
+      - GATEWAY_ADMIN_PASSWORD_FILE=/run/secrets/gateway-admin-password
+      - GATEWAY_SKIP_COMMISSIONING=${GATEWAY_SKIP_COMMISSIONING:-true}
+      # Ignition 8.3 API Configuration
+      - IGNITION_API_ENABLED=${IGNITION_API_ENABLED:-true}
+      - IGNITION_DEPLOYMENT_MODE=${IGNITION_DEPLOYMENT_MODE:-development}
+      - IGNITION_BACKUP_ENABLED=${IGNITION_BACKUP_ENABLED:-true}
+      - IGNITION_VERSION_CONTROL=${IGNITION_VERSION_CONTROL:-true}
+      # Ignition 8.3 Deployment Mode Configuration
+      - IGNITION_DEPLOYMENT_MODES_ENABLED=${IGNITION_DEPLOYMENT_MODES_ENABLED:-true}
+      - IGNITION_ALTERNATE_CONFIGS_PATH=/usr/local/bin/ignition/data/deployment-configs
+      - IGNITION_MODE_SWITCHING_RESTART=${IGNITION_MODE_SWITCHING_RESTART:-true}
+      - IGNITION_DEPLOYMENT_JSON_CONFIG=${IGNITION_DEPLOYMENT_JSON_CONFIG:-true}
+      # Environment-specific settings
+      - DEPLOYMENT_ENVIRONMENT=${DEPLOYMENT_ENVIRONMENT:-development}
+      - DEPLOYMENT_CONFIG_PATH=/usr/local/bin/ignition/data/deployment-configs/${DEPLOYMENT_ENVIRONMENT}
+      # Ignition 8.3 Secrets Management
+      - IGNITION_DB_PASSWORD_FILE=/run/secrets/ignition-db-password
+      - IGNITION_API_SECRET_FILE=/run/secrets/ignition-api-secret
+      - IGNITION_EMAIL_PASSWORD_FILE=/run/secrets/ignition-email-password
+      - IGNITION_MQTT_PASSWORD_FILE=/run/secrets/ignition-mqtt-password
+    volumes:
+      - gw-data:/usr/local/bin/ignition/data
+      - ./gw-init/git.yaml:/usr/local/bin/ignition/data/git.yaml
+      - ./.env:/usr/local/bin/ignition/data/.env
+      - ./gw-build/ignition.conf:/usr/local/bin/ignition/data/ignition.conf
+      # Ignition 8.3 JSON configuration and project directories for version control
+      - ./ignition-config:/usr/local/bin/ignition/data/config:rw
+      - ./ignition-projects:/usr/local/bin/ignition/data/projects:rw
+      - ./ignition-backups:/usr/local/bin/ignition/backups:rw
+      # Ignition 8.3 Deployment Mode configurations
+      - ./ignition-deployment-configs:/usr/local/bin/ignition/data/deployment-configs:rw
+    secrets:
+      - gateway-admin-password
+      - ignition-db-password
+      - ignition-api-secret
+      - ignition-email-password
+      - ignition-mqtt-password
+    command: >
+      -n whk-development-gw -m 4096  -- wrapper.java.maxmemory=2048 -Dignition.allowunsignedmodules=true  -Dia.developer.moduleupload=true
+    # -d -- -Dignition.allowunsignedmodules=true -Dia.developer.moduleupload=true
+    # -n hub.localtest.me -a hub.localtest.me -h 80 -s 443
+    # labels:
+    #   - traefik.enable=true
+    #   - traefik.hostname=hub
+
+volumes:
+  redis:
+    driver: local
+  postgres: ~
+  vector_postgres: ~
+  kong_data: {}
+  kong_prefix_vol:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  kong_tmp_vol:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  rabbitmq_data: {}
+  mqtt_data:
+    driver: local
+  mqtt_log:
+    driver: local
+  gw-data:
+  ignition-certs:
+  llama_index_storage:
+    driver: local
+  portainer_data:
+    driver: local
+  grafana_data:
+    driver: local
+  grafana_config:
+    driver: local
+  prometheus_data:
+    driver: local
+  netdata_config:
+    driver: local
+  netdata_lib:
+    driver: local
+  netdata_cache:
+    driver: local
+
+networks:
+  whk-network:
+    driver: bridge
+
+secrets:
+  kong_postgres_password:
+    file: ./secrets/POSTGRES_PASSWORD
+  # gateway-git-user-secret removed - no longer needed
+  gateway-admin-password:
+    file: secrets/GATEWAY_ADMIN_PASSWORD
+  # Ignition 8.3 Secrets Management
+  ignition-db-password:
+    file: secrets/IGNITION_DB_PASSWORD
+  ignition-api-secret:
+    file: secrets/IGNITION_API_SECRET
+  ignition-email-password:
+    file: secrets/IGNITION_EMAIL_PASSWORD
+  ignition-mqtt-password:
+    file: secrets/IGNITION_MQTT_PASSWORD

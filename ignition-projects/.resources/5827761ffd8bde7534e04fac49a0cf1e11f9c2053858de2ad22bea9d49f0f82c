@@ -1,0 +1,8 @@
+{
+  "base": {
+    "style": {
+      "fontSize": "12px",
+      "textAlign": "left"
+    }
+  }
+}

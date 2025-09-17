@@ -1,0 +1,177 @@
+# Ignition Empirical Linter Integration
+
+## Overview
+This project integrates the robust empirical ignition linter from `../empirical-ignition-perspective-component-schema` for production-validated code quality. The linter provides 92.7% validation success rate across diverse manufacturing environments with zero false positives.
+
+## Linter Capabilities
+- **Perspective Components**: Validates 48+ component types against empirical schema
+- **Jython Scripts**: Validates Python/Jython 2.7 compatibility and Ignition-specific patterns
+- **Production Patterns**: Based on analysis of 12,220+ real components from industrial systems
+- **Critical Requirements**: Enforces Ignition-specific requirements like mandatory indentation for inline scripts
+
+## Integration Commands
+
+### @lint-perspective
+Lint Perspective components in the current project or specific path.
+
+Usage:
+- `@lint-perspective` - Lint all Perspective components in current project
+- `@lint-perspective --path ignition-projects/DemoAIProject` - Lint specific project
+- `@lint-perspective --component ia.display.button` - Lint only button components
+- `@lint-perspective --verbose` - Show detailed validation results
+
+### @lint-scripts
+Lint Jython/Python scripts in the current project.
+
+Usage:
+- `@lint-scripts` - Lint all scripts in current project
+- `@lint-scripts --path ignition-projects/Global/ignition/script-python` - Lint specific path
+- `@lint-scripts --verbose` - Show detailed validation results
+
+### @lint-project
+Comprehensive linting of entire Ignition project.
+
+Usage:
+- `@lint-project` - Lint current project (both Perspective and scripts)
+- `@lint-project --path ignition-projects/DemoAIProject` - Lint specific project
+- `@lint-project --quick` - Fast validation (critical issues only)
+
+### @validate-component
+Validate a single Perspective component (inline validation).
+
+Usage:
+- `@validate-component` - Validate component JSON in current selection/clipboard
+- `@validate-component --fix` - Attempt to auto-fix common issues
+
+### @validate-script
+Validate a single Jython script (inline validation).
+
+Usage:
+- `@validate-script` - Validate script in current selection/clipboard
+- `@validate-script --context button_click` - Validate with specific context
+
+## AI Development Rules
+
+### When Generating Perspective Components
+1. **ALWAYS** run `@validate-component` after generating any Perspective component
+2. **CRITICAL**: Ensure all inline Jython scripts have proper indentation (ALL lines must be indented)
+3. **SECURITY**: Add `meta.security.roleAccess` for any production control components
+4. **NAMING**: Provide descriptive `meta.name` properties, avoid generic names like "Button" or "Label"
+5. **STANDARDS**: Follow WHK color standards (start buttons: #28a745, stop buttons: #dc3545)
+
+### When Generating Jython Scripts
+1. **ALWAYS** run `@validate-script` after generating any Jython code
+2. **INDENTATION**: ALL lines in Ignition inline scripts must be indented (tabs or 4 spaces)
+3. **ERROR HANDLING**: Include try/except blocks for production scripts
+4. **TAG OPERATIONS**: Use `system.tag.writeBlocking()` for critical operations
+5. **LOGGING**: Use `system.perspective.print()` instead of `print()` for Ignition output
+
+### When Modifying Existing Projects
+1. **BEFORE CHANGES**: Run `@lint-project --quick` to understand current state
+2. **AFTER CHANGES**: Run appropriate linter command to validate modifications
+3. **AUTO-FIX**: Use `@validate-component --fix` to automatically resolve common issues
+
+### Production Readiness Checklist
+Before considering any Ignition code production-ready:
+- [ ] Passes `@lint-perspective` with zero critical errors
+- [ ] Passes `@lint-scripts` with zero critical errors  
+- [ ] All components have descriptive names
+- [ ] Security roles defined for control components
+- [ ] Exception handling in all scripts
+- [ ] Proper Ignition indentation in inline scripts
+
+## Critical Validation Rules
+
+### Perspective Components
+- **Schema Compliance**: Must validate against empirical schema (48 component types)
+- **Meta Properties**: Required `meta.name` for all components
+- **Security Access**: Production control components need `meta.security.roleAccess`
+- **Color Standards**: Start/stop buttons must use WHK standard colors
+- **Binding Validation**: All bindings must have required properties (tagPath, expression, etc.)
+
+### Jython Scripts
+- **Ignition Indentation**: ALL lines must be indented (critical requirement)
+- **Syntax Validation**: Must parse as valid Python/Jython 2.7
+- **System Functions**: Proper usage of Ignition system functions
+- **Exception Handling**: Try/except blocks for production code
+- **Best Practices**: Use writeBlocking, proper logging, avoid hardcoded localhost
+
+### Auto-Fix Capabilities
+The linter can automatically fix:
+- Missing `meta.name` properties
+- Missing security role access for buttons
+- WHK color standard violations for start/stop buttons
+- Basic indentation issues in scripts
+
+## Example Workflows
+
+### Creating a New Button Component
+```
+1. Generate button component with AI
+2. Run: @validate-component
+3. If issues found, run: @validate-component --fix
+4. Verify fixes and re-validate
+5. Deploy to Ignition
+```
+
+### Modifying Existing Project
+```
+1. Run: @lint-project --quick
+2. Review critical issues
+3. Make modifications
+4. Run: @lint-project
+5. Address any new issues
+6. Deploy changes
+```
+
+### Validating Inline Script
+```
+1. Generate or modify Jython script
+2. Run: @validate-script --context button_click
+3. Fix indentation and syntax issues
+4. Re-validate until clean
+5. Test in Ignition
+```
+
+## Integration Notes
+
+### Linter Location
+The empirical linter is expected at: `../empirical-ignition-perspective-component-schema`
+
+### Command Implementation
+All `@` commands are implemented via the scripts in `scripts/` directory:
+- `scripts/lint-ignition-project.py` - Main linting interface
+- `scripts/ai-lint-integration.py` - AI workflow integration
+
+### Performance
+- Quick validation: < 5 seconds for typical projects
+- Full validation: < 30 seconds for large projects
+- Inline validation: < 1 second for single components/scripts
+
+### Error Handling
+- Graceful fallback if empirical linter not available
+- Clear error messages with actionable suggestions
+- Non-blocking warnings for style issues
+
+## Troubleshooting
+
+### Linter Not Found
+If you see "Empirical linter not found":
+1. Ensure `../empirical-ignition-perspective-component-schema` exists
+2. Run: `@lint-project --check-linter` to verify availability
+3. Clone the repository if missing
+
+### Validation Failures
+For persistent validation failures:
+1. Check the specific error message and rule code
+2. Refer to the empirical linter documentation
+3. Use `--verbose` flag for detailed diagnostics
+4. Try auto-fix with `--fix` flag
+
+### Performance Issues
+If linting is slow:
+1. Use `--quick` mode for faster validation
+2. Lint specific paths instead of entire projects
+3. Focus on critical issues first
+
+Remember: The empirical linter is based on analysis of real production systems and enforces patterns that work in industrial environments. Trust its recommendations for production-quality code.

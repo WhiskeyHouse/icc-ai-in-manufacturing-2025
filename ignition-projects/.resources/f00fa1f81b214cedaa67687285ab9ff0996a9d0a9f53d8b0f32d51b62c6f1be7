@@ -1,0 +1,15 @@
+{
+  "pages": {
+    "/": {
+      "title": "AI Whiskey Lab Assistant",
+      "viewPath": "WhiskeyLab/AIAssistant/Main"
+    },
+    "/ai-lab": {
+      "title": "AI Lab Demo",
+      "viewPath": "WhiskeyLab/AIAssistant/Main"
+    }
+  },
+  "sharedDocks": {
+    "cornerPriority": "top-bottom"
+  }
+}

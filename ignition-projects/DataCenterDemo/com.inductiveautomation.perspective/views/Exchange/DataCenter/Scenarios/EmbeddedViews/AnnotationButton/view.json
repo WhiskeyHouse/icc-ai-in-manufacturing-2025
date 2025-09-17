@@ -1,0 +1,122 @@
+{
+  "custom": {},
+  "params": {
+    "annotationNumber": 1,
+    "displayGraphics": false,
+    "mobile": false,
+    "offset": {
+      "x": 0,
+      "y": 0
+    },
+    "size": {
+      "height": 207,
+      "width": 523
+    },
+    "text": "PUE \u003d Total Power / IT Power\n    \u003d 4100 / 2800\n    \u003d 1.46\n\nTarget PUE \u003c 1.3"
+  },
+  "propConfig": {
+    "params.annotationNumber": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.displayGraphics": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.mobile": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.offset": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.size": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 85,
+      "width": 91
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "AnnotationNumber"
+        },
+        "position": {
+          "basis": "32px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.annotationNumber"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--callToAction--active)",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\ttext \u003d self.view.params.text\n\t\n\twidth \u003d self.view.params.size.width\n\theight \u003d self.view.params.size.height\n\t\n\tleft \u003d event.clientX\n\ttop \u003d event.clientY\t\n\t\n\tif \u0027offset\u0027 in self.view.params.keys():\n\t\toffsetX \u003d self.view.params.offset.x\n\t\toffsetY \u003d self.view.params.offset.y\n\t\t\n\t\tif offsetX !\u003d 0:\n\t\t\t# Not sure, come back to this\n\t\t\tleft \u003d left + offsetX\n\t\t\t\n\t\tif offsetY !\u003d 0:\n\t\t\ttop \u003d top + offsetY + height\n\t\n\tviewPath \u003d \u0027Exchange/DataCenter/Scenarios/EmbeddedViews/AnnotationWithGraphic\u0027 if self.view.params.displayGraphics else \u0027Exchange/DataCenter/Scenarios/EmbeddedViews/Annotation\u0027\n\t\n\tmobile \u003d self.view.params.mobile\n\t\n\tif mobile:\n\t\tif self.page.props.dimensions.viewport.width \u003c 500:\n\t\t\tmobile \u003d True\n\t\telse:\n\t\t\tmobile \u003d False\n\t\n\tparams \u003d {\u0027text\u0027: text, \u0027mobile\u0027: mobile}\n\t\n\tif mobile \u003d\u003d True:\n\t\twidth \u003d min(width * 0.75, self.page.props.dimensions.viewport.width)\n\t\theight \u003d min(height * 0.75, self.page.props.dimensions.viewport.height)\n\t\n\t\tposition \u003d {\u0027width\u0027: width, \u0027height\u0027: height}\n\telse:\n\t\t\n\t\tif left + width \u003e self.page.props.dimensions.viewport.width:\n\t\t\tif width \u003e\u003d self.page.props.dimensions.viewport.width:\n\t\t\t\tleft \u003d 0\n\t\t\t\twidth \u003d self.page.props.dimensions.viewport.width\n\t\t\telse:\n\t\t\t\tleft \u003d left - width\n\t\t\n\t\tif top + height \u003e self.page.props.dimensions.viewport.height:\n\t\t\tif height \u003e\u003d self.page.props.dimensions.viewport.height:\n\t\t\t\ttop \u003d 0\n\t\t\t\theight \u003d self.page.props.dimensions.viewport.height\n\t\t\telse:\n\t\t\t\ttop \u003d top - height\n\t\telse:\n\t\t\ttop \u003d top - height\n\t\t\n\t\tposition \u003d {\u0027width\u0027: width, \u0027height\u0027: height, \u0027left\u0027: left, \u0027top\u0027: top}\t\t\n\t\n\tsystem.perspective.openPopup(text, viewPath, params \u003d params, title \u003d \u0027Annotation\u0027, position \u003d position, viewportBound \u003d True)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root",
+      "tooltip": {
+        "enabled": true,
+        "text": "View annotation"
+      }
+    },
+    "propConfig": {
+      "meta.tooltip.location": {
+        "binding": {
+          "config": {
+            "path": "view.params.text"
+          },
+          "transforms": [
+            {
+              "code": "\t# Temp workaround to get tooltip to bottom for main annotation\n\tif \u0027ACTION\u0027 in value:\n\t\treturn \u0027bottom\u0027\n\telse:\n\t\treturn \u0027top\u0027",
+              "type": "script"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "justify": "center",
+      "style": {
+        "classes": "exchange/datacenter/scenarios/annotation/icon",
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

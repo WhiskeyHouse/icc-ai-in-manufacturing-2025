@@ -1,0 +1,97 @@
+{
+  "custom": {},
+  "params": {
+    "displayGraphics": true,
+    "mobile": false,
+    "text": "✓ Combined effect of\ncooling capacity changes\nand UPS optimization\nlowers PUE below target\nof 1.3",
+    "text2": "ACTION 2B: Load Balancing\n\nAnalyze phase loading and \nreconfigure PDUS and IT to balance"
+  },
+  "propConfig": {
+    "params.displayGraphics": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.mobile": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.text2": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 225,
+      "width": 471
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Text"
+        },
+        "position": {
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "view.params.mobile"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn \u0027exchange/datacenter/scenarios/label/value/base {sizeClass}\u0027.format(sizeClass \u003d \u0027exchange/datacenter/scenarios/label/value/very-small\u0027 if value else \u0027exchange/datacenter/scenarios/label/value/medium\u0027) ",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.mobile}, \u002718px\u0027, \u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontFamily": "monospace",
+            "textAlign": "left",
+            "whiteSpace": "pre"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "--callToAction--hover",
+        "classes": "exchange/datacenter/scenarios/annotation/popup"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

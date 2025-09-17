@@ -1,0 +1,273 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 400,
+      "width": 280
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "InteractionContainer"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "gap": "20px"
+          }
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "AIChatBubble"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#3498db",
+                "borderRadius": "15px",
+                "padding": "15px",
+                "color": "#ffffff",
+                "fontSize": "14px",
+                "lineHeight": "1.4",
+                "position": "relative",
+                "boxShadow": "0 2px 8px rgba(0,0,0,0.1)"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "AIMessage"
+                },
+                "props": {
+                  "text": "System ready. Should we proceed with the current operation?",
+                  "style": {
+                    "color": "#ffffff",
+                    "fontSize": "14px",
+                    "lineHeight": "1.4"
+                  }
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "tag",
+                      "config": {
+                        "tagPath": "[Global]WhiskeyLab/AI/CurrentMessage",
+                        "fallbackDelay": 2.5
+                      }
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "type": "ia.container.coord"
+          },
+          {
+            "meta": {
+              "name": "ActionButtons"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "15px"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "AcceptButton"
+                },
+                "props": {
+                  "text": "✅ Accept AI Action",
+                  "style": {
+                    "backgroundColor": "#27ae60",
+                    "color": "#ffffff",
+                    "border": "none",
+                    "borderRadius": "8px",
+                    "padding": "15px 20px",
+                    "fontSize": "16px",
+                    "fontWeight": "bold",
+                    "cursor": "pointer",
+                    "width": "100%",
+                    "transition": "all 0.3s ease"
+                  }
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "meta": {
+                  "name": "OverrideButton"
+                },
+                "props": {
+                  "text": "❌ Override AI",
+                  "style": {
+                    "backgroundColor": "#e74c3c",
+                    "color": "#ffffff",
+                    "border": "none",
+                    "borderRadius": "8px",
+                    "padding": "15px 20px",
+                    "fontSize": "16px",
+                    "fontWeight": "bold",
+                    "cursor": "pointer",
+                    "width": "100%",
+                    "transition": "all 0.3s ease"
+                  }
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "StatusSection"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "10px",
+                "backgroundColor": "#ecf0f1",
+                "borderRadius": "8px",
+                "padding": "15px"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "LastActionLabel"
+                },
+                "props": {
+                  "text": "Last Action:",
+                  "style": {
+                    "fontSize": "12px",
+                    "fontWeight": "bold",
+                    "color": "#7f8c8d"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "LastActionValue"
+                },
+                "props": {
+                  "text": "INITIALIZED",
+                  "style": {
+                    "fontSize": "14px",
+                    "fontWeight": "bold",
+                    "color": "#95a5a6"
+                  }
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "tag",
+                      "config": {
+                        "tagPath": "[Global]WhiskeyLab/AI/LastAction",
+                        "fallbackDelay": 2.5
+                      }
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "if({[Global]WhiskeyLab/AI/LastAction} = 'ACCEPTED', '#27ae60', if({[Global]WhiskeyLab/AI/LastAction} = 'OVERRIDDEN', '#e74c3c', '#95a5a6'))"
+                      }
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "QuickActions"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "8px"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "QuickActionsLabel"
+                },
+                "props": {
+                  "text": "Quick Actions:",
+                  "style": {
+                    "fontSize": "12px",
+                    "fontWeight": "bold",
+                    "color": "#7f8c8d"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "EmergencyStopButton"
+                },
+                "props": {
+                  "text": "🛑 Emergency Stop",
+                  "style": {
+                    "backgroundColor": "#c0392b",
+                    "color": "#ffffff",
+                    "border": "none",
+                    "borderRadius": "6px",
+                    "padding": "10px 15px",
+                    "fontSize": "12px",
+                    "fontWeight": "bold",
+                    "cursor": "pointer",
+                    "width": "100%"
+                  }
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "meta": {
+                  "name": "ResetButton"
+                },
+                "props": {
+                  "text": "🔄 Reset System",
+                  "style": {
+                    "backgroundColor": "#95a5a6",
+                    "color": "#ffffff",
+                    "border": "none",
+                    "borderRadius": "6px",
+                    "padding": "8px 12px",
+                    "fontSize": "11px",
+                    "cursor": "pointer",
+                    "width": "100%"
+                  }
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "type": "ia.container.flex"
+          }
+        ],
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "padding": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

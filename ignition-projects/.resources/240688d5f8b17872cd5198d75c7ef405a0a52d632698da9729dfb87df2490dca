@@ -1,0 +1,99 @@
+"""
+WebDev GET Handler for Validation API
+Handles GET requests for validation endpoints
+"""
+
+import whk.validation
+import json
+
+def doGet(request, session):
+    """
+    Handle GET requests for validation API
+    
+    Supported endpoints:
+    - /system/webdev/Global/validation (no pathInfo) - API documentation
+    - /system/webdev/Global/validation/health - Health check
+    - /system/webdev/Global/validation/sessions - List all sessions
+    - /system/webdev/Global/validation/sessions/{id} - Get specific session
+    """
+    
+    try:
+        # Get the path after /system/webdev/Global/validation
+        path_info = request.get('pathInfo', '')
+        
+        if not path_info or path_info == '/':
+            # Root endpoint - return API documentation
+            return {
+                'json': {
+                    'service': 'WHK Validation API',
+                    'version': '1.0.0',
+                    'description': 'REST API for Jython script and Perspective component validation',
+                    'endpoints': {
+                        'GET /health': 'Check service health',
+                        'GET /sessions': 'List all validation sessions',
+                        'GET /sessions/{id}': 'Get specific validation session',
+                        'POST /scripts': 'Validate Jython script',
+                        'POST /components': 'Validate Perspective component',
+                        'PATCH /sessions/{id}': 'Update validation session'
+                    },
+                    'integration': {
+                        'rules_engine': 'http://host.docker.internal:8087',
+                        'project': 'Global (inheritable)',
+                        'module': 'whk.validation'
+                    }
+                }
+            }
+        
+        elif path_info == '/health':
+            # Health check endpoint
+            health_status = whk.validation.get_service_health()
+            return {'json': health_status}
+        
+        elif path_info == '/sessions':
+            # List all validation sessions
+            sessions = whk.validation.list_validation_sessions()
+            return {
+                'json': {
+                    'sessions': sessions,
+                    'total': len(sessions)
+                }
+            }
+        
+        elif path_info.startswith('/sessions/'):
+            # Get specific validation session
+            session_id = path_info.replace('/sessions/', '').strip()
+            
+            if not session_id:
+                return {
+                    'json': {'error': 'Session ID is required'},
+                    'response_code': 400
+                }
+            
+            session_data = whk.validation.get_validation_session(session_id)
+            if session_data:
+                return {'json': session_data}
+            else:
+                return {
+                    'json': {'error': 'Session not found', 'session_id': session_id},
+                    'response_code': 404
+                }
+        
+        else:
+            # Unknown endpoint
+            return {
+                'json': {
+                    'error': 'Endpoint not found',
+                    'path': path_info,
+                    'available_endpoints': ['/health', '/sessions', '/sessions/{id}']
+                },
+                'response_code': 404
+            }
+    
+    except Exception as e:
+        return {
+            'json': {
+                'error': 'Internal server error',
+                'message': str(e)
+            },
+            'response_code': 500
+        }

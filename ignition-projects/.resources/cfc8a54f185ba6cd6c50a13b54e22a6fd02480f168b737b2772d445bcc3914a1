@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "authRequired": false,
+  "module": "com.inductiveautomation.webdev",
+  "resourceType": "RESOURCE",
+  "securityPolicy": "Inherit"
+}

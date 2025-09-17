@@ -1,0 +1,11 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF00",
+      "color": "var(--label)",
+      "fontFamily": "Roboto",
+      "fontSize": "13px",
+      "padding": "7.5px"
+    }
+  }
+}

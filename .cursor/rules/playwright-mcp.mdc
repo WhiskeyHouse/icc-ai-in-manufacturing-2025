@@ -1,0 +1,292 @@
+---
+description: Playwright MCP authentication and usage patterns for Ignition Gateway
+globs:
+  - "**/*.spec.js"
+  - "**/*.spec.ts"
+  - "**/test*.js"
+  - "**/mcp*.js"
+alwaysApply: true
+---
+
+# Playwright MCP Tool Usage with Ignition Gateway
+
+## Overview
+The Playwright MCP server provides browser automation capabilities through the Model Context Protocol. When working with Ignition Gateway, authentication must be performed manually through MCP tools since MCP doesn't execute custom scripts.
+
+## Ignition Authentication Flow
+
+### Manual Authentication Steps (Required for MCP)
+When using Playwright MCP tools to interact with Ignition, follow this exact sequence:
+
+```javascript
+// Step 1: Navigate to home page
+mcp_playwright_browser_navigate({ url: "http://localhost:9088/app/home" })
+
+// Step 2: Click Log In button
+mcp_playwright_browser_click({ 
+  element: "Log In button",
+  ref: "button:has-text('Log In')" 
+})
+
+// Step 3: Enter username
+mcp_playwright_browser_type({ 
+  element: "username field",
+  ref: "input[name='username']",
+  text: "admin" 
+})
+
+// Step 4: Press Enter to reveal password field
+mcp_playwright_browser_press_key({ key: "Enter" })
+// Wait 2 seconds for password field to appear
+
+// Step 5: Enter password
+mcp_playwright_browser_type({ 
+  element: "password field",
+  ref: "input[type='password']:visible",
+  text: "password_from_secrets" 
+})
+
+// Step 6: Press Enter to submit
+mcp_playwright_browser_press_key({ key: "Enter" })
+// Wait for redirect to complete
+```
+
+## Important Notes
+
+### Authentication Characteristics
+- **Two-step process**: Username entry → Enter → Password entry → Enter
+- **No visible Continue button**: Use Enter key to progress between steps
+- **Password field is hidden initially**: Only appears after entering username and pressing Enter
+- **Successful login redirects to**: `http://localhost:9088/app/home`
+
+### Available Pages After Authentication
+Once authenticated, these pages become accessible:
+- `/web/config` - Web configuration interface
+- `/app/config` - Application configuration
+- `/app/admin` - Admin panel
+- `/app/gateway` - Gateway management
+- `/app/platform/system/projects` - Project management
+- `/data/perspective/client/<projectName>` - Perspective project sessions
+
+### MCP Server Limitations
+- **No script execution**: Cannot use auth-helper.js or automated scripts
+- **No session persistence**: Each MCP session requires fresh authentication
+- **Manual actions only**: Every step must be explicitly commanded
+- **No storage state**: Cannot load saved authentication like Playwright tests
+
+## Starting MCP Server
+
+### Basic Start
+```bash
+npx @playwright/mcp --port 3001
+```
+
+### With Options
+```bash
+npx @playwright/mcp --port 3001 --browser chromium --headless false
+```
+
+### Using Helper Script
+```bash
+./start-mcp-authenticated.sh
+```
+
+## Common Patterns
+
+### Check Authentication Status
+```javascript
+// Navigate to a protected page
+mcp_playwright_browser_navigate({ url: "http://localhost:9088/web/config" })
+// If redirected to login, perform authentication steps
+```
+
+### Take Screenshots
+```javascript
+mcp_playwright_browser_take_screenshot({ 
+  filename: "ignition-state.png",
+  fullPage: false 
+})
+```
+
+### Wait for Elements
+```javascript
+mcp_playwright_browser_wait_for({ 
+  text: "Welcome",
+  time: 5 // seconds
+})
+```
+
+## Credentials Location
+- Username: `admin` (default)
+- Password: Located in `secrets/GATEWAY_ADMIN_PASSWORD`
+
+## Common Project Testing Scenarios
+
+### List All Projects
+```javascript
+// Navigate to projects management page
+mcp_playwright_browser_navigate({ url: "http://localhost:9088/app/platform/system/projects" })
+// Look for project names in the table/list
+mcp_playwright_browser_snapshot()
+```
+
+### Check If Project Exists
+```javascript
+// Try to navigate to the project
+mcp_playwright_browser_navigate({ 
+  url: "http://localhost:9088/data/perspective/client/YourProjectName" 
+})
+// Check if redirected to login or 404
+// If project loads, you'll see perspective elements
+```
+
+### Validate Project Components
+```javascript
+// After navigating to project
+mcp_playwright_browser_snapshot()
+// Look for expected components in snapshot:
+// - perspective-root
+// - perspective-workspace
+// - specific component IDs or classes
+```
+
+### Test Project Navigation
+```javascript
+// Click on navigation elements within project
+mcp_playwright_browser_click({ 
+  element: "navigation button",
+  ref: "button:has-text('Next Page')" 
+})
+```
+
+### Capture Project State
+```javascript
+// Take screenshot of project
+mcp_playwright_browser_take_screenshot({ 
+  filename: "project-state.png",
+  fullPage: true 
+})
+```
+
+## Known Project URLs in This Environment
+Based on the repository structure, common projects include:
+- `DemoAIProject` - Main demo project
+- `TestProject` - Testing project
+- `Global` - Global project resources
+
+Access them via:
+- `/data/perspective/client/DemoAIProject`
+- `/data/perspective/client/TestProject`
+- `/data/perspective/client/Global`
+
+## Troubleshooting
+
+### Password Field Not Appearing
+- Ensure you pressed Enter after entering username
+- Wait 2-3 seconds for field to become visible
+- Use selector `input[type='password']:visible`
+
+### Login Not Working
+- Check if already logged in (look for "Log Out" button)
+- Clear cookies/storage if needed
+- Verify credentials in secrets file
+
+### Page Not Accessible
+- Confirm authentication completed (check URL)
+- Some pages may require additional permissions
+- Try `/app/*` paths instead of `/web/*`
+
+## Key Differences from Playwright Tests
+
+| Feature | Playwright Tests | MCP Server |
+|---------|-----------------|------------|
+| Authentication | Automated via helpers | Manual steps required |
+| Session | Persisted in .auth/ | Per-session only |
+| Scripts | Can execute JS files | Command-by-command only |
+| Speed | Fast (automated) | Slower (manual steps) |
+
+## Best Practices
+
+1. **Always check authentication first** before accessing protected pages
+2. **Use explicit waits** after navigation and form submissions
+3. **Take screenshots** to debug authentication issues
+4. **Use specific selectors** like `input[name='username']` over generic ones
+5. **Handle redirects** by checking current URL after actions
+
+## Checking Perspective Projects
+
+### Discovering Available Projects
+
+#### Method 1: Using Ignition REST API
+```javascript
+// Get list of projects via REST API (requires authentication)
+fetch('http://localhost:9088/data/perspective/projects', {
+  headers: {
+    'Authorization': 'Basic ' + btoa('admin:password')
+  }
+})
+```
+
+#### Method 2: Using Ignition MCP Server (if available)
+```javascript
+// If ignition-fastmcp is configured in .mcp.json
+mcp_ignition_list_projects()
+```
+
+#### Method 3: Navigate to Project Management Page
+```javascript
+// Navigate to projects page to see list
+mcp_playwright_browser_navigate({ url: "http://localhost:9088/app/platform/system/projects" })
+```
+
+### Accessing Perspective Project Sessions
+```javascript
+// Project URLs follow this pattern:
+// /data/perspective/client/<projectName>
+
+// Examples:
+mcp_playwright_browser_navigate({ url: "http://localhost:9088/data/perspective/client/DemoAIProject" })
+mcp_playwright_browser_navigate({ url: "http://localhost:9088/data/perspective/client/TestProject" })
+```
+
+### Testing Project Access
+```javascript
+// Check if a project loads successfully
+async function testProjectAccess(projectName) {
+  // Navigate to project
+  await mcp_playwright_browser_navigate({ 
+    url: `http://localhost:9088/data/perspective/client/${projectName}` 
+  })
+  
+  // Wait for Perspective to load
+  await mcp_playwright_browser_wait_for({ time: 3 })
+  
+  // Check for Perspective root element
+  await mcp_playwright_browser_snapshot()
+  // Look for perspective-root or perspective-workspace in the snapshot
+}
+```
+
+## Example: Complete Authentication and Access Project
+
+```javascript
+// Full flow to access a Perspective project
+async function authenticateAndAccessProject(projectName) {
+  // Navigate to home
+  await mcp_playwright_browser_navigate({ url: "http://localhost:9088/app/home" })
+  
+  // Perform authentication
+  await mcp_playwright_browser_click({ element: "Log In", ref: "text='Log In'" })
+  await mcp_playwright_browser_type({ element: "username", ref: "input[name='username']", text: "admin" })
+  await mcp_playwright_browser_press_key({ key: "Enter" })
+  await mcp_playwright_browser_wait_for({ time: 2 })
+  await mcp_playwright_browser_type({ element: "password", ref: "input[type='password']", text: "your_password" })
+  await mcp_playwright_browser_press_key({ key: "Enter" })
+  await mcp_playwright_browser_wait_for({ time: 3 })
+  
+  // Access specific project
+  await mcp_playwright_browser_navigate({ 
+    url: `http://localhost:9088/data/perspective/client/${projectName}` 
+  })
+}
+```

@@ -1,0 +1,1661 @@
+{
+  "custom": {
+    "closed": true,
+    "popupId": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/Breaker/Breaker1A",
+    "status": "closed",
+    "tagName": "Breaker1A",
+    "tripped": false
+  },
+  "params": {
+    "displayTitle": false,
+    "showClose": true,
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/Breaker/Breaker1A"
+  },
+  "propConfig": {
+    "custom.closed": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}/Status/IsBreakerClosed"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.popupId": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.status": {
+      "binding": {
+        "config": {
+          "struct": {
+            "closed": "{view.custom.closed}",
+            "tripped": "{view.custom.tripped}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tif value[\u0027tripped\u0027]:\n\t\treturn \u0027tripped\u0027\n\telse:\n\t\tif value[\u0027closed\u0027]:\n\t\t\treturn \u0027closed\u0027\n\t\telse:\n\t\t\treturn \u0027open\u0027",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.tagName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.name"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tripped": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}/Status/IsBreakerTripped"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.displayTitle": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showClose": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 720,
+      "width": 640
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.displayTitle"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.tagName"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/faceplates/circuit-breaker/title"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Status"
+                },
+                "position": {
+                  "basis": "100px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.value": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.status"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "states": [
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/closed exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "CLOSED",
+                        "value": "closed"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/open exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "OPEN",
+                        "value": "open"
+                      },
+                      {
+                        "style": {
+                          "classes": "exchange/datacenter/faceplates/circuit-breaker/status/generic/tripped exchange/datacenter/faceplates/circuit-breaker/status/base exchange/datacenter/faceplates/circuit-breaker/status/generic/extraLeftRightPadding"
+                        },
+                        "text": "TRIPPED",
+                        "value": "tripped"
+                      }
+                    ]
+                  },
+                  "path": "Exchange/DataCenter/Framework/Data/Status"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "ActiveAlarmCount"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.activeAlarmCount": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Status/ActiveAlarmCount"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "equipment": "CIRCUIT BREAKER",
+                        "toggle": false
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/ActiveAlarmCount"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "ActiveAlarmCountContainer"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "center"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "AlarmStatusTable"
+                },
+                "position": {
+                  "basis": "600px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "../ActiveAlarmCountContainer/ActiveAlarmCount.props.params.toggle"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.filters.active.conditions.source": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.tagPath"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \u0027]\u0027 in value:\n\t\t# Tag provider is in the path, remove it.\n\t\ttagPath \u003d value.split(\u0027]\u0027)[1]\n\telse:\n\t\ttagPath \u003d value\n\t\t\n\treturn \u0027*{tagPath}*\u0027.format(tagPath \u003d tagPath)",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "columns": {
+                    "active": {
+                      "activeTime": {
+                        "strictWidth": true,
+                        "width": 145
+                      },
+                      "displayPath": {
+                        "width": 600
+                      },
+                      "name": {
+                        "width": 50
+                      },
+                      "priority": {
+                        "width": 80
+                      },
+                      "source": {
+                        "enabled": false
+                      },
+                      "state": {
+                        "enabled": false
+                      }
+                    }
+                  },
+                  "filters": {
+                    "active": {
+                      "conditions": {}
+                    }
+                  },
+                  "responsive": {
+                    "breakpoint": 700,
+                    "enabled": true
+                  },
+                  "style": {
+                    "height": "420px"
+                  }
+                },
+                "type": "ia.display.alarmstatustable"
+              }
+            ],
+            "meta": {
+              "name": "StatusAndAlarms"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "justify": "space-around",
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section",
+                "row-gap": "15px"
+              },
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+                  },
+                  "text": "ENERGY"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Real"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.tagPath} + \u0027/Energy/RealEnergyTotal\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "numberFormat": "###0.#",
+                        "simpleGauge": {
+                          "arc": {
+                            "color": "var(--callToAction)",
+                            "width": 30
+                          },
+                          "arcBackground": {
+                            "color": "var(--neutral-50)",
+                            "opacity": 0.2
+                          },
+                          "endAngle": 405,
+                          "label": {
+                            "color": "var(--callToAction)",
+                            "maxDecimal": 4,
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "size": "10px",
+                            "units": "",
+                            "visible": false
+                          },
+                          "startAngle": 135
+                        },
+                        "title": "REAL"
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Reactive"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.tagPath} + \u0027/Energy/ReactiveEnergyTotal\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "numberFormat": "###0.#",
+                        "simpleGauge": {
+                          "arc": {
+                            "color": "var(--callToAction)",
+                            "width": 30
+                          },
+                          "arcBackground": {
+                            "color": "var(--neutral-50)",
+                            "opacity": 0.2
+                          },
+                          "endAngle": 405,
+                          "label": {
+                            "color": "var(--callToAction)",
+                            "maxDecimal": 4,
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "size": "10px",
+                            "units": "",
+                            "visible": false
+                          },
+                          "startAngle": 135
+                        },
+                        "title": "REACTIVE"
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Apparent"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.tagPath} + \u0027/Energy/ApparentEnergyTotal\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "numberFormat": "###0.#",
+                        "simpleGauge": {
+                          "arc": {
+                            "color": "var(--callToAction)",
+                            "width": 30
+                          },
+                          "arcBackground": {
+                            "color": "var(--neutral-50)",
+                            "opacity": 0.2
+                          },
+                          "endAngle": 405,
+                          "label": {
+                            "color": "var(--callToAction)",
+                            "maxDecimal": 4,
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "size": "10px",
+                            "units": "",
+                            "visible": false
+                          },
+                          "startAngle": 135
+                        },
+                        "title": "APPARENT"
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Metrics"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "justify": "space-evenly",
+                  "style": {
+                    "overflow": "hidden",
+                    "row-gap": "27.5px"
+                  },
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Energy"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section",
+                "gap": "7.5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+                  },
+                  "text": "POWER"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Real"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.tagPath} + \u0027/Power/RealPowerTotal\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "numberFormat": "###0.#",
+                        "simpleGauge": {
+                          "arc": {
+                            "color": "var(--callToAction)",
+                            "width": 30
+                          },
+                          "arcBackground": {
+                            "color": "var(--neutral-50)",
+                            "opacity": 0.2
+                          },
+                          "endAngle": 405,
+                          "label": {
+                            "color": "var(--callToAction)",
+                            "maxDecimal": 4,
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "size": "10px",
+                            "units": "",
+                            "visible": false
+                          },
+                          "startAngle": 135
+                        },
+                        "title": "REAL"
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Reactive"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.tagPath} + \u0027/Power/ReactivePowerTotal\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "numberFormat": "###0.#",
+                        "simpleGauge": {
+                          "arc": {
+                            "color": "var(--callToAction)",
+                            "width": 30
+                          },
+                          "arcBackground": {
+                            "color": "var(--neutral-50)",
+                            "opacity": 0.2
+                          },
+                          "endAngle": 405,
+                          "label": {
+                            "color": "var(--callToAction)",
+                            "maxDecimal": 4,
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "size": "10px",
+                            "units": "",
+                            "visible": false
+                          },
+                          "startAngle": 135
+                        },
+                        "title": "REACTIVE"
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Apparent"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.tagPath} + \u0027/Power/ApparentPowerTotal\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "numberFormat": "###0.#",
+                        "simpleGauge": {
+                          "arc": {
+                            "color": "var(--callToAction)",
+                            "width": 30
+                          },
+                          "arcBackground": {
+                            "color": "var(--neutral-50)",
+                            "opacity": 0.2
+                          },
+                          "endAngle": 405,
+                          "label": {
+                            "color": "var(--callToAction)",
+                            "maxDecimal": 4,
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "size": "10px",
+                            "units": "",
+                            "visible": false
+                          },
+                          "startAngle": 135
+                        },
+                        "title": "APPARENT"
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Factor"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.tagPath} + \u0027/Metering/PowerFactorTotal\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "numberFormat": "###0.00",
+                        "simpleGauge": {
+                          "arc": {
+                            "color": "var(--callToAction)",
+                            "width": 30
+                          },
+                          "arcBackground": {
+                            "color": "var(--neutral-50)",
+                            "opacity": 0.2
+                          },
+                          "endAngle": 405,
+                          "label": {
+                            "color": "var(--callToAction)",
+                            "maxDecimal": 4,
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "size": "10px",
+                            "units": "",
+                            "visible": false
+                          },
+                          "startAngle": 135
+                        },
+                        "title": "FACTOR"
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/SimpleGauge"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Metrics"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "justify": "space-evenly",
+                  "style": {
+                    "overflow": "hidden",
+                    "row-gap": "27.5px"
+                  },
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Power"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section",
+                "gap": "7.5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+                  },
+                  "text": "METERING"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Title"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+                          },
+                          "text": "CURRENT"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Average"
+                            },
+                            "position": {
+                              "basis": "65px"
+                            },
+                            "propConfig": {
+                              "props.params.tagPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.params.tagPath} + \u0027/Metering/CurrentMean\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "maiBasis": "120px",
+                                "movingAnalogIndicator": {
+                                  "alarms": {
+                                    "inactiveRangeColor": "var(--neutral-60)",
+                                    "level1": {
+                                      "highHigh": null,
+                                      "lowLow": null,
+                                      "rangeColor": "var(--error)"
+                                    },
+                                    "level2": {
+                                      "high": null,
+                                      "low": null,
+                                      "rangeColor": "var(--warningSecondary)"
+                                    }
+                                  },
+                                  "defaultRangeColor": "var(--neutral-10)",
+                                  "desired": {
+                                    "high": 5000,
+                                    "low": 2000,
+                                    "rangeColor": "var(--callToAction)"
+                                  },
+                                  "indicator": {
+                                    "color": "var(--label)",
+                                    "reverse": false,
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-100)",
+                                      "width": 0
+                                    }
+                                  },
+                                  "interlocks": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--neutral-100)"
+                                  },
+                                  "label": {
+                                    "format": "#,##0",
+                                    "position": {
+                                      "applyOffsetsOnlyWhenLabelVisible": true,
+                                      "horizontalOffset": 1,
+                                      "verticalOffset": 1
+                                    },
+                                    "style": {
+                                      "classes": "",
+                                      "fill": "var(--neutral-100)",
+                                      "fontSize": 4
+                                    },
+                                    "visible": false
+                                  },
+                                  "rangesBar": {
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-50)",
+                                      "width": 0.2
+                                    },
+                                    "verticalDisplay": true
+                                  },
+                                  "setpoint": {
+                                    "color": "var(--neutral-10)",
+                                    "stroke": {
+                                      "color": "var(--info)",
+                                      "width": 0.5
+                                    },
+                                    "value": null
+                                  }
+                                },
+                                "numberFormat": "###0.00",
+                                "title": "AVG"
+                              },
+                              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                            },
+                            "type": "ia.display.view"
+                          },
+                          {
+                            "meta": {
+                              "name": "CurrentA"
+                            },
+                            "position": {
+                              "basis": "65px"
+                            },
+                            "propConfig": {
+                              "props.params.tagPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.params.tagPath} + \u0027/Metering/CurrentA\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "maiBasis": "120px",
+                                "movingAnalogIndicator": {
+                                  "alarms": {
+                                    "inactiveRangeColor": "var(--neutral-60)",
+                                    "level1": {
+                                      "highHigh": null,
+                                      "lowLow": null,
+                                      "rangeColor": "var(--error)"
+                                    },
+                                    "level2": {
+                                      "high": null,
+                                      "low": null,
+                                      "rangeColor": "var(--warningSecondary)"
+                                    }
+                                  },
+                                  "defaultRangeColor": "var(--neutral-10)",
+                                  "desired": {
+                                    "high": 5000,
+                                    "low": 2000,
+                                    "rangeColor": "var(--callToAction)"
+                                  },
+                                  "indicator": {
+                                    "color": "var(--label)",
+                                    "reverse": false,
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-100)",
+                                      "width": 0
+                                    }
+                                  },
+                                  "interlocks": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--neutral-100)"
+                                  },
+                                  "label": {
+                                    "format": "#,##0",
+                                    "position": {
+                                      "applyOffsetsOnlyWhenLabelVisible": true,
+                                      "horizontalOffset": 1,
+                                      "verticalOffset": 1
+                                    },
+                                    "style": {
+                                      "classes": "",
+                                      "fill": "var(--neutral-100)",
+                                      "fontSize": 4
+                                    },
+                                    "visible": false
+                                  },
+                                  "rangesBar": {
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-50)",
+                                      "width": 0.2
+                                    },
+                                    "verticalDisplay": true
+                                  },
+                                  "setpoint": {
+                                    "color": "var(--neutral-10)",
+                                    "stroke": {
+                                      "color": "var(--info)",
+                                      "width": 0.5
+                                    },
+                                    "value": null
+                                  }
+                                },
+                                "numberFormat": "###0.00",
+                                "title": "A"
+                              },
+                              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                            },
+                            "type": "ia.display.view"
+                          },
+                          {
+                            "meta": {
+                              "name": "CurrentB"
+                            },
+                            "position": {
+                              "basis": "65px"
+                            },
+                            "propConfig": {
+                              "props.params.tagPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.params.tagPath} + \u0027/Metering/CurrentB\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "maiBasis": "120px",
+                                "movingAnalogIndicator": {
+                                  "alarms": {
+                                    "inactiveRangeColor": "var(--neutral-60)",
+                                    "level1": {
+                                      "highHigh": null,
+                                      "lowLow": null,
+                                      "rangeColor": "var(--error)"
+                                    },
+                                    "level2": {
+                                      "high": null,
+                                      "low": null,
+                                      "rangeColor": "var(--warningSecondary)"
+                                    }
+                                  },
+                                  "defaultRangeColor": "var(--neutral-10)",
+                                  "desired": {
+                                    "high": 5000,
+                                    "low": 2000,
+                                    "rangeColor": "var(--callToAction)"
+                                  },
+                                  "indicator": {
+                                    "color": "var(--label)",
+                                    "reverse": false,
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-100)",
+                                      "width": 0
+                                    }
+                                  },
+                                  "interlocks": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--neutral-100)"
+                                  },
+                                  "label": {
+                                    "format": "#,##0",
+                                    "position": {
+                                      "applyOffsetsOnlyWhenLabelVisible": true,
+                                      "horizontalOffset": 1,
+                                      "verticalOffset": 1
+                                    },
+                                    "style": {
+                                      "classes": "",
+                                      "fill": "var(--neutral-100)",
+                                      "fontSize": 4
+                                    },
+                                    "visible": false
+                                  },
+                                  "rangesBar": {
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-50)",
+                                      "width": 0.2
+                                    },
+                                    "verticalDisplay": true
+                                  },
+                                  "setpoint": {
+                                    "color": "var(--neutral-10)",
+                                    "stroke": {
+                                      "color": "var(--info)",
+                                      "width": 0.5
+                                    },
+                                    "value": null
+                                  }
+                                },
+                                "numberFormat": "###0.00",
+                                "title": "B"
+                              },
+                              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                            },
+                            "type": "ia.display.view"
+                          },
+                          {
+                            "meta": {
+                              "name": "CurrentC"
+                            },
+                            "position": {
+                              "basis": "65px"
+                            },
+                            "propConfig": {
+                              "props.params.tagPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.params.tagPath} + \u0027/Metering/CurrentC\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "maiBasis": "120px",
+                                "movingAnalogIndicator": {
+                                  "alarms": {
+                                    "inactiveRangeColor": "var(--neutral-60)",
+                                    "level1": {
+                                      "highHigh": null,
+                                      "lowLow": null,
+                                      "rangeColor": "var(--error)"
+                                    },
+                                    "level2": {
+                                      "high": null,
+                                      "low": null,
+                                      "rangeColor": "var(--warningSecondary)"
+                                    }
+                                  },
+                                  "defaultRangeColor": "var(--neutral-10)",
+                                  "desired": {
+                                    "high": 5000,
+                                    "low": 2000,
+                                    "rangeColor": "var(--callToAction)"
+                                  },
+                                  "indicator": {
+                                    "color": "var(--label)",
+                                    "reverse": false,
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-100)",
+                                      "width": 0
+                                    }
+                                  },
+                                  "interlocks": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--neutral-100)"
+                                  },
+                                  "label": {
+                                    "format": "#,##0",
+                                    "position": {
+                                      "applyOffsetsOnlyWhenLabelVisible": true,
+                                      "horizontalOffset": 1,
+                                      "verticalOffset": 1
+                                    },
+                                    "style": {
+                                      "classes": "",
+                                      "fill": "var(--neutral-100)",
+                                      "fontSize": 4
+                                    },
+                                    "visible": false
+                                  },
+                                  "rangesBar": {
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-50)",
+                                      "width": 0.2
+                                    },
+                                    "verticalDisplay": true
+                                  },
+                                  "setpoint": {
+                                    "color": "var(--neutral-10)",
+                                    "stroke": {
+                                      "color": "var(--info)",
+                                      "width": 0.5
+                                    },
+                                    "value": null
+                                  }
+                                },
+                                "numberFormat": "###0.00",
+                                "title": "C"
+                              },
+                              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                            },
+                            "type": "ia.display.view"
+                          },
+                          {
+                            "meta": {
+                              "name": "CurrentG"
+                            },
+                            "position": {
+                              "basis": "65px"
+                            },
+                            "propConfig": {
+                              "props.params.tagPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.params.tagPath} + \u0027/Metering/CurrentG\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "maiBasis": "120px",
+                                "movingAnalogIndicator": {
+                                  "alarms": {
+                                    "inactiveRangeColor": "var(--neutral-60)",
+                                    "level1": {
+                                      "highHigh": null,
+                                      "lowLow": null,
+                                      "rangeColor": "var(--error)"
+                                    },
+                                    "level2": {
+                                      "high": null,
+                                      "low": null,
+                                      "rangeColor": "var(--warningSecondary)"
+                                    }
+                                  },
+                                  "defaultRangeColor": "var(--neutral-10)",
+                                  "desired": {
+                                    "high": 80,
+                                    "low": 20,
+                                    "rangeColor": "var(--callToAction)"
+                                  },
+                                  "indicator": {
+                                    "color": "var(--label)",
+                                    "reverse": false,
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-100)",
+                                      "width": 0
+                                    }
+                                  },
+                                  "interlocks": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--neutral-100)"
+                                  },
+                                  "label": {
+                                    "format": "#,##0",
+                                    "position": {
+                                      "applyOffsetsOnlyWhenLabelVisible": true,
+                                      "horizontalOffset": 1,
+                                      "verticalOffset": 1
+                                    },
+                                    "style": {
+                                      "classes": "",
+                                      "fill": "var(--neutral-100)",
+                                      "fontSize": 4
+                                    },
+                                    "visible": false
+                                  },
+                                  "rangesBar": {
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-50)",
+                                      "width": 0.2
+                                    },
+                                    "verticalDisplay": true
+                                  },
+                                  "setpoint": {
+                                    "color": "var(--neutral-10)",
+                                    "stroke": {
+                                      "color": "var(--info)",
+                                      "width": 0.5
+                                    },
+                                    "value": null
+                                  }
+                                },
+                                "numberFormat": "###0.00",
+                                "title": "G"
+                              },
+                              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                            },
+                            "type": "ia.display.view"
+                          },
+                          {
+                            "meta": {
+                              "name": "CurrentN"
+                            },
+                            "position": {
+                              "basis": "65px"
+                            },
+                            "propConfig": {
+                              "props.params.tagPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.params.tagPath} + \u0027/Metering/CurrentN\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "maiBasis": "120px",
+                                "movingAnalogIndicator": {
+                                  "alarms": {
+                                    "inactiveRangeColor": "var(--neutral-60)",
+                                    "level1": {
+                                      "highHigh": null,
+                                      "lowLow": null,
+                                      "rangeColor": "var(--error)"
+                                    },
+                                    "level2": {
+                                      "high": null,
+                                      "low": null,
+                                      "rangeColor": "var(--warningSecondary)"
+                                    }
+                                  },
+                                  "defaultRangeColor": "var(--neutral-10)",
+                                  "desired": {
+                                    "high": 80,
+                                    "low": 20,
+                                    "rangeColor": "var(--callToAction)"
+                                  },
+                                  "indicator": {
+                                    "color": "var(--label)",
+                                    "reverse": false,
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-100)",
+                                      "width": 0
+                                    }
+                                  },
+                                  "interlocks": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--neutral-100)"
+                                  },
+                                  "label": {
+                                    "format": "#,##0",
+                                    "position": {
+                                      "applyOffsetsOnlyWhenLabelVisible": true,
+                                      "horizontalOffset": 1,
+                                      "verticalOffset": 1
+                                    },
+                                    "style": {
+                                      "classes": "",
+                                      "fill": "var(--neutral-100)",
+                                      "fontSize": 4
+                                    },
+                                    "visible": false
+                                  },
+                                  "rangesBar": {
+                                    "size": 7,
+                                    "stroke": {
+                                      "color": "var(--neutral-50)",
+                                      "width": 0.2
+                                    },
+                                    "verticalDisplay": true
+                                  },
+                                  "setpoint": {
+                                    "color": "var(--neutral-10)",
+                                    "stroke": {
+                                      "color": "var(--info)",
+                                      "width": 0.5
+                                    },
+                                    "value": null
+                                  }
+                                },
+                                "numberFormat": "###0.00",
+                                "title": "N"
+                              },
+                              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                            },
+                            "type": "ia.display.view"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Indicators"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "space-evenly",
+                          "style": {
+                            "row-gap": "27.5px"
+                          },
+                          "wrap": "wrap"
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Current"
+                    },
+                    "position": {
+                      "basis": "400px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": "7.5px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Title"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary"
+                          },
+                          "text": "VOLTAGE"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "AverageLl"
+                            },
+                            "position": {
+                              "basis": "65px"
+                            },
+                            "propConfig": {
+                              "props.params.tagPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.params.tagPath} + \u0027/Metering/VoltageMeanLL\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "maiBasis": "120px",
+                                "movingAnalogIndicator": {
+                                  "alarms": {
+                                    "inactiveRangeColor": "var(--neutral-60)",
+                                    "level1": {
+                                      "highHigh": null,
+                                      "lowLow": null,
+                                      "rangeColor": "var(--error)"
+                                    },
+                                    "level2": {
+                                      "high": null,
+                                      "low": null,
+                                      "rangeColor": "var(--warningSecondary)"
+                                    }
+                                  },
+                                  "defaultRangeColor": "var(--neutral-10)",
+                                  "desired": {
+                                    "high": 486,
+                                    "low": 474,
+                                    "rangeColor": "var(--callToAction)"
+                                  },
+                                  "indicator": {
+                                    "color": "var(--label)",
+                                    "reverse": false,
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-100)",
+                                      "width": 0
+                                    }
+                                  },
+                                  "interlocks": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--neutral-100)"
+                                  },
+                                  "label": {
+                                    "format": "#,##0",
+                                    "position": {
+                                      "applyOffsetsOnlyWhenLabelVisible": true,
+                                      "horizontalOffset": 1,
+                                      "verticalOffset": 1
+                                    },
+                                    "style": {
+                                      "classes": "",
+                                      "fill": "var(--neutral-100)",
+                                      "fontSize": 4
+                                    },
+                                    "visible": false
+                                  },
+                                  "rangesBar": {
+                                    "size": 8,
+                                    "stroke": {
+                                      "color": "var(--neutral-50)",
+                                      "width": 0.2
+                                    },
+                                    "verticalDisplay": true
+                                  },
+                                  "setpoint": {
+                                    "color": "var(--neutral-10)",
+                                    "stroke": {
+                                      "color": "var(--info)",
+                                      "width": 0.5
+                                    },
+                                    "value": null
+                                  }
+                                },
+                                "numberFormat": "###0.00",
+                                "title": "L-L AVG"
+                              },
+                              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                            },
+                            "type": "ia.display.view"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Indicators"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "center"
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Voltage"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": "7.5px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Metrics"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "space-evenly",
+                  "style": {
+                    "row-gap": "27.5px"
+                  },
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Metering"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section",
+                "gap": "7.5px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Main"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.showClose}, \u0027calc(100% - 55px)\u0027, \u0027100%\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "if(len({view.params.tagPath})\u003d0, False, True)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "gap": "5px",
+            "row-gap": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": true,
+                    "id": "{view.custom.popupId}",
+                    "modal": false,
+                    "overlayDismiss": false,
+                    "resizable": true,
+                    "showCloseIcon": true,
+                    "type": "close",
+                    "viewPath": "",
+                    "viewportBound": false
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "marginBottom": 4,
+                "marginTop": 4
+              },
+              "text": "CLOSE"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Footer"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.showClose"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/faceplates/container",
+        "gap": "5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

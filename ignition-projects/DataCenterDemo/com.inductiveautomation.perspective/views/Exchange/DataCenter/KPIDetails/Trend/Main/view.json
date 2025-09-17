@@ -1,0 +1,411 @@
+{
+  "custom": {
+    "history": {
+      "info": [
+        {
+          "aggregate": "LastValue",
+          "alias": "value"
+        }
+      ]
+    }
+  },
+  "params": {
+    "desired": {
+      "high": 1.806,
+      "low": 1.224
+    },
+    "numberFormat": "#,##0.000",
+    "rangeSelected": "24HR",
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/PowerUsageEffectiveness",
+    "tagUnits": "",
+    "trendColor": "var(--callToAction)"
+  },
+  "propConfig": {
+    "custom.history": {
+      "persistent": true
+    },
+    "custom.history.data": {
+      "binding": {
+        "config": {
+          "aggregate": "MinMax",
+          "avoidScanClassValidation": true,
+          "dateRange": {
+            "mostRecent": "case({/root/TimeRange/Dropdown.props.value},\r     \u002724HR\u0027,  24,\r     \u00277DAY\u0027, 168,     \r     \u002730DAY\u0027, 720,     \r     24          \r )",
+            "mostRecentUnits": "HOUR"
+          },
+          "enableValueCache": true,
+          "ignoreBadQuality": false,
+          "polling": {
+            "enabled": true,
+            "rate": "60"
+          },
+          "preventInterpolation": false,
+          "returnFormat": "Wide",
+          "returnSize": {
+            "numRows": "100",
+            "type": "FIXED"
+          },
+          "tags": "{view.custom.history.info}",
+          "valueFormat": "DOCUMENT"
+        },
+        "type": "tag-history"
+      }
+    },
+    "custom.history.info[0].path": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "type": "property"
+      }
+    },
+    "custom.history.metrics": {
+      "binding": {
+        "config": {
+          "avoidScanClassValidation": true,
+          "calculations": [
+            "Minimum",
+            "Maximum",
+            "Average"
+          ],
+          "dateRange": {
+            "mostRecent": "case({/root/TimeRange/Dropdown.props.value},\r     \u002724HR\u0027,  24,\r     \u00277DAY\u0027, 168,     \r     \u002730DAY\u0027, 720,     \r     24          \r )",
+            "mostRecentUnits": "HOUR"
+          },
+          "enableValueCache": true,
+          "ignoreBadQuality": false,
+          "polling": {
+            "enabled": true,
+            "rate": "60"
+          },
+          "preventInterpolation": false,
+          "returnFormat": "Calculations",
+          "tags": "{view.custom.history.info}",
+          "valueFormat": "DOCUMENT"
+        },
+        "type": "tag-history"
+      }
+    },
+    "custom.history.metricsPercentCheck": {
+      "binding": {
+        "config": {
+          "struct": {
+            "metrics": "{view.custom.history.metrics}",
+            "tagUnits": "{view.params.tagUnits}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tmetrics \u003d value[\u0027metrics\u0027]\n\t\n\tif len(metrics) \u003d\u003d 0:\n\t\treturn [{\u0027t_stamp\u0027: \u0027\u0027, \u0027Minimum\u0027: \u0027\u0027, \u0027Maximum\u0027: \u0027\u0027, \u0027Average\u0027: \u0027\u0027}]\n\telse:\n\t\tmetricValues \u003d metrics[0]\n\t\t\n\t\tif value[\u0027tagUnits\u0027] \u003d\u003d \u0027%\u0027:\n\t\t\treturn [{\u0027t_stamp\u0027: metricValues.get(\u0027t_stamp\u0027), \u0027Minimum\u0027: metricValues.get(\u0027Minimum\u0027) * 100.0,\n\t\t\t\t\u0027Maximum\u0027: metricValues.get(\u0027Maximum\u0027) * 100.0, \u0027Average\u0027: metricValues.get(\u0027Average\u0027) * 100.0}]\n\t\telse:\n\t\t\treturn metrics",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      }
+    },
+    "params.desired": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.numberFormat": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rangeSelected": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagUnits": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.trendColor": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 265,
+      "width": 528
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Dropdown"
+            },
+            "position": {
+              "basis": "93px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.rangeSelected"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "exchange/datacenter/kpi-details/trend/dropdown-option"
+              },
+              "options": [
+                {
+                  "label": "24HR",
+                  "value": "24HR"
+                },
+                {
+                  "label": "7DAY",
+                  "value": "7DAY"
+                },
+                {
+                  "label": "30DAY",
+                  "value": "30DAY"
+                }
+              ],
+              "style": {
+                "classes": "exchange/datacenter/kpi-details/trend/dropdown-selected-value"
+              }
+            },
+            "type": "ia.input.dropdown"
+          }
+        ],
+        "meta": {
+          "name": "TimeRange"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Sparkline"
+        },
+        "position": {
+          "basis": "35px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.color": {
+            "binding": {
+              "config": {
+                "path": "view.params.trendColor"
+              },
+              "type": "property"
+            }
+          },
+          "props.desired.high": {
+            "binding": {
+              "config": {
+                "path": "view.params.desired.high"
+              },
+              "type": "property"
+            }
+          },
+          "props.desired.low": {
+            "binding": {
+              "config": {
+                "path": "view.params.desired.low"
+              },
+              "type": "property"
+            }
+          },
+          "props.points": {
+            "binding": {
+              "config": {
+                "path": "view.custom.history.data"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn [row[\u0027value\u0027] for row in value]",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.range": {
+            "binding": {
+              "config": {
+                "path": "this.props.points"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value:\t\n\t\treturn {\u0027low\u0027: min(value), \u0027high\u0027: max(value)}\n\telse:\n\t\treturn {\u0027low\u0027: \u0027\u0027, \u0027high\u0027: \u0027\u0027}",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "desired": {
+            "fill": {
+              "opacity": 0
+            },
+            "stroke": {
+              "color": "var(--neutral-30)",
+              "width": 2
+            }
+          },
+          "marker": {
+            "first": {
+              "size": 0
+            },
+            "high": {
+              "size": 0
+            },
+            "last": {
+              "size": 0
+            },
+            "low": {
+              "size": 0
+            }
+          },
+          "width": 2
+        },
+        "type": "ia.display.sparkline"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Min"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.numberFormat": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.numberFormat"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.history.metricsPercentCheck[0].Minimum"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "name": "MIN"
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Trend/Value"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Max"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.numberFormat": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.numberFormat"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.history.metricsPercentCheck[0].Maximum"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "name": "MAX"
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Trend/Value"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Avg"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.numberFormat": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.numberFormat"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.history.metricsPercentCheck[0].Average"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "name": "AVG"
+              },
+              "path": "Exchange/DataCenter/KPIDetails/Trend/Value"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Metrics"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "gap": "12.5px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "gap": "7.5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

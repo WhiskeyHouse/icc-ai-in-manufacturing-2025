@@ -1,0 +1,41 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 1561
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "NarrowView"
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/NarrowView"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "WideView"
+        },
+        "position": {
+          "size": "large"
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/WideView"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "breakpoint": 1580
+    },
+    "type": "ia.container.breakpt"
+  }
+}

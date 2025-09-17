@@ -1,0 +1,282 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 400,
+      "width": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "TankContainer"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "gap": "10px",
+            "alignItems": "center"
+          }
+        },
+        "children": [
+          {
+            "meta": {
+              "name": "TankStatus"
+            },
+            "props": {
+              "text": "Tank 1 - Active",
+              "style": {
+                "fontSize": "16px",
+                "fontWeight": "bold",
+                "color": "#2c3e50",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "TankVisual"
+            },
+            "position": {
+              "basis": "200px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "position": "relative",
+                "width": "120px",
+                "height": "180px",
+                "border": "3px solid #34495e",
+                "borderRadius": "0 0 15px 15px",
+                "backgroundColor": "#ecf0f1",
+                "margin": "0 auto"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "FillLevel"
+                },
+                "props": {
+                  "style": {
+                    "position": "absolute",
+                    "bottom": "0",
+                    "left": "0",
+                    "right": "0",
+                    "backgroundColor": "#f39c12",
+                    "borderRadius": "0 0 12px 12px",
+                    "transition": "height 0.5s ease"
+                  }
+                },
+                "propConfig": {
+                  "props.style.height": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "concat({[Global]WhiskeyLab/Tank1/FillLevel} * 1.74, 'px')"
+                      }
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "StatusIndicator"
+                },
+                "props": {
+                  "style": {
+                    "position": "absolute",
+                    "top": "10px",
+                    "right": "10px",
+                    "width": "15px",
+                    "height": "15px",
+                    "borderRadius": "50%",
+                    "backgroundColor": "#27ae60"
+                  }
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "if({[Global]WhiskeyLab/Tank1/Status} = 'OK', '#27ae60', if({[Global]WhiskeyLab/Tank1/Status} = 'Warning', '#f39c12', '#e74c3c'))"
+                      }
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "type": "ia.container.coord"
+          },
+          {
+            "meta": {
+              "name": "TemperatureGauge"
+            },
+            "position": {
+              "basis": "80px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "width": "150px"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "TempLabel"
+                },
+                "props": {
+                  "text": "Temperature",
+                  "style": {
+                    "fontSize": "14px",
+                    "fontWeight": "bold",
+                    "color": "#2c3e50",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "TempGauge"
+                },
+                "props": {
+                  "max": 100,
+                  "min": 0,
+                  "style": {
+                    "height": "50px"
+                  }
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "type": "tag",
+                      "config": {
+                        "tagPath": "[Global]WhiskeyLab/Tank1/Temperature",
+                        "fallbackDelay": 2.5
+                      }
+                    }
+                  },
+                  "props.track.fill": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "if({[Global]WhiskeyLab/Tank1/Temperature} > 80, '#e74c3c', if({[Global]WhiskeyLab/Tank1/Temperature} > 70, '#f39c12', '#27ae60'))"
+                      }
+                    }
+                  }
+                },
+                "type": "ia.input.slider"
+              },
+              {
+                "meta": {
+                  "name": "TempValue"
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "18px",
+                    "fontWeight": "bold",
+                    "color": "#2c3e50",
+                    "textAlign": "center"
+                  }
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "concat(round({[Global]WhiskeyLab/Tank1/Temperature}, 1), '°F')"
+                      }
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "if({[Global]WhiskeyLab/Tank1/Temperature} > 80, '#e74c3c', if({[Global]WhiskeyLab/Tank1/Temperature} > 70, '#f39c12', '#27ae60'))"
+                      }
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "FillLevelIndicator"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "5px",
+                "alignItems": "center"
+              }
+            },
+            "children": [
+              {
+                "meta": {
+                  "name": "FillLabel"
+                },
+                "props": {
+                  "text": "Fill Level",
+                  "style": {
+                    "fontSize": "14px",
+                    "fontWeight": "bold",
+                    "color": "#2c3e50"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "FillValue"
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "16px",
+                    "fontWeight": "bold",
+                    "color": "#f39c12"
+                  }
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "concat(round({[Global]WhiskeyLab/Tank1/FillLevel}, 1), '%')"
+                      }
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "type": "ia.container.flex"
+          }
+        ],
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "padding": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

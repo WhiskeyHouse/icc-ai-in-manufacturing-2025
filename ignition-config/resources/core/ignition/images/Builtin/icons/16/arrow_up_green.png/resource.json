@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow_up_green.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "import",
+      "timestamp": "2025-09-17T11:12:43Z"
+    },
+    "size": 299,
+    "lastModificationSignature": "6cc04cf81a222a019274fe3719cdc2dc492b330aff0f7fbec908b85cbbc56c3d",
+    "height": 16
+  }
+}

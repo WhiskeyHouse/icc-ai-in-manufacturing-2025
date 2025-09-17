@@ -1,0 +1,63 @@
+{
+  "custom": {},
+  "params": {
+    "folderPath": "[default]Exchange/DataCenter/Equipment/PDU/PDU1A/Outlet/Outlet1"
+  },
+  "propConfig": {
+    "params.folderPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 263,
+      "width": 255
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "ViewCanvas"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.params.folderPath"
+              },
+              "transforms": [
+                {
+                  "code": "\n\tdef getViewCanvasInstance(viewPath, viewParams):\n\t\treturn {\n\t\t  \"position\": \"relative\",\n\t\t  \"top\": \"0px\",\n\t\t  \"left\": \"0px\",\n\t\t  \"bottom\": \"auto\",\n\t\t  \"right\": \"auto\",\n\t\t  \"zIndex\": \"auto\",\n\t\t  \"width\": \"auto\",\n\t\t  \"height\": \"auto\",\n\t\t  \"viewPath\": viewPath,\n\t\t  \"viewParams\": viewParams,\n\t\t  \"style\": {\n\t\t    \"classes\": \"\",\n\t\t    \"margin-bottom\":\"8px\"\n\t\t  }\n\t\t}\n\t\t\n\ttagPath \u003d value\n\ttags \u003d system.tag.browse(tagPath)\n\tengUnits \u003d system.tag.readBlocking([\"%s.engUnit\" %tag.get(\"fullPath\") for tag in tags])\n\n\tviewPathMap \u003d {\n\t\t\"Float8\": \"Numeric\",\n\t\t\"Float4\": \"Numeric\",\n\t\t\"Int4\": \"Numeric\",\n\t\t\"Int8\": \"Numeric\",\n\t\t\"Boolean\": \"String\",\n\t\t\"String\": \"String\"\n\t}\n\n\tinstances \u003d []\n\tfor index, tag in enumerate(tags):\n\t\tif not bool(tag.get(\"hasChildren\")):\n\t\t\tdataType \u003d str(tag.get(\"dataType\"))\n\t\t\tlabel \u003d tag.get(\"name\")\n\t\t\tvalue \u003d tag.get(\"value\")\n\t\t\t\n\t\t\tviewPath \u003d \"Exchange/DataCenter/Framework/Data/%s\" % viewPathMap.get(dataType, dataType)\n\t\t\tviewParams \u003d {\n\t\t\t\t\t    \"engUnit\": engUnits[index],\n\t\t\t\t\t    \"label\": label,\n\t\t\t\t\t    \"value\": value\n\t\t\t\t\t  }\n\t\t\tinstances.append(getViewCanvasInstance(viewPath, viewParams))\n\treturn instances\n\t\n\t",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "enableTransitions": false,
+          "transitionSettings": {
+            "duration": "1s",
+            "timingFunction": "linear"
+          },
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.viewcanvas"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

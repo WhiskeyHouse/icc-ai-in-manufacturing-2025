@@ -1,0 +1,173 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 1225
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "PowerChart"
+        },
+        "position": {
+          "basis": "600px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.axes": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.axes"
+              },
+              "type": "property"
+            }
+          },
+          "props.config": {
+            "onChange": {
+              "enabled": null,
+              "script": "\tconfig \u003d currentValue.value\n\t\n\tif config[\u0027mode\u0027].value \u003d\u003d \u0027historical\u0027:\n\t\tif previousValue !\u003d None:\n\t\t\tif previousValue.value !\u003d None:\n\t\t\t\tstartDate \u003d config[\u0027startDate\u0027].value\n\t\t\t\tendDate \u003d config[\u0027endDate\u0027].value\t\t\n\t\t\t\t\n\t\t\t\tdaysBetween \u003d system.date.daysBetween(startDate,endDate)\n\t\t\t\t\n\t\t\t\tif daysBetween \u003e 31:\n\t\t\t\t\toldStartDate \u003d previousValue.value[\u0027startDate\u0027].value\n\t\t\t\t\toldEndDate \u003d previousValue.value[\u0027endDate\u0027].value\n\t\t\t\t\t\n\t\t\t\t\tif oldStartDate \u003d\u003d startDate:\n\t\t\t\t\t\tself.props.config.startDate \u003d system.date.addDays(endDate,-31)\n\t\t\t\t\telse:\n\t\t\t\t\t\tself.props.config.endDate \u003d system.date.addDays(startDate,31)\n\telif config[\u0027mode\u0027].value \u003d\u003d \u0027realtime\u0027:\n\t\tunits \u003d config[\u0027measureOfTime\u0027].value\n\t\ttime \u003d config[\u0027unitOfTime\u0027].value\n\t\t\n\t\tif units \u003d\u003d \u0027seconds\u0027:\n\t\t\tif time \u003e 2629800:\n\t\t\t\tself.props.config.unitOfTime \u003d 2629800\n\t\telif units \u003d\u003d \u0027minutes\u0027:\n\t\t\tif time \u003e 43830:\n\t\t\t\tself.props.config.unitOfTime \u003d 43830\n\t\telif units \u003d\u003d \u0027hours\u0027:\n\t\t\tif time \u003e 730:\n\t\t\t\tself.props.config.unitOfTime \u003d 730\n\t\telif units \u003d\u003d \u0027days\u0027:\n\t\t\tif time \u003e 31:\n\t\t\t\tself.props.config.unitOfTime \u003d 31\n\t\telif units \u003d\u003d \u0027weeks\u0027:\n\t\t\tif time \u003e 4:\n\t\t\t\tself.props.config.unitOfTime \u003d 4\n\t\telse:\n\t\t\tself.props.config.unitOfTime \u003d 1\n\t\t\tself.props.config.measureOfTime \u003d \u0027months\u0027"
+            }
+          },
+          "props.config.measureOfTime": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.config.measureOfTime"
+              },
+              "type": "property"
+            }
+          },
+          "props.config.mode": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.config.mode"
+              },
+              "type": "property"
+            }
+          },
+          "props.config.rangeEndDate": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.config.rangeEndDate"
+              },
+              "type": "property"
+            }
+          },
+          "props.config.rangeStartDate": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.config.rangeStartDate"
+              },
+              "type": "property"
+            }
+          },
+          "props.config.responsiveDesignWidth": {
+            "binding": {
+              "config": {
+                "path": "session.custom.breakpoint"
+              },
+              "type": "property"
+            }
+          },
+          "props.config.tagBrowserStartPath": {
+            "binding": {
+              "config": {
+                "expression": "\"histprov:DataCenter:/drv:\" + {session.custom.gatewayName} + \":datacenterdemo:/tag:exchange/datacenterdemo\""
+              },
+              "type": "expr"
+            },
+            "persistent": true
+          },
+          "props.config.unitOfTime": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.config.unitOfTime"
+              },
+              "type": "property"
+            }
+          },
+          "props.config.visibility.showTagBrowser": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.config.visibility.showTagBrowser"
+              },
+              "type": "property"
+            }
+          },
+          "props.dataColumns": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.dataColumns"
+              },
+              "type": "property"
+            }
+          },
+          "props.interaction": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.interaction"
+              },
+              "type": "property"
+            }
+          },
+          "props.pens": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.pens"
+              },
+              "type": "property"
+            }
+          },
+          "props.plots": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.powerChart.plots"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "config": {
+            "pointCount": 60,
+            "tagBrowserStartPath": "histprov:DataCenter:/drv:datacenter-demo-be:datacenterdemo:/tag:exchange/datacenterdemo",
+            "visibility": {}
+          },
+          "style": {
+            "borderColor": "--neutral-40",
+            "borderWidth": "1px"
+          },
+          "title": {
+            "style": {
+              "color": "var(--neutral-90)"
+            }
+          }
+        },
+        "type": "ia.chart.powerchart"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/container"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

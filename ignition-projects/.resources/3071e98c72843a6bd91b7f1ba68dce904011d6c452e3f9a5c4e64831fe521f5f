@@ -1,0 +1,2461 @@
+{
+  "custom": {
+    "currentTheme": "dark",
+    "gap": "5px",
+    "largeGap": "27.5px",
+    "popupId": "upsPopup-[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/UPS/UPS1A"
+  },
+  "params": {
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/UPS/UPS1A"
+  },
+  "propConfig": {
+    "custom.currentTheme": {
+      "binding": {
+        "config": {
+          "path": "session.props.theme"
+        },
+        "transforms": [
+          {
+            "code": "\treturn \u0027light\u0027 if \u0027light\u0027 in value else \u0027dark\u0027",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.gap": {
+      "persistent": true
+    },
+    "custom.largeGap": {
+      "persistent": true
+    },
+    "custom.popupId": {
+      "binding": {
+        "config": {
+          "expression": "concat(\u0027upsPopup-\u0027, {view.params.tagPath})"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 860,
+      "width": 1391
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.states": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currentTheme"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn [\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/on exchange/datacenter/faceplates/ups/status/base exchange/datacenter/faceplates/ups/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"ONLINE\",\n    \"value\": 1\n  },\n  {\n    \"style\": {\n      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/off exchange/datacenter/faceplates/ups/status/base exchange/datacenter/faceplates/ups/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n    },\n    \"text\": \"OFFLINE\",\n    \"value\": 0\n  }\n]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Status/SystemStatus"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "Exchange/DataCenter/Framework/Data/Status"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Title"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/important"
+                          },
+                          "text": "ENERGY CONSUMED"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Value"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.value": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "tagPath": "{view.params.tagPath}"
+                                },
+                                "tagPath": "{tagPath}/Energy/SystemInputRealEnergyMonthly"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "numberFormat({value}, \u0027###0.#\u0027)",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "baseClass": "exchange/datacenter/faceplates/ups/energy-consumed",
+                            "units": "kWh"
+                          },
+                          "path": "Exchange/DataCenter/Framework/Data/Value"
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "EnergyConsumed"
+                    },
+                    "position": {
+                      "basis": "97px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "direction": "column",
+                      "justify": "center"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "StatusAndEnergyConsumed"
+                },
+                "position": {
+                  "basis": "290px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "space-between",
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "InverterActive"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.states": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currentTheme"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn [\n\t  {\n\t    \"style\": {\n\t      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/on exchange/datacenter/faceplates/ups/status/base exchange/datacenter/faceplates/ups/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n\t    },\n\t    \"text\": \"INVERTER ACTIVE\",\n\t    \"value\": 1\n\t  },\n\t  {\n\t    \"style\": {\n\t      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/off exchange/datacenter/faceplates/ups/status/base exchange/datacenter/faceplates/ups/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n\t    },\n\t    \"text\": \"INVERTER NOT ACTIVE\",\n\t    \"value\": 0\n\t  }\n\t]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Status/IsInverterActive"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "Exchange/DataCenter/Framework/Data/Status"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "OutputOverloaded"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.states": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currentTheme"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn [\n\t  {\n\t    \"style\": {\n\t      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/on exchange/datacenter/faceplates/ups/status/base exchange/datacenter/faceplates/ups/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n\t    },\n\t    \"text\": \"OUTPUT OVERLOADED\",\n\t    \"value\": 1\n\t  },\n\t  {\n\t    \"style\": {\n\t      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/off exchange/datacenter/faceplates/ups/status/base exchange/datacenter/faceplates/ups/status/generic/extraLeftRightPadding\".format(theme \u003d value)\n\t    },\n\t    \"text\": \"OUTPUT NOT OVERLOADED\",\n\t    \"value\": 0\n\t  }\n\t]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Status/IsOutputOverloaded"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "Exchange/DataCenter/Framework/Data/Status"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "InverterAndOutput"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "gap": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "ActiveAlarmCount"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.activeAlarmCount": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Status/ActiveAlarmCount"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "equipment": "UPS",
+                        "toggle": false
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/ActiveAlarmCount"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "ActiveAlarmCountContainer"
+                },
+                "position": {
+                  "basis": "290px",
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "center"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "AlarmStatusTable"
+                },
+                "position": {
+                  "basis": "900px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "../ActiveAlarmCountContainer/ActiveAlarmCount.props.params.toggle"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.filters.active.conditions.source": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.tagPath"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \u0027]\u0027 in value:\n\t\t# Tag provider is in the path, remove it.\n\t\ttagPath \u003d value.split(\u0027]\u0027)[1]\n\telse:\n\t\ttagPath \u003d value\n\t\t\n\treturn \u0027*{tagPath}*\u0027.format(tagPath \u003d tagPath)",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "columns": {
+                    "active": {
+                      "activeTime": {
+                        "strictWidth": true,
+                        "width": 145
+                      },
+                      "displayPath": {
+                        "width": 600
+                      },
+                      "name": {
+                        "width": 50
+                      },
+                      "priority": {
+                        "width": 80
+                      },
+                      "source": {
+                        "enabled": false
+                      },
+                      "state": {
+                        "enabled": false
+                      }
+                    }
+                  },
+                  "filters": {
+                    "active": {
+                      "conditions": {}
+                    }
+                  },
+                  "responsive": {
+                    "breakpoint": 700,
+                    "enabled": true
+                  },
+                  "style": {
+                    "minHeight": "420px"
+                  }
+                },
+                "type": "ia.display.alarmstatustable"
+              }
+            ],
+            "meta": {
+              "name": "Status"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.theme": {
+                "binding": {
+                  "config": {
+                    "path": "session.props.theme"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn \u0027light\u0027 if \u0027light\u0027 in value else \u0027dark\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.style.row-gap": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.largeGap"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignItems": "center",
+              "justify": "space-around",
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section",
+                "overflow": "hidden"
+              },
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "InputPower"
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.tagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "simpleGauges": {
+                          "first": {
+                            "arc": {
+                              "color": "var(--callToAction)",
+                              "width": 30
+                            },
+                            "arcBackground": {
+                              "color": "var(--neutral-50)",
+                              "opacity": 0.2
+                            },
+                            "endAngle": 405,
+                            "label": {
+                              "color": "var(--callToAction)",
+                              "maxDecimal": 4,
+                              "offsetX": 0,
+                              "offsetY": 0,
+                              "size": "10px",
+                              "units": "",
+                              "visible": false
+                            },
+                            "numberFormat": "###0.#",
+                            "pathToTag": "Input/SystemInputRealPower",
+                            "startAngle": 135,
+                            "title": "REAL"
+                          },
+                          "second": {
+                            "arc": {
+                              "color": "var(--callToAction)",
+                              "width": 30
+                            },
+                            "arcBackground": {
+                              "color": "var(--neutral-50)",
+                              "opacity": 0.2
+                            },
+                            "endAngle": 405,
+                            "label": {
+                              "color": "var(--callToAction)",
+                              "maxDecimal": 4,
+                              "offsetX": 0,
+                              "offsetY": 0,
+                              "size": "10px",
+                              "units": "",
+                              "visible": false
+                            },
+                            "numberFormat": "###0.00",
+                            "pathToTag": "Input/SystemInputPowerFactor",
+                            "startAngle": 135,
+                            "title": "FACTOR"
+                          },
+                          "third": {
+                            "arc": {
+                              "color": "var(--callToAction)",
+                              "width": 30
+                            },
+                            "arcBackground": {
+                              "color": "var(--neutral-50)",
+                              "opacity": 0.2
+                            },
+                            "endAngle": 405,
+                            "label": {
+                              "color": "var(--callToAction)",
+                              "maxDecimal": 4,
+                              "offsetX": 0,
+                              "offsetY": 0,
+                              "size": "10px",
+                              "units": "",
+                              "visible": false
+                            },
+                            "numberFormat": "###0.#",
+                            "pathToTag": "Input/SystemInputFrequency",
+                            "startAngle": 135,
+                            "title": "FREQUENCY"
+                          }
+                        },
+                        "title": "INPUT POWER"
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/InputPower"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "CurrentAndVoltage"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.tagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "current": {
+                          "title": "INPUT CURRENT",
+                          "trend": {
+                            "desired": {
+                              "high": 1700,
+                              "low": 800
+                            },
+                            "numberFormat": "#,##0.000",
+                            "rangeSelected": "24HR",
+                            "seriesName": "INPUT CURRENT"
+                          },
+                          "values": {
+                            "first": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 1700,
+                                  "low": 800,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Input/SystemInputCurrentA",
+                              "title": "A",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "A",
+                                "color": "var(--seq-2)"
+                              }
+                            },
+                            "second": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 1700,
+                                  "low": 800,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Input/SystemInputCurrentB",
+                              "title": "B",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "B",
+                                "color": "var(--qual-10)"
+                              }
+                            },
+                            "third": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 1700,
+                                  "low": 800,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Input/SystemInputCurrentC",
+                              "title": "C",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "C",
+                                "color": "var(--qual-7)"
+                              }
+                            }
+                          }
+                        },
+                        "voltage": {
+                          "title": "INPUT VOLTAGE",
+                          "trend": {
+                            "desired": {
+                              "high": 486,
+                              "low": 474
+                            },
+                            "numberFormat": "#,##0.000",
+                            "rangeSelected": "24HR",
+                            "seriesName": "INPUT VOLTAGE"
+                          },
+                          "values": {
+                            "first": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 486,
+                                  "low": 474,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Input/SystemInputVoltageAB",
+                              "title": "A-B",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "A-B",
+                                "color": "var(--seq-2)"
+                              }
+                            },
+                            "second": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 486,
+                                  "low": 474,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Input/SystemInputVoltageBC",
+                              "title": "B-C",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "B-C",
+                                "color": "var(--qual-10)"
+                              }
+                            },
+                            "third": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 486,
+                                  "low": 474,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Input/SystemInputVoltageCA",
+                              "title": "C-A",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "C-A",
+                                "color": "var(--qual-7)"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/CurrentAndVoltage"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Input"
+                },
+                "position": {
+                  "basis": "425px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.gap": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.largeGap"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "classes": "exchange/datacenter/faceplates/section"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "OutputPower"
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.tagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "simpleGauges": {
+                          "first": {
+                            "arc": {
+                              "color": "var(--callToAction)",
+                              "width": 30
+                            },
+                            "arcBackground": {
+                              "color": "var(--neutral-50)",
+                              "opacity": 0.2
+                            },
+                            "endAngle": 405,
+                            "label": {
+                              "color": "var(--callToAction)",
+                              "maxDecimal": 4,
+                              "offsetX": 0,
+                              "offsetY": 0,
+                              "size": "10px",
+                              "units": "",
+                              "visible": false
+                            },
+                            "numberFormat": "###0.#",
+                            "pathToTag": "Output/SystemOutputRealPower",
+                            "startAngle": 135,
+                            "title": "REAL"
+                          },
+                          "fourth": {
+                            "arc": {
+                              "color": "var(--callToAction)",
+                              "width": 30
+                            },
+                            "arcBackground": {
+                              "color": "var(--neutral-50)",
+                              "opacity": 0.2
+                            },
+                            "endAngle": 405,
+                            "label": {
+                              "color": "var(--callToAction)",
+                              "maxDecimal": 4,
+                              "offsetX": 0,
+                              "offsetY": 0,
+                              "size": "10px",
+                              "units": "",
+                              "visible": false
+                            },
+                            "numberFormat": "###0.00",
+                            "pathToTag": "Output/SystemOutputPowerFactor",
+                            "startAngle": 135,
+                            "title": "FACTOR"
+                          },
+                          "second": {
+                            "arc": {
+                              "color": "var(--callToAction)",
+                              "width": 30
+                            },
+                            "arcBackground": {
+                              "color": "var(--neutral-50)",
+                              "opacity": 0.2
+                            },
+                            "endAngle": 405,
+                            "label": {
+                              "color": "var(--callToAction)",
+                              "maxDecimal": 4,
+                              "offsetX": 0,
+                              "offsetY": 0,
+                              "size": "10px",
+                              "units": "",
+                              "visible": false
+                            },
+                            "numberFormat": "###0.#",
+                            "pathToTag": "Output/SystemOutputReactivePower",
+                            "startAngle": 135,
+                            "title": "REACTIVE"
+                          },
+                          "third": {
+                            "arc": {
+                              "color": "var(--callToAction)",
+                              "width": 30
+                            },
+                            "arcBackground": {
+                              "color": "var(--neutral-50)",
+                              "opacity": 0.2
+                            },
+                            "endAngle": 405,
+                            "label": {
+                              "color": "var(--callToAction)",
+                              "maxDecimal": 4,
+                              "offsetX": 0,
+                              "offsetY": 0,
+                              "size": "10px",
+                              "units": "",
+                              "visible": false
+                            },
+                            "numberFormat": "###0.#",
+                            "pathToTag": "Output/SystemOutputApparentPower",
+                            "startAngle": 135,
+                            "title": "APPARENT"
+                          }
+                        },
+                        "title": "OUTPUT POWER"
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/OutputPower"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "CurrentAndVoltage"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.tagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "current": {
+                          "title": "OUTPUT CURRENT",
+                          "trend": {
+                            "desired": {
+                              "high": 1700,
+                              "low": 800
+                            },
+                            "numberFormat": "#,##0.000",
+                            "rangeSelected": "24HR",
+                            "seriesName": "OUTPUT CURRENT"
+                          },
+                          "values": {
+                            "first": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 1700,
+                                  "low": 800,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Output/SystemOutputCurrentA",
+                              "title": "A",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "A",
+                                "color": "var(--seq-2)"
+                              }
+                            },
+                            "second": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 1700,
+                                  "low": 800,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Output/SystemOutputCurrentB",
+                              "title": "B",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "B",
+                                "color": "var(--qual-10)"
+                              }
+                            },
+                            "third": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 1700,
+                                  "low": 800,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Output/SystemOutputCurrentC",
+                              "title": "C",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "C",
+                                "color": "var(--qual-7)"
+                              }
+                            }
+                          }
+                        },
+                        "voltage": {
+                          "title": "OUTPUT VOLTAGE",
+                          "trend": {
+                            "desired": {
+                              "high": 486,
+                              "low": 474
+                            },
+                            "numberFormat": "#,##0.000",
+                            "rangeSelected": "24HR",
+                            "seriesName": "OUTPUT VOLTAGE"
+                          },
+                          "values": {
+                            "first": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 486,
+                                  "low": 474,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Output/SystemOutputVoltageAB",
+                              "title": "A-B",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "A-B",
+                                "color": "var(--seq-2)"
+                              }
+                            },
+                            "second": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 486,
+                                  "low": 474,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Output/SystemOutputVoltageBC",
+                              "title": "B-C",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "B-C",
+                                "color": "var(--qual-10)"
+                              }
+                            },
+                            "third": {
+                              "maiBasis": "80px",
+                              "movingAnalogIndicator": {
+                                "alarms": {
+                                  "inactiveRangeColor": "var(--neutral-60)",
+                                  "level1": {
+                                    "highHigh": null,
+                                    "lowLow": null,
+                                    "rangeColor": "var(--error)"
+                                  },
+                                  "level2": {
+                                    "high": null,
+                                    "low": null,
+                                    "rangeColor": "var(--warningSecondary)"
+                                  }
+                                },
+                                "defaultRangeColor": "var(--neutral-10)",
+                                "desired": {
+                                  "high": 486,
+                                  "low": 474,
+                                  "rangeColor": "var(--callToAction)"
+                                },
+                                "indicator": {
+                                  "color": "var(--label)",
+                                  "reverse": false,
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-100)",
+                                    "width": 0
+                                  }
+                                },
+                                "interlocks": {
+                                  "high": null,
+                                  "low": null,
+                                  "rangeColor": "var(--neutral-100)"
+                                },
+                                "label": {
+                                  "format": "#,##0",
+                                  "position": {
+                                    "applyOffsetsOnlyWhenLabelVisible": true,
+                                    "horizontalOffset": 1,
+                                    "verticalOffset": 1
+                                  },
+                                  "style": {
+                                    "classes": "",
+                                    "fill": "var(--neutral-100)",
+                                    "fontSize": 4
+                                  },
+                                  "visible": false
+                                },
+                                "rangesBar": {
+                                  "size": 8,
+                                  "stroke": {
+                                    "color": "var(--neutral-50)",
+                                    "width": 0.2
+                                  },
+                                  "verticalDisplay": true
+                                },
+                                "setpoint": {
+                                  "color": "var(--neutral-10)",
+                                  "stroke": {
+                                    "color": "var(--info)",
+                                    "width": 0.5
+                                  },
+                                  "value": null
+                                }
+                              },
+                              "numberFormat": "###0.#",
+                              "pathToTag": "Output/SystemOutputVoltageCA",
+                              "title": "C-A",
+                              "trend": {
+                                "aggregate": "LastValue",
+                                "alias": "C-A",
+                                "color": "var(--qual-7)"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/CurrentAndVoltage"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Output"
+                },
+                "position": {
+                  "basis": "425px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.gap": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.largeGap"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "classes": "exchange/datacenter/faceplates/section"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "InputAndOutput"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.gap": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.gap"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "BatteryIcon"
+                    },
+                    "position": {
+                      "basis": "35px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "custom.outline": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.custom.currentTheme}\u003d\u0027light\u0027, \u0027var(--neutral-40)\u0027, \u0027var(--neutral-60)\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "custom.stopOffset": {
+                        "binding": {
+                          "config": {
+                            "expression": "{parent.custom.value} / 100"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.elements[0].elements[0].elements[0].offset": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.stopOffset"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.elements[0].elements[0].elements[1].offset": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.stopOffset"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.elements[1].stroke.paint": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.outline"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.elements[2].fill.paint": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.custom.currentTheme}\u003d\u0027light\u0027, \u0027var(--neutral-10)\u0027, \u0027var(--neutral-90)\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.elements[3].fill.paint": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.outline"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "elements": [
+                        {
+                          "elements": [
+                            {
+                              "elements": [
+                                {
+                                  "id": "stop27",
+                                  "name": "stop27",
+                                  "stopColor": "var(--callToAction)",
+                                  "stopOpacity": "1",
+                                  "type": "stop"
+                                },
+                                {
+                                  "id": "stop28",
+                                  "name": "stop28",
+                                  "stopColor": "var(--callToAction)",
+                                  "stopOpacity": "0",
+                                  "type": "stop"
+                                }
+                              ],
+                              "id": "linearGradient27",
+                              "name": "linearGradient27",
+                              "type": "linearGradient"
+                            },
+                            {
+                              "gradientTransform": "rotate(90,5.0000001e-6,2.0000001e-6)",
+                              "gradientUnits": "userSpaceOnUse",
+                              "href": "#linearGradient27",
+                              "id": "linearGradient28",
+                              "name": "linearGradient28",
+                              "type": "linearGradient",
+                              "x1": "212.72",
+                              "x2": "212.72",
+                              "y1": "-209.63521",
+                              "y2": "-906.91522"
+                            }
+                          ],
+                          "id": "defs1",
+                          "name": "defs1",
+                          "type": "defs"
+                        },
+                        {
+                          "fill": {
+                            "opacity": "1",
+                            "url": "url(#linearGradient28)"
+                          },
+                          "height": "401.51965",
+                          "id": "rect27",
+                          "name": "rect27",
+                          "rx": "100",
+                          "ry": "100",
+                          "stroke": {
+                            "dasharray": "none",
+                            "dashoffset": "0",
+                            "linecap": "butt",
+                            "linejoin": "miter",
+                            "miterlimit": "4",
+                            "opacity": "1",
+                            "width": "23.92"
+                          },
+                          "style": {
+                            "fontVariationSettings": "normal",
+                            "opacity": "1",
+                            "paintOrder": "normal",
+                            "stopColor": "#000000",
+                            "stopOpacity": "1"
+                          },
+                          "transform": "rotate(-90)",
+                          "type": "rect",
+                          "width": "721.21936",
+                          "x": "197.65587",
+                          "y": "11.96"
+                        },
+                        {
+                          "d": "m 179.45929,-358.70231 v -166.30268 h -66.52108 l 133.04217,-232.8238 v 166.30271 h 66.52107 z",
+                          "fill": {
+                            "opacity": 1
+                          },
+                          "id": "path3",
+                          "name": "path3",
+                          "stroke": {
+                            "width": "0.596712"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m 146.11869,-960 h 133.20219 c 4.432,0 8,3.568 8,8 v 26.1841 c 0,4.432 -3.568,8 -8,8 H 146.11869 c -4.432,0 -8,-3.568 -8,-8 V -952 c 0,-4.432 3.568,-8 8,-8 z",
+                          "fill": {},
+                          "id": "rect2",
+                          "name": "rect2",
+                          "type": "path"
+                        }
+                      ],
+                      "viewBox": "0 -960 425.43965 774.30413"
+                    },
+                    "type": "ia.shapes.svg"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Title"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/important"
+                          },
+                          "text": "CAPACITY REMAINING"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Value"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.value": {
+                            "binding": {
+                              "config": {
+                                "expression": "numberFormat({..../CapacityRemaining.custom.value}, \u0027#,##0.0\u0027)"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "baseClass": "exchange/datacenter/faceplates/value/important",
+                            "units": "%"
+                          },
+                          "path": "Exchange/DataCenter/Framework/Data/Value"
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Value"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "direction": "column",
+                      "justify": "center"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "CapacityRemaining"
+                },
+                "position": {
+                  "basis": "290px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "tagPath": "{tagPath}/Battery/BatteryCapacityRemaining"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "justify": "space-around",
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "StatusCharging"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.states": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currentTheme"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn [\n\t  {\n\t    \"style\": {\n\t      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/on exchange/datacenter/faceplates/ups/status/base\".format(theme \u003d value)\n\t    },\n\t    \"text\": \"CHARGING\",\n\t    \"value\": 1\n\t  },\n\t  {\n\t    \"style\": {\n\t      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/off exchange/datacenter/faceplates/ups/status/base\".format(theme \u003d value)\n\t    },\n\t    \"text\": \"NOT CHARGING\",\n\t    \"value\": 0\n\t  }\n\t]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Battery/IsBatteryCharging"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "Exchange/DataCenter/Framework/Data/Status"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "StatusDischarging"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.states": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currentTheme"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn [\n\t  {\n\t    \"style\": {\n\t      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/on exchange/datacenter/faceplates/ups/status/base\".format(theme \u003d value)\n\t    },\n\t    \"text\": \"DISCHARGING\",\n\t    \"value\": 1\n\t  },\n\t  {\n\t    \"style\": {\n\t      \"classes\": \"exchange/datacenter/faceplates/ups/status/generic/{theme}/off exchange/datacenter/faceplates/ups/status/base\".format(theme \u003d value)\n\t    },\n\t    \"text\": \"NOT DISCHARGING\",\n\t    \"value\": 0\n\t  }\n\t]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.params.value": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "tagPath": "{tagPath}/Battery/IsBatteryDischarging"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "Exchange/DataCenter/Framework/Data/Status"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "ChargingDischarging"
+                },
+                "position": {
+                  "basis": "158px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "gap": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "133px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/bold exchange/datacenter/faceplates/section-title/left-aligned"
+                          },
+                          "text": "DISCHARGE TIME"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "basis": "50px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "tagPath": "{view.params.tagPath}"
+                                    },
+                                    "tagPath": "{tagPath}/Battery/ElapsedTimeDischargingBattery"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "#,##0.0",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/value"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Units"
+                            },
+                            "position": {
+                              "basis": "50px"
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/units"
+                              },
+                              "text": "SEC"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Value"
+                        },
+                        "position": {
+                          "basis": "105px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "gap": "5px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Time"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "space-between"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "133px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/bold exchange/datacenter/faceplates/section-title/left-aligned"
+                          },
+                          "text": "DISCHARGE CYCLES"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "grow": 1,
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "tagPath": "{view.params.tagPath}"
+                                    },
+                                    "tagPath": "{tagPath}/Battery/BatteryDischargeCycles"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "#,##0.0",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/value"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Units"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "exchange/datacenter/faceplates/ups/discharge-metrics/base exchange/datacenter/faceplates/ups/discharge-metrics/units"
+                              },
+                              "text": "CYCLES"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Value"
+                        },
+                        "position": {
+                          "basis": "105px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "gap": "5px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Cycles"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "space-between"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "DischargeMetrics"
+                },
+                "position": {
+                  "basis": "290px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "gap": "5px",
+                    "paddingLeft": "14.5px",
+                    "paddingRight": "14.5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Battery"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.row-gap": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.largeGap"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignItems": "center",
+              "justify": "space-around",
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section",
+                "overflow": "hidden"
+              },
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Main",
+          "tooltip": {
+            "location": "bottom"
+          }
+        },
+        "position": {
+          "basis": "calc(100% - 55px)",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.gap": {
+            "binding": {
+              "config": {
+                "path": "view.custom.gap"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": true,
+                    "id": "{view.custom.popupId}",
+                    "modal": false,
+                    "overlayDismiss": false,
+                    "resizable": true,
+                    "showCloseIcon": true,
+                    "type": "close",
+                    "viewPath": "",
+                    "viewportBound": false
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "marginBottom": 4,
+                "marginTop": 4
+              },
+              "text": "CLOSE"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Footer"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "domId": "upsPopup",
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.gap": {
+        "binding": {
+          "config": {
+            "path": "view.custom.gap"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/faceplates/container"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

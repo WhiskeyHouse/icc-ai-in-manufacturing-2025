@@ -1,0 +1,388 @@
+{
+  "custom": {
+    "history": {}
+  },
+  "params": {
+    "desired": {
+      "high": 1400,
+      "low": 800
+    },
+    "numberFormat": "#,##0.000",
+    "rangeSelected": "24HR",
+    "seriesName": "INPUT CURRENT",
+    "tags": [
+      {
+        "aggregate": "LastValue",
+        "alias": "A",
+        "color": "var(--seq-2)",
+        "path": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/UPS/UPS1A/Input/SystemInputCurrentA"
+      },
+      {
+        "aggregate": "LastValue",
+        "alias": "B",
+        "color": "var(--qual-10)",
+        "path": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/UPS/UPS1A/Input/SystemInputCurrentB"
+      },
+      {
+        "aggregate": "LastValue",
+        "alias": "C",
+        "color": "var(--qual-7)",
+        "path": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/UPS/UPS1A/Input/SystemInputCurrentC"
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.history": {
+      "persistent": true
+    },
+    "custom.history.data": {
+      "binding": {
+        "config": {
+          "aggregate": "MinMax",
+          "avoidScanClassValidation": true,
+          "dateRange": {
+            "mostRecent": "case({/root/TimeRange/Dropdown.props.value},\r     \u002724HR\u0027,  24,\r     \u00277DAY\u0027, 168,     \r     \u002730DAY\u0027, 720,     \r     24          \r )",
+            "mostRecentUnits": "HOUR"
+          },
+          "enableValueCache": true,
+          "ignoreBadQuality": false,
+          "polling": {
+            "enabled": true,
+            "rate": "60"
+          },
+          "preventInterpolation": false,
+          "returnFormat": "Wide",
+          "returnSize": {
+            "numRows": "100",
+            "type": "FIXED"
+          },
+          "tags": "{view.custom.history.info}",
+          "valueFormat": "DOCUMENT"
+        },
+        "type": "tag-history"
+      }
+    },
+    "custom.history.info": {
+      "binding": {
+        "config": {
+          "path": "view.params.tags"
+        },
+        "type": "property"
+      }
+    },
+    "params.desired": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.numberFormat": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rangeSelected": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.seriesName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tags": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 265,
+      "width": 264
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Dropdown"
+            },
+            "position": {
+              "basis": "93px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.rangeSelected"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "exchange/datacenter/kpi-details/trend/dropdown-option"
+              },
+              "options": [
+                {
+                  "label": "24HR",
+                  "value": "24HR"
+                },
+                {
+                  "label": "7DAY",
+                  "value": "7DAY"
+                },
+                {
+                  "label": "30DAY",
+                  "value": "30DAY"
+                }
+              ],
+              "style": {
+                "classes": "exchange/datacenter/kpi-details/trend/dropdown-selected-value"
+              }
+            },
+            "type": "ia.input.dropdown"
+          }
+        ],
+        "meta": {
+          "name": "TimeRange"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "TimeSeriesChart"
+        },
+        "position": {
+          "basis": "100px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.plots[0].markers[0].value": {
+            "binding": {
+              "config": {
+                "path": "view.params.desired.low"
+              },
+              "type": "property"
+            }
+          },
+          "props.plots[0].markers[1].value": {
+            "binding": {
+              "config": {
+                "path": "view.params.desired.high"
+              },
+              "type": "property"
+            }
+          },
+          "props.plots[0].trends[0].columns": {
+            "binding": {
+              "config": {
+                "path": "view.params.tags"
+              },
+              "transforms": [
+                {
+                  "code": "\tcolumns \u003d []\n\t\n\tfor tag in value:\n\t\tcolumns.append({\n\t\t\t  \"key\": tag.get(\u0027alias\u0027),\n\t\t\t  \"color\": tag.get(\u0027color\u0027),\n\t\t\t  \"styles\": {\n\t\t\t    \"normal\": {\n\t\t\t      \"stroke\": {\n\t\t\t        \"color\": \"\",\n\t\t\t        \"width\": 2,\n\t\t\t        \"opacity\": None,\n\t\t\t        \"dashArray\": None\n\t\t\t      },\n\t\t\t      \"fill\": {\n\t\t\t        \"color\": \"\",\n\t\t\t        \"opacity\": None\n\t\t\t      }\n\t\t\t    },\n\t\t\t    \"highlighted\": {\n\t\t\t      \"stroke\": {\n\t\t\t        \"color\": \"\",\n\t\t\t        \"width\": 2,\n\t\t\t        \"opacity\": None,\n\t\t\t        \"dashArray\": None\n\t\t\t      },\n\t\t\t      \"fill\": {\n\t\t\t        \"color\": \"\",\n\t\t\t        \"opacity\": None\n\t\t\t      }\n\t\t\t    },\n\t\t\t    \"selected\": {\n\t\t\t      \"stroke\": {\n\t\t\t        \"color\": \"\",\n\t\t\t        \"width\": 2,\n\t\t\t        \"opacity\": None,\n\t\t\t        \"dashArray\": None\n\t\t\t      },\n\t\t\t      \"fill\": {\n\t\t\t        \"color\": \"\",\n\t\t\t        \"opacity\": None\n\t\t\t      }\n\t\t\t    },\n\t\t\t    \"muted\": {\n\t\t\t      \"stroke\": {\n\t\t\t        \"color\": \"\",\n\t\t\t        \"width\": None,\n\t\t\t        \"opacity\": None,\n\t\t\t        \"dashArray\": None\n\t\t\t      },\n\t\t\t      \"fill\": {\n\t\t\t        \"color\": \"\",\n\t\t\t        \"opacity\": None\n\t\t\t      }\n\t\t\t    }\n\t\t\t  }\n\t\t\t})\n\t\t\t\n\treturn columns",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.plots[0].trends[0].series": {
+            "binding": {
+              "config": {
+                "path": "view.params.seriesName"
+              },
+              "type": "property"
+            }
+          },
+          "props.series[0].data": {
+            "binding": {
+              "config": {
+                "path": "view.custom.history.data"
+              },
+              "type": "property"
+            }
+          },
+          "props.series[0].name": {
+            "binding": {
+              "config": {
+                "path": "view.params.seriesName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "legend": {
+            "visible": true
+          },
+          "plots": [
+            {
+              "axes": [
+                {
+                  "alignment": "left",
+                  "grid": {
+                    "color": "",
+                    "dashArray": 0,
+                    "opacity": 0.9,
+                    "style": {
+                      "classes": ""
+                    },
+                    "visible": false
+                  },
+                  "label": {
+                    "font": {
+                      "color": "",
+                      "size": 10
+                    },
+                    "offset": 0,
+                    "style": {
+                      "classes": ""
+                    },
+                    "text": "",
+                    "visible": true
+                  },
+                  "max": "",
+                  "min": "",
+                  "name": "Data",
+                  "style": {
+                    "classes": ""
+                  },
+                  "tick": {
+                    "color": "",
+                    "count": "Auto",
+                    "label": {
+                      "font": {
+                        "color": "",
+                        "size": 10
+                      },
+                      "format": "Auto",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "style": {
+                      "classes": ""
+                    }
+                  },
+                  "width": 30
+                }
+              ],
+              "markers": [
+                {
+                  "axis": "Data",
+                  "line": {
+                    "color": "",
+                    "dashArray": 5,
+                    "label": {
+                      "font": {
+                        "color": "",
+                        "size": 10
+                      },
+                      "position": "right",
+                      "style": {
+                        "classes": ""
+                      },
+                      "text": ""
+                    },
+                    "opacity": 0.75,
+                    "style": {
+                      "classes": ""
+                    },
+                    "width": 2
+                  },
+                  "type": "line",
+                  "visible": true
+                },
+                {
+                  "axis": "Data",
+                  "line": {
+                    "color": "",
+                    "dashArray": 5,
+                    "label": {
+                      "font": {
+                        "color": "",
+                        "size": 10
+                      },
+                      "position": "right",
+                      "style": {
+                        "classes": ""
+                      },
+                      "text": ""
+                    },
+                    "opacity": 0.75,
+                    "style": {
+                      "classes": ""
+                    },
+                    "width": 2
+                  },
+                  "type": "line",
+                  "visible": true
+                }
+              ],
+              "relativeWeight": 1,
+              "trends": [
+                {
+                  "axis": "Data",
+                  "baselines": [],
+                  "breakLine": true,
+                  "interpolation": "curveLinear",
+                  "radius": 2,
+                  "stack": true,
+                  "type": "line",
+                  "visible": true
+                }
+              ]
+            }
+          ],
+          "series": [
+            {}
+          ],
+          "timeAxis": {
+            "height": 0,
+            "tick": {
+              "color": "var(--neutral-10)"
+            },
+            "tickCount": 0,
+            "visible": false
+          },
+          "timeRange": {
+            "timeFormat": "HH:mm:ss",
+            "visible": false
+          },
+          "xTrace": {
+            "infoBox": {
+              "fill": {
+                "color": "var(--neutral-20)",
+                "opacity": 0.5
+              },
+              "font": {
+                "color": "var(--neutral-100)",
+                "style": {
+                  "fontWeight": "bold"
+                }
+              },
+              "stroke": {
+                "color": "var(--label)"
+              },
+              "timeFormat": "HH:mm:ss"
+            }
+          }
+        },
+        "type": "ia.chart.timeseries"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

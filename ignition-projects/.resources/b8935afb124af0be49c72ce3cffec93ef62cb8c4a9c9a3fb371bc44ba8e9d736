@@ -1,0 +1,11 @@
+{
+  "base": {
+    "style": {
+      "color": "var(--neutral-60)",
+      "fontFamily": "Roboto",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "marginBottom": "7.5px"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "color": "var(--callToAction)",
+      "fontFamily": "Roboto",
+      "fontSize": "14px",
+      "textAlign": "center"
+    }
+  }
+}

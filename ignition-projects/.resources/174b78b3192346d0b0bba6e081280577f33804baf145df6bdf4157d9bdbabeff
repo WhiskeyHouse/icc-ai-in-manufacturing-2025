@@ -1,0 +1,25 @@
+{
+  "base": {
+    "animation": {
+      "duration": "1s",
+      "keyframes": {
+        "0%": {
+          "borderStyle": "none",
+          "borderTopLeftRadius": "80px",
+          "borderTopRightRadius": "80px",
+          "borderBottomLeftRadius": "80px",
+          "borderBottomRightRadius": "80px"
+        },
+        "100%": {
+          "backgroundColor": "#FF000099",
+          "borderStyle": "none",
+          "borderTopLeftRadius": "80px",
+          "borderTopRightRadius": "80px",
+          "borderBottomLeftRadius": "80px",
+          "borderBottomRightRadius": "80px",
+          "boxShadow": "0px 0px 5px 1px #FF000099"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "color": "var(--qual-10)",
+      "textAlign": "center",
+      "fill": "var(--qual-10)"
+    }
+  }
+}

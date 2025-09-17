@@ -1,0 +1,158 @@
+"""
+WebDev PATCH Handler for Validation API
+Handles PATCH requests for validation endpoints
+"""
+
+import whk.validation
+import json
+
+def doPatch(request, session):
+    """
+    Handle PATCH requests for validation API
+    
+    Supported endpoints:
+    - /system/webdev/Global/validation/sessions/{id} - Update validation session
+    """
+    
+    try:
+        # Get the path after /system/webdev/Global/validation
+        path_info = request.get('pathInfo', '')
+        
+        if path_info.startswith('/sessions/'):
+            # Update specific validation session
+            session_id = path_info.replace('/sessions/', '').strip()
+            
+            if not session_id:
+                return {
+                    'json': {'error': 'Session ID is required'},
+                    'response_code': 400
+                }
+            
+            return handle_session_update(request, session_id)
+            
+        else:
+            # Unknown endpoint
+            return {
+                'json': {
+                    'error': 'Endpoint not found',
+                    'path': path_info,
+                    'available_endpoints': ['/sessions/{id}']
+                },
+                'response_code': 404
+            }
+    
+    except Exception as e:
+        return {
+            'json': {
+                'error': 'Internal server error',
+                'message': str(e)
+            },
+            'response_code': 500
+        }
+
+
+def handle_session_update(request, session_id):
+    """Handle session update PATCH request"""
+    try:
+        # Check if session exists
+        existing_session = whk.validation.get_validation_session(session_id)
+        if not existing_session:
+            return {
+                'json': {'error': 'Session not found', 'session_id': session_id},
+                'response_code': 404
+            }
+        
+        # Get request body
+        post_data = request.get('postData', '')
+        if not post_data:
+            return {
+                'json': {'error': 'Request body is required for updates'},
+                'response_code': 400
+            }
+        
+        # Parse JSON data
+        try:
+            update_data = json.loads(post_data)
+        except:
+            return {
+                'json': {'error': 'Invalid JSON in request body'},
+                'response_code': 400
+            }
+        
+        # Handle different update operations
+        if 'revalidate' in update_data and update_data['revalidate']:
+            # Re-run validation with current or updated content
+            content = update_data.get('content', existing_session['content'])
+            context = update_data.get('context', existing_session.get('context', {}))
+            
+            if existing_session['type'] == 'script':
+                validation_result = whk.validation.validate_script_with_rules_engine(
+                    content, context
+                )
+            elif existing_session['type'] == 'component':
+                validation_result = whk.validation.validate_component_with_rules_engine(
+                    content, context
+                )
+            else:
+                return {
+                    'json': {'error': 'Unknown session type for revalidation'},
+                    'response_code': 400
+                }
+            
+            # Update session with new validation results
+            updated_session = whk.validation.update_validation_session(
+                session_id,
+                content=content,
+                validation_result=validation_result,
+                context=context
+            )
+            
+            return {'json': updated_session}
+        
+        elif 'status' in update_data:
+            # Update session status (e.g., mark as reviewed, approved, rejected)
+            status = update_data['status']
+            notes = update_data.get('notes', '')
+            reviewer = update_data.get('reviewer', 'system')
+            
+            updated_session = whk.validation.update_validation_session(
+                session_id,
+                status=status,
+                notes=notes,
+                reviewer=reviewer
+            )
+            
+            return {'json': updated_session}
+        
+        elif 'metadata' in update_data:
+            # Update session metadata
+            metadata = update_data['metadata']
+            
+            updated_session = whk.validation.update_validation_session(
+                session_id,
+                metadata=metadata
+            )
+            
+            return {'json': updated_session}
+        
+        else:
+            return {
+                'json': {
+                    'error': 'No valid update operation specified',
+                    'supported_operations': [
+                        'revalidate: true',
+                        'status: "approved/rejected/under_review"',
+                        'metadata: {...}'
+                    ]
+                },
+                'response_code': 400
+            }
+        
+    except Exception as e:
+        return {
+            'json': {
+                'error': 'Session update failed',
+                'message': str(e)
+            },
+            'response_code': 500
+        }

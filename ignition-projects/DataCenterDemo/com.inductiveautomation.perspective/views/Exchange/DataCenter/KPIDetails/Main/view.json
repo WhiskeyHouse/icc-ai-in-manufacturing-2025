@@ -1,0 +1,477 @@
+{
+  "custom": {
+    "currentValue": 1.1974286511074985,
+    "engHigh": 2,
+    "engLow": 1.03,
+    "engUnits": ""
+  },
+  "params": {
+    "currentValueBasis": "auto",
+    "movingAnalogIndicator": {
+      "alarms": {
+        "inactiveRangeColor": "var(--neutral-60)",
+        "level1": {
+          "highHigh": null,
+          "lowLow": null,
+          "rangeColor": "var(--error)"
+        },
+        "level2": {
+          "high": null,
+          "low": null,
+          "rangeColor": "var(--warningSecondary)"
+        }
+      },
+      "defaultRangeColor": "var(--neutral-10)",
+      "desired": {
+        "high": 1.806,
+        "low": 1.224,
+        "rangeColor": "var(--callToAction)"
+      },
+      "indicator": {
+        "color": "var(--label)",
+        "reverse": false,
+        "size": 3.5,
+        "stroke": {
+          "color": "var(--neutral-100)",
+          "width": 0
+        }
+      },
+      "interlocks": {
+        "high": null,
+        "low": null,
+        "rangeColor": "var(--neutral-100)"
+      },
+      "label": {
+        "format": "#,##0",
+        "position": {
+          "applyOffsetsOnlyWhenLabelVisible": true,
+          "horizontalOffset": 1,
+          "verticalOffset": 1
+        },
+        "style": {
+          "classes": "",
+          "fill": "var(--neutral-100)",
+          "fontSize": 4
+        },
+        "visible": false
+      },
+      "rangesBar": {
+        "size": 5,
+        "stroke": {
+          "color": "var(--neutral-50)",
+          "width": 0.2
+        },
+        "verticalDisplay": true
+      },
+      "setpoint": {
+        "color": "var(--neutral-10)",
+        "stroke": {
+          "color": "var(--info)",
+          "width": 0.5
+        },
+        "value": null
+      }
+    },
+    "numberFormat": "#,##0.000",
+    "rangesSelected": [
+      "24HR",
+      "7DAY"
+    ],
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/Site/PowerUsageEffectiveness",
+    "title": "Power Usage Effectiveness (PUE)",
+    "trend": {
+      "desired": {
+        "high": 1.806,
+        "low": 1.224
+      },
+      "lineColor": "var(--callToAction)"
+    }
+  },
+  "propConfig": {
+    "custom.currentValue": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.engHigh": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.engHigh"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.engLow": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.engLow"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.engUnits": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}.engUnit"
+        },
+        "transforms": [
+          {
+            "code": "\tif value not in [\u0027n/a\u0027, None]:\n\t\treturn value\n\telse:\n\t\treturn \u0027\u0027",
+            "type": "script"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.currentValueBasis": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.movingAnalogIndicator": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.numberFormat": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rangesSelected": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.trend": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 293,
+      "width": 523
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/kpi-details/title"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "MovingAnalogIndicator"
+                },
+                "position": {
+                  "basis": "90px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.params": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "maxValue": "{view.custom.engHigh}",
+                          "minValue": "{view.custom.engLow}",
+                          "movingAnalogIndicator": "{view.params.movingAnalogIndicator}",
+                          "processValue": "{view.custom.currentValue}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tparams \u003d {key: theValue for key, theValue in value.get(\u0027movingAnalogIndicator\u0027).iteritems()}\n\t\n\tparams[\u0027minValue\u0027] \u003d value.get(\u0027minValue\u0027)\n\tparams[\u0027maxValue\u0027] \u003d value.get(\u0027maxValue\u0027)\n\tparams[\u0027processValue\u0027] \u003d value.get(\u0027processValue\u0027)\n\t\n\treturn params",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "Exchange/SVGMovingAnalogIndicator/SVGMovingAnalogIndicator",
+                  "style": {
+                    "width": "50px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "CurrentValue"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.custom.engUnits}\u003d\u0027%\u0027,\r\nconcat(numberFormat({view.custom.currentValue} * 100.0, {view.params.numberFormat}), {view.custom.engUnits}),\r\nconcat(numberFormat({view.custom.currentValue}, {view.params.numberFormat}), {view.custom.engUnits}))"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/datacenter/kpi-details/current-value"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "IndicatorAndValue"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.currentValueBasis"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignItems": "center",
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "TopTrend"
+                },
+                "position": {
+                  "basis": "120px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.params.desired": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.trend.desired"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.numberFormat": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.numberFormat"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.rangeSelected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.rangesSelected[0]"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.tagPath"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagUnits": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.engUnits"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.trendColor": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.trend.lineColor"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "Exchange/DataCenter/KPIDetails/Trend/Main"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "BottomTrend"
+                },
+                "position": {
+                  "basis": "120px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.params.desired": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.trend.desired"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.numberFormat": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.numberFormat"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.rangeSelected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.rangesSelected[1]"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.tagPath"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagUnits": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.engUnits"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.trendColor": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.trend.lineColor"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "Exchange/DataCenter/KPIDetails/Trend/Main"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Trends"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "15px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "IndicatorAndTrends"
+        },
+        "position": {
+          "basis": "212.5px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "gap": "17.5px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/datacenter/kpi-details/container",
+        "gap": "7.5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

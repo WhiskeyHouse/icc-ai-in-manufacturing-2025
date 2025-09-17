@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "description": "Tag provider for DataCenterDemo project",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2025-09-17T13:38:50Z"
+    },
+    "uuid": "80c53644-1695-4d5f-86a2-f0cd2ae2eb57",
+    "lastModificationSignature": "a3ec5cf7ef5401b11e3406f9e1b9cae7f1ccf9859536f410c8a93850bf3403f2",
+    "enabled": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "resource": {
+    "version": 1,
+    "type": "com.inductiveautomation.webdev.gateway.resource.PythonResource",
+    "data": {
+      "files": ["doGet.py", "doPost.py", "doPatch.py"]
+    }
+  }
+}

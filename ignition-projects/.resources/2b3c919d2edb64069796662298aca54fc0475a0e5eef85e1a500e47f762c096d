@@ -1,0 +1,90 @@
+{
+  "custom": {
+    "deviceName": "Utility XFR1A",
+    "popupTitle": "Site 1 - Data Hall 1 - Section 1 - XFR 1A"
+  },
+  "params": {
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/XFR/XFR1A"
+  },
+  "propConfig": {
+    "custom.deviceName": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "transforms": [
+          {
+            "code": "\treturn \u0027Utility {name}\u0027.format(name \u003d value.rsplit(\"/\",1)[1])",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.popupTitle": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagPath": "{view.params.tagPath}"
+          },
+          "tagPath": "{tagPath}/Info/PopupTitle"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 52,
+      "width": 124
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "DeviceName"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/faceplates/lvswg/diagram/label"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "justify": "space-evenly",
+      "style": {
+        "classes": "exchange/datacenter/singleline/equipment/device/off",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,906 @@
+{
+  "custom": {},
+  "params": {
+    "current": {
+      "title": "INPUT CURRENT",
+      "trend": {
+        "desired": {
+          "high": 1700,
+          "low": 800
+        },
+        "numberFormat": "#,##0.000",
+        "rangeSelected": "24HR",
+        "seriesName": "INPUT CURRENT"
+      },
+      "values": {
+        "first": {
+          "maiBasis": "80px",
+          "movingAnalogIndicator": {
+            "alarms": {
+              "inactiveRangeColor": "var(--neutral-60)",
+              "level1": {
+                "highHigh": null,
+                "lowLow": null,
+                "rangeColor": "var(--error)"
+              },
+              "level2": {
+                "high": null,
+                "low": null,
+                "rangeColor": "var(--warningSecondary)"
+              }
+            },
+            "defaultRangeColor": "var(--neutral-10)",
+            "desired": {
+              "high": 1700,
+              "low": 800,
+              "rangeColor": "var(--callToAction)"
+            },
+            "indicator": {
+              "color": "var(--label)",
+              "reverse": false,
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-100)",
+                "width": 0
+              }
+            },
+            "interlocks": {
+              "high": null,
+              "low": null,
+              "rangeColor": "var(--neutral-100)"
+            },
+            "label": {
+              "format": "#,##0",
+              "position": {
+                "applyOffsetsOnlyWhenLabelVisible": true,
+                "horizontalOffset": 1,
+                "verticalOffset": 1
+              },
+              "style": {
+                "classes": "",
+                "fill": "var(--neutral-100)",
+                "fontSize": 4
+              },
+              "visible": false
+            },
+            "rangesBar": {
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-50)",
+                "width": 0.2
+              },
+              "verticalDisplay": true
+            },
+            "setpoint": {
+              "color": "var(--neutral-10)",
+              "stroke": {
+                "color": "var(--info)",
+                "width": 0.5
+              },
+              "value": null
+            }
+          },
+          "numberFormat": "###0.#",
+          "pathToTag": "Input/SystemInputCurrentA",
+          "title": "A",
+          "trend": {
+            "aggregate": "LastValue",
+            "alias": "A",
+            "color": "var(--seq-2)"
+          }
+        },
+        "second": {
+          "maiBasis": "80px",
+          "movingAnalogIndicator": {
+            "alarms": {
+              "inactiveRangeColor": "var(--neutral-60)",
+              "level1": {
+                "highHigh": null,
+                "lowLow": null,
+                "rangeColor": "var(--error)"
+              },
+              "level2": {
+                "high": null,
+                "low": null,
+                "rangeColor": "var(--warningSecondary)"
+              }
+            },
+            "defaultRangeColor": "var(--neutral-10)",
+            "desired": {
+              "high": 1700,
+              "low": 800,
+              "rangeColor": "var(--callToAction)"
+            },
+            "indicator": {
+              "color": "var(--label)",
+              "reverse": false,
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-100)",
+                "width": 0
+              }
+            },
+            "interlocks": {
+              "high": null,
+              "low": null,
+              "rangeColor": "var(--neutral-100)"
+            },
+            "label": {
+              "format": "#,##0",
+              "position": {
+                "applyOffsetsOnlyWhenLabelVisible": true,
+                "horizontalOffset": 1,
+                "verticalOffset": 1
+              },
+              "style": {
+                "classes": "",
+                "fill": "var(--neutral-100)",
+                "fontSize": 4
+              },
+              "visible": false
+            },
+            "rangesBar": {
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-50)",
+                "width": 0.2
+              },
+              "verticalDisplay": true
+            },
+            "setpoint": {
+              "color": "var(--neutral-10)",
+              "stroke": {
+                "color": "var(--info)",
+                "width": 0.5
+              },
+              "value": null
+            }
+          },
+          "numberFormat": "###0.#",
+          "pathToTag": "Input/SystemInputCurrentB",
+          "title": "B",
+          "trend": {
+            "aggregate": "LastValue",
+            "alias": "B",
+            "color": "var(--qual-10)"
+          }
+        },
+        "third": {
+          "maiBasis": "80px",
+          "movingAnalogIndicator": {
+            "alarms": {
+              "inactiveRangeColor": "var(--neutral-60)",
+              "level1": {
+                "highHigh": null,
+                "lowLow": null,
+                "rangeColor": "var(--error)"
+              },
+              "level2": {
+                "high": null,
+                "low": null,
+                "rangeColor": "var(--warningSecondary)"
+              }
+            },
+            "defaultRangeColor": "var(--neutral-10)",
+            "desired": {
+              "high": 1700,
+              "low": 800,
+              "rangeColor": "var(--callToAction)"
+            },
+            "indicator": {
+              "color": "var(--label)",
+              "reverse": false,
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-100)",
+                "width": 0
+              }
+            },
+            "interlocks": {
+              "high": null,
+              "low": null,
+              "rangeColor": "var(--neutral-100)"
+            },
+            "label": {
+              "format": "#,##0",
+              "position": {
+                "applyOffsetsOnlyWhenLabelVisible": true,
+                "horizontalOffset": 1,
+                "verticalOffset": 1
+              },
+              "style": {
+                "classes": "",
+                "fill": "var(--neutral-100)",
+                "fontSize": 4
+              },
+              "visible": false
+            },
+            "rangesBar": {
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-50)",
+                "width": 0.2
+              },
+              "verticalDisplay": true
+            },
+            "setpoint": {
+              "color": "var(--neutral-10)",
+              "stroke": {
+                "color": "var(--info)",
+                "width": 0.5
+              },
+              "value": null
+            }
+          },
+          "numberFormat": "###0.#",
+          "pathToTag": "Input/SystemInputCurrentC",
+          "title": "C",
+          "trend": {
+            "aggregate": "LastValue",
+            "alias": "C",
+            "color": "var(--qual-7)"
+          }
+        }
+      }
+    },
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/UPS/UPS1A",
+    "voltage": {
+      "title": "INPUT VOLTAGE",
+      "trend": {
+        "desired": {
+          "high": 486,
+          "low": 474
+        },
+        "numberFormat": "#,##0.000",
+        "rangeSelected": "24HR",
+        "seriesName": "INPUT CURRENT"
+      },
+      "values": {
+        "first": {
+          "maiBasis": "80px",
+          "movingAnalogIndicator": {
+            "alarms": {
+              "inactiveRangeColor": "var(--neutral-60)",
+              "level1": {
+                "highHigh": null,
+                "lowLow": null,
+                "rangeColor": "var(--error)"
+              },
+              "level2": {
+                "high": null,
+                "low": null,
+                "rangeColor": "var(--warningSecondary)"
+              }
+            },
+            "defaultRangeColor": "var(--neutral-10)",
+            "desired": {
+              "high": 486,
+              "low": 474,
+              "rangeColor": "var(--callToAction)"
+            },
+            "indicator": {
+              "color": "var(--label)",
+              "reverse": false,
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-100)",
+                "width": 0
+              }
+            },
+            "interlocks": {
+              "high": null,
+              "low": null,
+              "rangeColor": "var(--neutral-100)"
+            },
+            "label": {
+              "format": "#,##0",
+              "position": {
+                "applyOffsetsOnlyWhenLabelVisible": true,
+                "horizontalOffset": 1,
+                "verticalOffset": 1
+              },
+              "style": {
+                "classes": "",
+                "fill": "var(--neutral-100)",
+                "fontSize": 4
+              },
+              "visible": false
+            },
+            "rangesBar": {
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-50)",
+                "width": 0.2
+              },
+              "verticalDisplay": true
+            },
+            "setpoint": {
+              "color": "var(--neutral-10)",
+              "stroke": {
+                "color": "var(--info)",
+                "width": 0.5
+              },
+              "value": null
+            }
+          },
+          "numberFormat": "###0.#",
+          "pathToTag": "Input/SystemInputVoltageAB",
+          "title": "A-B",
+          "trend": {
+            "aggregate": "LastValue",
+            "alias": "A-B",
+            "color": "var(--seq-2)"
+          }
+        },
+        "second": {
+          "maiBasis": "80px",
+          "movingAnalogIndicator": {
+            "alarms": {
+              "inactiveRangeColor": "var(--neutral-60)",
+              "level1": {
+                "highHigh": null,
+                "lowLow": null,
+                "rangeColor": "var(--error)"
+              },
+              "level2": {
+                "high": null,
+                "low": null,
+                "rangeColor": "var(--warningSecondary)"
+              }
+            },
+            "defaultRangeColor": "var(--neutral-10)",
+            "desired": {
+              "high": 486,
+              "low": 474,
+              "rangeColor": "var(--callToAction)"
+            },
+            "indicator": {
+              "color": "var(--label)",
+              "reverse": false,
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-100)",
+                "width": 0
+              }
+            },
+            "interlocks": {
+              "high": null,
+              "low": null,
+              "rangeColor": "var(--neutral-100)"
+            },
+            "label": {
+              "format": "#,##0",
+              "position": {
+                "applyOffsetsOnlyWhenLabelVisible": true,
+                "horizontalOffset": 1,
+                "verticalOffset": 1
+              },
+              "style": {
+                "classes": "",
+                "fill": "var(--neutral-100)",
+                "fontSize": 4
+              },
+              "visible": false
+            },
+            "rangesBar": {
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-50)",
+                "width": 0.2
+              },
+              "verticalDisplay": true
+            },
+            "setpoint": {
+              "color": "var(--neutral-10)",
+              "stroke": {
+                "color": "var(--info)",
+                "width": 0.5
+              },
+              "value": null
+            }
+          },
+          "numberFormat": "###0.#",
+          "pathToTag": "Input/SystemInputVoltageBC",
+          "title": "B-C",
+          "trend": {
+            "aggregate": "LastValue",
+            "alias": "B-C",
+            "color": "var(--qual-10)"
+          }
+        },
+        "third": {
+          "maiBasis": "80px",
+          "movingAnalogIndicator": {
+            "alarms": {
+              "inactiveRangeColor": "var(--neutral-60)",
+              "level1": {
+                "highHigh": null,
+                "lowLow": null,
+                "rangeColor": "var(--error)"
+              },
+              "level2": {
+                "high": null,
+                "low": null,
+                "rangeColor": "var(--warningSecondary)"
+              }
+            },
+            "defaultRangeColor": "var(--neutral-10)",
+            "desired": {
+              "high": 486,
+              "low": 474,
+              "rangeColor": "var(--callToAction)"
+            },
+            "indicator": {
+              "color": "var(--label)",
+              "reverse": false,
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-100)",
+                "width": 0
+              }
+            },
+            "interlocks": {
+              "high": null,
+              "low": null,
+              "rangeColor": "var(--neutral-100)"
+            },
+            "label": {
+              "format": "#,##0",
+              "position": {
+                "applyOffsetsOnlyWhenLabelVisible": true,
+                "horizontalOffset": 1,
+                "verticalOffset": 1
+              },
+              "style": {
+                "classes": "",
+                "fill": "var(--neutral-100)",
+                "fontSize": 4
+              },
+              "visible": false
+            },
+            "rangesBar": {
+              "size": 8,
+              "stroke": {
+                "color": "var(--neutral-50)",
+                "width": 0.2
+              },
+              "verticalDisplay": true
+            },
+            "setpoint": {
+              "color": "var(--neutral-10)",
+              "stroke": {
+                "color": "var(--info)",
+                "width": 0.5
+              },
+              "value": null
+            }
+          },
+          "numberFormat": "###0.#",
+          "pathToTag": "Input/SystemInputVoltageCA",
+          "title": "C-A",
+          "trend": {
+            "aggregate": "LastValue",
+            "alias": "C-A",
+            "color": "var(--qual-7)"
+          }
+        }
+      }
+    }
+  },
+  "propConfig": {
+    "params.current": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.voltage": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 390,
+      "width": 669
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.current.title"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary",
+                "marginBottom": "7.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "InputA"
+                },
+                "position": {
+                  "basis": "62px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "currentValue": "{view.params.current.values.first}",
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tparams \u003d {key: theValue for key, theValue in value.get(\u0027currentValue\u0027).iteritems() if key !\u003d \u0027pathToTag\u0027}\n\t\n\tparams[\u0027tagPath\u0027] \u003d \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d value.get(\u0027currentValue\u0027).get(\u0027pathToTag\u0027))\n\t\n\treturn params",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "InputB"
+                },
+                "position": {
+                  "basis": "62px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "currentValue": "{view.params.current.values.second}",
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tparams \u003d {key: theValue for key, theValue in value.get(\u0027currentValue\u0027).iteritems() if key !\u003d \u0027pathToTag\u0027}\n\t\n\tparams[\u0027tagPath\u0027] \u003d \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d value.get(\u0027currentValue\u0027).get(\u0027pathToTag\u0027))\n\t\n\treturn params",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "InputC"
+                },
+                "position": {
+                  "basis": "62px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "currentValue": "{view.params.current.values.third}",
+                          "tagPath": "{view.params.tagPath}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tparams \u003d {key: theValue for key, theValue in value.get(\u0027currentValue\u0027).iteritems() if key !\u003d \u0027pathToTag\u0027}\n\t\n\tparams[\u0027tagPath\u0027] \u003d \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d value.get(\u0027currentValue\u0027).get(\u0027pathToTag\u0027))\n\t\n\treturn params",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Metrics"
+            },
+            "position": {
+              "basis": "190px"
+            },
+            "props": {
+              "justify": "space-evenly",
+              "style": {
+                "marginBottom": "15px",
+                "row-gap": "27.5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Trend"
+            },
+            "position": {
+              "basis": "150px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "tagPath": "{view.params.tagPath}",
+                      "trend": "{view.params.current.trend}",
+                      "values": "{view.params.current.values}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tparams \u003d {key: theValue for key, theValue in value.get(\u0027trend\u0027).iteritems()}\n\t\n\tvalues \u003d value.get(\u0027values\u0027)\n\t\n\ttrendTags \u003d []\n\t\n\tfor currentValue in values:\n\t\tvalueObj \u003d values.get(currentValue)\n\t\ttagPath \u003d \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d valueObj.get(\u0027pathToTag\u0027))\n\t\ttrendParams \u003d {key: theValue for key, theValue in valueObj.get(\u0027trend\u0027).iteritems()}\n\t\ttrendParams[\u0027path\u0027] \u003d tagPath\n\t\t\n\t\ttrendTags.append(trendParams)\n\t\t\n\tparams[\u0027tags\u0027] \u003d sorted(trendTags, key\u003dlambda x: x[\u0027alias\u0027])\n\t\n\treturn params",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              }
+            },
+            "props": {
+              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Trend"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Current"
+        },
+        "position": {
+          "basis": "190px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.voltage.title"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/faceplates/section-title/base exchange/datacenter/faceplates/section-title/secondary",
+                "marginBottom": "7.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "InputAb"
+                },
+                "position": {
+                  "basis": "62px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "tagPath": "{view.params.tagPath}",
+                          "voltageValue": "{view.params.voltage.values.first}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tparams \u003d {key: theValue for key, theValue in value.get(\u0027voltageValue\u0027).iteritems() if key !\u003d \u0027pathToTag\u0027}\n\t\n\tparams[\u0027tagPath\u0027] \u003d \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d value.get(\u0027voltageValue\u0027).get(\u0027pathToTag\u0027))\n\t\n\treturn params",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "InputBc"
+                },
+                "position": {
+                  "basis": "62px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "tagPath": "{view.params.tagPath}",
+                          "voltageValue": "{view.params.voltage.values.second}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tparams \u003d {key: theValue for key, theValue in value.get(\u0027voltageValue\u0027).iteritems() if key !\u003d \u0027pathToTag\u0027}\n\t\n\tparams[\u0027tagPath\u0027] \u003d \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d value.get(\u0027voltageValue\u0027).get(\u0027pathToTag\u0027))\n\t\n\treturn params",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "InputCa"
+                },
+                "position": {
+                  "basis": "62px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "tagPath": "{view.params.tagPath}",
+                          "voltageValue": "{view.params.voltage.values.third}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tparams \u003d {key: theValue for key, theValue in value.get(\u0027voltageValue\u0027).iteritems() if key !\u003d \u0027pathToTag\u0027}\n\t\n\tparams[\u0027tagPath\u0027] \u003d \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d value.get(\u0027voltageValue\u0027).get(\u0027pathToTag\u0027))\n\t\n\treturn params",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/MovingAnalogIndicator"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Metrics"
+            },
+            "position": {
+              "basis": "190px"
+            },
+            "props": {
+              "justify": "space-evenly",
+              "style": {
+                "marginBottom": "15px",
+                "row-gap": "27.5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Trend"
+            },
+            "position": {
+              "basis": "150px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "tagPath": "{view.params.tagPath}",
+                      "trend": "{view.params.voltage.trend}",
+                      "values": "{view.params.voltage.values}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tparams \u003d {key: theValue for key, theValue in value.get(\u0027trend\u0027).iteritems()}\n\t\n\tvalues \u003d value.get(\u0027values\u0027)\n\t\n\ttrendTags \u003d []\n\t\n\tfor currentValue in values:\n\t\tvalueObj \u003d values.get(currentValue)\n\t\ttagPath \u003d \u0027{udtPath}/{pathToTag}\u0027.format(udtPath \u003d value.get(\u0027tagPath\u0027), pathToTag \u003d valueObj.get(\u0027pathToTag\u0027))\n\t\ttrendParams \u003d {key: theValue for key, theValue in valueObj.get(\u0027trend\u0027).iteritems()}\n\t\ttrendParams[\u0027path\u0027] \u003d tagPath\n\t\t\n\t\ttrendTags.append(trendParams)\n\t\t\n\tparams[\u0027tags\u0027] \u003d sorted(trendTags, key\u003dlambda x: x[\u0027alias\u0027])\n\t\n\treturn params",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              }
+            },
+            "props": {
+              "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Trend"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Voltage"
+        },
+        "position": {
+          "basis": "190px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "gap": "27.5px"
+      },
+      "wrap": "wrap"
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "custom": {},
+  "params": {
+    "status": [
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/AgentGroup",
+        "hasChildren": false,
+        "name": "AgentGroup",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/AgentName",
+        "hasChildren": false,
+        "name": "AgentName",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/BrowserURL",
+        "hasChildren": false,
+        "name": "BrowserURL",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/IsApproved",
+        "hasChildren": false,
+        "name": "IsApproved",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/IsConnected",
+        "hasChildren": false,
+        "name": "IsConnected",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/IsRunning",
+        "hasChildren": false,
+        "name": "IsRunning",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/LastCommunication",
+        "hasChildren": false,
+        "name": "LastCommunication",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/LicenseKey",
+        "hasChildren": false,
+        "name": "LicenseKey",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/NodeRole",
+        "hasChildren": false,
+        "name": "NodeRole",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/PlatformEdition",
+        "hasChildren": false,
+        "name": "PlatformEdition",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/RunningState",
+        "hasChildren": false,
+        "name": "RunningState",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/RunningStateInt",
+        "hasChildren": false,
+        "name": "RunningStateInt",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/ServerId",
+        "hasChildren": false,
+        "name": "ServerId",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Master/Master/Version",
+        "hasChildren": false,
+        "name": "Version",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      }
+    ]
+  },
+  "propConfig": {
+    "params.status": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "props.defaultSize.height": {
+      "binding": {
+        "config": {
+          "path": "view.params.status"
+        },
+        "transforms": [
+          {
+            "code": "\treturn len(value)*30",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    }
+  },
+  "props": {
+    "defaultSize": {}
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.params.status"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "direction": "column",
+          "elementPosition": {
+            "basis": "30px",
+            "grow": 0,
+            "shrink": 0
+          },
+          "path": "Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/StatusCard",
+          "style": {
+            "overflow": "visible"
+          },
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

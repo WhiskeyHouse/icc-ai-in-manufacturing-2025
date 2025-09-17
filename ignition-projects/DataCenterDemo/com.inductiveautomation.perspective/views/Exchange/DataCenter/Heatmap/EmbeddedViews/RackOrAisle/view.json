@@ -1,0 +1,71 @@
+{
+  "custom": {},
+  "params": {
+    "inputs": "value",
+    "isAisle": false
+  },
+  "propConfig": {
+    "params.inputs": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.isAisle": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.inputs": {
+            "binding": {
+              "config": {
+                "path": "view.params.inputs"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "view.params.isAisle"
+              },
+              "transforms": [
+                {
+                  "fallback": "Exchange/DataCenter/Heatmap/EmbeddedViews/Rack",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "Exchange/DataCenter/Heatmap/EmbeddedViews/Aisle"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

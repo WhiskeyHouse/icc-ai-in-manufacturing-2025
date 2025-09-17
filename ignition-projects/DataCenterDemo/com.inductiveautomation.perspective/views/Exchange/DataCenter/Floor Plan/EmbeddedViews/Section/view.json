@@ -1,0 +1,1200 @@
+{
+  "custom": {},
+  "params": {
+    "sectionPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1"
+  },
+  "propConfig": {
+    "params.sectionPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 193.8165,
+      "width": 492.377
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "ahuNumber": 1
+        },
+        "meta": {
+          "name": "Ahu1"
+        },
+        "position": {
+          "height": 0.095,
+          "width": 0.062,
+          "x": 0.304,
+          "y": 0.078
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/AHU\u0027, \u0027/AHU\u0027, {this.custom.ahuNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "loading": {
+            "order": "with-parent"
+          },
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/AHU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "ahuNumber": 2
+        },
+        "meta": {
+          "name": "Ahu2"
+        },
+        "position": {
+          "height": 0.095,
+          "width": 0.062,
+          "x": 0.406,
+          "y": 0.078
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/AHU\u0027, \u0027/AHU\u0027, {this.custom.ahuNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "loading": {
+            "order": "with-parent"
+          },
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/AHU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "ahuNumber": 3
+        },
+        "meta": {
+          "name": "Ahu3"
+        },
+        "position": {
+          "height": 0.095,
+          "width": 0.062,
+          "x": 0.508,
+          "y": 0.078
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/AHU\u0027, \u0027/AHU\u0027, {this.custom.ahuNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "loading": {
+            "order": "with-parent"
+          },
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/AHU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "ahuNumber": 4
+        },
+        "meta": {
+          "name": "Ahu4"
+        },
+        "position": {
+          "height": 0.095,
+          "width": 0.062,
+          "x": 0.6105,
+          "y": 0.078
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/AHU\u0027, \u0027/AHU\u0027, {this.custom.ahuNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "loading": {
+            "order": "with-parent"
+          },
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/AHU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "ahuNumber": 5
+        },
+        "meta": {
+          "name": "Ahu5"
+        },
+        "position": {
+          "height": 0.095,
+          "width": 0.062,
+          "x": 0.7126,
+          "y": 0.078
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/AHU\u0027, \u0027/AHU\u0027, {this.custom.ahuNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "loading": {
+            "order": "with-parent"
+          },
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/AHU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "ahuNumber": 6
+        },
+        "meta": {
+          "name": "Ahu6"
+        },
+        "position": {
+          "height": 0.095,
+          "width": 0.062,
+          "x": 0.8147,
+          "y": 0.078
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/AHU\u0027, \u0027/AHU\u0027, {this.custom.ahuNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "loading": {
+            "order": "with-parent"
+          },
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/AHU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "ahuNumber": 7
+        },
+        "meta": {
+          "name": "Ahu7"
+        },
+        "position": {
+          "height": 0.095,
+          "width": 0.062,
+          "x": 0.9167,
+          "y": 0.078
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/AHU\u0027, \u0027/AHU\u0027, {this.custom.ahuNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "loading": {
+            "order": "with-parent"
+          },
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/AHU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "1B"
+        },
+        "meta": {
+          "name": "Pdu1b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.3463,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "2B"
+        },
+        "meta": {
+          "name": "Pdu2b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.3984,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "3B"
+        },
+        "meta": {
+          "name": "Pdu3b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.4506,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "4B"
+        },
+        "meta": {
+          "name": "Pdu4b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.5028,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "5B"
+        },
+        "meta": {
+          "name": "Pdu5b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.5551,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "6B"
+        },
+        "meta": {
+          "name": "Pdu6b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.6072,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "7B"
+        },
+        "meta": {
+          "name": "Pdu7b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.6594,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "8B"
+        },
+        "meta": {
+          "name": "Pdu8b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.7116,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "9B"
+        },
+        "meta": {
+          "name": "Pdu9b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.7639,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "10B"
+        },
+        "meta": {
+          "name": "Pdu10b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.816,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "11B"
+        },
+        "meta": {
+          "name": "Pdu11b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.8682,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "12B"
+        },
+        "meta": {
+          "name": "Pdu12b"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.9204,
+          "y": 0.8728
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "1A"
+        },
+        "meta": {
+          "name": "Pdu1a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.3463,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "2A"
+        },
+        "meta": {
+          "name": "Pdu2a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.3984,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "3A"
+        },
+        "meta": {
+          "name": "Pdu3a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.4506,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "4A"
+        },
+        "meta": {
+          "name": "Pdu4a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.5028,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "5A"
+        },
+        "meta": {
+          "name": "Pdu5a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.5551,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "6A"
+        },
+        "meta": {
+          "name": "Pdu6a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.6072,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "7A"
+        },
+        "meta": {
+          "name": "Pdu7a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.6594,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "8A"
+        },
+        "meta": {
+          "name": "Pdu8a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.7116,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "9A"
+        },
+        "meta": {
+          "name": "Pdu9a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.7639,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "10A"
+        },
+        "meta": {
+          "name": "Pdu10a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.816,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "11A"
+        },
+        "meta": {
+          "name": "Pdu11a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.8682,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "pduNumber": "12A"
+        },
+        "meta": {
+          "name": "Pdu12a"
+        },
+        "position": {
+          "height": 0.0328,
+          "width": 0.0206,
+          "x": 0.9204,
+          "y": 0.3506
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/PDU\u0027, \u0027/PDU\u0027, {this.custom.pduNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/PDU"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "xfrNumber": "1A"
+        },
+        "meta": {
+          "name": "Xrf1a"
+        },
+        "position": {
+          "height": 0.0983,
+          "width": 0.0489,
+          "x": 0.0648,
+          "y": 0.0715
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/XFR\u0027, \u0027/XFR\u0027, {this.custom.xfrNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/XFR"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "xfrNumber": "1B"
+        },
+        "meta": {
+          "name": "Xrf1b"
+        },
+        "position": {
+          "height": 0.0983,
+          "width": 0.0489,
+          "x": 0.0648,
+          "y": 0.7905
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/XFR\u0027, \u0027/XFR\u0027, {this.custom.xfrNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/XFR"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "lvswgNumber": "1A"
+        },
+        "meta": {
+          "name": "Lvswg1a"
+        },
+        "position": {
+          "height": 0.2517,
+          "width": 0.0336,
+          "x": 0.2123,
+          "y": 0.0676
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/LVSWG\u0027, \u0027/LVSWG\u0027, {this.custom.lvswgNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/LVSWG"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "lvswgNumber": "1B"
+        },
+        "meta": {
+          "name": "Lvswg1b"
+        },
+        "position": {
+          "height": 0.2517,
+          "width": 0.0336,
+          "x": 0.2123,
+          "y": 0.6332
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/LVSWG\u0027, \u0027/LVSWG\u0027, {this.custom.lvswgNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/LVSWG"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "genNumber": "1A"
+        },
+        "meta": {
+          "name": "Gen1a"
+        },
+        "position": {
+          "height": 0.1056,
+          "width": 0.1139,
+          "y": 0.2873
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/GEN\u0027, \u0027/GEN\u0027, {this.custom.genNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/GEN"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "genNumber": "1B"
+        },
+        "meta": {
+          "name": "Gen1b"
+        },
+        "position": {
+          "height": 0.1056,
+          "width": 0.1139,
+          "y": 0.5389
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/GEN\u0027, \u0027/GEN\u0027, {this.custom.genNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/GEN"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "upsNumber": "1A"
+        },
+        "meta": {
+          "name": "Ups1a"
+        },
+        "position": {
+          "height": 0.0718,
+          "width": 0.0224,
+          "x": 0.2038,
+          "y": 0.3741
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/UPS\u0027, \u0027/UPS\u0027, {this.custom.upsNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/UPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "upsNumber": "1B"
+        },
+        "meta": {
+          "name": "Ups1b"
+        },
+        "position": {
+          "height": 0.0718,
+          "width": 0.0224,
+          "x": 0.2038,
+          "y": 0.504
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/UPS\u0027, \u0027/UPS\u0027, {this.custom.upsNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/UPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "upsNumber": "2A"
+        },
+        "meta": {
+          "name": "Ups2a"
+        },
+        "position": {
+          "height": 0.0718,
+          "width": 0.0224,
+          "x": 0.2338,
+          "y": 0.3741
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/UPS\u0027, \u0027/UPS\u0027, {this.custom.upsNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/UPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "upsNumber": "2B"
+        },
+        "meta": {
+          "name": "Ups2b"
+        },
+        "position": {
+          "height": 0.0718,
+          "width": 0.0224,
+          "x": 0.2338,
+          "y": 0.504
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "concat({view.params.sectionPath}, \u0027/UPS\u0027, \u0027/UPS\u0027, {this.custom.upsNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Floor Plan/EmbeddedViews/UPS"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "aspectRatio": "492.377:193.8165",
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

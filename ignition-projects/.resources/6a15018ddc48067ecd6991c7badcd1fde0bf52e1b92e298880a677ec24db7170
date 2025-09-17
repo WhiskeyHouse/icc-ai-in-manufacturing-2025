@@ -1,0 +1,148 @@
+{
+  "custom": {},
+  "params": {
+    "attributes": "value",
+    "dataType": "value",
+    "formatString": "value",
+    "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/Metrics/System/CPU Usage",
+    "hasChildren": "value",
+    "name": "value",
+    "tagType": "value",
+    "value": 9.999,
+    "valueSource": "value"
+  },
+  "propConfig": {
+    "params.attributes": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.dataType": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.formatString": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fullPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.hasChildren": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagType": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.value": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.valueSource": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 25,
+      "width": 350
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "155px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.name"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\timport re\n\treturn re.sub(r\"([A-Z][a-z]+)([A-Z][a-z]+)\", r\"\\1 \\2\", value.split(\u0027/\u0027)[-1])",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.fullPath}"
+                  },
+                  "transforms": [
+                    {
+                      "formatType": "numeric",
+                      "formatValue": "##.##",
+                      "type": "format"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/datacenter/framework/data/text-value",
+                "textAlign": "start",
+                "textOverflow": "ellipsis"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px"
+        },
+        "props": {
+          "style": {
+            "fontSize": "14px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

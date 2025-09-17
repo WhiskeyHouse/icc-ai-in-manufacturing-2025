@@ -1,0 +1,61 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker network:*)",
+      "Bash(docker compose:*)",
+      "WebSearch",
+      "Bash(docker exec:*)",
+      "Bash(chmod:*)",
+      "Bash(./scripts/api/test-api.sh:*)",
+      "Bash(./scripts/demo-preflight.sh:*)",
+      "Bash(docker system:*)",
+      "Bash(docker ps:*)",
+      "Bash(curl:*)",
+      "Bash(grep:*)",
+      "Read(//Users/pmannion/Documents/whiskeyhouse/ignition-mcp/**)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker-compose down:*)",
+      "Bash(lsof:*)",
+      "Bash(docker-compose rm:*)",
+      "Read(//Users/pmannion/Documents/whiskeyhouse/ignition-mcp/**)",
+      "Bash(python3:*)",
+      "Bash(docker-compose stop:*)",
+      "Bash(docker-compose build:*)",
+      "Bash(LLAMA_INDEX_PORT=8086 docker-compose up -d --force-recreate llama-index-service)",
+      "Bash(pip3 install:*)",
+      "Bash(source:*)",
+      "Bash(pip install fastapi uvicorn pydantic)",
+      "Bash(./llama-index-service/venv/bin/python3 rules-engine-service.py)",
+      "Bash(./llama-index-service/venv/bin/python3 populate-vector-store.py)",
+      "Bash(./llama-index-service/venv/bin/pip install requests)",
+      "Bash(./llama-index-service/venv/bin/python3 test-ai-generation.py)",
+      "Bash(export IGNITION_MCP_IGNITION_GATEWAY_URL=\"http://localhost:9088\")",
+      "Bash(./run_server.sh:*)",
+      "Bash(export:*)",
+      "Bash(python:*)",
+      "WebFetch(domain:files.inductiveautomation.com)",
+      "Bash(LLAMA_INDEX_PORT=8086 docker compose up -d llama-index-service)",
+      "Bash(docker logs:*)",
+      "Bash(cat:*)",
+      "Bash(docker kill:*)",
+      "Bash(npm install:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(find:*)",
+      "Bash(uv add:*)",
+      "Bash(uv init:*)",
+      "Bash(uv run:*)",
+      "WebFetch(domain:forum.inductiveautomation.com)",
+      "Bash(./ignition-lint \"../whk-distillery01-ignition-global/com.inductiveautomation.perspective/views/_REFERENCE/Instructions/InstructionPopup/view.json\" --format=json)",
+      "WebFetch(domain:docs.inductiveautomation.com)"
+    ],
+    "deny": [],
+    "ask": [],
+    "additionalDirectories": [
+      "/Users/pmannion/Documents/whiskeyhouse"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "playwright"
+  ]
+}

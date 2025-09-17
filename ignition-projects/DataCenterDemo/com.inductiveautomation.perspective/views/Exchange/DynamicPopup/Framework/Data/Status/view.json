@@ -1,0 +1,103 @@
+{
+  "custom": {
+    "currentState": {
+      "style": {
+        "classes": "exchange/datacenter/faceplates/ups/status/generic/dark/on exchange/datacenter/faceplates/ups/status/base"
+      },
+      "text": "CHARGING",
+      "value": 1
+    }
+  },
+  "params": {
+    "states": [
+      {
+        "style": {
+          "classes": "exchange/datacenter/faceplates/ups/status/generic/dark/on exchange/datacenter/faceplates/ups/status/base"
+        },
+        "text": "CHARGING",
+        "value": 1
+      },
+      {
+        "style": {
+          "classes": "exchange/datacenter/faceplates/ups/status/generic/dark/off exchange/datacenter/faceplates/ups/status/base"
+        },
+        "text": "NOT CHARGING",
+        "value": 0
+      }
+    ],
+    "value": 1
+  },
+  "propConfig": {
+    "custom.currentState": {
+      "binding": {
+        "config": {
+          "struct": {
+            "states": "{view.params.states}",
+            "value": "{view.params.value}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tfor state in value.get(\u0027states\u0027):\n\t\tif state.get(\u0027value\u0027) \u003d\u003d value.get(\u0027value\u0027):\n\t\t\treturn state\n\t\n\treturn {}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "params.states": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 61,
+      "width": 348
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.style": {
+            "binding": {
+              "config": {
+                "path": "view.custom.currentState.style"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.currentState.text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

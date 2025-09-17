@@ -1,0 +1,166 @@
+{
+  "custom": {},
+  "params": {
+    "metrics": [
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Database/Active Connections",
+        "hasChildren": false,
+        "name": "Active Connections",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Logging/Errors Per Hour",
+        "hasChildren": false,
+        "name": "Errors Per Hour",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Logging/Errors Per Minute",
+        "hasChildren": false,
+        "name": "Errors Per Minute",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Sessions/Clients",
+        "hasChildren": false,
+        "name": "Clients",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Sessions/Designers",
+        "hasChildren": false,
+        "name": "Designers",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/Sessions/Perspective Sessions",
+        "hasChildren": false,
+        "name": "Perspective Sessions",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/System/CPU Usage",
+        "hasChildren": false,
+        "name": "CPU Usage",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/Metrics/System/Memory Usage",
+        "hasChildren": false,
+        "name": "Memory Usage",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      }
+    ]
+  },
+  "propConfig": {
+    "params.metrics": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "props.defaultSize.height": {
+      "binding": {
+        "config": {
+          "path": "view.params.metrics"
+        },
+        "transforms": [
+          {
+            "code": "\treturn len(value)*30\n\t",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.params.metrics"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "direction": "column",
+          "elementPosition": {
+            "basis": "30px",
+            "grow": 0,
+            "shrink": 0
+          },
+          "path": "Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/MetricsCard",
+          "style": {
+            "paddingLeft": "10px",
+            "paddingRight": "10px"
+          },
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

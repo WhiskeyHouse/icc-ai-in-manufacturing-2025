@@ -1,0 +1,938 @@
+{
+  "custom": {
+    "sectionPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1"
+  },
+  "params": {
+    "selectedEquipment": {
+      "tagPath": "",
+      "viewPath": ""
+    },
+    "tagPath": "[DataCenterDemo]Exchange/DataCenterDemo/Site1/DataHall1/Section1/LVSWG/LVSWG1B"
+  },
+  "propConfig": {
+    "custom.sectionPath": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "transforms": [
+          {
+            "code": "\tsectionPath \u003d \u0027\u0027\n\t\n\tpathParts \u003d value.split(\u0027/\u0027)\n\t\n\tfor part in pathParts:\n\t\tsectionPath +\u003d part + \u0027/\u0027\n\t\t\n\t\tif \u0027Section\u0027 in part:\n\t\t\tbreak\n\t\n\treturn sectionPath[:-1]",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.selectedEquipment": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 668,
+      "width": 712
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "BaseNew"
+        },
+        "position": {
+          "height": 1,
+          "width": 1
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "clipPathUnits": "userSpaceOnUse",
+                  "elements": [
+                    {
+                      "d": "M 0,1224.0599 H 792 V 0.05994 H 0 Z",
+                      "id": "path710-8-7",
+                      "name": "path710-8-7",
+                      "transform": "translate(0,2.1000001e-5)",
+                      "type": "path"
+                    }
+                  ],
+                  "id": "clipPath710-6-6",
+                  "name": "clipPath710-6-6",
+                  "type": "clipPath"
+                },
+                {
+                  "clipPathUnits": "userSpaceOnUse",
+                  "elements": [
+                    {
+                      "d": "M 0,1224.0599 H 792 V 0.05994 H 0 Z",
+                      "id": "path676-8",
+                      "name": "path676-8",
+                      "transform": "translate(0,2.1000001e-5)",
+                      "type": "path"
+                    }
+                  ],
+                  "id": "clipPath676-9",
+                  "name": "clipPath676-9",
+                  "type": "clipPath"
+                }
+              ],
+              "id": "defs1",
+              "name": "defs1",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m 79.277723,146.20618 4.31972,-3.71854",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path53",
+                  "name": "path53",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 82.385283,187.50782 v -6.48557",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path5-2",
+                  "name": "path5-2",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 115.52828,187.50782 v -6.48557",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path5-2-9",
+                  "name": "path5-2-9",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 82.385283,175.14608 v -5.99783",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path789-4-54",
+                  "name": "path789-4-54",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 103.95628,175.14608 v -5.99783",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path789-4-54-7",
+                  "name": "path789-4-54-7",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 115.52828,175.14608 v -5.99783",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path789-4-54-7-1",
+                  "name": "path789-4-54-7-1",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "clipPath": "url(#clipPath710-6-6)",
+                  "d": "m 600.10706,362.71301 v 168.79303 h 83.01397 V 362.71301 Z",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path26",
+                  "name": "path26",
+                  "stroke": {
+                    "dasharray": "2.66708, 1.33354",
+                    "dashoffset": "0",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.333385"
+                  },
+                  "transform": "matrix(0,0.35285308,-0.28559962,0,225.13512,-56.22649)",
+                  "type": "path"
+                },
+                {
+                  "d": "M 92.561993,169.12459 H 120.07543",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path27",
+                  "name": "path27",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 87.022941,169.12908 h -9.21632",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path28",
+                  "name": "path28",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 99.918726,145.9939 v 2.449",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path29",
+                  "name": "path29",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "clipPath": "url(#clipPath676-9)",
+                  "d": "m 573.08502,441.16602 -3.24298,7.36502",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path30",
+                  "name": "path30",
+                  "stroke": {
+                    "dasharray": "135.823, 27.1638, 27.1638, 27.1638",
+                    "dashoffset": "0",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.297875"
+                  },
+                  "transform": "matrix(0,0.35277777,0.35782963,0,-57.93314,-56.17775)",
+                  "type": "path"
+                },
+                {
+                  "d": "m 100.4194,151.06215 v -2.62952 h -1.026853 v 2.62952 z m -0.26306,3.06681 h -0.533042 m -0.266828,-0.53364 h 1.06669 m 0.26653,-0.53305 h -1.599745 m 0.799869,-1.92496 v 1.92496",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path31",
+                  "name": "path31",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 102.61218,137.8359 v 5.60211",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path32",
+                  "name": "path32",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 103.01153,137.8359 c 0,-0.1104 -0.0892,-0.19965 -0.19968,-0.19965 -0.11041,0 -0.20001,0.0893 -0.20001,0.19965 0,0.11044 -0.0896,0.20005 -0.20004,0.20005 -0.11005,0 -0.19931,-0.0896 -0.19931,-0.20005",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path33",
+                  "name": "path33",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 101.73307,144.84987 c 0,-0.24271 0.19684,-0.43921 0.43956,-0.43921 0.24271,0 0.43955,0.1965 0.43955,0.43921 m 0,0 c 0,-0.24271 0.19686,-0.43921 0.43956,-0.43921 0.24272,0 0.43956,0.1965 0.43956,0.43921 m 0,-1.41185 c 0,0.24273 -0.19684,0.43923 -0.43956,0.43923 -0.2427,0 -0.43956,-0.1965 -0.43956,-0.43923 m 1.75825,-0.013 c 0.007,0.2427 -0.18415,0.44519 -0.4265,0.45225 -0.24272,0.007 -0.44522,-0.18379 -0.45227,-0.4265 -3.5e-4,-0.004 -3.5e-4,-0.008 -3.5e-4,-0.0127 m 0,1.41185 c 0,-0.24271 0.19685,-0.43921 0.43956,-0.43921 0.24272,0 0.43956,0.1965 0.43956,0.43921 m -3.51613,-0.0127 c 0,-0.24307 0.19685,-0.43991 0.43955,-0.43991 0.24273,0 0.43922,0.19684 0.43922,0.43991 m 0.87911,-1.39914 c 0,0.24273 -0.19684,0.43923 -0.43955,0.43923 -0.24272,0 -0.43956,-0.1965 -0.43956,-0.43923 0,-0.005 0,-0.009 0,-0.013 m 0,0 c 0,0.24271 -0.19649,0.43921 -0.43922,0.43921 -0.2427,0 -0.43955,-0.1965 -0.43955,-0.43921 0,-0.004 0,-0.009 0,-0.0131",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path43",
+                  "name": "path43",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 83.911719,167.16027 v 1.90535",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path44",
+                  "name": "path44",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 102.61172,144.82227 v 10.0651 m 0,6.98466 v -6.94868",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path46",
+                  "name": "path46",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 102.61159,167.40327 v 1.72364",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path47",
+                  "name": "path47",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 79.716163,151.22549 v -2.62952 h -1.02685 v 2.62952 z m -0.26305,3.06681 h -0.53305 m -0.26683,-0.53364 h 1.0667 m 0.26652,-0.53305 h -1.59974 m 0.79987,-1.92496 v 1.92496",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path54",
+                  "name": "path54",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 83.909723,161.83184 v -6.64291 m 0.002,-12.63196 v 12.62315",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path55",
+                  "name": "path55",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 79.267383,146.20989 -10e-4,2.3682",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "id": "path681-7",
+                  "name": "path681-7",
+                  "stroke": {
+                    "dasharray": "none",
+                    "linecap": "round",
+                    "linejoin": "round",
+                    "miterlimit": "4",
+                    "opacity": "1",
+                    "paint": "var(--neutral-90)",
+                    "width": "0.105833"
+                  },
+                  "type": "path"
+                }
+              ],
+              "id": "layer1",
+              "name": "layer1",
+              "transform": "translate(-73.28959,-137.58333)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 48.302441 49.977402"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Pqm1b"
+        },
+        "position": {
+          "height": 0.1034,
+          "width": 0.1796,
+          "x": 0.4141,
+          "y": 0.3664
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/PQM/PQM1B\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "reverse": false
+          },
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/Pqm",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Xfra"
+        },
+        "position": {
+          "height": 0.0647,
+          "width": 0.248,
+          "x": 0.4846
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/XFR/XFR1B\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/Xfr"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Gen1a"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.1524,
+          "x": 0.1452
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/GEN/GEN1B\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/Gen"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pqm2b"
+        },
+        "position": {
+          "height": 0.1034,
+          "width": 0.1796,
+          "x": 0.017,
+          "y": 0.365
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/PQM/PQM2B\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "reverse": false
+          },
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/Pqm",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Cb3b"
+        },
+        "position": {
+          "height": 0.1157,
+          "width": 0.1161,
+          "x": 0.283,
+          "y": 0.6126
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/Breaker/Breaker3B\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.selectedEquipment.tagPath}\u003d{this.props.params.tagPath},\r\n\u0027exchange/datacenter/faceplates/lvswg/diagram/selected\u0027,\r\n\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "reverse": false,
+            "vertical": false
+          },
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/CircuitBreakerNoData",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MainTitle"
+        },
+        "position": {
+          "height": 0.0295,
+          "width": 0.2464,
+          "x": 0.7483,
+          "y": 0.375
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/faceplates/lvswg/diagram/section-title"
+          },
+          "text": "LV Switchgear B"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "MainBpLabel"
+        },
+        "position": {
+          "height": 0.0309,
+          "width": 0.1431,
+          "x": 0.5636,
+          "y": 0.8864
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/faceplates/lvswg/diagram/sublabel"
+          },
+          "text": "Building"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Cb5b"
+        },
+        "position": {
+          "height": 0.1101,
+          "width": 0.2319,
+          "x": 0.5237,
+          "y": 0.754
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/Breaker/Breaker5B\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.selectedEquipment.tagPath}\u003d{this.props.params.tagPath},\r\n\u0027exchange/datacenter/faceplates/lvswg/diagram/selected\u0027,\r\n\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "displayData": true,
+            "reverse": false,
+            "vertical": true
+          },
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/CircuitBreaker",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Cb6b"
+        },
+        "position": {
+          "height": 0.1101,
+          "width": 0.2319,
+          "x": 0.7629,
+          "y": 0.754
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/Breaker/Breaker6B\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.selectedEquipment.tagPath}\u003d{this.props.params.tagPath},\r\n\u0027exchange/datacenter/faceplates/lvswg/diagram/selected\u0027,\r\n\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "displayData": true,
+            "reverse": true,
+            "vertical": true
+          },
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/CircuitBreaker",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Cb4b"
+        },
+        "position": {
+          "height": 0.1101,
+          "width": 0.2319,
+          "x": 0.0773,
+          "y": 0.754
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/Breaker/Breaker4B\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.selectedEquipment.tagPath}\u003d{this.props.params.tagPath},\r\n\u0027exchange/datacenter/faceplates/lvswg/diagram/selected\u0027,\r\n\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "displayData": true,
+            "reverse": false,
+            "vertical": true
+          },
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/CircuitBreaker",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Cb2b"
+        },
+        "position": {
+          "height": 0.1101,
+          "width": 0.1533,
+          "x": 0.4777,
+          "y": 0.4851
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/Breaker/Breaker2B\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.selectedEquipment.tagPath}\u003d{this.props.params.tagPath},\r\n\u0027exchange/datacenter/faceplates/lvswg/diagram/selected\u0027,\r\n\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "displayData": false,
+            "reverse": false,
+            "vertical": true
+          },
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/CircuitBreakerNoData",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Cb1b"
+        },
+        "position": {
+          "height": 0.1101,
+          "width": 0.1533,
+          "x": 0.0899,
+          "y": 0.4851
+        },
+        "propConfig": {
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.sectionPath} + \u0027/Breaker/Breaker1B\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.selectedEquipment.tagPath}\u003d{this.props.params.tagPath},\r\n\u0027exchange/datacenter/faceplates/lvswg/diagram/selected\u0027,\r\n\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "displayData": false,
+            "reverse": false,
+            "vertical": true
+          },
+          "path": "Exchange/DataCenter/Faceplates/EmbeddedViews/Lvswg/Equipment/CircuitBreakerNoData",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tif self.custom.enabled:\n\t\tviewPath \u003d \u0027\u0027\n\t\ttagPath \u003d \u0027\u0027\n\t\n\t\tpayload \u003d {\u0027selectedEquipment\u0027: {\u0027viewPath\u0027: viewPath, \u0027tagPath\u0027: tagPath}}\n\t\n\t\tsystem.perspective.sendMessage(\u0027exchange.datacenterDemo.switchSelectedEquipment\u0027, scope \u003d \u0027page\u0027, payload \u003d payload)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "ViewLvswgData"
+        },
+        "position": {
+          "height": 0.0659,
+          "width": 0.2554,
+          "x": 0.7256,
+          "y": 0.4236
+        },
+        "propConfig": {
+          "custom.enabled": {
+            "binding": {
+              "config": {
+                "expression": "len({view.params.selectedEquipment.tagPath})\u003e0"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({this.custom.enabled},\r\n\u0027exchange/datacenter/faceplates/lvswg/diagram/button/base exchange/datacenter/faceplates/lvswg/diagram/button/enabled\u0027,\r\n\u0027exchange/datacenter/faceplates/lvswg/diagram/button/base exchange/datacenter/faceplates/lvswg/diagram/button/disabled\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "View System Status for\nLV Switchgear B"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "aspectRatio": "48.302441:49.977314",
+      "mode": "percent",
+      "style": {
+        "backgroundColor": "var(--neutral-10)"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "custom": {},
+  "params": {
+    "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Backend - Backup/Backup/IsConnected",
+    "server": "value"
+  },
+  "propConfig": {
+    "params.fullPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.server": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 22,
+      "width": 110
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "fallback": true,
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": false
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "server": "{view.params.server}",
+                  "vw": "{page.props.dimensions.viewport.width}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\tvw \u003d value.vw\n\tserver \u003d value.server\n\t\n\tif vw \u003c 800:\n\t\treturn \u0027\u0027.join(w[0].upper() for w in server.split())\n\treturn server",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "16px",
+            "fontWeight": "bold",
+            "marginRight": "5px",
+            "maxWidth": "150px",
+            "textAlign": "center",
+            "textOverflow": "ellipsis"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "expression",
+                "tagPath": "{view.params.fullPath}"
+              },
+              "transforms": [
+                {
+                  "fallback": "#FF0000",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "#00D900"
+                    }
+                  ],
+                  "outputType": "color",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "center",
+      "justify": "center",
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

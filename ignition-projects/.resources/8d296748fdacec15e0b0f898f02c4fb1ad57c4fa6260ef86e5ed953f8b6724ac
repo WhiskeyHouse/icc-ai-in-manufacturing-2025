@@ -1,0 +1,25 @@
+{
+  "base": {
+    "style": {
+      "borderTopLeftRadius": "10px",
+      "borderTopRightRadius": "10px",
+      "borderBottomLeftRadius": "10px",
+      "borderBottomRightRadius": "10px",
+      "color": "var(--neutral-60)",
+      "cursor": "pointer",
+      "fontFamily": "Roboto",
+      "fontSize": "14px",
+      "fontWeight": "bold",
+      "padding": "5px",
+      "fill": "var(--label)"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "var(--neutral-30)"
+      }
+    }
+  ]
+}

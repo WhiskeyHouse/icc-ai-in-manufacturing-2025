@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "borderBottomColor": "var(--neutral-30)",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px"
+    }
+  }
+}

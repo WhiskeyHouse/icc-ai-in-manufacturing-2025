@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "fontFamily": "Roboto",
+      "fontSize": "28px",
+      "fontWeight": "500",
+      "textAlign": "center"
+    }
+  }
+}

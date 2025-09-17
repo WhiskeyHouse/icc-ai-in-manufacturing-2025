@@ -1,0 +1,19 @@
+{
+  "pages": {
+    "/": {
+      "title": "Test View",
+      "viewPath": "Test/SimpleView"
+    },
+    "/ai-lab": {
+      "title": "AI Lab Demo",
+      "viewPath": "WhiskeyLab/AIAssistant/Main"
+    },
+    "/test": {
+      "title": "Simple Test",
+      "viewPath": "Test/SimpleView"
+    }
+  },
+  "sharedDocks": {
+    "cornerPriority": "top-bottom"
+  }
+}

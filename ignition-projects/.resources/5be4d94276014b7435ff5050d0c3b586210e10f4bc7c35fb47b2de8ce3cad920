@@ -1,0 +1,2209 @@
+{
+  "custom": {
+    "dbConnection": false,
+    "edition": "standard",
+    "gwConnection": true,
+    "gwConnectionColor": "#00D900",
+    "gwIsRunning": false,
+    "isConnected": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/IsConnected"
+  },
+  "params": {
+    "metrics": {},
+    "redundancy": "",
+    "redundantMetrics": [],
+    "redundantStatus": [
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/AgentGroup",
+        "hasChildren": false,
+        "name": "AgentGroup",
+        "tagType": "AtomicTag",
+        "value": "Default Group",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/AgentName",
+        "hasChildren": false,
+        "name": "AgentName",
+        "tagType": "AtomicTag",
+        "value": "Data Center - Prod",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/BrowserURL",
+        "hasChildren": false,
+        "name": "BrowserURL",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Boolean",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/IsApproved",
+        "hasChildren": false,
+        "name": "IsApproved",
+        "tagType": "AtomicTag",
+        "value": true,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Boolean",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/IsConnected",
+        "hasChildren": false,
+        "name": "IsConnected",
+        "tagType": "AtomicTag",
+        "value": false,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Boolean",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/IsRunning",
+        "hasChildren": false,
+        "name": "IsRunning",
+        "tagType": "AtomicTag",
+        "value": false,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "DateTime",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/LastCommunication",
+        "hasChildren": false,
+        "name": "LastCommunication",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/LicenseKey",
+        "hasChildren": false,
+        "name": "LicenseKey",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/NodeRole",
+        "hasChildren": false,
+        "name": "NodeRole",
+        "tagType": "AtomicTag",
+        "value": "",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/PlatformEdition",
+        "hasChildren": false,
+        "name": "PlatformEdition",
+        "tagType": "AtomicTag",
+        "value": "",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/RunningState",
+        "hasChildren": false,
+        "name": "RunningState",
+        "tagType": "AtomicTag",
+        "value": "",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/RunningStateInt",
+        "hasChildren": false,
+        "name": "RunningStateInt",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/ServerId",
+        "hasChildren": false,
+        "name": "ServerId",
+        "tagType": "AtomicTag",
+        "value": "_0:0:Data Center - Prod",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/Version",
+        "hasChildren": false,
+        "name": "Version",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      }
+    ],
+    "server": "",
+    "status": [
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/AgentGroup",
+        "hasChildren": false,
+        "name": "AgentGroup",
+        "tagType": "AtomicTag",
+        "value": "Default Group",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/AgentName",
+        "hasChildren": false,
+        "name": "AgentName",
+        "tagType": "AtomicTag",
+        "value": "Data Center - Prod",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/BrowserURL",
+        "hasChildren": false,
+        "name": "BrowserURL",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Boolean",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/IsApproved",
+        "hasChildren": false,
+        "name": "IsApproved",
+        "tagType": "AtomicTag",
+        "value": true,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Boolean",
+        "formatString": "#,##0.##",
+        "fullPath": "[DataCenterDemo]Exchange/DataCenterDemo/Architecture/EAM/Agents/Frontend 1/Independent/IsConnected",
+        "hasChildren": false,
+        "name": "IsConnected",
+        "tagType": "AtomicTag",
+        "value": false,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Boolean",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/IsRunning",
+        "hasChildren": false,
+        "name": "IsRunning",
+        "tagType": "AtomicTag",
+        "value": false,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "DateTime",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/LastCommunication",
+        "hasChildren": false,
+        "name": "LastCommunication",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/LicenseKey",
+        "hasChildren": false,
+        "name": "LicenseKey",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/NodeRole",
+        "hasChildren": false,
+        "name": "NodeRole",
+        "tagType": "AtomicTag",
+        "value": "",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/PlatformEdition",
+        "hasChildren": false,
+        "name": "PlatformEdition",
+        "tagType": "AtomicTag",
+        "value": "",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/RunningState",
+        "hasChildren": false,
+        "name": "RunningState",
+        "tagType": "AtomicTag",
+        "value": "",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "Int4",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/RunningStateInt",
+        "hasChildren": false,
+        "name": "RunningStateInt",
+        "tagType": "AtomicTag",
+        "value": 0,
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/ServerId",
+        "hasChildren": false,
+        "name": "ServerId",
+        "tagType": "AtomicTag",
+        "value": "_0:0:Data Center - Prod",
+        "valueSource": "memory"
+      },
+      {
+        "attributes": "[]",
+        "dataType": "String",
+        "formatString": "#,##0.##",
+        "fullPath": "[System]Gateway/EAM/Agents/Data Center - Prod/Independent/Version",
+        "hasChildren": false,
+        "name": "Version",
+        "tagType": "AtomicTag",
+        "value": null,
+        "valueSource": "memory"
+      }
+    ],
+    "type": ""
+  },
+  "propConfig": {
+    "custom.dbConnection": {
+      "binding": {
+        "config": {
+          "path": "view.params.metrics"
+        },
+        "transforms": [
+          {
+            "code": "\tfor obj in value:\n\t\tif obj.name \u003d\u003d \"Active Connections\":\n\t\t\tconnections \u003d system.tag.readBlocking(tagPaths\u003d[obj.fullPath])[0].value\n\t\t\treturn not (connections \u003c\u003d 0 or connections is None)\n\t\n\t# Fallback with standard edition.\n\treturn False",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.edition": {
+      "binding": {
+        "config": {
+          "path": "view.params.status"
+        },
+        "transforms": [
+          {
+            "code": "\tfor obj in value:\n\t\tif obj.name \u003d\u003d \"PlatformEdition\":\n\t\t\treturn \"standard\" if obj.value in [\u0027\u0027, None] else obj.value\n\t\n\t# Fallback with standard edition.\n\treturn \"standard\"",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.gwConnection": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.custom.isConnected}"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.gwConnectionColor": {
+      "binding": {
+        "config": {
+          "path": "view.custom.gwConnection"
+        },
+        "transforms": [
+          {
+            "fallback": "#FF0000",
+            "inputType": "scalar",
+            "mappings": [
+              {
+                "input": true,
+                "output": "#00D900"
+              }
+            ],
+            "outputType": "color",
+            "type": "map"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.gwIsRunning": {
+      "binding": {
+        "config": {
+          "path": "view.params.status"
+        },
+        "transforms": [
+          {
+            "code": "\ttagPath\t \u003d next((status.fullPath for status in value if status.name \u003d\u003d \"IsRunning\"), False)\n\ttagValue \u003d system.tag.readBlocking(tagPaths \u003d [tagPath])[0].value\n\treturn tagValue if tagValue else False",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.isConnected": {
+      "binding": {
+        "config": {
+          "path": "view.params.status"
+        },
+        "transforms": [
+          {
+            "code": "#\ttagPath  \u003d next((status.fullPath for status in value if status.name \u003d\u003d \"IsConnected\"), False)\n#\ttagValue \u003d system.tag.readBlocking(tagPaths \u003d [tagPath])[0].value\n\tfor status in value:\n\t\tif status.name \u003d\u003d \"IsConnected\":\n\t\t\ttagPath \u003d status.fullPath\n#\ttagValue \u003d system.tag.readBlocking(tagPaths \u003d [tagPath])[0].value\n\treturn tagPath",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.metrics": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.redundancy": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.redundantMetrics": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.redundantStatus": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.server": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.status": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.type": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 265
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\timport time\n\tsystem.perspective.sendMessage(\"exchange-datacenter-architecture-server-deselected\", payload\u003d{})\n\ttime.sleep(.25)\n#\tif self.view.params.redundancy in [\"Master\", \"Backup\"]:\n#\t\tself.getSibling(\"Redundancy Selected\").position.display \u003d True\n#\telse:\n#\t\tself.props.style.classes \u003d \"exchange/datacenter/architecture/icons/server-selected\"\n#\tsystem.perspective.sendMessage(\"exchange-datacenter-architecture-sidebar-open\", payload\u003d{\"server\": self.view.params.server, \"metrics\":self.view.params.metrics, \"status\":self.view.params.status, \"redundancy\":self.view.params.redundancy, \"redundantStatus\":self.view.params.redundantStatus, \"redundantMetrics\":self.view.params.redundantMetrics})\n\t\n\t\n\tvw \u003d self.page.props.dimensions.viewport.width\n\tsystem.perspective.sendMessage(\"exchange-datacenter-architecture-server-popupopened\", payload\u003d{})\n\tif vw  \u003e 450:\n\t\tsystem.perspective.openPopup(\tid\t\t\u003d\u0027exchange-datacenter-architecture-systeminfo-\u0027 + str(self.view.params.server), \n\t\t\t\t\t\t\t\t\tview\t\u003d\u0027Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/SystemInfo\u0027, \n\t\t\t\t\t\t\t\t\tparams\t\u003d{\"systemInfo\":{\t\"server\": self.view.params.server, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"metrics\":self.view.params.metrics, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"status\":self.view.params.status, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundancy\":self.view.params.redundancy, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantStatus\":self.view.params.redundantStatus, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantMetrics\":self.view.params.redundantMetrics},\n\t\t\t\t\t\t\t\t\t\t\t  \"popupid\": \u0027exchange-datacenter-architecture-systeminfo-\u0027 + str(self.view.params.server)\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\ttitle\t\u003d str(self.view.params.server),\n\t\t\t\t\t\t\t\t\tposition\u003d {\"right\": 15, \"top\": 70, \"bottom\": 15},\n\t\t\t\t\t\t\t\t\tmodal\t\u003d False\n\t\t\t\t\t\t\t\t\t)\n\telse:\n\t\tsystem.perspective.closePopup(id\u003d\u0027exchange-datacenter-architecture-systeminfo\u0027)\n\t\tsystem.perspective.openPopup(\tid\t\t\u003d\u0027exchange-datacenter-architecture-systeminfo\u0027, \n\t\t\t\t\t\t\t\t\t\tview\t\u003d\u0027Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/SystemInfo\u0027, \n\t\t\t\t\t\t\t\t\t\tparams\t\u003d{\"systemInfo\":{\t\"server\": self.view.params.server, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"metrics\":self.view.params.metrics, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"status\":self.view.params.status, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundancy\":self.view.params.redundancy, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantStatus\":self.view.params.redundantStatus, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantMetrics\":self.view.params.redundantMetrics},\n\t\t\t\t\t\t\t\t\t\t\t\t  \"popupid\": \u0027exchange-datacenter-architecture-systeminfo-\u0027 + str(self.view.params.server)\n\t\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\ttitle\t\u003d str(self.view.params.server),\n\t\t\t\t\t\t\t\t\t\tposition\u003d {\"left\":15, \"right\": 15, \"top\": 70, \"bottom\": 70},\n\t\t\t\t\t\t\t\t\t\tmodal\t\u003d True\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Server Blue - Right"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.edition"
+              },
+              "transforms": [
+                {
+                  "fallback": true,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "edge",
+                      "output": false
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.height": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "100px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "80px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.width": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "80px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "50px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "height": "314.72",
+                      "name": "rect",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "rect",
+                      "width": "220.7"
+                    }
+                  ],
+                  "id": "clippath",
+                  "name": "clippath",
+                  "type": "clipPath"
+                },
+                {
+                  "elements": [
+                    {
+                      "height": "314.72",
+                      "name": "rect",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "rect",
+                      "width": "220.7"
+                    }
+                  ],
+                  "id": "clippath-1",
+                  "name": "clippath-1",
+                  "type": "clipPath"
+                }
+              ],
+              "name": "defs",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "elements": [
+                        {
+                          "fill": {
+                            "paint": "#2f4566"
+                          },
+                          "name": "polygon",
+                          "points": "0 226.59 148.5 314.72 148.5 127.79 0 41.21 0 226.59",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "polygon"
+                        },
+                        {
+                          "fill": {
+                            "paint": "#accde3"
+                          },
+                          "name": "polygon",
+                          "points": "71.36 0 0 41.21 148.5 127.79 220.7 86.35 71.36 0",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "polygon"
+                        },
+                        {
+                          "fill": {
+                            "paint": "#36577f"
+                          },
+                          "name": "polygon",
+                          "points": "148.52 127.36 148.52 314.72 220.7 274.78 220.7 86.35 148.52 127.36",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "polygon"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m56.03,189.61c1.85-.52,3.92-.02,6.22,1.5,2.31,1.5,4.26,3.64,5.84,6.38,1.57,2.75,2.27,5.23,2.1,7.43-.18,2.21-1.18,3.5-3.01,3.88-1.82.37-3.89-.22-6.2-1.71-2.32-1.51-4.26-3.56-5.85-6.17-1.58-2.6-2.29-5-2.11-7.2.18-2.21,1.18-3.58,3.01-4.09",
+                              "fill": {
+                                "paint": "#f79434"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m111.11,150.82c-.78-2.16-2-4.19-3.66-6.1-1.66-1.89-3.43-3.26-5.27-4.11-1.88-.87-3.48-.5-4.82,1.1-.24.29-.89,1.26-1.92,2.9-1.05,1.64-2.36,3.72-3.97,6.23-1.59,2.51-3.41,5.33-5.43,8.45-2.03,3.13-4.13,6.44-6.27,9.92-2.16,3.48-4.34,7.01-6.56,10.55-2.17,3.48-4.22,6.77-6.17,9.89.94.94,1.82,1.96,2.65,3.08,4-3.57,8.29-7.34,12.84-11.34,4.61-4.04,8.88-7.85,12.84-11.43,3.96-3.57,7.32-6.61,10.1-9.1,2.78-2.5,4.37-3.96,4.77-4.44,1.34-1.6,1.63-3.46.87-5.61",
+                              "fill": {
+                                "paint": "#f79434"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m55.93,183.35c-1.26-5.77-2.3-10.43-3.09-13.97-.81-3.58-1.48-6.42-2-8.53-.53-2.11-.94-3.68-1.26-4.72-.29-1.02-.59-1.91-.87-2.66-.69-1.83-1.69-3.33-3.01-4.54-1.33-1.19-2.73-1.86-4.24-2-1.5-.17-2.5.27-2.99,1.3-.49,1.02-.4,2.43.28,4.24.28.76.67,1.66,1.12,2.7.46,1.03,1.24,2.64,2.32,4.82,1.07,2.16,2.58,5.09,4.48,8.77,1.9,3.68,4.46,8.53,7.62,14.56.53-.03,1.07-.03,1.64.02",
+                              "fill": {
+                                "paint": "#f79434"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m164.91,146.49c.49,0,.99-.12,1.44-.39l45.24-26.13c1.38-.8,1.85-2.56,1.06-3.94-.8-1.38-2.56-1.85-3.94-1.06l-45.24,26.13c-1.38.8-1.85,2.56-1.06,3.94.53.93,1.51,1.44,2.5,1.44",
+                              "fill": {
+                                "paint": "#fff"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m164.91,161.46c.49,0,.99-.12,1.44-.39l45.24-26.12c1.38-.8,1.85-2.56,1.06-3.94-.8-1.38-2.56-1.85-3.94-1.06l-45.24,26.12c-1.38.8-1.85,2.56-1.06,3.94.53.93,1.51,1.44,2.5,1.44",
+                              "fill": {
+                                "paint": "#fff"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m164.91,176.41c.49,0,.99-.12,1.44-.39l45.24-26.12c1.38-.8,1.85-2.56,1.06-3.94-.8-1.38-2.56-1.85-3.94-1.06l-45.24,26.12c-1.38.8-1.85,2.56-1.06,3.94.53.93,1.51,1.44,2.5,1.44",
+                              "fill": {
+                                "paint": "#fff"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "group"
+                        }
+                      ],
+                      "name": "group",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "group"
+                    }
+                  ],
+                  "id": "Server_Blue_-_Right",
+                  "name": "Server_Blue_-_Right",
+                  "type": "group"
+                }
+              ],
+              "id": "Layer_1-2",
+              "name": "Layer_1-2",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "cursor": "pointer",
+            "zIndex": 999
+          },
+          "viewBox": "0 0 220.7 314.72"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\timport time\n\tsystem.perspective.sendMessage(\"exchange-datacenter-architecture-server-deselected\", payload\u003d{})\n\ttime.sleep(.25)\n#\tself.props.style.classes \u003d \"exchange/datacenter/architecture/icons/server-selected\"\n#\tsystem.perspective.sendMessage(\"exchange-datacenter-architecture-sidebar-open\", payload\u003d{\"server\": self.view.params.server, \"metrics\":self.view.params.metrics, \"status\":self.view.params.status, \"redundancy\":self.view.params.redundancy, \"redundantStatus\":self.view.params.redundantStatus, \"redundantMetrics\":self.view.params.redundantMetrics})\n\t\n\t\n\t\t\n\tvw \u003d self.page.props.dimensions.viewport.width\n\tif vw  \u003e 450:\n\t\tsystem.perspective.openPopup(\tid\t\t\u003d\u0027exchange-datacenter-architecture-systeminfo-\u0027 + str(self.view.params.server), \n\t\t\t\t\t\t\t\t\tview\t\u003d\u0027Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/SystemInfo\u0027, \n\t\t\t\t\t\t\t\t\tparams\t\u003d{\"systemInfo\":{\t\"server\": self.view.params.server, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"metrics\":self.view.params.metrics, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"status\":self.view.params.status, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundancy\":self.view.params.redundancy, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantStatus\":self.view.params.redundantStatus, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantMetrics\":self.view.params.redundantMetrics},\n\t\t\t\t\t\t\t\t\t\t\t  \"popupid\": \u0027exchange-datacenter-architecture-systeminfo-\u0027 + str(self.view.params.server)\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\ttitle\t\u003d str(self.view.params.server),\n\t\t\t\t\t\t\t\t\tposition\u003d {\"right\": 15, \"top\": 70, \"bottom\": 15},\n\t\t\t\t\t\t\t\t\tmodal\t\u003d False\n\t\t\t\t\t\t\t\t\t)\n\telse:\n\t\tsystem.perspective.closePopup(id\u003d\u0027exchange-datacenter-architecture-systeminfo\u0027)\n\t\tsystem.perspective.openPopup(\tid\t\t\u003d\u0027exchange-datacenter-architecture-systeminfo\u0027, \n\t\t\t\t\t\t\t\t\t\tview\t\u003d\u0027Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/SystemInfo\u0027, \n\t\t\t\t\t\t\t\t\t\tparams\t\u003d{\"systemInfo\":{\t\"server\": self.view.params.server, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"metrics\":self.view.params.metrics, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"status\":self.view.params.status, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundancy\":self.view.params.redundancy, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantStatus\":self.view.params.redundantStatus, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantMetrics\":self.view.params.redundantMetrics},\n\t\t\t\t\t\t\t\t\t\t \t\t  \"popupid\": \u0027exchange-datacenter-architecture-systeminfo-\u0027 + str(self.view.params.server)\n\t\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\ttitle\t\u003d str(self.view.params.server),\n\t\t\t\t\t\t\t\t\t\tposition\u003d {\"left\":15, \"right\": 15, \"top\": 70, \"bottom\": 70},\n\t\t\t\t\t\t\t\t\t\tmodal\t\u003d True\n\t\t\t\t\t\t\t\t\t\t)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Edge Gateway - Right"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.edition"
+              },
+              "transforms": [
+                {
+                  "fallback": false,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "edge",
+                      "output": true
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.height": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "100px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "80px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.width": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "60px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "40px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "height": "68.02",
+                      "name": "rect",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "rect",
+                      "width": "46.71"
+                    }
+                  ],
+                  "id": "clippath",
+                  "name": "clippath",
+                  "type": "clipPath"
+                },
+                {
+                  "elements": [
+                    {
+                      "height": "68.02",
+                      "name": "rect",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "rect",
+                      "width": "46.71",
+                      "y": "0"
+                    }
+                  ],
+                  "id": "clippath-1",
+                  "name": "clippath-1",
+                  "type": "clipPath"
+                },
+                {
+                  "elements": [
+                    {
+                      "height": "31.92",
+                      "name": "rect",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "rect",
+                      "width": "27.39",
+                      "x": "3.14",
+                      "y": "20.73"
+                    }
+                  ],
+                  "id": "clippath-2",
+                  "name": "clippath-2",
+                  "type": "clipPath"
+                },
+                {
+                  "elements": [
+                    {
+                      "name": "polygon",
+                      "points": "5.93 42.47 3.13 20.73 27.72 30.91 30.52 52.65 5.93 42.47",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "polygon"
+                    }
+                  ],
+                  "id": "clippath-3",
+                  "name": "clippath-3",
+                  "type": "clipPath"
+                }
+              ],
+              "name": "defs",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "elements": [
+                        {
+                          "elements": [
+                            {
+                              "d": "m10.79,1.25v39.35c0,.88.47,1.71,1.25,2.16l21.75,12.52.54.3,10.52,6.06c.27.16.59.2.86.14h.03c.26-.06.49-.19.67-.39.19-.21.31-.5.31-.83V21.21c0-.44-.11-.86-.32-1.24-.01-.02-.03-.05-.05-.08-.06-.1-.12-.2-.21-.3l-.03-.02s-.01-.03-.03-.04c-.1-.11-.21-.22-.34-.31-.09-.07-.17-.14-.27-.19l-2.22-1.28L24.05,6.72,12.64.16c-.3-.17-.64-.2-.93-.11-.21.05-.41.16-.56.32-.22.21-.36.52-.36.87",
+                              "fill": {
+                                "paint": "#3b4347"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m.97,6.26c.29-.06.6-.04.9.14l8.92,5.12,23.89,13.75c.11.06.23.14.32.21h0c.24.2.44.44.6.7l10.79-6.21s-.02-.05-.05-.08c-.06-.1-.12-.2-.21-.3-.01-.01-.03-.04-.05-.06-.1-.11-.21-.22-.34-.31L12.64.16c-.3-.17-.64-.2-.93-.11l-.56.32L.97,6.26Z",
+                              "fill": {
+                                "paint": "#585e61"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m35.94,27.43c0-.45-.12-.87-.34-1.24h0s10.79-6.21,10.79-6.21c.21.37.32.8.32,1.23v39.34c0,.34-.12.62-.31.83l-.67.39h-.03l-10.06,5.78c.19-.21.29-.47.29-.78V27.43Z",
+                              "fill": {
+                                "paint": "#3b4347"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m0,7.47v39.35c0,.9.47,1.72,1.25,2.16l32.53,18.72.29.16c.26.15.55.2.81.14.3-.04.57-.2.76-.44.19-.21.29-.47.29-.78V27.43c.01-.9-.47-1.72-1.25-2.16L1.87,6.4C1.04,5.91,0,6.51,0,7.47",
+                              "fill": {
+                                "paint": "#34393a"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m35,25.49h0s.01.05.01.05c.24.19.44.41.59.67.21.36.34.78.34,1.22l10.77-6.22c0-.44-.11-.86-.32-1.24-.01-.03-.03-.05-.05-.08-.06-.1-.12-.2-.21-.3-.01-.01-.02-.04-.05-.06-.1-.11-.21-.22-.34-.31l-10.74,6.26Z",
+                              "fill": {
+                                "paint": "#747677"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "elements": [
+                                {
+                                  "elements": [
+                                    {
+                                      "elements": [
+                                        {
+                                          "d": "m12.6,24.89c-4.15-1.72-7.51-.61-8.56,2.83-.08.26.1.66.41.9.07.06.15.1.22.13.22.09.41.04.47-.16.94-3.06,3.93-4.05,7.63-2.52.88.37,1.76.85,2.63,1.47.05.04.1.06.16.08.25.1.45.03.49-.2.04-.29-.17-.68-.48-.9-.97-.69-1.96-1.24-2.95-1.64",
+                                          "fill": {
+                                            "paint": "#84c77b"
+                                          },
+                                          "name": "path",
+                                          "style": {
+                                            "classes": ""
+                                          },
+                                          "type": "path"
+                                        },
+                                        {
+                                          "d": "m13.37,30.87c-1.87-.77-3.38-.27-3.86,1.27-.08.26.1.66.41.91.07.06.15.1.22.13.22.09.41.04.47-.16.37-1.16,1.51-1.55,2.92-.96.34.14.68.33,1.02.57.06.04.11.07.16.09.24.1.44.03.48-.2.05-.28-.16-.68-.47-.9-.45-.32-.9-.57-1.35-.76",
+                                          "fill": {
+                                            "paint": "#84c77b"
+                                          },
+                                          "name": "path",
+                                          "style": {
+                                            "classes": ""
+                                          },
+                                          "type": "path"
+                                        },
+                                        {
+                                          "d": "m12.99,27.88c-3-1.24-5.45-.44-6.21,2.05-.08.25.1.66.4.91.07.06.15.1.22.13.22.09.41.04.47-.16.65-2.11,2.72-2.79,5.27-1.74.61.25,1.22.59,1.82,1.01.05.04.11.07.16.09.24.1.45.02.48-.2.04-.29-.17-.69-.48-.9-.71-.5-1.43-.9-2.15-1.2",
+                                          "fill": {
+                                            "paint": "#84c77b"
+                                          },
+                                          "name": "path",
+                                          "style": {
+                                            "classes": ""
+                                          },
+                                          "type": "path"
+                                        },
+                                        {
+                                          "d": "m25.96,30.18c-.08-.03-.17-.06-.25-.09-.41-.12-.73.03-.96.49-.05.08-.15.35-.31.79-.16.44-.37,1-.63,1.68-.26.67-.54,1.43-.87,2.28-.32.84-.65,1.73-.99,2.67-.34.94-.69,1.89-1.03,2.84-.34.94-.67,1.83-.97,2.66.23.19.44.4.65.62.72-1.04,1.49-2.14,2.31-3.31.83-1.18,1.6-2.3,2.31-3.34.71-1.03,1.31-1.92,1.81-2.64.5-.73.78-1.16.85-1.29.23-.44.23-.91,0-1.39-.23-.49-.54-.91-.95-1.3-.32-.3-.65-.53-.98-.66",
+                                          "fill": {
+                                            "paint": "#84c77b"
+                                          },
+                                          "name": "path",
+                                          "style": {
+                                            "classes": ""
+                                          },
+                                          "type": "path"
+                                        },
+                                        {
+                                          "d": "m13.91,34.48c-.19-.08-.39-.11-.59-.09-.31.03-.51.18-.58.45-.07.27,0,.6.19,1.01.09.17.19.37.32.6.13.22.34.58.63,1.05.29.47.7,1.11,1.21,1.91.51.8,1.19,1.85,2.03,3.16.1-.04.22-.06.34-.07-.44-1.33-.8-2.41-1.07-3.22-.28-.82-.51-1.48-.69-1.96-.17-.48-.31-.85-.4-1.08-.09-.23-.18-.43-.26-.6-.2-.41-.45-.72-.77-.95-.12-.09-.23-.15-.35-.21",
+                                          "fill": {
+                                            "paint": "#84c77b"
+                                          },
+                                          "name": "path",
+                                          "style": {
+                                            "classes": ""
+                                          },
+                                          "type": "path"
+                                        },
+                                        {
+                                          "d": "m18.85,44c-1.04-.43-1.77.12-1.63,1.23.14,1.11,1.1,2.37,2.15,2.8,1.04.43,1.77-.12,1.63-1.23-.14-1.11-1.1-2.36-2.15-2.8",
+                                          "fill": {
+                                            "paint": "#84c77b"
+                                          },
+                                          "name": "path",
+                                          "style": {
+                                            "classes": ""
+                                          },
+                                          "type": "path"
+                                        }
+                                      ],
+                                      "name": "group",
+                                      "style": {
+                                        "classes": ""
+                                      },
+                                      "type": "group"
+                                    }
+                                  ],
+                                  "name": "group",
+                                  "style": {
+                                    "classes": ""
+                                  },
+                                  "type": "group"
+                                }
+                              ],
+                              "name": "group",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "group"
+                            }
+                          ],
+                          "name": "group",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "group"
+                        }
+                      ],
+                      "name": "group",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "group"
+                    }
+                  ],
+                  "id": "Edge_Gateway_-_Right",
+                  "name": "Edge_Gateway_-_Right",
+                  "type": "group"
+                }
+              ],
+              "id": "Layer_1-2",
+              "name": "Layer_1-2",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "cursor": "pointer",
+            "zIndex": 999
+          },
+          "viewBox": "0 0 46.71 68.02"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Database"
+        },
+        "position": {
+          "basis": "300px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.dbConnection"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.height": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "90px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "60px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.left": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "13%",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "15%"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.top": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "32%",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "30%"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.width": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "100px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "30px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "height": "304.73",
+                      "id": "rect4",
+                      "name": "rect4",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "rect",
+                      "width": "190.49"
+                    }
+                  ],
+                  "id": "clippath",
+                  "name": "clippath",
+                  "type": "clipPath"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "m0,55.99l.34,192.89c0,30.85,42.57,55.85,95.07,55.85s95.08-25,95.08-55.85V55.84l-190.49.16Z",
+                      "id": "path7",
+                      "name": "path7",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "path"
+                    }
+                  ],
+                  "id": "clippath-1",
+                  "name": "clippath-1",
+                  "type": "clipPath"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "stop10",
+                      "name": "stop10",
+                      "offset": "0",
+                      "stopColor": "#616264",
+                      "type": "stop"
+                    },
+                    {
+                      "id": "stop12",
+                      "name": "stop12",
+                      "offset": ".33",
+                      "stopColor": "#7f8184",
+                      "type": "stop"
+                    },
+                    {
+                      "id": "stop14",
+                      "name": "stop14",
+                      "offset": ".6",
+                      "stopColor": "#95979a",
+                      "type": "stop"
+                    },
+                    {
+                      "id": "stop16",
+                      "name": "stop16",
+                      "offset": "1",
+                      "stopColor": "#95979a",
+                      "type": "stop"
+                    }
+                  ],
+                  "gradientTransform": "translate(570572.35 -138823.21) scale(190.49 -190.49)",
+                  "gradientUnits": "userSpaceOnUse",
+                  "id": "linear-gradient",
+                  "name": "linear-gradient",
+                  "type": "linearGradient",
+                  "x1": "-2995.23",
+                  "x2": "-2994.23",
+                  "y1": "-729.7",
+                  "y2": "-729.7"
+                },
+                {
+                  "elements": [
+                    {
+                      "height": "304.73",
+                      "id": "rect19",
+                      "name": "rect19",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "rect",
+                      "width": "190.49"
+                    }
+                  ],
+                  "id": "clippath-2",
+                  "name": "clippath-2",
+                  "type": "clipPath"
+                }
+              ],
+              "id": "defs22",
+              "name": "defs22",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "clipPath": "url(#clippath)",
+                      "elements": [
+                        {
+                          "clipPath": "url(#clippath-1)",
+                          "elements": [
+                            {
+                              "fill": {
+                                "url": "url(#linear-gradient)"
+                              },
+                              "height": "248.89",
+                              "id": "rect24",
+                              "name": "rect24",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "rect",
+                              "width": "190.49",
+                              "y": "55.84"
+                            }
+                          ],
+                          "id": "g26",
+                          "name": "g26",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "clipPath": "url(#clippath-2)",
+                          "elements": [
+                            {
+                              "d": "m190.49,55.84c0,30.84-42.65,55.85-95.25,55.85S0,86.68,0,55.84,42.64,0,95.24,0s95.25,25,95.25,55.84",
+                              "fill": {
+                                "paint": "#bfc0c2"
+                              },
+                              "id": "path28",
+                              "name": "path28",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            }
+                          ],
+                          "id": "g30",
+                          "name": "g30",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "group"
+                        }
+                      ],
+                      "id": "g32",
+                      "name": "g32",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "group"
+                    }
+                  ],
+                  "id": "Database",
+                  "name": "Database",
+                  "type": "group"
+                }
+              ],
+              "id": "Layer_1-2",
+              "name": "Layer_1-2",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "position": "absolute",
+            "zIndex": 998
+          },
+          "viewBox": "0 0 190.49 304.73"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "VerticalPipe"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "propConfig": {
+          "props.style.height": {
+            "binding": {
+              "config": {
+                "path": "view.params.type"
+              },
+              "transforms": [
+                {
+                  "fallback": "50%",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "backends",
+                      "output": "100%"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.top": {
+            "binding": {
+              "config": {
+                "path": "view.params.type"
+              },
+              "transforms": [
+                {
+                  "fallback": "0px",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "frontends",
+                      "output": "100px"
+                    },
+                    {
+                      "input": "backends",
+                      "output": "0px"
+                    },
+                    {
+                      "input": "io",
+                      "output": "0px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Architecture/EmbeddedViews/Icons/VerticalPipe",
+          "style": {
+            "classes": "exchange/datacenter/architecture/icons/pipe-disconnected",
+            "padding": "10px",
+            "position": "absolute",
+            "width": "100%",
+            "zIndex": 1
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "HorizontalPipe"
+        },
+        "position": {
+          "basis": "320px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.dbConnection"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.left": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "20%",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "25%"
+                    },
+                    {
+                      "input": {
+                        "max": 800,
+                        "min": 450
+                      },
+                      "output": "20%"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.width": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "220px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "80px"
+                    },
+                    {
+                      "input": {
+                        "max": 800,
+                        "min": 450
+                      },
+                      "output": "120px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Exchange/DataCenter/Architecture/EmbeddedViews/Icons/HorizontalPipe",
+          "style": {
+            "position": "absolute",
+            "zIndex": 1
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Node Top",
+          "tooltip": {
+            "enabled": true
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.tooltip.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.gwConnection"
+              },
+              "transforms": [
+                {
+                  "fallback": "Gateway Connection is Faulted",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "Gateway Connection is Good"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.type"
+              },
+              "transforms": [
+                {
+                  "fallback": true,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "frontends",
+                      "output": false
+                    },
+                    {
+                      "input": "backends",
+                      "output": false
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.color": {
+            "binding": {
+              "config": {
+                "path": "view.custom.gwConnectionColor"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "material/radio_button_checked",
+          "style": {
+            "cursor": "pointer",
+            "position": "absolute",
+            "top": "0px",
+            "width": "20px",
+            "zIndex": 998
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Node Bottom",
+          "tooltip": {
+            "enabled": true
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.tooltip.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.gwConnection"
+              },
+              "transforms": [
+                {
+                  "fallback": "Gateway Connection is Faulted",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "Gateway Connection is Good"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.type"
+              },
+              "transforms": [
+                {
+                  "fallback": false,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "frontends",
+                      "output": true
+                    },
+                    {
+                      "input": "backends",
+                      "output": false
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.color": {
+            "binding": {
+              "config": {
+                "path": "view.custom.gwConnectionColor"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "material/radio_button_checked",
+          "style": {
+            "bottom": "0px",
+            "cursor": "pointer",
+            "position": "absolute",
+            "width": "20px",
+            "zIndex": 998
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Redundancy Selected"
+        },
+        "position": {
+          "basis": "0px",
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.height": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": 100,
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": 80
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                },
+                {
+                  "code": "\tspace \u003d 25 if self.view.params.redundancy in [\"Master\", \"Backup\"] else 0\n\treturn str(value+space) + \"px\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.width": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": 80,
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": 50
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                },
+                {
+                  "code": "\tspace \u003d 40 if self.view.params.redundancy in [\"Master\", \"Backup\"] else 0\n\treturn str(value+space) + \"px\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/architecture/icons/server-selected",
+            "overflow": "visible",
+            "position": "absolute",
+            "zIndex": 1
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\timport time\n\tsystem.perspective.sendMessage(\"exchange-datacenter-architecture-server-deselected\", payload\u003d{})\n\ttime.sleep(.25)\n#\tif self.view.params.redundancy in [\"Master\", \"Backup\"]:\n#\t\tself.getSibling(\"Redundancy Selected\").position.display \u003d True\n#\telse:\n#\t\tself.props.style.classes \u003d \"exchange/datacenter/architecture/icons/server-selected\"\n\t#system.perspective.sendMessage(\"exchange-datacenter-architecture-sidebar-open\", payload\u003d{\"server\": self.view.params.server, \"metrics\":self.view.params.metrics, \"status\":self.view.params.status, \"redundancy\":self.view.params.redundancy, \"redundantStatus\":self.view.params.redundantStatus, \"redundantMetrics\":self.view.params.redundantMetrics})\n\t\n\t\n\t\t\n\tvw \u003d self.page.props.dimensions.viewport.width\n\tif vw  \u003e 450:\n\t\tsystem.perspective.openPopup(\tid\t\t\u003d\u0027exchange-datacenter-architecture-systeminfo-\u0027 + str(self.view.params.server), \n\t\t\t\t\t\t\t\t\tview\t\u003d\u0027Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/SystemInfo\u0027, \n\t\t\t\t\t\t\t\t\tparams\t\u003d{\"systemInfo\":{\t\"server\": self.view.params.server, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"metrics\":self.view.params.metrics, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"status\":self.view.params.status, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundancy\":self.view.params.redundancy, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantStatus\":self.view.params.redundantStatus, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantMetrics\":self.view.params.redundantMetrics},\n\t\t\t\t\t\t\t\t\t\t\t  \"popupid\": \u0027exchange-datacenter-architecture-systeminfo-\u0027 + str(self.view.params.server)\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\ttitle\t\u003d str(self.view.params.server),\n\t\t\t\t\t\t\t\t\tposition\u003d {\"right\": 15, \"top\": 70, \"bottom\": 15},\n\t\t\t\t\t\t\t\t\tmodal\t\u003d False\n\t\t\t\t\t\t\t\t\t)\n\telse:\n\t\tsystem.perspective.closePopup(id\u003d\u0027exchange-datacenter-architecture-systeminfo\u0027)\n\t\tsystem.perspective.openPopup(\tid\t\t\u003d\u0027exchange-datacenter-architecture-systeminfo\u0027, \n\t\t\t\t\t\t\t\t\t\tview\t\u003d\u0027Exchange/DataCenter/Architecture/EmbeddedViews/InfoPopup/SystemInfo\u0027, \n\t\t\t\t\t\t\t\t\t\tparams\t\u003d{\"systemInfo\":{\t\"server\": self.view.params.server, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"metrics\":self.view.params.metrics, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"status\":self.view.params.status, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundancy\":self.view.params.redundancy, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantStatus\":self.view.params.redundantStatus, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"redundantMetrics\":self.view.params.redundantMetrics},\n\t\t\t\t\t\t\t\t\t\t\t\t  \"popupid\": \u0027exchange-datacenter-architecture-systeminfo-\u0027 + str(self.view.params.server)\n\t\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\ttitle\t\u003d str(self.view.params.server),\n\t\t\t\t\t\t\t\t\t\tposition\u003d {\"left\":15, \"right\": 15, \"top\": 70, \"bottom\": 70},\n\t\t\t\t\t\t\t\t\t\tmodal\t\u003d True\n\t\t\t\t\t\t\t\t\t\t)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Redundant Server"
+        },
+        "position": {
+          "basis": "300px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.redundancy"
+              },
+              "transforms": [
+                {
+                  "fallback": false,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Independent",
+                      "output": false
+                    },
+                    {
+                      "input": "Master",
+                      "output": true
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.height": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "100px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "80px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.top": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "32%",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "20%"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.width": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": "80px",
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": "50px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "height": "314.72",
+                      "name": "rect",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "rect",
+                      "width": "220.7"
+                    }
+                  ],
+                  "id": "clippath",
+                  "name": "clippath",
+                  "type": "clipPath"
+                },
+                {
+                  "elements": [
+                    {
+                      "height": "314.72",
+                      "name": "rect",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "rect",
+                      "width": "220.7"
+                    }
+                  ],
+                  "id": "clippath-1",
+                  "name": "clippath-1",
+                  "type": "clipPath"
+                }
+              ],
+              "name": "defs",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "elements": [
+                        {
+                          "fill": {
+                            "paint": "#815931"
+                          },
+                          "name": "polygon",
+                          "points": "0 226.59 148.5 314.72 148.5 127.79 0 41.21 0 226.59",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "polygon"
+                        },
+                        {
+                          "fill": {
+                            "paint": "#fcc595"
+                          },
+                          "name": "polygon",
+                          "points": "71.36 0 0 41.21 148.5 127.79 220.7 86.35 71.36 0",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "polygon"
+                        },
+                        {
+                          "fill": {
+                            "paint": "#f79434"
+                          },
+                          "name": "polygon",
+                          "points": "148.52 127.36 148.52 314.72 220.7 274.78 220.7 86.35 148.52 127.36",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "polygon"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m56.03,189.61c1.85-.52,3.92-.02,6.22,1.5,2.31,1.5,4.26,3.64,5.84,6.38,1.57,2.75,2.27,5.23,2.1,7.43-.18,2.21-1.18,3.5-3.01,3.88-1.82.37-3.89-.22-6.2-1.71-2.32-1.51-4.26-3.56-5.85-6.17-1.58-2.6-2.29-5-2.11-7.2.18-2.21,1.18-3.58,3.01-4.09",
+                              "fill": {
+                                "paint": "#fff"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m111.11,150.82c-.78-2.16-2-4.19-3.66-6.1-1.66-1.89-3.43-3.26-5.27-4.11-1.88-.87-3.48-.5-4.82,1.1-.24.29-.89,1.26-1.92,2.9-1.05,1.64-2.36,3.72-3.97,6.23-1.59,2.51-3.41,5.33-5.43,8.45-2.03,3.13-4.13,6.44-6.27,9.92-2.16,3.48-4.34,7.01-6.56,10.55-2.17,3.48-4.22,6.77-6.17,9.89.94.94,1.82,1.96,2.65,3.08,4-3.57,8.29-7.34,12.84-11.34,4.61-4.04,8.88-7.85,12.84-11.43,3.96-3.57,7.32-6.61,10.1-9.1,2.78-2.5,4.37-3.96,4.77-4.44,1.34-1.6,1.63-3.46.87-5.61",
+                              "fill": {
+                                "paint": "#fff"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m55.93,183.35c-1.26-5.77-2.3-10.43-3.09-13.97-.81-3.58-1.48-6.42-2-8.53-.53-2.11-.94-3.68-1.26-4.72-.29-1.02-.59-1.91-.87-2.66-.69-1.83-1.69-3.33-3.01-4.54-1.33-1.19-2.73-1.86-4.24-2-1.5-.17-2.5.27-2.99,1.3-.49,1.02-.4,2.43.28,4.24.28.76.67,1.66,1.12,2.7.46,1.03,1.24,2.64,2.32,4.82,1.07,2.16,2.58,5.09,4.48,8.77,1.9,3.68,4.46,8.53,7.62,14.56.53-.03,1.07-.03,1.64.02",
+                              "fill": {
+                                "paint": "#fff"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m164.91,146.49c.49,0,.99-.12,1.44-.39l45.24-26.13c1.38-.8,1.85-2.56,1.06-3.94-.8-1.38-2.56-1.85-3.94-1.06l-45.24,26.13c-1.38.8-1.85,2.56-1.06,3.94.53.93,1.51,1.44,2.5,1.44",
+                              "fill": {
+                                "paint": "#fff"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m164.91,161.46c.49,0,.99-.12,1.44-.39l45.24-26.12c1.38-.8,1.85-2.56,1.06-3.94-.8-1.38-2.56-1.85-3.94-1.06l-45.24,26.12c-1.38.8-1.85,2.56-1.06,3.94.53.93,1.51,1.44,2.5,1.44",
+                              "fill": {
+                                "paint": "#fff"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m164.91,176.41c.49,0,.99-.12,1.44-.39l45.24-26.12c1.38-.8,1.85-2.56,1.06-3.94-.8-1.38-2.56-1.85-3.94-1.06l-45.24,26.12c-1.38.8-1.85,2.56-1.06,3.94.53.93,1.51,1.44,2.5,1.44",
+                              "fill": {
+                                "paint": "#fff"
+                              },
+                              "name": "path",
+                              "style": {
+                                "classes": ""
+                              },
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "style": {
+                            "classes": ""
+                          },
+                          "type": "group"
+                        }
+                      ],
+                      "name": "group",
+                      "style": {
+                        "classes": ""
+                      },
+                      "type": "group"
+                    }
+                  ],
+                  "id": "Server_Orange_-_Right",
+                  "name": "Server_Orange_-_Right",
+                  "type": "group"
+                }
+              ],
+              "id": "Layer_1-2",
+              "name": "Layer_1-2",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "cursor": "pointer",
+            "left": "50%",
+            "position": "absolute",
+            "zIndex": 998
+          },
+          "viewBox": "0 0 220.7 314.72"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Faulted Server"
+        },
+        "position": {
+          "basis": "0px",
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.gwIsRunning"
+              },
+              "enabled": false,
+              "type": "property"
+            }
+          },
+          "props.style.height": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": 100,
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": 80
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                },
+                {
+                  "code": "\tspace \u003d 25 if self.view.params.redundancy in [\"Master\", \"Backup\"] else 0\n\treturn str(value+space) + \"px\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.width": {
+            "binding": {
+              "config": {
+                "path": "page.props.dimensions.viewport.width"
+              },
+              "transforms": [
+                {
+                  "fallback": 80,
+                  "inputType": "range",
+                  "mappings": [
+                    {
+                      "input": {
+                        "max": 450,
+                        "min": 0
+                      },
+                      "output": 50
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                },
+                {
+                  "code": "\tspace \u003d 30 if self.view.params.redundancy in [\"Master\", \"Backup\"] else 0\n\treturn str(value+space) + \"px\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "exchange/datacenter/architecture/icons/server-faulted",
+            "overflow": "visible",
+            "position": "absolute",
+            "zIndex": 1
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "center",
+      "direction": "column",
+      "justify": "center",
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "exchange-datacenter-architecture-server-deselected",
+          "pageScope": true,
+          "script": "\tself.getChild(\"Server Blue - Right\").props.style.classes  \u003d \"\"\n\tself.getChild(\"Edge Gateway - Right\").props.style.classes \u003d \"\"\n\tself.getChild(\"Redundancy Selected\").position.display \u003d False",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}
