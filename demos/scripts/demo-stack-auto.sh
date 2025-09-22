@@ -4,8 +4,10 @@ set -euo pipefail
 # Auto-running demo script for presentations
 # This version runs without requiring user interaction
 
-ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
-cd "$ROOT_DIR"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
+cd "$REPO_ROOT"
 
 # Colors for output
 RED='\033[0;31m'

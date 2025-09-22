@@ -500,4 +500,4 @@ startPump()
 
 ---
 
-**Next Steps**: Review PRESENTATION-PREP-TODOS.md for detailed preparation tasks and DEMO-COMMANDS.md for all required commands and scripts.
+**Next Steps**: Review docs/runbooks/PRESENTATION-PREP-TODOS.md for detailed preparation tasks and docs/demos/DEMO-COMMANDS.md for all required commands and scripts.

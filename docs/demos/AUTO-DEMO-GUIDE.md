@@ -9,7 +9,7 @@ The linting demo now supports **automated presentation mode** with the `--auto` 
 ### Shell Script (Recommended)
 ```bash
 # Full automated demo - no user interaction required
-./run-linting-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 ```
 
 ### Direct Python Script
@@ -99,7 +99,7 @@ uv run python demo-linting-showcase.py --auto --section cli
 ### Presentation Mode
 ```bash
 # Perfect for live presentations
-./run-linting-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 
 # Shows real production validation results
 # No interruptions or user input required
@@ -119,7 +119,7 @@ uv run python demo-linting-showcase.py --auto --section cli
 ### Documentation Generation
 ```bash
 # Capture demo output
-./run-linting-demo.sh --auto > demo-output.log 2>&1
+./demos/scripts/run-linting-demo.sh --auto > demo-output.log 2>&1
 
 # Creates reproducible documentation
 # Shows actual validation results
@@ -221,5 +221,5 @@ The auto mode makes the linting demo perfect for:
 **🎉 One command showcases production-validated Ignition linting at industrial scale!**
 
 ```bash
-./run-linting-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 ```

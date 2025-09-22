@@ -162,13 +162,13 @@ AI: Uses get_logs_* tools → Filtered error analysis
 ### 🎯 **Perfect for Presentations**
 ```bash
 # Showcase the future of industrial automation
-./run-ignition-mcp-demo.sh --auto
+./demos/scripts/run-ignition-mcp-demo.sh --auto
 
 # Demonstrate specific capabilities
-./run-ignition-mcp-demo.sh --section tools
+./demos/scripts/run-ignition-mcp-demo.sh --section tools
 
 # Show AI integration examples
-./run-ignition-mcp-demo.sh --section ai
+./demos/scripts/run-ignition-mcp-demo.sh --section ai
 ```
 
 ## 🚀 **The Future is Here**
@@ -191,5 +191,5 @@ AI: Uses get_logs_* tools → Filtered error analysis
 
 ```bash
 # Ready to revolutionize your Gateway management?
-./run-ignition-mcp-demo.sh --auto
+./demos/scripts/run-ignition-mcp-demo.sh --auto
 ```

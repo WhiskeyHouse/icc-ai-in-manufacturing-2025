@@ -71,13 +71,13 @@ npx playwright test --debug
 
 ```bash
 # Start with default settings (headed mode, port 3001)
-./run-playwright-mcp.sh
+./demos/scripts/run-playwright-mcp.sh
 
 # Start in headless mode
-./run-playwright-mcp.sh --headless
+./demos/scripts/run-playwright-mcp.sh --headless
 
 # Start on custom port
-./run-playwright-mcp.sh --port 3002
+./demos/scripts/run-playwright-mcp.sh --port 3002
 ```
 
 ## Authentication Components
@@ -222,7 +222,7 @@ The MCP server automatically handles authentication when accessing Ignition:
 
 1. Start the MCP server with authentication:
    ```bash
-   ./run-playwright-mcp.sh
+   ./demos/scripts/run-playwright-mcp.sh
    ```
 
 2. In Claude Code, use the browser tools to interact with Ignition

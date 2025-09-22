@@ -11,10 +11,10 @@ We've created a **comprehensive demonstration ecosystem** that showcases the com
 
 ```bash
 # Interactive linting demo
-./run-linting-demo.sh
+./demos/scripts/run-linting-demo.sh
 
 # Automated linting demo
-./run-linting-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 ```
 
 **Showcases**:
@@ -29,10 +29,10 @@ We've created a **comprehensive demonstration ecosystem** that showcases the com
 
 ```bash
 # Interactive full stack demo
-./run-full-stack-demo.sh
+./demos/scripts/run-full-stack-demo.sh
 
 # Automated full stack demo
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 ```
 
 **Showcases**:
@@ -48,7 +48,7 @@ We've created a **comprehensive demonstration ecosystem** that showcases the com
 
 ```bash
 # Start services without demo
-./run-full-stack-demo.sh --services-only
+./demos/scripts/run-full-stack-demo.sh --services-only
 ```
 
 **Provides**:
@@ -133,22 +133,22 @@ Once running, access these services:
 ### **Quick Start Options**
 ```bash
 # Complete automated demo (6-10 minutes)
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 
 # Linting-only demo (2-3 minutes)
-./run-linting-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 
 # Development infrastructure (2-5 minutes)
-./run-full-stack-demo.sh --services-only
+./demos/scripts/run-full-stack-demo.sh --services-only
 ```
 
 ### **Interactive Exploration**
 ```bash
 # Full interactive experience
-./run-full-stack-demo.sh
+./demos/scripts/run-full-stack-demo.sh
 
 # Linting deep-dive
-./run-linting-demo.sh
+./demos/scripts/run-linting-demo.sh
 
 # Specific sections
 uv run python demo-linting-showcase.py --section cli
@@ -157,7 +157,7 @@ uv run python demo-linting-showcase.py --section cli
 ### **Cleanup and Management**
 ```bash
 # Stop all services
-./run-full-stack-demo.sh --cleanup
+./demos/scripts/run-full-stack-demo.sh --cleanup
 
 # Check service status
 cd ../whk-services-deployments && docker compose ps
@@ -165,9 +165,9 @@ cd ../whk-services-deployments && docker compose ps
 
 ## 📚 Complete Documentation Suite
 
-- **[FULL-STACK-DEMO-GUIDE.md](FULL-STACK-DEMO-GUIDE.md)** - Complete infrastructure demo guide
-- **[LINTING-DEMO-GUIDE.md](LINTING-DEMO-GUIDE.md)** - Linting capabilities showcase
-- **[AUTO-DEMO-GUIDE.md](AUTO-DEMO-GUIDE.md)** - Automated presentation mode
+- **[docs/demos/FULL-STACK-DEMO-GUIDE.md](docs/demos/FULL-STACK-DEMO-GUIDE.md)** - Complete infrastructure demo guide
+- **[docs/demos/LINTING-DEMO-GUIDE.md](docs/demos/LINTING-DEMO-GUIDE.md)** - Linting capabilities showcase
+- **[docs/demos/AUTO-DEMO-GUIDE.md](docs/demos/AUTO-DEMO-GUIDE.md)** - Automated presentation mode
 - **[demo-linting-scenarios.py](demo-linting-scenarios.py)** - Test scenarios and examples
 
 ## 🎯 Perfect For
@@ -215,5 +215,5 @@ cd ../whk-services-deployments && docker compose ps
 **🎉 One command showcases the complete WHK manufacturing and AI ecosystem with production-validated quality assurance at industrial scale!**
 
 ```bash
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 ```

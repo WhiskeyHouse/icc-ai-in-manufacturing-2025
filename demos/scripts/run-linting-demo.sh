@@ -4,6 +4,10 @@ set -euo pipefail
 # Ignition Linting Demo Runner
 # Comprehensive showcase of CLI and MCP linting capabilities
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+DISTILLERY_ROOT="$REPO_ROOT/../whk-distillery01-ignition-global"
+
 echo "🎯 Ignition Linting Demo Showcase"
 echo "=================================="
 echo ""
@@ -22,8 +26,8 @@ if ! command -v uv &> /dev/null; then
 fi
 
 # Check if distillery project exists
-if [ ! -d "../whk-distillery01-ignition-global" ]; then
-    echo "❌ WHK Distillery project not found at ../whk-distillery01-ignition-global"
+if [ ! -d "$DISTILLERY_ROOT" ]; then
+    echo "❌ WHK Distillery project not found at $DISTILLERY_ROOT"
     echo "   The demo will use local projects instead."
     DISTILLERY_AVAILABLE=false
 else
@@ -46,7 +50,7 @@ else
     echo "3. MCP server test"
     echo "4. Prerequisites check only"
     echo ""
-    echo "💡 Tip: Use './run-linting-demo.sh --auto' for automated full demo"
+    echo "💡 Tip: Use './demos/scripts/run-linting-demo.sh --auto' for automated full demo"
     echo ""
     read -p "Enter choice (1-4): " choice
 fi
@@ -55,37 +59,37 @@ case $choice in
     1)
         if [ "$AUTO_MODE" = true ]; then
             echo "🎬 Running full automated demo..."
-            uv run python demo-linting-showcase.py --auto
+            (cd "$REPO_ROOT" && uv run python demos/python/demo-linting-showcase.py --auto)
         else
             echo "🎬 Running full interactive demo..."
-            uv run python demo-linting-showcase.py
+            (cd "$REPO_ROOT" && uv run python demos/python/demo-linting-showcase.py)
         fi
         ;;
     2)
         echo "⚡ Running quick CLI tests..."
         echo ""
         echo "📋 Checking linter availability..."
-        uv run python scripts/lint-ignition.py --check-linter
+        (cd "$REPO_ROOT" && uv run python scripts/lint-ignition.py --check-linter)
         echo ""
         
         if [ "$DISTILLERY_AVAILABLE" = true ]; then
             echo "🏭 Testing on real distillery project (scripts only, limited output)..."
-            timeout 30s uv run python scripts/lint-ignition.py --project ../whk-distillery01-ignition-global --type scripts || echo "⏱️  Analysis timeout (normal for large projects)"
+            timeout 30s env REPO_ROOT="$REPO_ROOT" DISTILLERY_ROOT="$DISTILLERY_ROOT" bash -c 'cd "$REPO_ROOT" && uv run python scripts/lint-ignition.py --project "$DISTILLERY_ROOT" --type scripts' || echo "⏱️  Analysis timeout (normal for large projects)"
             echo ""
             echo "🎨 Testing Perspective components..."
-            uv run python scripts/lint-ignition.py --project ../whk-distillery01-ignition-global --type perspective
+            (cd "$REPO_ROOT" && uv run python scripts/lint-ignition.py --project "$DISTILLERY_ROOT" --type perspective)
         else
             echo "📝 Testing on local Global project..."
-            uv run python scripts/lint-ignition.py --project ignition-projects/Global --verbose
+            (cd "$REPO_ROOT" && uv run python scripts/lint-ignition.py --project ignition-projects/Global --verbose)
         fi
         ;;
     3)
         echo "🤖 Testing MCP server integration..."
-        uv run python test-mcp-linter.py
+        (cd "$REPO_ROOT" && uv run python test-mcp-linter.py)
         ;;
     4)
         echo "🔍 Checking prerequisites only..."
-        uv run python demo-linting-showcase.py --section prereq
+        (cd "$REPO_ROOT" && uv run python demos/python/demo-linting-showcase.py --section prereq)
         ;;
     *)
         echo "❌ Invalid choice. Please run again with 1-4."
@@ -97,15 +101,15 @@ echo ""
 echo "🎉 Demo complete!"
 echo ""
 echo "📚 Next steps:"
-echo "• Review LINTING-DEMO-GUIDE.md for detailed documentation"
+echo "• Review docs/demos/LINTING-DEMO-GUIDE.md for detailed documentation"
 echo "• Use CLI: uv run python scripts/lint-ignition.py --project <path>"
 echo "• Use MCP tools in Cursor AI conversations"
 echo "• Integrate linting into your development workflow"
 echo ""
 echo "🔧 Available commands:"
-echo "• ./run-linting-demo.sh --auto          # Full automated demo"
-echo "• uv run python scripts/lint-ignition.py --help"
-echo "• uv run python demo-linting-showcase.py --help"
-echo "• uv run python demo-linting-showcase.py --auto  # Direct auto mode"
-echo "• uv run python test-mcp-linter.py"
+echo "• ./demos/scripts/run-linting-demo.sh --auto          # Full automated demo"
+echo "• (cd "$REPO_ROOT" && uv run python scripts/lint-ignition.py --help)"
+echo "• (cd "$REPO_ROOT" && uv run python demos/python/demo-linting-showcase.py --help)"
+echo "• (cd "$REPO_ROOT" && uv run python demos/python/demo-linting-showcase.py --auto)  # Direct auto mode"
+echo "• (cd "$REPO_ROOT" && uv run python test-mcp-linter.py)"
 echo ""

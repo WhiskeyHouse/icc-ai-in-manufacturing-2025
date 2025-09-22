@@ -10,7 +10,7 @@ That's it! No other typing required.
 
 ## 🔄 Step-by-Step Example
 
-Here's exactly what happens when you run `./run-demo.sh up startup`:
+Here's exactly what happens when you run `./demos/scripts/run-demo.sh up startup`:
 
 ### 1. Initial Screen
 ```
@@ -96,17 +96,17 @@ All services will auto-accept licenses and certificates!
 
 ### Interactive Commands That Need ENTER Presses
 ```bash
-./run-demo.sh up startup        # 11 ENTER presses needed
-./run-demo.sh up health         # 6 ENTER presses needed  
-./run-demo.sh down shutdown     # 7 ENTER presses needed
-./run-demo.sh down cleanup      # 7 ENTER presses needed + confirmation
+./demos/scripts/run-demo.sh up startup        # 11 ENTER presses needed
+./demos/scripts/run-demo.sh up health         # 6 ENTER presses needed  
+./demos/scripts/run-demo.sh down shutdown     # 7 ENTER presses needed
+./demos/scripts/run-demo.sh down cleanup      # 7 ENTER presses needed + confirmation
 ```
 
 ### Auto Commands That Need NO Input
 ```bash
-./run-demo.sh auto startup      # Zero input needed
-./run-demo.sh auto health       # Zero input needed
-./run-demo.sh auto shutdown     # Zero input needed
+./demos/scripts/run-demo.sh auto startup      # Zero input needed
+./demos/scripts/run-demo.sh auto health       # Zero input needed
+./demos/scripts/run-demo.sh auto shutdown     # Zero input needed
 ```
 
 ## 🎬 Pro Tips for Interactive Demos
@@ -119,11 +119,11 @@ All services will auto-accept licenses and certificates!
 ### For Troubleshooting
 - Use `--dry-run` to see all commands without executing:
   ```bash
-  ./run-demo.sh up startup --dry-run
+  ./demos/scripts/run-demo.sh up startup --dry-run
   ```
 - Use `--continue-on-error` if you want to keep going despite failures:
   ```bash
-  ./run-demo.sh up startup --continue-on-error
+  ./demos/scripts/run-demo.sh up startup --continue-on-error
   ```
 
 ### For Different Speeds
@@ -135,7 +135,7 @@ All services will auto-accept licenses and certificates!
 
 ### Interactive Mode (ENTER presses)
 ```bash
-./run-demo.sh up startup
+./demos/scripts/run-demo.sh up startup
 ```
 **Best for:**
 - Training sessions
@@ -145,7 +145,7 @@ All services will auto-accept licenses and certificates!
 
 ### Auto Mode (no input)
 ```bash
-./run-demo.sh auto startup  
+./demos/scripts/run-demo.sh auto startup  
 ```
 **Best for:**
 - Live presentations

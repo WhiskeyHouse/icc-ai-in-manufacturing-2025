@@ -4,6 +4,11 @@ set -euo pipefail
 # WHK Full Stack Demo Runner
 # Comprehensive demonstration of complete manufacturing infrastructure + linting
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+PYTHON_SCRIPT="$REPO_ROOT/demos/python/demo-full-stack.py"
+SERVICES_ROOT="$REPO_ROOT/../whk-services-deployments"
+
 echo "🏭 WHK Full Stack Demo - Complete Manufacturing Infrastructure"
 echo "=============================================================="
 echo ""
@@ -35,8 +40,8 @@ if ! docker compose version &> /dev/null; then
 fi
 
 # Check if WHK services directory exists
-if [ ! -d "../whk-services-deployments" ]; then
-    echo "❌ WHK services directory not found at ../whk-services-deployments"
+if [ ! -d "$SERVICES_ROOT" ]; then
+    echo "❌ WHK services directory not found at $SERVICES_ROOT"
     echo "   Please ensure the whk-services-deployments repository is cloned"
     echo "   at the expected location."
     exit 1
@@ -97,19 +102,19 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Build command
-CMD="uv run python demo-full-stack.py"
+CMD=(uv run python "$PYTHON_SCRIPT")
 
 if [ "$AUTO_MODE" = true ]; then
-    CMD="$CMD --auto"
+    CMD+=('--auto')
     echo "🤖 Running in AUTO mode - full demo without user interaction"
 elif [ "$SERVICES_ONLY" = true ]; then
-    CMD="$CMD --services-only"
+    CMD+=('--services-only')
     echo "🔧 Starting services only - skipping integration demo"
 elif [ "$CLEANUP" = true ]; then
-    CMD="$CMD --cleanup"
+    CMD+=('--cleanup')
     echo "🧹 Cleaning up services..."
 elif [ "$CLEANUP_ALL" = true ]; then
-    CMD="$CMD --cleanup-all"
+    CMD+=('--cleanup-all')
     echo "🧹 Comprehensive cleanup - stopping ALL demo services..."
 else
     echo "🎬 Choose demo mode:"
@@ -127,15 +132,15 @@ else
             echo "🎬 Running full interactive demo..."
             ;;
         2)
-            CMD="$CMD --services-only"
+            CMD+=('--services-only')
             echo "🔧 Starting services only - skipping integration demo..."
             ;;
         3)
-            CMD="$CMD --cleanup"
+            CMD+=('--cleanup')
             echo "🧹 Cleaning up services..."
             ;;
         4)
-            CMD="$CMD --cleanup-all"
+            CMD+=('--cleanup-all')
             echo "🧹 Comprehensive cleanup - stopping ALL demo services..."
             ;;
         *)
@@ -146,8 +151,10 @@ else
 fi
 
 echo ""
-echo "🚀 Executing: $CMD"
+CMD_DISPLAY=$(printf ' %q' "${CMD[@]}")
+echo "🚀 Executing:${CMD_DISPLAY}"
 echo ""
 
 # Execute the demo
-exec $CMD
+cd "$REPO_ROOT"
+exec "${CMD[@]}"

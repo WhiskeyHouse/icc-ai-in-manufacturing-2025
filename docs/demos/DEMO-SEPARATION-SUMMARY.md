@@ -9,7 +9,7 @@ We now have **two distinct, focused demos** that can be run independently or tog
 
 ```bash
 # Linting-focused demonstration
-./run-linting-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 ```
 
 **Features**:
@@ -24,7 +24,7 @@ We now have **two distinct, focused demos** that can be run independently or tog
 
 ```bash
 # Infrastructure-focused demonstration
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 ```
 
 **Features**:
@@ -60,27 +60,27 @@ We now have **two distinct, focused demos** that can be run independently or tog
 ### **Developer Conference**
 ```bash
 # Focus on code quality and AI integration
-./run-linting-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 ```
 
 ### **Manufacturing Executive Briefing**
 ```bash
 # Focus on complete infrastructure and business value
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 ```
 
 ### **Technical Architecture Review**
 ```bash
 # Show both capabilities
-./run-full-stack-demo.sh --auto
-./run-linting-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 ```
 
 ### **Sales Demonstration**
 ```bash
 # Infrastructure first, then quality assurance
-./run-full-stack-demo.sh --auto
-./run-linting-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 ```
 
 ## 📊 **Demo Comparison**
@@ -137,31 +137,31 @@ We now have **two distinct, focused demos** that can be run independently or tog
 ### **Quick Demo Selection**
 ```bash
 # Code quality focus (2-3 minutes)
-./run-linting-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 
 # Infrastructure focus (6-10 minutes)  
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 
 # Clean slate before switching
-./run-full-stack-demo.sh --cleanup-all
+./demos/scripts/run-full-stack-demo.sh --cleanup-all
 ```
 
 ### **Interactive Exploration**
 ```bash
 # Explore linting capabilities
-./run-linting-demo.sh
+./demos/scripts/run-linting-demo.sh
 
 # Explore infrastructure services
-./run-full-stack-demo.sh
+./demos/scripts/run-full-stack-demo.sh
 ```
 
 ### **Development Setup**
 ```bash
 # Quick infrastructure for development
-./run-full-stack-demo.sh --services-only
+./demos/scripts/run-full-stack-demo.sh --services-only
 
 # Quick linting validation
-./run-linting-demo.sh --section cli
+./demos/scripts/run-linting-demo.sh --section cli
 ```
 
 ## 🎉 **Perfect for Any Scenario**
@@ -178,8 +178,8 @@ We now have **two distinct, focused demos** that can be run independently or tog
 
 ```bash
 # Infrastructure Platform Demo
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 
 # Code Quality Demo  
-./run-linting-demo.sh --auto
+./demos/scripts/run-linting-demo.sh --auto
 ```

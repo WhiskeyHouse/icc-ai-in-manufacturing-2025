@@ -5,7 +5,7 @@ The shell script `run-linting-demo.sh` was throwing an "unbound variable" error 
 
 ## Error Message
 ```bash
-./run-linting-demo.sh: line 38: $1: unbound variable
+./demos/scripts/run-linting-demo.sh: line 38: $1: unbound variable
 ```
 
 ## Root Cause
@@ -28,8 +28,8 @@ if [[ "${1:-}" == "--auto" ]]; then
 - This allows the script to work both with and without arguments
 
 ## Testing
-✅ **Without arguments**: `./run-linting-demo.sh` - Works correctly  
-✅ **With auto flag**: `./run-linting-demo.sh --auto` - Works correctly  
+✅ **Without arguments**: `./demos/scripts/run-linting-demo.sh` - Works correctly  
+✅ **With auto flag**: `./demos/scripts/run-linting-demo.sh --auto` - Works correctly  
 ✅ **Interactive mode**: All menu options work properly  
 
 ## Status

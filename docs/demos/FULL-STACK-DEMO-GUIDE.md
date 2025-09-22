@@ -9,13 +9,13 @@ The **WHK Full Stack Demo** showcases a complete manufacturing and AI infrastruc
 ### One-Command Demo
 ```bash
 # Full automated demo - complete infrastructure + linting
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 
 # Interactive demo with user control
-./run-full-stack-demo.sh
+./demos/scripts/run-full-stack-demo.sh
 
 # Services only (no linting demo)
-./run-full-stack-demo.sh --services-only
+./demos/scripts/run-full-stack-demo.sh --services-only
 ```
 
 ### Direct Python Execution
@@ -213,13 +213,13 @@ Once the demo is running, access these services:
 
 ### 🎪 **Live Presentations**
 ```bash
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 # Perfect for conferences, sales demos, training sessions
 ```
 
 ### 🏭 **Development Environment**
 ```bash
-./run-full-stack-demo.sh --services-only
+./demos/scripts/run-full-stack-demo.sh --services-only
 # Quick infrastructure setup for development work
 ```
 
@@ -231,7 +231,7 @@ uv run python demo-full-stack.py --auto
 
 ### 📚 **Training and Onboarding**
 ```bash
-./run-full-stack-demo.sh
+./demos/scripts/run-full-stack-demo.sh
 # Interactive learning experience for new team members
 ```
 
@@ -357,5 +357,5 @@ After running the demo, you should have:
 **🎉 Ready to showcase the complete WHK manufacturing and AI infrastructure with production-validated quality assurance!**
 
 ```bash
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 ```

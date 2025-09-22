@@ -4,8 +4,13 @@ set -euo pipefail
 # Demo runner script for AI Manufacturing Stack
 # This script provides easy access to the interactive demo programs
 
-ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
-cd "$ROOT_DIR"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+DEMO_ROOT="$REPO_ROOT/demos"
+GO_SRC_DIR="$DEMO_ROOT/go"
+GO_BIN_DIR="$GO_SRC_DIR/bin"
+
+cd "$SCRIPT_DIR"
 
 # Ensure Go path is set for Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
@@ -62,9 +67,9 @@ run_startup_demo() {
     echo -e "${GREEN}🚀 Starting AI Manufacturing Stack Demo...${NC}"
     
     if [ "$sub_command" = "startup" ]; then
-        ./demo-stack-up --startup "$@"
+        (cd "$REPO_ROOT" && "$GO_BIN_DIR/demo-stack-up" --startup "$@")
     elif [ "$sub_command" = "health" ]; then
-        ./demo-stack-up --health "$@"
+        (cd "$REPO_ROOT" && "$GO_BIN_DIR/demo-stack-up" --health "$@")
     else
         echo -e "${RED}Unknown startup sub-command: $sub_command${NC}"
         echo "Available: startup, health"
@@ -79,12 +84,12 @@ run_shutdown_demo() {
     echo -e "${YELLOW}🛑 Starting Stack Shutdown Demo...${NC}"
     
     if [ "$sub_command" = "shutdown" ]; then
-        ./demo-stack-down --shutdown "$@"
+        (cd "$REPO_ROOT" && "$GO_BIN_DIR/demo-stack-down" --shutdown "$@")
     elif [ "$sub_command" = "cleanup" ]; then
         echo -e "${RED}⚠️  WARNING: This will delete ALL data permanently!${NC}"
         read -p "Are you sure? Type 'yes' to continue: " confirm
         if [ "$confirm" = "yes" ]; then
-            ./demo-stack-down --cleanup "$@"
+            (cd "$REPO_ROOT" && "$GO_BIN_DIR/demo-stack-down" --cleanup "$@")
         else
             echo "Cleanup cancelled."
             exit 0
@@ -97,10 +102,11 @@ run_shutdown_demo() {
 }
 
 # Check if demo executables exist
-if [ ! -f "./demo-stack-up" ] || [ ! -f "./demo-stack-down" ]; then
+if [ ! -f "$GO_BIN_DIR/demo-stack-up" ] || [ ! -f "$GO_BIN_DIR/demo-stack-down" ]; then
     echo -e "${YELLOW}Building demo executables...${NC}"
-    go build -o demo-stack-up demo-stack-up.go
-    go build -o demo-stack-down demo-stack-down.go
+    mkdir -p "$GO_BIN_DIR"
+    (cd "$GO_SRC_DIR" && go build -o "$GO_BIN_DIR/demo-stack-up" demo-stack-up.go)
+    (cd "$GO_SRC_DIR" && go build -o "$GO_BIN_DIR/demo-stack-down" demo-stack-down.go)
     echo -e "${GREEN}Demo executables built successfully!${NC}"
 fi
 
@@ -122,7 +128,7 @@ run_auto_demo() {
         export DEMO_COMMAND_DELAY=0.5
     fi
     
-    ./demo-stack-auto.sh "$sub_command"
+    "$SCRIPT_DIR/demo-stack-auto.sh" "$sub_command"
 }
 
 # Parse command line arguments
@@ -141,7 +147,7 @@ case "${1:-help}" in
         ;;
     "cleanup")
         echo -e "${YELLOW}🧹 Running cleanup to fix container conflicts...${NC}"
-        ./demo-cleanup.sh
+        "$SCRIPT_DIR/demo-cleanup.sh"
         ;;
     "help"|"--help"|"-h")
         show_help

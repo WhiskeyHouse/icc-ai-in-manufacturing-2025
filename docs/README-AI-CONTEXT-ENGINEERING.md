@@ -155,7 +155,7 @@ This repository contains a comprehensive AI Context Engineering system designed 
 ## 🔗 **Related Resources**
 
 ### 📺 **Presentation Materials**
-- [SLIDES-OUTLINE.md](./docs/SLIDES-OUTLINE.md) - "Fueling Manufacturing Integration With AI & Ignition Containers" presentation outline
+- [docs/presentations/SLIDES-OUTLINE.md](./presentations/SLIDES-OUTLINE.md) - "Fueling Manufacturing Integration With AI & Ignition Containers" presentation outline
 
 ### 🏭 **Whiskey House Specific**
 - WHK-Global project patterns and standards are integrated throughout the documentation

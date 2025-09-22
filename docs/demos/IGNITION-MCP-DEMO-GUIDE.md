@@ -15,14 +15,14 @@ The Ignition MCP Server Demo showcases the powerful integration between **Induct
 ### Run the Demo
 ```bash
 # Full interactive demo
-./run-ignition-mcp-demo.sh
+./demos/scripts/run-ignition-mcp-demo.sh
 
 # Automated demo (perfect for presentations)
-./run-ignition-mcp-demo.sh --auto
+./demos/scripts/run-ignition-mcp-demo.sh --auto
 
 # Specific sections
-./run-ignition-mcp-demo.sh --section architecture
-./run-ignition-mcp-demo.sh --section server
+./demos/scripts/run-ignition-mcp-demo.sh --section architecture
+./demos/scripts/run-ignition-mcp-demo.sh --section server
 ```
 
 ## 🏗️ Architecture Overview
@@ -189,7 +189,7 @@ After running the demo and restarting Cursor:
 
 ### Interactive Mode
 ```bash
-./run-ignition-mcp-demo.sh
+./demos/scripts/run-ignition-mcp-demo.sh
 ```
 - Full user interaction
 - Step-by-step progression
@@ -198,7 +198,7 @@ After running the demo and restarting Cursor:
 
 ### Automated Mode
 ```bash
-./run-ignition-mcp-demo.sh --auto
+./demos/scripts/run-ignition-mcp-demo.sh --auto
 ```
 - No user prompts
 - Continuous execution
@@ -207,9 +207,9 @@ After running the demo and restarting Cursor:
 
 ### Section-Specific Mode
 ```bash
-./run-ignition-mcp-demo.sh --section architecture
-./run-ignition-mcp-demo.sh --section server
-./run-ignition-mcp-demo.sh --section tools
+./demos/scripts/run-ignition-mcp-demo.sh --section architecture
+./demos/scripts/run-ignition-mcp-demo.sh --section server
+./demos/scripts/run-ignition-mcp-demo.sh --section tools
 ```
 - Focus on specific aspects
 - Quick validation
@@ -220,7 +220,7 @@ After running the demo and restarting Cursor:
 
 ### Stop MCP Server
 ```bash
-./run-ignition-mcp-demo.sh --cleanup
+./demos/scripts/run-ignition-mcp-demo.sh --cleanup
 ```
 
 ### Manual Cleanup
@@ -283,5 +283,5 @@ pkill -f "fastmcp.*mcp_server.py"
 
 ```bash
 # Ready to revolutionize Gateway management?
-./run-ignition-mcp-demo.sh --auto
+./demos/scripts/run-ignition-mcp-demo.sh --auto
 ```

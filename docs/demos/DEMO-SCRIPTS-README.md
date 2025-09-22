@@ -31,13 +31,13 @@ All demos include:
 
 ```bash
 # Interactive stack startup
-./run-demo.sh up
+./demos/scripts/run-demo.sh up
 
 # Interactive stack shutdown  
-./run-demo.sh down
+./demos/scripts/run-demo.sh down
 
 # Show all options
-./run-demo.sh help
+./demos/scripts/run-demo.sh help
 ```
 
 ### Direct Demo Execution
@@ -71,13 +71,13 @@ Interactive demo that starts all services in the correct order:
 
 ```bash
 # Interactive mode (best for presentations)
-./run-demo.sh up startup
+./demos/scripts/run-demo.sh up startup
 
 # Automatic mode (for CI/testing)
-./run-demo.sh up startup --auto
+./demos/scripts/run-demo.sh up startup --auto
 
 # Dry run (show commands without executing)
-./run-demo.sh up startup --dry-run
+./demos/scripts/run-demo.sh up startup --dry-run
 ```
 
 #### `health` - Service Health Check
@@ -91,7 +91,7 @@ Comprehensive health verification of all stack components:
 6. **Summary Report** - Overall stack readiness
 
 ```bash
-./run-demo.sh up health
+./demos/scripts/run-demo.sh up health
 ```
 
 ### 🛑 Stack Shutdown (`demo-stack-down`)
@@ -108,7 +108,7 @@ Proper shutdown sequence preserving data:
 7. **Verification** - Confirm clean shutdown
 
 ```bash
-./run-demo.sh down shutdown
+./demos/scripts/run-demo.sh down shutdown
 ```
 
 #### `cleanup` - Complete Environment Reset
@@ -122,7 +122,7 @@ Proper shutdown sequence preserving data:
 6. **Verification** - Confirm complete cleanup
 
 ```bash
-./run-demo.sh down cleanup
+./demos/scripts/run-demo.sh down cleanup
 # Will prompt for confirmation before data deletion
 ```
 
@@ -132,13 +132,13 @@ For live presentations, use these optimized commands:
 
 ```bash
 # Fast startup demo (no typewriter delay)
-./run-demo.sh up startup --immediate
+./demos/scripts/run-demo.sh up startup --immediate
 
 # Automatic health check
-./run-demo.sh up health --auto --immediate
+./demos/scripts/run-demo.sh up health --auto --immediate
 
 # Fast shutdown demo
-./run-demo.sh down shutdown --immediate
+./demos/scripts/run-demo.sh down shutdown --immediate
 ```
 
 ## 🔧 Demo Framework Options
@@ -184,7 +184,7 @@ go version  # Should be 1.25+
 
 # Rebuild demos
 rm demo-stack-up demo-stack-down
-./run-demo.sh up  # Will auto-rebuild
+./demos/scripts/run-demo.sh up  # Will auto-rebuild
 ```
 
 ### Services Not Starting
@@ -193,7 +193,7 @@ rm demo-stack-up demo-stack-down
 ./scripts/demo-preflight.sh
 
 # Run health check
-./run-demo.sh up health
+./demos/scripts/run-demo.sh up health
 
 # Check Docker
 docker compose ps
@@ -209,9 +209,9 @@ The demos automatically handle license acceptance via:
 ### Complete Reset
 ```bash
 # Nuclear option - removes ALL data
-./run-demo.sh down cleanup
+./demos/scripts/run-demo.sh down cleanup
 # Then restart fresh
-./run-demo.sh up startup
+./demos/scripts/run-demo.sh up startup
 ```
 
 ## 🎬 Demo Flow for Presentations
@@ -220,12 +220,12 @@ The demos automatically handle license acceptance via:
 
 1. **Introduction** (2 min)
    ```bash
-   ./run-demo.sh up startup --immediate
+   ./demos/scripts/run-demo.sh up startup --immediate
    ```
 
 2. **Show Running Stack** (1 min)
    ```bash
-   ./run-demo.sh up health --auto --immediate
+   ./demos/scripts/run-demo.sh up health --auto --immediate
    ```
 
 3. **Demonstrate Features** (10-15 min)
@@ -235,7 +235,7 @@ The demos automatically handle license acceptance via:
 
 4. **Clean Shutdown** (1 min)
    ```bash
-   ./run-demo.sh down shutdown --immediate
+   ./demos/scripts/run-demo.sh down shutdown --immediate
    ```
 
 ### Pre-Presentation Checklist
@@ -282,7 +282,7 @@ func yourNewDemo() *demo.Run {
 - [DOCKER-SERVICES.md](docs/DOCKER-SERVICES.md) - Service architecture
 - [IGNITION-DOCKER-SETUP.md](IGNITION-DOCKER-SETUP.md) - Ignition configuration
 - [SECRETS-QUICKSTART.md](SECRETS-QUICKSTART.md) - Secrets management
-- [TALK-RUNBOOK.md](TALK-RUNBOOK.md) - Presentation guide
+- [docs/runbooks/TALK-RUNBOOK.md](docs/runbooks/TALK-RUNBOOK.md) - Presentation guide
 
 ## 🤝 Contributing
 
@@ -299,4 +299,4 @@ MIT License - See LICENSE file for details.
 
 ---
 
-**🎯 Ready to demo? Start with: `./run-demo.sh up`**
+**🎯 Ready to demo? Start with: `./demos/scripts/run-demo.sh up`**

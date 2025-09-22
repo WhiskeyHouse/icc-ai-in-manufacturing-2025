@@ -58,7 +58,7 @@ npx @playwright/mcp --port 3001
 npx @playwright/mcp --headless --port 3001
 
 # Using the convenience script
-./run-playwright-mcp.sh
+./demos/scripts/run-playwright-mcp.sh
 ```
 
 ### Running Tests

@@ -33,7 +33,7 @@ critical_ports = [
 
 ### **Successful Execution**
 ```bash
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 # ✅ Runs successfully with OrbStack conflicts
 # ✅ Automatically skips conflicting services
 # ✅ Starts available services without errors
@@ -178,5 +178,5 @@ The demo now works reliably across different development environments:
 
 ```bash
 # Perfect demo execution every time
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 ```

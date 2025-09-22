@@ -3,13 +3,13 @@
 ## 🎯 TL;DR - What You Need to Know
 
 ### The Problem You Encountered
-When you ran `./run-demo.sh up startup --immediate`, it **hung waiting for you to press ENTER**. This is because the original Go-based demos are designed for **interactive presentations** where you control each step.
+When you ran `./demos/scripts/run-demo.sh up startup --immediate`, it **hung waiting for you to press ENTER**. This is because the original Go-based demos are designed for **interactive presentations** where you control each step.
 
 ### ✅ The Solution - Use Auto Mode
 
 **For your presentation, use this command:**
 ```bash
-./run-demo.sh auto startup
+./demos/scripts/run-demo.sh auto startup
 ```
 
 **This will:**
@@ -22,7 +22,7 @@ When you ran `./run-demo.sh up startup --immediate`, it **hung waiting for you t
 
 ### 1. Start the Demo
 ```bash
-./run-demo.sh auto startup
+./demos/scripts/run-demo.sh auto startup
 ```
 **Takes:** 3-5 minutes  
 **Interaction:** None required  
@@ -30,7 +30,7 @@ When you ran `./run-demo.sh up startup --immediate`, it **hung waiting for you t
 
 ### 2. Verify Everything Works
 ```bash
-./run-demo.sh auto health
+./demos/scripts/run-demo.sh auto health
 ```
 **Takes:** 30 seconds  
 **Interaction:** None required  
@@ -43,7 +43,7 @@ When you ran `./run-demo.sh up startup --immediate`, it **hung waiting for you t
 
 ### 4. Clean Shutdown After Demo
 ```bash
-./run-demo.sh auto shutdown
+./demos/scripts/run-demo.sh auto shutdown
 ```
 **Takes:** 1 minute  
 **Interaction:** None required  
@@ -78,12 +78,12 @@ Step 2 Description
 
 ### Normal Presentation Speed
 ```bash
-./run-demo.sh auto startup
+./demos/scripts/run-demo.sh auto startup
 ```
 
 ### Fast Mode (for testing)
 ```bash
-DEMO_FAST_MODE=1 ./run-demo.sh auto startup
+DEMO_FAST_MODE=1 ./demos/scripts/run-demo.sh auto startup
 ```
 
 ### Super Fast Mode (for CI/testing)
@@ -103,7 +103,7 @@ DEMO_NO_TYPEWRITER=1 DEMO_STEP_DELAY=0 ./demo-stack-auto.sh startup
 
 **Use this for your presentation:**
 ```bash
-./run-demo.sh auto startup
+./demos/scripts/run-demo.sh auto startup
 ```
 
 **It will run completely hands-free and show your audience a professional, smooth demo of the entire AI manufacturing stack starting up with automatic license acceptance.**

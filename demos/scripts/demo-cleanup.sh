@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
+cd "$REPO_ROOT"
+
 echo "🧹 Demo Cleanup - Removing all conflicting containers..."
 
 # Stop and remove all compose services
@@ -42,6 +47,6 @@ done
 echo "✅ Cleanup complete! All ports freed and ready for fresh demo startup."
 echo ""
 echo "Now you can run:"
-echo "  ./run-demo.sh auto startup"
+echo "  ./demos/scripts/run-demo.sh auto startup"
 echo "  or"
-echo "  ./run-demo.sh up startup"
+echo "  ./demos/scripts/run-demo.sh up startup"

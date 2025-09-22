@@ -1,5 +1,7 @@
 # Ignition Development Environment Setup Guide
 
+> 📍 New here? Start with `GUIDE-INDEX.md` for a map of demos, runbooks, and AI services.
+
 ## Table of Contents
 - [Ignition Development Environment Setup Guide](#ignition-development-environment-setup-guide)
   - [Table of Contents](#table-of-contents)
@@ -29,13 +31,17 @@
 
 ## Talk Runbook and Demo Helpers
 
-- See `TALK-RUNBOOK.md` for the 45‑min outline, roles, and scripted demo.
+- See `docs/runbooks/TALK-RUNBOOK.md` for the 45‑min outline, roles, and scripted demo.
 - Quick demo scripts:
   - `./scripts/demo-preflight.sh`
   - `./scripts/demo-up.sh`
   - `./scripts/demo-down.sh`
   - `./scripts/demo-open.sh`
- - Slide deck outline: `SLIDES-OUTLINE.md`
+- Demo automation entry points now live under `./demos/scripts/` (for example `./demos/scripts/run-full-stack-demo.sh --auto`).
+- Slide prep:
+  - Outline: `docs/presentations/SLIDES-OUTLINE.md`
+  - Detailed reference: `docs/presentations/SLIDES-OUTLINE-detailed.md`
+  - Drop finished decks in `presentations/`
 
 # QuickStart
 

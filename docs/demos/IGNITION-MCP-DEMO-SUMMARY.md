@@ -24,7 +24,7 @@ Successfully created a comprehensive **Ignition MCP Server Demo** using the same
   - Cleanup functionality
 
 ### 📚 Documentation
-- **`IGNITION-MCP-DEMO-GUIDE.md`** - Complete user guide
+- **`docs/demos/IGNITION-MCP-DEMO-GUIDE.md`** - Complete user guide
   - Architecture overview
   - Usage examples
   - Integration scenarios
@@ -54,7 +54,7 @@ Successfully created a comprehensive **Ignition MCP Server Demo** using the same
 
 ### 🎪 Interactive Mode
 ```bash
-./run-ignition-mcp-demo.sh
+./demos/scripts/run-ignition-mcp-demo.sh
 ```
 - Full user interaction with step-by-step progression
 - Menu-driven section selection
@@ -62,7 +62,7 @@ Successfully created a comprehensive **Ignition MCP Server Demo** using the same
 
 ### 🤖 Automated Mode
 ```bash
-./run-ignition-mcp-demo.sh --auto
+./demos/scripts/run-ignition-mcp-demo.sh --auto
 ```
 - No user prompts, continuous execution
 - Professional presentation flow
@@ -70,9 +70,9 @@ Successfully created a comprehensive **Ignition MCP Server Demo** using the same
 
 ### 🔧 Section-Specific Mode
 ```bash
-./run-ignition-mcp-demo.sh --section architecture
-./run-ignition-mcp-demo.sh --section server
-./run-ignition-mcp-demo.sh --section tools
+./demos/scripts/run-ignition-mcp-demo.sh --section architecture
+./demos/scripts/run-ignition-mcp-demo.sh --section server
+./demos/scripts/run-ignition-mcp-demo.sh --section tools
 ```
 - Focus on specific aspects
 - Quick validation and targeted demonstrations
@@ -190,19 +190,19 @@ Works seamlessly with existing `.cursor/mcp.json` configuration:
 ### Quick Start
 ```bash
 # Full automated demo (perfect for presentations)
-./run-ignition-mcp-demo.sh --auto
+./demos/scripts/run-ignition-mcp-demo.sh --auto
 
 # Interactive exploration
-./run-ignition-mcp-demo.sh
+./demos/scripts/run-ignition-mcp-demo.sh
 
 # Architecture overview only
-./run-ignition-mcp-demo.sh --section architecture
+./demos/scripts/run-ignition-mcp-demo.sh --section architecture
 ```
 
 ### Cleanup
 ```bash
 # Stop all MCP servers
-./run-ignition-mcp-demo.sh --cleanup
+./demos/scripts/run-ignition-mcp-demo.sh --cleanup
 ```
 
 ## 🎉 Mission Success!
@@ -221,5 +221,5 @@ Works seamlessly with existing `.cursor/mcp.json` configuration:
 
 ```bash
 # Ready to revolutionize Gateway management?
-./run-ignition-mcp-demo.sh --auto
+./demos/scripts/run-ignition-mcp-demo.sh --auto
 ```

@@ -4,6 +4,11 @@ set -euo pipefail
 # Ignition MCP Server Demo Runner
 # Comprehensive demonstration of Ignition FastMCP server integration
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+PYTHON_SCRIPT="$REPO_ROOT/demos/python/demo-ignition-mcp.py"
+IGNITION_MCP_DIR="$REPO_ROOT/../ignition-mcp"
+
 echo "🏭 Ignition MCP Server Demo - AI-Powered Gateway Integration"
 echo "=========================================================="
 echo ""
@@ -25,7 +30,6 @@ if ! command -v uv &> /dev/null; then
 fi
 
 # Check if ignition-mcp directory exists
-IGNITION_MCP_DIR="../ignition-mcp"
 if [ ! -d "$IGNITION_MCP_DIR" ]; then
     echo "❌ Ignition MCP directory not found: $IGNITION_MCP_DIR"
     echo "   Please ensure the ignition-mcp repository is cloned in the parent directory"
@@ -113,13 +117,13 @@ if [ "$CLEANUP" = true ]; then
 fi
 
 # Build the command
-CMD="uv run python demo-ignition-mcp.py"
+CMD=(uv run python "$PYTHON_SCRIPT")
 
 if [ "$AUTO_MODE" = true ]; then
-    CMD="$CMD --auto"
+    CMD+=('--auto')
     echo "🤖 Running in AUTO mode - full demo without user interaction"
 elif [ -n "$SECTION" ]; then
-    CMD="$CMD --section $SECTION"
+    CMD+=('--section' "$SECTION")
     echo "🔧 Running section: $SECTION"
 else
     # Interactive mode - show menu
@@ -138,19 +142,19 @@ else
             echo "🎬 Running full interactive demo..."
             ;;
         2)
-            CMD="$CMD --section architecture"
+            CMD+=('--section' 'architecture')
             echo "🏗️ Showing architecture overview..."
             ;;
         3)
-            CMD="$CMD --section server"
+            CMD+=('--section' 'server')
             echo "🚀 Starting MCP server..."
             ;;
         4)
-            CMD="$CMD --section tools"
+            CMD+=('--section' 'tools')
             echo "🔍 Discovering tools..."
             ;;
         5)
-            CMD="$CMD --section ai"
+            CMD+=('--section' 'ai')
             echo "🤖 Showing AI integration examples..."
             ;;
         6)
@@ -176,8 +180,10 @@ else
 fi
 
 echo ""
-echo "🚀 Executing: $CMD"
+CMD_DISPLAY=$(printf ' %q' "${CMD[@]}")
+echo "🚀 Executing:${CMD_DISPLAY}"
 echo ""
 
 # Execute the command
-exec $CMD
+cd "$REPO_ROOT"
+exec "${CMD[@]}"

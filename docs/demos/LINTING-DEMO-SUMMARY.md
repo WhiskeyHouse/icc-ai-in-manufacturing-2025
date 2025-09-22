@@ -30,7 +30,7 @@ We've successfully created a comprehensive linting demo that showcases both CLI 
 ### Quick Start
 ```bash
 # Run the complete interactive demo
-./run-linting-demo.sh
+./demos/scripts/run-linting-demo.sh
 
 # Or run specific components
 uv run python demo-linting-showcase.py
@@ -111,7 +111,7 @@ Linting Demo Ecosystem
 ├── Demo Scripts (demo-linting-showcase.py)
 ├── Test Scenarios (demo-linting-scenarios.py)
 ├── Runner Script (run-linting-demo.sh)
-└── Documentation (LINTING-DEMO-GUIDE.md)
+└── Documentation (docs/demos/LINTING-DEMO-GUIDE.md)
 ```
 
 ## 🎬 Demo Flow
@@ -125,7 +125,7 @@ Linting Demo Ecosystem
 
 ## 📚 Documentation
 
-- **[LINTING-DEMO-GUIDE.md](LINTING-DEMO-GUIDE.md)** - Complete usage guide
+- **[docs/demos/LINTING-DEMO-GUIDE.md](docs/demos/LINTING-DEMO-GUIDE.md)** - Complete usage guide
 - **[MCP-IGNITION-LINTER.md](MCP-IGNITION-LINTER.md)** - MCP server documentation
 - **[demo-linting-scenarios.py](demo-linting-scenarios.py)** - Test scenarios
 - **[run-linting-demo.sh](run-linting-demo.sh)** - Easy demo runner

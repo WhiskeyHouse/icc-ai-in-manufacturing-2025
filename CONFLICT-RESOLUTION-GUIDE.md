@@ -26,19 +26,19 @@ Multiple cleanup strategies available:
 
 #### **1. Interactive Cleanup** (Default)
 ```bash
-./run-full-stack-demo.sh
+./demos/scripts/run-full-stack-demo.sh
 # Prompts user before stopping conflicting containers
 ```
 
 #### **2. Automatic Cleanup** (Auto Mode)
 ```bash
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 # Automatically resolves conflicts without user input
 ```
 
 #### **3. Comprehensive Cleanup**
 ```bash
-./run-full-stack-demo.sh --cleanup-all
+./demos/scripts/run-full-stack-demo.sh --cleanup-all
 # Stops ALL demo-related services across all demos
 ```
 
@@ -81,22 +81,22 @@ def cleanup_all_demo_services(self):
 ### **Start Fresh Infrastructure**
 ```bash
 # Clean up everything first
-./run-full-stack-demo.sh --cleanup-all
+./demos/scripts/run-full-stack-demo.sh --cleanup-all
 
 # Then start fresh
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 ```
 
 ### **Quick Development Setup**
 ```bash
 # Services only with automatic conflict resolution
-./run-full-stack-demo.sh --services-only
+./demos/scripts/run-full-stack-demo.sh --services-only
 ```
 
 ### **Interactive Demo with Conflict Handling**
 ```bash
 # Will prompt to resolve conflicts if found
-./run-full-stack-demo.sh
+./demos/scripts/run-full-stack-demo.sh
 ```
 
 ## 📊 Results Achieved
@@ -135,11 +135,11 @@ def cleanup_all_demo_services(self):
 
 ### **Shell Script Commands**
 ```bash
-./run-full-stack-demo.sh --help          # Show all options
-./run-full-stack-demo.sh --auto          # Auto mode with conflict resolution
-./run-full-stack-demo.sh --services-only # Infrastructure only
-./run-full-stack-demo.sh --cleanup       # Stop current services
-./run-full-stack-demo.sh --cleanup-all   # Stop ALL demo services
+./demos/scripts/run-full-stack-demo.sh --help          # Show all options
+./demos/scripts/run-full-stack-demo.sh --auto          # Auto mode with conflict resolution
+./demos/scripts/run-full-stack-demo.sh --services-only # Infrastructure only
+./demos/scripts/run-full-stack-demo.sh --cleanup       # Stop current services
+./demos/scripts/run-full-stack-demo.sh --cleanup-all   # Stop ALL demo services
 ```
 
 ### **Direct Python Commands**
@@ -179,5 +179,5 @@ uv run python demo-full-stack.py --auto           # Full demo with auto-cleanup
 **🎉 Container conflicts are now automatically detected and resolved, ensuring smooth deployment of the complete WHK manufacturing infrastructure every time!**
 
 ```bash
-./run-full-stack-demo.sh --auto
+./demos/scripts/run-full-stack-demo.sh --auto
 ```
