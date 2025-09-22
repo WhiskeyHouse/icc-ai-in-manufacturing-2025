@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BatchUpdateManyWithoutProductionOrdersInput\n\n## Properties\n**connect** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n**set** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "5950b92802d3e6852b346edadb5f5d7c7f7d3073190b3938c91a7e457c247988"
+  }
+}

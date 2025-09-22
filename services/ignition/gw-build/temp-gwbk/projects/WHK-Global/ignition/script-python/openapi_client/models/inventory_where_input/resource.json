@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryWhereInput\n\n## Properties\n**active** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**corrected_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**correction_note** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**current_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**customers** - [JsonFilter](JsonFilter.md)\n[optional] \n\n**fifo_index** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**global_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**item_receipt** - [ItemReceiptWhereUniqueInput](ItemReceiptWhereUniqueInput.md)\n[optional] \n\n**lot_number** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**notes** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**original_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**units** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**proof** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**revision** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ae0488e397ba84fd0f8e3d7096c3ceda77c4bf50ffd441145c7a29127d5959c8"
+  }
+}

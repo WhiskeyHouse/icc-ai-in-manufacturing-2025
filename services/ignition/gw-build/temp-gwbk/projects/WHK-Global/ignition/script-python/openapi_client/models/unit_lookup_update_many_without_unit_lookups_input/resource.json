@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitLookupUpdateManyWithoutUnitLookupsInput\n\n## Properties\n**connect** - [list[UnitLookupWhereUniqueInput]](UnitLookupWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[UnitLookupWhereUniqueInput]](UnitLookupWhereUniqueInput.md)\n[optional] \n\n**set** - [list[UnitLookupWhereUniqueInput]](UnitLookupWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "8754526a6ce777dfcd16f71567319dbc97d2b243db5c84e1e039702aa1a02c6f"
+  }
+}

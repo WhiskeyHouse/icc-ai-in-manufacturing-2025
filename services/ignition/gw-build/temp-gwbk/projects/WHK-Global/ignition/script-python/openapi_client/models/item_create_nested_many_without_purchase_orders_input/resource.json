@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemCreateNestedManyWithoutPurchaseOrdersInput\n\n## Properties\n**connect** - [list[ItemWhereUniqueInput]](ItemWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "d8169e24330a3d08f2dd53213c147bee445f22a87ed95f64da4e10863dd7f4ac"
+  }
+}

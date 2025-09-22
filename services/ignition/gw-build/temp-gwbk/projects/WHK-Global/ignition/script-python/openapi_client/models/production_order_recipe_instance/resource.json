@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ProductionOrderRecipeInstance\n\n## Properties\n**batches** - [list[Batch]](Batch.md)\n[optional] \n\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**id** - str\n\n\n**mashing_protocol** - [list[MashingProtocol]](MashingProtocol.md)\n\n\n**production_order** - [ProductionOrder](ProductionOrder.md)\n\n\n**recipe** - [Recipe](Recipe.md)\n\n\n**recipe_bom** - [list[RecipeBom]](RecipeBom.md)\n\n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "6121708e870b60acac7dde51c54f209279d39ce972bfc466761988df361053de"
+  }
+}

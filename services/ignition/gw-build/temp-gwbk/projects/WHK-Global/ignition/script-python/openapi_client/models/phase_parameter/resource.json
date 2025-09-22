@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# PhaseParameter\n\n## Properties\n**active** - bool\n[optional] \n\n**class_id** - [PhaseParameter](PhaseParameter.md)\n[optional] \n\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**description** - str\n\n\n**edited_by** - str\n[optional] \n\n**equipment_phases** - [list[EquipmentPhase]](EquipmentPhase.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**instances** - [list[PhaseParameter]](PhaseParameter.md)\n[optional] \n\n**is_class_def** - bool\n\n\n**is_static_parameter** - bool\n[optional] \n\n**item_id** - str\n[optional] \n\n**name** - str\n\n\n**recipe_id** - str\n[optional] \n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**setpoint_boolean_value** - bool\n[optional] \n\n**setpoint_lower_limit** - float\n[optional] \n\n**setpoint_numerical_value** - float\n[optional] \n\n**setpoint_type** - str\n\n\n**setpoint_upper_limit** - float\n[optional] \n\n**static_name** - str\n[optional] \n\n**string_value** - str\n[optional] \n\n**units** - str\n\n\n**updated_at** - datetime\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ba2e8b62c81dc5f7a7d492585aa097dbf74ca9d1f06d11f5bc820ea4e5a105a2"
+  }
+}

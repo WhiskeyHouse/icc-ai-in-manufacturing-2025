@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ScheduleOrderWhereUniqueInput\n\n## Properties\n**id** - str\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "069e9d0481749009ee24aa0aa67cf7a81e09b874a3d177512dfa13da029328cc"
+  }
+}

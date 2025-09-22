@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitLookupWhereInput\n\n## Properties\n**abbreviation** - [StringFilter](StringFilter.md)\n[optional] \n\n**base_record** - [UnitLookupWhereUniqueInput](UnitLookupWhereUniqueInput.md)\n[optional] \n\n**base_unit** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**conversion_rate** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**name** - [StringFilter](StringFilter.md)\n[optional] \n\n**plural_abbreviation** - [StringFilter](StringFilter.md)\n[optional] \n\n**plural_name** - [StringFilter](StringFilter.md)\n[optional] \n\n**type_name** - [StringFilter](StringFilter.md)\n[optional] \n\n**unit_lookup_records** - [UnitLookupListRelationFilter](UnitLookupListRelationFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "1cc279feafa73ce37257629b9b75701e8d92c83883a2b833eea9d10e741e0760"
+  }
+}

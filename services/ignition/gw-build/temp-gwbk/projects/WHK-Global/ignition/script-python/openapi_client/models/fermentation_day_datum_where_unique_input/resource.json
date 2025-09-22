@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationDayDatumWhereUniqueInput\n\n## Properties\n**id** - str\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "b85a91a86f94467b8b0ea3c262346ac7aa9cd87bcad7ba6fdd7100087c2040d8"
+  }
+}

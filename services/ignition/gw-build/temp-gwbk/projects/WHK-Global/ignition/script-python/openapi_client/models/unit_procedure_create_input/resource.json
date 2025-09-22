@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitProcedureCreateInput\n\n## Properties\n**abbreviation** - str\n[optional] \n\n**active** - bool\n[optional] \n\n**boms** - [BomWhereUniqueInput](BomWhereUniqueInput.md)\n[optional] \n\n**class_id** - [UnitProcedureWhereUniqueInput](UnitProcedureWhereUniqueInput.md)\n[optional] \n\n**created_by** - str\n\n\n**description** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**instances** - [UnitProcedureCreateNestedManyWithoutUnitProceduresInput](UnitProcedureCreateNestedManyWithoutUnitProceduresInput.md)\n[optional] \n\n**is_class_def** - bool\n[optional] \n\n**name** - str\n\n\n**operations** - [OperationCreateNestedManyWithoutUnitProceduresInput](OperationCreateNestedManyWithoutUnitProceduresInput.md)\n[optional] \n\n**path** - str\n[optional] \n\n**primary_bom** - [BomWhereUniqueInput](BomWhereUniqueInput.md)\n[optional] \n\n**procedure** - [ProcedureWhereUniqueInput](ProcedureWhereUniqueInput.md)\n\n\n**recipe** - [RecipeCreateNestedManyWithoutUnitProceduresInput](RecipeCreateNestedManyWithoutUnitProceduresInput.md)\n[optional] \n\n**revision** - float\n[optional] \n\n**schedule_order_queues** - [ScheduleOrderQueueCreateNestedManyWithoutUnitProceduresInput](ScheduleOrderQueueCreateNestedManyWithoutUnitProceduresInput.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "4ecbfc8b140a75075d4c72799a5081168f89263754c77da8dca749e8864daad9"
+  }
+}

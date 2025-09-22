@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BomItemUpdateManyWithoutBomsInput\n\n## Properties\n**connect** - [list[BomItemWhereUniqueInput]](BomItemWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[BomItemWhereUniqueInput]](BomItemWhereUniqueInput.md)\n[optional] \n\n**set** - [list[BomItemWhereUniqueInput]](BomItemWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "bde6a48f159de511c5ec77f54ada1f57f316f57d8a3c5e44e81e74c70f203264"
+  }
+}

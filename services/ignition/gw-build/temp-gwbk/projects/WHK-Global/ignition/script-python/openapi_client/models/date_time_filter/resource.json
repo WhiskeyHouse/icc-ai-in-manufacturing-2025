@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# DateTimeFilter\n\n## Properties\n**equals** - datetime\n[optional] \n\n**_not** - datetime\n[optional] \n\n**_in** - list[datetime]\n[optional] \n\n**not_in** - list[datetime]\n[optional] \n\n**lt** - datetime\n[optional] \n\n**lte** - datetime\n[optional] \n\n**gt** - datetime\n[optional] \n\n**gte** - datetime\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "43aff34a6f7cef89ec3dffa54c32a534c7bceb95947189da48a671f95fbb23de"
+  }
+}

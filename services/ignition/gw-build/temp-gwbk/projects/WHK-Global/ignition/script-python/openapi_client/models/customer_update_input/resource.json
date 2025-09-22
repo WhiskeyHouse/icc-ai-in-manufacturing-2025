@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# CustomerUpdateInput\n\n## Properties\n**address** - str\n[optional] \n\n**batches** - [BatchUpdateManyWithoutCustomersInput](BatchUpdateManyWithoutCustomersInput.md)\n[optional] \n\n**created_by** - str\n[optional] \n\n**customer_code** - str\n[optional] \n\n**description** - str\n[optional] \n\n**edited_by** - str\n[optional] \n\n**email** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**inventory_log** - [InventoryLogWhereUniqueInput](InventoryLogWhereUniqueInput.md)\n[optional] \n\n**name** - str\n[optional] \n\n**phone** - str\n[optional] \n\n**production_orders** - [ProductionOrderUpdateManyWithoutCustomersInput](ProductionOrderUpdateManyWithoutCustomersInput.md)\n[optional] \n\n**recipes** - [RecipeUpdateManyWithoutCustomersInput](RecipeUpdateManyWithoutCustomersInput.md)\n[optional] \n\n**revision** - float\n[optional] \n\n**sales_orders** - [SalesOrderUpdateManyWithoutCustomersInput](SalesOrderUpdateManyWithoutCustomersInput.md)\n[optional] \n\n**schedule_orders** - [ScheduleOrderUpdateManyWithoutCustomersInput](ScheduleOrderUpdateManyWithoutCustomersInput.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "7ab4b04dca731832071f82e112195a064057786aa59bb0259b4461e6853ab5c0"
+  }
+}

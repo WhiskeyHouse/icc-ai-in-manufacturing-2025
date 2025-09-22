@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# AssetUpdateInput\n\n## Properties\n**asset_path** - str\n[optional] \n\n**asset_type** - str\n[optional] \n\n**batches** - [BatchUpdateManyWithoutAssetsInput](BatchUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**children** - [AssetUpdateManyWithoutAssetsInput](AssetUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**created_by** - str\n[optional] \n\n**description** - str\n[optional] \n\n**fermentation_chemistries** - [FermentationChemistryUpdateManyWithoutAssetsInput](FermentationChemistryUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**fermentation_day_data** - [FermentationDayDatumUpdateManyWithoutAssetsInput](FermentationDayDatumUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**inventories** - [InventoryUpdateManyWithoutAssetsInput](InventoryUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**inventory_logs** - [InventoryLogUpdateManyWithoutAssetsInput](InventoryLogUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**inventory_transfers_from** - [InventoryTransferUpdateManyWithoutAssetsInput](InventoryTransferUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**inventory_transfers_to** - [InventoryTransferUpdateManyWithoutAssetsInput](InventoryTransferUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**item_receipts** - [ItemReceiptUpdateManyWithoutAssetsInput](ItemReceiptUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**lot_proofing_tank** - [LotUpdateManyWithoutAssetsInput](LotUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**lot_tankof_origin** - [LotUpdateManyWithoutAssetsInput](LotUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**lots** - [LotUpdateManyWithoutAssetsInput](LotUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**lots_filled_from** - [LotUpdateManyWithoutAssetsInput](LotUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**mashing_data** - [MashingDatumUpdateManyWithoutAssetsInput](MashingDatumUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**name** - str\n[optional] \n\n**parent** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**proof_initial** - float\n[optional] \n\n**purchase_orders** - [PurchaseOrderUpdateManyWithoutAssetsInput](PurchaseOrderUpdateManyWithoutAssetsInput.md)\n[optional] \n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**status** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "79c4e27f5f52b49511481725133711cf1b4b828a97f5d8f8b03a4e09e8690229"
+  }
+}

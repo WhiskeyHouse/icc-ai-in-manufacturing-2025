@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationDayDatum\n\n## Properties\n**acid** - float\n\n\n**asset** - [Asset](Asset.md)\n[optional] \n\n**balling** - float\n\n\n**created_at** - datetime\n\n\n**day** - str\n[optional] \n\n**dry_inches** - float\n[optional] \n\n**fermentation_chemistry** - [FermentationChemistry](FermentationChemistry.md)\n[optional] \n\n**fermenter_number** - float\n\n\n**id** - str\n\n\n**logged_by** - str\n\n\n**lot_id** - str\n\n\n**operation** - [Operation](Operation.md)\n\n\n**p_h** - float\n\n\n**production_order** - [ProductionOrder](ProductionOrder.md)\n\n\n**temperature** - float\n\n\n**updated_at** - datetime\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "9f34a9606b1939b5401613d512c831c5a15f400fbb88836c742ee2bc16bce791"
+  }
+}

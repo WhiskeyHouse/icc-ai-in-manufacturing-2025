@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemWhereUniqueInput\n\n## Properties\n**id** - str\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "96eafd89e517c4f01c1bb73b043dac812ea6334056e8487bbe6b09dd081a0e6b"
+  }
+}

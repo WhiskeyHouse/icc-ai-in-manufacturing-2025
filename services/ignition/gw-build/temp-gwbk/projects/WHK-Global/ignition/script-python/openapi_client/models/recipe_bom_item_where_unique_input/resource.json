@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeBomItemWhereUniqueInput\n\n## Properties\n**id** - str\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "4b5d6ff479da800fd7d2617db930a46831fbe745fe9d3fe0203b55049d42f072"
+  }
+}

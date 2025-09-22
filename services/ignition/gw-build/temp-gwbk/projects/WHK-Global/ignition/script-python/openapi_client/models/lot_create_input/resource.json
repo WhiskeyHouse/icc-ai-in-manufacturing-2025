@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# LotCreateInput\n\n## Properties\n**avg_bbl_fill_by_pg** - float\n[optional] \n\n**avg_bbl_fill_by_wg** - float\n[optional] \n\n**avg_pgs_ferm** - float\n[optional] \n\n**batches** - [BatchCreateNestedManyWithoutLotsInput](BatchCreateNestedManyWithoutLotsInput.md)\n\n\n**bbl_entry_proof** - float\n[optional] \n\n**bbl_oem** - str\n[optional] \n\n**bbl_total** - float\n[optional] \n\n**bbl_type** - str\n[optional] \n\n**bom_items** - [BomItemCreateNestedManyWithoutLotsInput](BomItemCreateNestedManyWithoutLotsInput.md)\n[optional] \n\n**confirmed** - bool\n[optional] \n\n**continer_item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**created_by** - str\n[optional] \n\n**density_final** - float\n[optional] \n\n**external_id** - str\n[optional] \n\n**filled_from** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**filled_from_string** - str\n[optional] \n\n**final_volume** - float\n[optional] \n\n**final_weight** - float\n[optional] \n\n**from_asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**grain_lbs_ferm** - float\n[optional] \n\n**grain_lbs_pg** - float\n[optional] \n\n**initial_volume** - float\n[optional] \n\n**initial_weight** - float\n[optional] \n\n**inventory_transfers** - [InventoryTransferCreateNestedManyWithoutLotsInput](InventoryTransferCreateNestedManyWithoutLotsInput.md)\n[optional] \n\n**is_raw_material** - bool\n[optional] \n\n**item** - [ItemCreateNestedManyWithoutLotsInput](ItemCreateNestedManyWithoutLotsInput.md)\n[optional] \n\n**lot_alpha_char** - str\n[optional] \n\n**lot_created_at** - object\n[optional] \n\n**lot_number** - str\n\n\n**notes** - str\n[optional] \n\n**pg_losses** - float\n[optional] \n\n**production_order** - [ProductionOrderWhereUniqueInput](ProductionOrderWhereUniqueInput.md)\n[optional] \n\n**proof_initial** - float\n[optional] \n\n**proofing_tank** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**purchase_order_accepted_lots** - [PurchaseOrderWhereUniqueInput](PurchaseOrderWhereUniqueInput.md)\n[optional] \n\n**recipe** - [RecipeWhereUniqueInput](RecipeWhereUniqueInput.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n**standard_yield** - float\n[optional] \n\n**status** - str\n[optional] \n\n**tank_of_origin** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**total_fermenters** - float\n[optional] \n\n**total_pgs** - float\n[optional] \n\n**total_pgs_by_recipe** - float\n[optional] \n\n**total_volume_wg** - float\n[optional] \n\n**total_wgs** - float\n[optional] \n\n**total_weight** - float\n[optional] \n\n**warehouse_entry_number** - float\n[optional] \n\n**whiskey_type** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "5fb2248d09615d5fd2fd9f2b9bd4aeb10f90b049c0b7ad5eb6c00d3de37dc618"
+  }
+}

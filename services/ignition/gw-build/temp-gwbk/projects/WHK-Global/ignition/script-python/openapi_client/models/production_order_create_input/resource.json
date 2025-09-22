@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ProductionOrderCreateInput\n\n## Properties\n**batches** - [BatchCreateNestedManyWithoutProductionOrdersInput](BatchCreateNestedManyWithoutProductionOrdersInput.md)\n[optional] \n\n**bom** - [BomWhereUniqueInput](BomWhereUniqueInput.md)\n\n\n**class_name** - str\n[optional] \n\n**complete** - bool\n[optional] \n\n**completed_cooks** - float\n[optional] \n\n**completed_fermenters** - float\n[optional] \n\n**completed_quantity** - float\n[optional] \n\n**created_by** - str\n\n\n**customer** - [CustomerWhereUniqueInput](CustomerWhereUniqueInput.md)\n\n\n**customer_code** - str\n[optional] \n\n**end_date** - object\n[optional] \n\n**estimated_barrels_per_fermenter** - float\n[optional] \n\n**estimated_pgs_per_bbl** - float\n[optional] \n\n**estimated_pgs_per_bushel** - float\n[optional] \n\n**fermentation_chemistries** - [FermentationChemistryCreateNestedManyWithoutProductionOrdersInput](FermentationChemistryCreateNestedManyWithoutProductionOrdersInput.md)\n[optional] \n\n**fermentation_day_data** - [FermentationDayDatumCreateNestedManyWithoutProductionOrdersInput](FermentationDayDatumCreateNestedManyWithoutProductionOrdersInput.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**in_process** - bool\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n\n\n**lots** - [LotCreateNestedManyWithoutProductionOrdersInput](LotCreateNestedManyWithoutProductionOrdersInput.md)\n[optional] \n\n**name** - str\n[optional] \n\n**planned_cooks** - float\n[optional] \n\n**planned_fermenters** - float\n[optional] \n\n**production_order_recipe_instances** - [ProductionOrderRecipeInstanceCreateNestedManyWithoutProductionOrdersInput](ProductionOrderRecipeInstanceCreateNestedManyWithoutProductionOrdersInput.md)\n[optional] \n\n**quantity** - float\n[optional] \n\n**recipe** - [RecipeWhereUniqueInput](RecipeWhereUniqueInput.md)\n[optional] \n\n**recipe_group** - [RecipeGroupWhereUniqueInput](RecipeGroupWhereUniqueInput.md)\n[optional] \n\n**sales_order** - [SalesOrderWhereUniqueInput](SalesOrderWhereUniqueInput.md)\n[optional] \n\n**schedule_order** - [ScheduleOrderWhereUniqueInput](ScheduleOrderWhereUniqueInput.md)\n[optional] \n\n**scheduled** - bool\n[optional] \n\n**schema_version** - str\n[optional] \n\n**start_date** - object\n[optional] \n\n**status** - str\n[optional] \n\n**units** - str\n[optional] \n\n**updated_by** - object\n[optional] \n\n**total_fermenters** - float\n[optional] \n\n**total_cooks** - float\n[optional] \n\n**executed_cooks** - float\n[optional] \n\n**executed_fermenters** - float\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "29f90f2482c194e17f870e17dfe3c9b97c7058e37ffc4a8c89b63c4801a42ea3"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingDatumWhereInput\n\n## Properties\n**additive_actuals** - [AdditiveActualListRelationFilter](AdditiveActualListRelationFilter.md)\n[optional] \n\n**asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**backset_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**bom** - [BomWhereUniqueInput](BomWhereUniqueInput.md)\n[optional] \n\n**cook_complete_time** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**cook_drop_time** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**cook_duration** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**cook_start_time** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**cook_started_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**cooker_number** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**corn_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**drop_duration** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**malt_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**operation** - [OperationWhereUniqueInput](OperationWhereUniqueInput.md)\n[optional] \n\n**pre_malt_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**recipe_bom** - [RecipeBomWhereUniqueInput](RecipeBomWhereUniqueInput.md)\n[optional] \n\n**rye_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**specialty_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**total_duration** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**water_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**wheat_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "3a6e8059c732a6e677092024c9f20d1c4dcd94dc48acc8474bb1555ad95bda00"
+  }
+}

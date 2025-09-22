@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# SalesOrderUpdateInput\n\n## Properties\n**created_by** - str\n[optional] \n\n**customer** - [CustomerWhereUniqueInput](CustomerWhereUniqueInput.md)\n[optional] \n\n**customer_code** - str\n[optional] \n\n**erp_id** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**item** - [ItemUpdateManyWithoutSalesOrdersInput](ItemUpdateManyWithoutSalesOrdersInput.md)\n[optional] \n\n**line_items** - object\n[optional] \n\n**name** - str\n[optional] \n\n**order_type** - str\n[optional] \n\n**production_orders** - [ProductionOrderWhereUniqueInput](ProductionOrderWhereUniqueInput.md)\n[optional] \n\n**quantity** - float\n[optional] \n\n**requested_ship_date** - object\n[optional] \n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "1e81d9bae9f498f06667a064519b2661bca01832ac3ad568c0d6ab2be79058ab"
+  }
+}

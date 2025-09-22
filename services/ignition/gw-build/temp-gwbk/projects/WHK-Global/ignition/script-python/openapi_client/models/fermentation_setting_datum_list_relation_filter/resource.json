@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationSettingDatumListRelationFilter\n\n## Properties\n**every** - [FermentationSettingDatumWhereInput](FermentationSettingDatumWhereInput.md)\n[optional] \n\n**some** - [FermentationSettingDatumWhereInput](FermentationSettingDatumWhereInput.md)\n[optional] \n\n**_none** - [FermentationSettingDatumWhereInput](FermentationSettingDatumWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "6346534d5ee67da5cf3b8c8765091c3453e8aa2e0ebbc2d69829e5030cc9eb9c"
+  }
+}

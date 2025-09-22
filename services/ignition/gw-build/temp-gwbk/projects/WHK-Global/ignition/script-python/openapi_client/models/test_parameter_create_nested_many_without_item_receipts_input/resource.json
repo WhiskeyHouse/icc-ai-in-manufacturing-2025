@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# TestParameterCreateNestedManyWithoutItemReceiptsInput\n\n## Properties\n**connect** - [list[TestParameterWhereUniqueInput]](TestParameterWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "de804d2b6bb72dc90083feba021f78f9d9ae289e02a43ec47a0c4610502497f7"
+  }
+}

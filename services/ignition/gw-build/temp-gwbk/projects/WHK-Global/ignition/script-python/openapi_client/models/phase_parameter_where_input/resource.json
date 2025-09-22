@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# PhaseParameterWhereInput\n\n## Properties\n**active** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**class_id** - [PhaseParameterWhereUniqueInput](PhaseParameterWhereUniqueInput.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**description** - [StringFilter](StringFilter.md)\n[optional] \n\n**edited_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**equipment_phases** - [EquipmentPhaseListRelationFilter](EquipmentPhaseListRelationFilter.md)\n[optional] \n\n**global_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**instances** - [PhaseParameterListRelationFilter](PhaseParameterListRelationFilter.md)\n[optional] \n\n**is_class_def** - [BooleanFilter](BooleanFilter.md)\n[optional] \n\n**is_static_parameter** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**item_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**name** - [StringFilter](StringFilter.md)\n[optional] \n\n**recipe_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**revision** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**setpoint_boolean_value** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**setpoint_lower_limit** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**setpoint_numerical_value** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**setpoint_type** - str\n[optional] \n\n**setpoint_upper_limit** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**static_name** - str\n[optional] \n\n**string_value** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**units** - [StringFilter](StringFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "f1abcdbe2db30357e2da4afffc9d59f1ce919000d7889467655bdf159a4c6d9c"
+  }
+}

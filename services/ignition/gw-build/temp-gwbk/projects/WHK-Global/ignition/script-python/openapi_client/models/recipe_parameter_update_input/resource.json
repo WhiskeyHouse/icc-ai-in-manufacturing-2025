@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeParameterUpdateInput\n\n## Properties\n**active** - bool\n[optional] \n\n**class_name** - str\n[optional] \n\n**created_by** - str\n[optional] \n\n**description** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**is_class_definition** - bool\n[optional] \n\n**operation** - str\n[optional] \n\n**operation_index** - float\n[optional] \n\n**recipe** - [RecipeUpdateManyWithoutRecipeParametersInput](RecipeUpdateManyWithoutRecipeParametersInput.md)\n[optional] \n\n**recipe_numerical_setpoint** - float\n[optional] \n\n**recipe_param_description** - str\n[optional] \n\n**recipe_param_name** - str\n[optional] \n\n**recipe_param_units** - str\n[optional] \n\n**recipe_setpoint_boolean_value** - bool\n[optional] \n\n**recipe_setpoint_lower_limit** - float\n[optional] \n\n**recipe_setpoint_type** - str\n[optional] \n\n**recipe_setpoint_upper_limit** - float\n[optional] \n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "eca43683e65ae90fa7e279032234b16c2517190a39ebfcf78b7773d038dfa440"
+  }
+}

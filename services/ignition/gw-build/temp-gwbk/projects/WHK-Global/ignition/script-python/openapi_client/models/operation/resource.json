@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# Operation\n\n## Properties\n**abbreviation** - str\n\n\n**active** - bool\n[optional] \n\n**auxiliary_phases** - object\n[optional] \n\n**class_id** - [Operation](Operation.md)\n[optional] \n\n**created_at** - object\n[optional] \n\n**created_by** - str\n\n\n**description** - str\n\n\n**edited_by** - str\n[optional] \n\n**equipment_phases** - [list[EquipmentPhase]](EquipmentPhase.md)\n[optional] \n\n**fermentation_chemistries** - [list[FermentationChemistry]](FermentationChemistry.md)\n[optional] \n\n**fermentation_day_data** - [list[FermentationDayDatum]](FermentationDayDatum.md)\n[optional] \n\n**fermentation_setting_data** - [list[FermentationSettingDatum]](FermentationSettingDatum.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**instances** - [list[Operation]](Operation.md)\n[optional] \n\n**is_class_definition** - bool\n[optional] \n\n**lot_id** - str\n[optional] \n\n**mashing_data** - [list[MashingDatum]](MashingDatum.md)\n[optional] \n\n**name** - str\n\n\n**path** - str\n[optional] \n\n**procedure_sequence_index** - float\n\n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**unit_procedure** - [UnitProcedure](UnitProcedure.md)\n[optional] \n\n**updated_at** - object\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "538ec24c36fd4243c14e8999a66bb08ce990903e4ac53ae3f232fc1c4462ab8b"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# IntNullableFilter\n\n## Properties\n**equals** - float\n[optional] \n\n**_in** - list[float]\n[optional] \n\n**not_in** - list[float]\n[optional] \n\n**lt** - float\n[optional] \n\n**lte** - float\n[optional] \n\n**gt** - float\n[optional] \n\n**gte** - float\n[optional] \n\n**_not** - float\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "6b192dd5e5d60365b7d86f9a59fc3918e4bfee064d4bf03bf2d3bb09ab26cf34"
+  }
+}

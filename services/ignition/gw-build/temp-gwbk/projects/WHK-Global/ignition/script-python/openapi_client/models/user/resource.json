@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# User\n\n## Properties\n**created_at** - datetime\n\n\n**first_name** - str\n[optional] \n\n**id** - str\n\n\n**last_name** - str\n[optional] \n\n**roles** - object\n\n\n**updated_at** - datetime\n\n\n**username** - str\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "e9b5d3e3bebad7068df31847494333133fd4d718538b94c84001e9481e4cd91f"
+  }
+}

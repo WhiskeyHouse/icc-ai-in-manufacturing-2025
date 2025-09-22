@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# AdditiveActualCreateNestedManyWithoutItemsInput\n\n## Properties\n**connect** - [list[AdditiveActualWhereUniqueInput]](AdditiveActualWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "5fba71a4bfd482c15603f61ad287531012aa1a2b7d8a44ea1c35ff375426e047"
+  }
+}

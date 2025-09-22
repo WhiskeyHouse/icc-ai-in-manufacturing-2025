@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeBomItemCreateNestedManyWithoutItemsInput\n\n## Properties\n**connect** - [list[RecipeBomItemWhereUniqueInput]](RecipeBomItemWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "1bd61cfd2fa3953e5bedd4dd4cb099829e19b54903ea2903da048e0c92eb5804"
+  }
+}

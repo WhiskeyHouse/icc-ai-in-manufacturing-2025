@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnsBrokerConfiguration\n\n## Properties\n**base_topic_path** - str\n[optional] \n\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**host** - str\n\n\n**id** - str\n\n\n**port** - float\n[optional] \n\n**protocol** - str\n[optional] \n\n**subscriptions** - object\n[optional] \n\n**tls** - bool\n[optional] \n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n**username** - str\n[optional] \n\n**validate_certificate** - bool\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "8b37e56622341236003ea0e80bf0fdfbf1f2bcdf30a8e90c89b77fd21a1e8330"
+  }
+}

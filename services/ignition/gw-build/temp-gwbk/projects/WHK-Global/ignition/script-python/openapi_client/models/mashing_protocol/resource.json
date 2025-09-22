@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocol\n\n## Properties\n**batches** - [list[Batch]](Batch.md)\n[optional] \n\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**id** - str\n\n\n**master** - bool\n[optional] \n\n**master_instances** - [list[MashingProtocol]](MashingProtocol.md)\n[optional] \n\n**master_mashing_protocol** - [MashingProtocol](MashingProtocol.md)\n[optional] \n\n**name** - str\n\n\n**production_order_recipe_instances** - [list[ProductionOrderRecipeInstance]](ProductionOrderRecipeInstance.md)\n[optional] \n\n**recipes** - [list[Recipe]](Recipe.md)\n[optional] \n\n**revision** - str\n[optional] \n\n**running** - bool\n[optional] \n\n**running_instances** - [list[MashingProtocol]](MashingProtocol.md)\n[optional] \n\n**running_mashing_protocol** - [MashingProtocol](MashingProtocol.md)\n[optional] \n\n**steps** - [list[MashingProtocolStep]](MashingProtocolStep.md)\n\n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "87895cf77160858b9fab5e8414f64e14a91895660bff83c2d6c417762f6a1b47"
+  }
+}

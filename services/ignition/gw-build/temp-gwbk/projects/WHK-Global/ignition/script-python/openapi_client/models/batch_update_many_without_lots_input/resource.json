@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BatchUpdateManyWithoutLotsInput\n\n## Properties\n**connect** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n**set** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "0ee56a540c00a2923767703133716bb9396725edf2117727a7a74f97547d0fae"
+  }
+}

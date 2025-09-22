@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# EquipmentPhaseCreateNestedManyWithoutTestParametersInput\n\n## Properties\n**connect** - [list[EquipmentPhaseWhereUniqueInput]](EquipmentPhaseWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "36a4c4b7e8b4ad381f1791f618aa70025bc576e4f90df7e7a82407af514501a5"
+  }
+}

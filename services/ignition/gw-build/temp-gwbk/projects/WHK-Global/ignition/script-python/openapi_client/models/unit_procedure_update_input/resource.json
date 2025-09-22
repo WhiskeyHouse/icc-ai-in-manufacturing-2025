@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitProcedureUpdateInput\n\n## Properties\n**abbreviation** - str\n[optional] \n\n**active** - bool\n[optional] \n\n**boms** - [BomWhereUniqueInput](BomWhereUniqueInput.md)\n[optional] \n\n**class_id** - [UnitProcedureWhereUniqueInput](UnitProcedureWhereUniqueInput.md)\n[optional] \n\n**created_by** - str\n[optional] \n\n**description** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**instances** - [UnitProcedureUpdateManyWithoutUnitProceduresInput](UnitProcedureUpdateManyWithoutUnitProceduresInput.md)\n[optional] \n\n**is_class_def** - bool\n[optional] \n\n**name** - str\n[optional] \n\n**operations** - [OperationUpdateManyWithoutUnitProceduresInput](OperationUpdateManyWithoutUnitProceduresInput.md)\n[optional] \n\n**path** - str\n[optional] \n\n**primary_bom** - [BomWhereUniqueInput](BomWhereUniqueInput.md)\n[optional] \n\n**procedure** - [ProcedureWhereUniqueInput](ProcedureWhereUniqueInput.md)\n[optional] \n\n**recipe** - [RecipeUpdateManyWithoutUnitProceduresInput](RecipeUpdateManyWithoutUnitProceduresInput.md)\n[optional] \n\n**revision** - float\n[optional] \n\n**schedule_order_queues** - [ScheduleOrderQueueUpdateManyWithoutUnitProceduresInput](ScheduleOrderQueueUpdateManyWithoutUnitProceduresInput.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "bb6e83d6a23a5cea16afa9d6e49260b6799982b146740ccfafe6b1e6e5bb2bc0"
+  }
+}

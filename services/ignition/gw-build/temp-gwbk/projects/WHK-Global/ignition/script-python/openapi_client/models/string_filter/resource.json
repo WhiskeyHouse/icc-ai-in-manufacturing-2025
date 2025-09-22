@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# StringFilter\n\n## Properties\n**equals** - str\n[optional] \n\n**_in** - list[str]\n[optional] \n\n**not_in** - list[str]\n[optional] \n\n**lt** - str\n[optional] \n\n**lte** - str\n[optional] \n\n**gt** - str\n[optional] \n\n**gte** - str\n[optional] \n\n**contains** - str\n[optional] \n\n**starts_with** - str\n[optional] \n\n**ends_with** - str\n[optional] \n\n**mode** - str\n[optional] \n\n**_not** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "b20a88524daa8f4fc6dab95b25ef10592bae4ecd9a4ec83b0e09bb627c61e3eb"
+  }
+}

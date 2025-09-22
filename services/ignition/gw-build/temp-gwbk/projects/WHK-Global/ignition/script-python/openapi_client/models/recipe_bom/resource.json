@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeBom\n\n## Properties\n**created_at** - datetime\n\n\n**id** - str\n\n\n**mashing_data** - [list[MashingDatum]](MashingDatum.md)\n[optional] \n\n**master** - bool\n[optional] \n\n**master_instances** - [list[RecipeBom]](RecipeBom.md)\n[optional] \n\n**master_recipe_bom** - [RecipeBom](RecipeBom.md)\n[optional] \n\n**production_order_recipe_instances** - [list[ProductionOrderRecipeInstance]](ProductionOrderRecipeInstance.md)\n[optional] \n\n**recipe** - [list[Recipe]](Recipe.md)\n[optional] \n\n**recipe_bom_i_tem** - [list[RecipeBomItem]](RecipeBomItem.md)\n\n\n**revision** - str\n[optional] \n\n**running** - bool\n[optional] \n\n**running_instances** - [list[RecipeBom]](RecipeBom.md)\n[optional] \n\n**running_recipe_bom** - [RecipeBom](RecipeBom.md)\n[optional] \n\n**updated_at** - datetime\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "b457176c08bcd9b8bccabc6d66a53157eab52f774497d66c1a298114f825774c"
+  }
+}

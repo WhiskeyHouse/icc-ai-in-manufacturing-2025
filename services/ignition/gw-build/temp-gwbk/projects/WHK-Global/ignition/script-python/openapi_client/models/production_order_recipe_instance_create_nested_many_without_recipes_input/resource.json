@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ProductionOrderRecipeInstanceCreateNestedManyWithoutRecipesInput\n\n## Properties\n**connect** - [list[ProductionOrderRecipeInstanceWhereUniqueInput]](ProductionOrderRecipeInstanceWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "0bf1c6a572a3707a65f6a2faca449075db14a694d7e0f296946fcc68d57bac2c"
+  }
+}

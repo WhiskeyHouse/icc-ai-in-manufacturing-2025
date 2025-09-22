@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryLogWhereInput\n\n## Properties\n**asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**customers** - [CustomerListRelationFilter](CustomerListRelationFilter.md)\n[optional] \n\n**date** - [DateTimeFilter](DateTimeFilter.md)\n[optional] \n\n**date_time** - [DateTimeFilter](DateTimeFilter.md)\n[optional] \n\n**quantity** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**logged_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**raw_measurement_units** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**raw_measurement_value** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**revised_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**revision** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**units** - [StringFilter](StringFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "34f3508a48d54a2516a6daf38a5facbac9af56867a5774519aeab3e5291121a4"
+  }
+}

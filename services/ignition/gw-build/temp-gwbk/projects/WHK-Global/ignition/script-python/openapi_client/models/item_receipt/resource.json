@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemReceipt\n\n## Properties\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**driver** - str\n\n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**inventories** - [list[Inventory]](Inventory.md)\n[optional] \n\n**item** - [Item](Item.md)\n\n\n**load_id** - float\n[optional] \n\n**lots** - object\n[optional] \n\n**purchase_order** - [PurchaseOrder](PurchaseOrder.md)\n[optional] \n\n**quantity** - float\n\n\n**schema_version** - str\n[optional] \n\n**status** - str\n[optional] \n\n**supplier_lot** - str\n[optional] \n\n**tests** - [list[TestParameter]](TestParameter.md)\n[optional] \n\n**tests_passed** - bool\n[optional] \n\n**to_asset** - [Asset](Asset.md)\n[optional] \n\n**units** - str\n\n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n**weigh_in** - float\n[optional] \n\n**weigh_out** - float\n[optional] \n\n**silo_number** - float\n[optional] \n\n**asset** - [Asset](Asset.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "1bc2686655e91ad0bc033b4069935958ca86bc5ad41692ece235729842e6c80f"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeBomCreateInput\n\n## Properties\n**mashing_data** - [MashingDatumCreateNestedManyWithoutRecipeBomsInput](MashingDatumCreateNestedManyWithoutRecipeBomsInput.md)\n[optional] \n\n**master** - bool\n[optional] \n\n**master_instances** - [RecipeBomCreateNestedManyWithoutRecipeBomsInput](RecipeBomCreateNestedManyWithoutRecipeBomsInput.md)\n[optional] \n\n**master_recipe_bom** - [RecipeBomWhereUniqueInput](RecipeBomWhereUniqueInput.md)\n[optional] \n\n**production_order_recipe_instances** - [ProductionOrderRecipeInstanceCreateNestedManyWithoutRecipeBomsInput](ProductionOrderRecipeInstanceCreateNestedManyWithoutRecipeBomsInput.md)\n[optional] \n\n**recipe** - [RecipeCreateNestedManyWithoutRecipeBomsInput](RecipeCreateNestedManyWithoutRecipeBomsInput.md)\n[optional] \n\n**recipe_bom_i_tem** - [RecipeBomItemCreateNestedManyWithoutRecipeBomsInput](RecipeBomItemCreateNestedManyWithoutRecipeBomsInput.md)\n\n\n**revision** - str\n[optional] \n\n**running** - bool\n[optional] \n\n**running_instances** - [RecipeBomCreateNestedManyWithoutRecipeBomsInput](RecipeBomCreateNestedManyWithoutRecipeBomsInput.md)\n[optional] \n\n**running_recipe_bom** - [RecipeBomWhereUniqueInput](RecipeBomWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "17870da04885c882ce2fa58e27f212165cfc2115223075aa0cdf7199973ca768"
+  }
+}

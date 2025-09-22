@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolStepCreateNestedManyWithoutRecipeBomItemsInput\n\n## Properties\n**connect** - [list[MashingProtocolStepWhereUniqueInput]](MashingProtocolStepWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "c57d0a08af73ca411157f5a3ed62db8b6fffa666b6c3ca6ee5d28ebdba777b10"
+  }
+}

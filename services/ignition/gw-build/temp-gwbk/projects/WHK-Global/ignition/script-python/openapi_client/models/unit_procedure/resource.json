@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitProcedure\n\n## Properties\n**abbreviation** - str\n[optional] \n\n**active** - bool\n[optional] \n\n**boms** - [Bom](Bom.md)\n[optional] \n\n**class_id** - [UnitProcedure](UnitProcedure.md)\n[optional] \n\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**description** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**instances** - [list[UnitProcedure]](UnitProcedure.md)\n[optional] \n\n**is_class_def** - bool\n[optional] \n\n**name** - str\n\n\n**operations** - [list[Operation]](Operation.md)\n[optional] \n\n**path** - str\n[optional] \n\n**primary_bom** - [Bom](Bom.md)\n[optional] \n\n**procedure** - [Procedure](Procedure.md)\n\n\n**recipe** - [list[Recipe]](Recipe.md)\n[optional] \n\n**revision** - float\n[optional] \n\n**schedule_order_queues** - [list[ScheduleOrderQueue]](ScheduleOrderQueue.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "7d87871ec1f933c5ec21a7c02e83ccdb304363c5ffd3c4977eb480c0c8d2432a"
+  }
+}

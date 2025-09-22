@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolUpdateManyWithoutProductionOrderRecipeInstancesInput\n\n## Properties\n**connect** - [list[MashingProtocolWhereUniqueInput]](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[MashingProtocolWhereUniqueInput]](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n**set** - [list[MashingProtocolWhereUniqueInput]](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "01a08ae6d953f8597f6315f5a3f76cdce6420b4855cf8a2fbc9870cff477439d"
+  }
+}

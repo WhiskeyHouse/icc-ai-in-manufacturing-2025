@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# EquipmentPhaseUpdateInput\n\n## Properties\n**active** - bool\n[optional] \n\n**bom_item** - [BomItemUpdateManyWithoutEquipmentPhasesInput](BomItemUpdateManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n**class_id** - [EquipmentPhaseWhereUniqueInput](EquipmentPhaseWhereUniqueInput.md)\n[optional] \n\n**class_name** - str\n[optional] \n\n**created_by** - str\n[optional] \n\n**description** - str\n[optional] \n\n**edited_by** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**instances** - [EquipmentPhaseUpdateManyWithoutEquipmentPhasesInput](EquipmentPhaseUpdateManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n**instructions** - [InstructionUpdateManyWithoutEquipmentPhasesInput](InstructionUpdateManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n**is_class_definition** - bool\n[optional] \n\n**message** - str\n[optional] \n\n**name** - str\n[optional] \n\n**operation** - [OperationWhereUniqueInput](OperationWhereUniqueInput.md)\n[optional] \n\n**operation_sequence_index** - float\n[optional] \n\n**path** - str\n[optional] \n\n**phase_parameters** - [PhaseParameterUpdateManyWithoutEquipmentPhasesInput](PhaseParameterUpdateManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**step_type** - str\n[optional] \n\n**test_parameters** - [TestParameterUpdateManyWithoutEquipmentPhasesInput](TestParameterUpdateManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "7b1cda10f0d41bd5816176ca1699dba06654507274203f2e12c859533b6b4ee7"
+  }
+}

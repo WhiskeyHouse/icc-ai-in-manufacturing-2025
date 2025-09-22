@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ScheduleOrderQueueControllerUpdateScheduleOrderQueueIndexRequest\n\n## Properties\n**new_index** - float\n[optional] New queue index position\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "4fd634f2537eec7aeae3b04071c2ec32f3a255e6209f37e919c7d1ee4dd429bd"
+  }
+}

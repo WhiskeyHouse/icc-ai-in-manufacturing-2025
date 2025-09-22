@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitProcedureCreateNestedManyWithoutUnitProceduresInput\n\n## Properties\n**connect** - [list[UnitProcedureWhereUniqueInput]](UnitProcedureWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "48cd9ad767ad2abb3783b38bb59b15e42ff3fcf757d9ee8574d4f4d309951bf8"
+  }
+}

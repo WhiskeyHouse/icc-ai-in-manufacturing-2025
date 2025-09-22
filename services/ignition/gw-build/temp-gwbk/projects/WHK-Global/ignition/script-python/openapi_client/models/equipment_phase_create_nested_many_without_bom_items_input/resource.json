@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# EquipmentPhaseCreateNestedManyWithoutBomItemsInput\n\n## Properties\n**connect** - [list[EquipmentPhaseWhereUniqueInput]](EquipmentPhaseWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "85930793efb43b232cfda632ae398551db09b749e0bb31907d3fdc793c958108"
+  }
+}

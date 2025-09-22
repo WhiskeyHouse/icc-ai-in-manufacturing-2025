@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BatchUpdateManyWithoutRecipesInput\n\n## Properties\n**connect** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n**set** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "96d9f6b8c6d86e6e9d9672ac71ab2f5ad789563ef4344bd59d87fb42ee8b9731"
+  }
+}

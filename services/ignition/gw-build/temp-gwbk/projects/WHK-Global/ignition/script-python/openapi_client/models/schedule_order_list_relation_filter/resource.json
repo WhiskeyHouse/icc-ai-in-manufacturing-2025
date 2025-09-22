@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ScheduleOrderListRelationFilter\n\n## Properties\n**every** - [ScheduleOrderWhereInput](ScheduleOrderWhereInput.md)\n[optional] \n\n**some** - [ScheduleOrderWhereInput](ScheduleOrderWhereInput.md)\n[optional] \n\n**_none** - [ScheduleOrderWhereInput](ScheduleOrderWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "a8ba787b0d082b5edc95b4d9edb6403ddff1da636bbb487ccc173499c9d50ba5"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolStep\n\n## Properties\n**agitator_enabled** - bool\n[optional] \n\n**agitator_spd_sp** - float\n[optional] \n\n**cool_enabled** - bool\n[optional] \n\n**cool_temp_sp** - float\n[optional] \n\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**heat_enabled** - bool\n[optional] \n\n**heat_temp_sp** - float\n[optional] \n\n**hold_type** - str\n[optional] \n\n**id** - str\n\n\n**index** - float\n[optional] \n\n**is_class_definition** - bool\n[optional] \n\n**mashing_protocol** - [MashingProtocol](MashingProtocol.md)\n[optional] \n\n**prompt_message** - str\n[optional] \n\n**recipe_bom_item** - [list[RecipeBomItem]](RecipeBomItem.md)\n[optional] \n\n**step_time** - float\n[optional] \n\n**step_type** - str\n[optional] \n\n**temperature_actual** - float\n[optional] \n\n**temperature_setpoint** - float\n[optional] \n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "07d9751f11129247b8c6416efa88ed63ecd9d13a6572704684f28e16c581372d"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeUpdateManyWithoutMashingProtocolsInput\n\n## Properties\n**connect** - [list[RecipeWhereUniqueInput]](RecipeWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[RecipeWhereUniqueInput]](RecipeWhereUniqueInput.md)\n[optional] \n\n**set** - [list[RecipeWhereUniqueInput]](RecipeWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "57b88f4033ce8c92981832d084ea888c6a94d464c89d63f8a50d5a69aca5b251"
+  }
+}

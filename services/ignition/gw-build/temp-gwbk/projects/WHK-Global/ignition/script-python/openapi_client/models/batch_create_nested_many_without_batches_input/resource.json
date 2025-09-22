@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BatchCreateNestedManyWithoutBatchesInput\n\n## Properties\n**connect** - [list[BatchWhereUniqueInput]](BatchWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "899c1de85bb452b1baf6de72f4d66116bad4eefb2b7cab16baa424395b9e7465"
+  }
+}

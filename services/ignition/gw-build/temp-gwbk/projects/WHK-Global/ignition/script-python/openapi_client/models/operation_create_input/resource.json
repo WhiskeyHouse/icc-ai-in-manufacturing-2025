@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# OperationCreateInput\n\n## Properties\n**abbreviation** - str\n\n\n**active** - bool\n[optional] \n\n**auxiliary_phases** - object\n[optional] \n\n**class_id** - [OperationWhereUniqueInput](OperationWhereUniqueInput.md)\n[optional] \n\n**created_by** - str\n\n\n**description** - str\n\n\n**edited_by** - str\n[optional] \n\n**equipment_phases** - [EquipmentPhaseCreateNestedManyWithoutOperationsInput](EquipmentPhaseCreateNestedManyWithoutOperationsInput.md)\n[optional] \n\n**fermentation_chemistries** - [FermentationChemistryCreateNestedManyWithoutOperationsInput](FermentationChemistryCreateNestedManyWithoutOperationsInput.md)\n[optional] \n\n**fermentation_day_data** - [FermentationDayDatumCreateNestedManyWithoutOperationsInput](FermentationDayDatumCreateNestedManyWithoutOperationsInput.md)\n[optional] \n\n**fermentation_setting_data** - [FermentationSettingDatumCreateNestedManyWithoutOperationsInput](FermentationSettingDatumCreateNestedManyWithoutOperationsInput.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**instances** - [OperationCreateNestedManyWithoutOperationsInput](OperationCreateNestedManyWithoutOperationsInput.md)\n[optional] \n\n**is_class_definition** - bool\n[optional] \n\n**lot_id** - str\n[optional] \n\n**mashing_data** - [MashingDatumCreateNestedManyWithoutOperationsInput](MashingDatumCreateNestedManyWithoutOperationsInput.md)\n[optional] \n\n**name** - str\n\n\n**path** - str\n[optional] \n\n**procedure_sequence_index** - float\n\n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**unit_procedure** - [UnitProcedureWhereUniqueInput](UnitProcedureWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "344aee6ed5bdf83e9039f782eb1f7d223b55478f5099c0eb189506a4951d1ddd"
+  }
+}

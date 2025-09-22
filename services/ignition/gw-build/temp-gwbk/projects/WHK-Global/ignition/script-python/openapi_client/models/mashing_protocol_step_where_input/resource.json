@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolStepWhereInput\n\n## Properties\n**agitator_enabled** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**agitator_spd_sp** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**cool_enabled** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**cool_temp_sp** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**heat_enabled** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**heat_temp_sp** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**hold_type** - str\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**index** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**is_class_definition** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**mashing_protocol** - [MashingProtocolWhereUniqueInput](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n**prompt_message** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**recipe_bom_item** - [RecipeBomItemListRelationFilter](RecipeBomItemListRelationFilter.md)\n[optional] \n\n**step_time** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**step_type** - str\n[optional] \n\n**temperature_actual** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**temperature_setpoint** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "1727a75168a71416f6c24bc5aabb242deaa012dbf086f1e5ab46b7cf5e430481"
+  }
+}

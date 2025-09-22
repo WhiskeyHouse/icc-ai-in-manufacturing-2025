@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# SalesOrderUpdateManyWithoutCustomersInput\n\n## Properties\n**connect** - [list[SalesOrderWhereUniqueInput]](SalesOrderWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[SalesOrderWhereUniqueInput]](SalesOrderWhereUniqueInput.md)\n[optional] \n\n**set** - [list[SalesOrderWhereUniqueInput]](SalesOrderWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "526c153eaef49dae517c6badd69b89a0ff81f6e5d7c263abda4632924dbe97bc"
+  }
+}

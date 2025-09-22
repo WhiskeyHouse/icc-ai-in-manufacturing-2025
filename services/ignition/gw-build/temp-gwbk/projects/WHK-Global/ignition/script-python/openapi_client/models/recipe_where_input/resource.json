@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeWhereInput\n\n## Properties\n**recipe** - [StringFilter](StringFilter.md)\n[optional] \n\n**active** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**batches** - [BatchListRelationFilter](BatchListRelationFilter.md)\n[optional] \n\n**class_id** - [RecipeWhereUniqueInput](RecipeWhereUniqueInput.md)\n[optional] \n\n**cooks_per_ferm** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**customer** - [CustomerWhereUniqueInput](CustomerWhereUniqueInput.md)\n[optional] \n\n**customer_code** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**estimated_abv** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**global_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**instances** - [RecipeListRelationFilter](RecipeListRelationFilter.md)\n[optional] \n\n**is_class_definition** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**lots** - [LotListRelationFilter](LotListRelationFilter.md)\n[optional] \n\n**mashing_protocol** - [MashingProtocolWhereUniqueInput](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n**recipe_parameters** - [RecipeParameterListRelationFilter](RecipeParameterListRelationFilter.md)\n[optional] \n\n**production_order_recipe_instances** - [ProductionOrderRecipeInstanceListRelationFilter](ProductionOrderRecipeInstanceListRelationFilter.md)\n[optional] \n\n**production_orders** - [ProductionOrderListRelationFilter](ProductionOrderListRelationFilter.md)\n[optional] \n\n**recipe_boms** - [RecipeBomListRelationFilter](RecipeBomListRelationFilter.md)\n[optional] \n\n**recipe_group** - [RecipeGroupWhereUniqueInput](RecipeGroupWhereUniqueInput.md)\n[optional] \n\n**revision** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**schedule_orders** - [ScheduleOrderListRelationFilter](ScheduleOrderListRelationFilter.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**target_proof** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**unit_procedures** - [UnitProcedureListRelationFilter](UnitProcedureListRelationFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**whiskey_type** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "26953f97115ba00e675af223b4ee219243c865ae3d02d953497548d62318549b"
+  }
+}

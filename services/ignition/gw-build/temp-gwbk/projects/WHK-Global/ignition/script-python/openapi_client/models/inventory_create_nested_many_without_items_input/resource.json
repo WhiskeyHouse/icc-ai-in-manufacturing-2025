@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryCreateNestedManyWithoutItemsInput\n\n## Properties\n**connect** - [list[InventoryWhereUniqueInput]](InventoryWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "0b5dcc8be13825ae70580bcacab77d8eb5746ecd591e21c6febbc64f42b54004"
+  }
+}

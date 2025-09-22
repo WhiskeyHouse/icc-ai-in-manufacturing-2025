@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InstructionWhereInput\n\n## Properties\n**active** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**edited_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**equipment_phase** - [EquipmentPhaseListRelationFilter](EquipmentPhaseListRelationFilter.md)\n[optional] \n\n**file_path** - [StringFilter](StringFilter.md)\n[optional] \n\n**global_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**name** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**revision** - [IntFilter](IntFilter.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "eff2b50b577d8d83fc0ac99e4d3592a91d40ccfc924ba202bb506ad309da5d50"
+  }
+}

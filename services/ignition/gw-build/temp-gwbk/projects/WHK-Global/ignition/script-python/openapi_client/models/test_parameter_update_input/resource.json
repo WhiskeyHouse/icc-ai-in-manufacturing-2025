@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# TestParameterUpdateInput\n\n## Properties\n**active** - bool\n[optional] \n\n**schema_version** - str\n[optional] \n\n**test_setpoint_value** - float\n[optional] \n\n**test_param_units** - str\n[optional] \n\n**test_setpoint_upper_limit** - float\n[optional] \n\n**test_param_revision** - str\n[optional] \n\n**test_setpoint_lower_limit** - float\n[optional] \n\n**test_result** - float\n[optional] \n\n**created_by** - str\n[optional] \n\n**test_setpoint_type** - str\n[optional] \n\n**equipment_phases** - [EquipmentPhaseUpdateManyWithoutTestParametersInput](EquipmentPhaseUpdateManyWithoutTestParametersInput.md)\n[optional] \n\n**is_class_def** - bool\n[optional] \n\n**class_id** - [TestParameterWhereUniqueInput](TestParameterWhereUniqueInput.md)\n[optional] \n\n**description** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**instances** - [TestParameterUpdateManyWithoutTestParametersInput](TestParameterUpdateManyWithoutTestParametersInput.md)\n[optional] \n\n**item_receipt** - [ItemReceiptWhereUniqueInput](ItemReceiptWhereUniqueInput.md)\n[optional] \n\n**name** - str\n[optional] \n\n**purchase_order** - [PurchaseOrderUpdateManyWithoutTestParametersInput](PurchaseOrderUpdateManyWithoutTestParametersInput.md)\n[optional] \n\n**required** - bool\n[optional] \n\n**test_details** - str\n[optional] \n\n**test_pass** - bool\n[optional] \n\n**test_setpoint_boolean_value** - bool\n[optional] \n\n**tested_at** - object\n[optional] \n\n**tested_by** - str\n[optional] \n\n**tooltip** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "0873051379058b81585bace3bddca7626d96ebb2759140eab736a87650178608"
+  }
+}

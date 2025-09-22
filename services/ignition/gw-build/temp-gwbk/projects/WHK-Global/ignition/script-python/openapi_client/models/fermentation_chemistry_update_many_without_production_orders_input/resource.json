@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationChemistryUpdateManyWithoutProductionOrdersInput\n\n## Properties\n**connect** - [list[FermentationChemistryWhereUniqueInput]](FermentationChemistryWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[FermentationChemistryWhereUniqueInput]](FermentationChemistryWhereUniqueInput.md)\n[optional] \n\n**set** - [list[FermentationChemistryWhereUniqueInput]](FermentationChemistryWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "593eec91a852faf7fc9662e11014c441619d27a9a7ea15269dfcce75654307f6"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationChemistryUpdateManyWithoutAssetsInput\n\n## Properties\n**connect** - [list[FermentationChemistryWhereUniqueInput]](FermentationChemistryWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[FermentationChemistryWhereUniqueInput]](FermentationChemistryWhereUniqueInput.md)\n[optional] \n\n**set** - [list[FermentationChemistryWhereUniqueInput]](FermentationChemistryWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "a0c186a5f64a4b2dea7f9559f8a1ef39a9a9cd9f5931c66822e60666cf07a14e"
+  }
+}

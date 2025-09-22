@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# TestParameterListRelationFilter\n\n## Properties\n**every** - [TestParameterWhereInput](TestParameterWhereInput.md)\n[optional] \n\n**some** - [TestParameterWhereInput](TestParameterWhereInput.md)\n[optional] \n\n**_none** - [TestParameterWhereInput](TestParameterWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "f8ba304376c0a8c7404c728621b8e508f14655f37b9fbb364ca7ac105d3a1fc2"
+  }
+}

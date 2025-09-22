@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# OperationUpdateManyWithoutUnitProceduresInput\n\n## Properties\n**connect** - [list[OperationWhereUniqueInput]](OperationWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[OperationWhereUniqueInput]](OperationWhereUniqueInput.md)\n[optional] \n\n**set** - [list[OperationWhereUniqueInput]](OperationWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "632c32286d18fca04e75a4cb66c03d07f1d60f766a141144ed93f7752a9c8da2"
+  }
+}

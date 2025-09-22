@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingDatumListRelationFilter\n\n## Properties\n**every** - [MashingDatumWhereInput](MashingDatumWhereInput.md)\n[optional] \n\n**some** - [MashingDatumWhereInput](MashingDatumWhereInput.md)\n[optional] \n\n**_none** - [MashingDatumWhereInput](MashingDatumWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "4396d2c6c27b57318de187616219993e0f6605cf3d4869ce6e834c060dd1b74c"
+  }
+}

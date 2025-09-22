@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryTransferCreateInput\n\n## Properties\n**created_by** - str\n[optional] \n\n**department** - str\n[optional] \n\n**from_location** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**lot** - [LotWhereUniqueInput](LotWhereUniqueInput.md)\n[optional] \n\n**notes** - str\n[optional] \n\n**quantity** - float\n[optional] \n\n**to_location** - [AssetCreateNestedManyWithoutInventoryTransfersInput](AssetCreateNestedManyWithoutInventoryTransfersInput.md)\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "a232e718ec202695106a6c151b8b8dc13208b11307dd4537429e620242b184f3"
+  }
+}

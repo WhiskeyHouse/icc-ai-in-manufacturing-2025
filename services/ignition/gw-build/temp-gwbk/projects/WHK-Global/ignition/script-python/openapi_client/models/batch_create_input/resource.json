@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BatchCreateInput\n\n## Properties\n**asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**asset_path** - str\n[optional] \n\n**batch_data** - object\n[optional] \n\n**batch_id** - str\n\n\n**batch_init_data** - object\n[optional] \n\n**children** - [BatchCreateNestedManyWithoutBatchesInput](BatchCreateNestedManyWithoutBatchesInput.md)\n[optional] \n\n**customer** - [CustomerWhereUniqueInput](CustomerWhereUniqueInput.md)\n[optional] \n\n**customers** - object\n[optional] \n\n**duration_splits** - object\n[optional] \n\n**fermentation_chemistries** - [FermentationChemistryCreateNestedManyWithoutBatchesInput](FermentationChemistryCreateNestedManyWithoutBatchesInput.md)\n[optional] \n\n**lot** - [LotWhereUniqueInput](LotWhereUniqueInput.md)\n[optional] \n\n**mashing_protocol** - [MashingProtocolWhereUniqueInput](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n**operation_index** - str\n[optional] \n\n**operation_type** - str\n[optional] \n\n**parameter_data** - object\n[optional] \n\n**parent** - [BatchWhereUniqueInput](BatchWhereUniqueInput.md)\n[optional] \n\n**production_order** - [ProductionOrderWhereUniqueInput](ProductionOrderWhereUniqueInput.md)\n[optional] \n\n**production_order_recipe_instance** - [ProductionOrderRecipeInstanceWhereUniqueInput](ProductionOrderRecipeInstanceWhereUniqueInput.md)\n[optional] \n\n**quantity** - float\n[optional] \n\n**recipe** - [RecipeWhereUniqueInput](RecipeWhereUniqueInput.md)\n[optional] \n\n**recipe_bom_items** - [RecipeBomItemCreateNestedManyWithoutBatchesInput](RecipeBomItemCreateNestedManyWithoutBatchesInput.md)\n[optional] \n\n**recipe_name** - str\n[optional] \n\n**revision** - float\n[optional] \n\n**total_duration** - float\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "09d1d9bd805207bb00a2fb0b89f94116361c016235361b131ad34f864b4c2657"
+  }
+}

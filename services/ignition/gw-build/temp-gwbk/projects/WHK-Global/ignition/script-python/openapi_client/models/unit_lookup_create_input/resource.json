@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitLookupCreateInput\n\n## Properties\n**abbreviation** - str\n\n\n**base_record** - [UnitLookupWhereUniqueInput](UnitLookupWhereUniqueInput.md)\n[optional] \n\n**base_unit** - bool\n[optional] \n\n**conversion_rate** - float\n[optional] \n\n**name** - str\n\n\n**plural_abbreviation** - str\n\n\n**plural_name** - str\n\n\n**type_name** - str\n\n\n**unit_lookup_records** - [UnitLookupCreateNestedManyWithoutUnitLookupsInput](UnitLookupCreateNestedManyWithoutUnitLookupsInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "7d610b06e63647618d1841d7536fa36d61b337d21a5b34174255bbee955d82e8"
+  }
+}

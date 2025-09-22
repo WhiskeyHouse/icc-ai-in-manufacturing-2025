@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BomItemUpdateManyWithoutEquipmentPhasesInput\n\n## Properties\n**connect** - [list[BomItemWhereUniqueInput]](BomItemWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[BomItemWhereUniqueInput]](BomItemWhereUniqueInput.md)\n[optional] \n\n**set** - [list[BomItemWhereUniqueInput]](BomItemWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "79fab486c1fc9969bb8622e74e2c78e46c464c249696153e5c69772ea9c5185c"
+  }
+}

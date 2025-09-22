@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationSettingDatumWhereInput\n\n## Properties\n**fermentation_chemistries** - [FermentationChemistryWhereUniqueInput](FermentationChemistryWhereUniqueInput.md)\n[optional] \n\n**fermenter_number** - [IntFilter](IntFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**logged_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**lot_id** - [StringFilter](StringFilter.md)\n[optional] \n\n**operation** - [OperationWhereUniqueInput](OperationWhereUniqueInput.md)\n[optional] \n\n**set_time** - [DateTimeFilter](DateTimeFilter.md)\n[optional] \n\n**temperature** - [FloatFilter](FloatFilter.md)\n[optional] \n\n**dry_inches** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**balling** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**acid** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**p_h** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "2c70c8f08d5d358972f62a1b3332b6a3b12226365b8cfd256045cd1d8ef133cc"
+  }
+}

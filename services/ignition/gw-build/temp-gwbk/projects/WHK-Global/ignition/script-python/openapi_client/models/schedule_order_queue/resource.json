@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ScheduleOrderQueue\n\n## Properties\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**next_operation** - str\n[optional] \n\n**next_unit_procedure** - [UnitProcedure](UnitProcedure.md)\n[optional] \n\n**next_unit_procedure_name** - str\n[optional] \n\n**queue_index** - float\n[optional] \n\n**schedule_order** - [ScheduleOrder](ScheduleOrder.md)\n\n\n**schema_version** - str\n[optional] \n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "9887d25f6c691c4b79a008368e656e4874a27d7ba3af3a6133a017aa04615e8a"
+  }
+}

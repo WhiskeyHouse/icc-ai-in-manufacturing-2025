@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# PhaseParameterUpdateManyWithoutPhaseParametersInput\n\n## Properties\n**connect** - [list[PhaseParameterWhereUniqueInput]](PhaseParameterWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[PhaseParameterWhereUniqueInput]](PhaseParameterWhereUniqueInput.md)\n[optional] \n\n**set** - [list[PhaseParameterWhereUniqueInput]](PhaseParameterWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ca824e4118d08e65f1cf3d6aade39e8e42784d81914f220ba3a923c30b4b6ff0"
+  }
+}

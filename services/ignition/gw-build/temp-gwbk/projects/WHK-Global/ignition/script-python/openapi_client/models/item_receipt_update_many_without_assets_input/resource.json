@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemReceiptUpdateManyWithoutAssetsInput\n\n## Properties\n**connect** - [list[ItemReceiptWhereUniqueInput]](ItemReceiptWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[ItemReceiptWhereUniqueInput]](ItemReceiptWhereUniqueInput.md)\n[optional] \n\n**set** - [list[ItemReceiptWhereUniqueInput]](ItemReceiptWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "2c2bea4e7da0be2d6bc0ef7a3efb0b19094843c07be2eda7992bbad3aed6ea40"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# Inventory\n\n## Properties\n**active** - bool\n[optional] \n\n**asset** - [Asset](Asset.md)\n\n\n**corrected_by** - str\n[optional] \n\n**correction_note** - str\n[optional] \n\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**current_quantity** - float\n[optional] \n\n**customers** - object\n[optional] \n\n**fifo_index** - float\n[optional] \n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**item** - [Item](Item.md)\n\n\n**item_receipt** - [ItemReceipt](ItemReceipt.md)\n[optional] \n\n**lot_number** - str\n[optional] \n\n**notes** - str\n[optional] \n\n**original_quantity** - float\n[optional] \n\n**proof** - float\n[optional] \n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**units** - str\n[optional] \n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ebb5b65e9d20bf41a33df6b3228894e23b85dec56fdb65e0b2e2da3a588da5fa"
+  }
+}

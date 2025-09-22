@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemCreateInput\n\n## Properties\n**active** - bool\n[optional] \n\n**additive_actuals** - [AdditiveActualCreateNestedManyWithoutItemsInput](AdditiveActualCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**bom_items** - [BomItemCreateNestedManyWithoutItemsInput](BomItemCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**boms_wip_item** - [BomCreateNestedManyWithoutItemsInput](BomCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**created_by** - str\n\n\n**erp_id** - str\n\n\n**global_id** - str\n[optional] \n\n**inventories** - [InventoryCreateNestedManyWithoutItemsInput](InventoryCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**inventory_logs** - [InventoryLogCreateNestedManyWithoutItemsInput](InventoryLogCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**inventory_transfers** - [InventoryTransferCreateNestedManyWithoutItemsInput](InventoryTransferCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**item_class** - str\n[optional] \n\n**item_description** - str\n[optional] \n\n**item_group** - str\n[optional] \n\n**item_name** - str\n\n\n**item_number** - str\n\n\n**item_receipts** - [ItemReceiptCreateNestedManyWithoutItemsInput](ItemReceiptCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**item_revision** - float\n[optional] \n\n**item_type** - str\n\n\n**lot_continer_item** - [LotWhereUniqueInput](LotWhereUniqueInput.md)\n[optional] \n\n**lots** - [LotCreateNestedManyWithoutItemsInput](LotCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**production_orders** - [ProductionOrderCreateNestedManyWithoutItemsInput](ProductionOrderCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**purchase_orders** - [PurchaseOrderCreateNestedManyWithoutItemsInput](PurchaseOrderCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**recipe_boms** - [RecipeBomItemCreateNestedManyWithoutItemsInput](RecipeBomItemCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**recipes** - [RecipeCreateNestedManyWithoutItemsInput](RecipeCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**sales_orders** - [SalesOrderCreateNestedManyWithoutItemsInput](SalesOrderCreateNestedManyWithoutItemsInput.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n**vendor** - [VendorWhereUniqueInput](VendorWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "32522853382f262363bc2005cc41b3ceeb3d3f6af315d29f2a71879bd8a1a502"
+  }
+}

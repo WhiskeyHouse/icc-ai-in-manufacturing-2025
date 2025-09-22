@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ScheduleOrderUpdateManyWithoutRecipeGroupsInput\n\n## Properties\n**connect** - [list[ScheduleOrderWhereUniqueInput]](ScheduleOrderWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[ScheduleOrderWhereUniqueInput]](ScheduleOrderWhereUniqueInput.md)\n[optional] \n\n**set** - [list[ScheduleOrderWhereUniqueInput]](ScheduleOrderWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "b0e868e11b663f86f1836333acd569dd563f20008f39670714189c03d777ef1b"
+  }
+}

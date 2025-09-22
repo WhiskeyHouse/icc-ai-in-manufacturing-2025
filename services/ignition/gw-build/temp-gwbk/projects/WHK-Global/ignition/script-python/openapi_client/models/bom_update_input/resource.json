@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BomUpdateInput\n\n## Properties\n**bom_item** - [BomItemUpdateManyWithoutBomsInput](BomItemUpdateManyWithoutBomsInput.md)\n[optional] \n\n**bom_name** - str\n[optional] \n\n**bom_revision** - str\n[optional] \n\n**bom_type** - str\n[optional] \n\n**class_name** - str\n[optional] \n\n**created_by** - str\n[optional] \n\n**edited_by** - str\n[optional] \n\n**effective_end_date** - object\n[optional] \n\n**effective_start_date** - object\n[optional] \n\n**erp_id** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**inactive** - bool\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**mashing_data** - [MashingDatumUpdateManyWithoutBomsInput](MashingDatumUpdateManyWithoutBomsInput.md)\n[optional] \n\n**notes** - str\n[optional] \n\n**production_order** - [ProductionOrderUpdateManyWithoutBomsInput](ProductionOrderUpdateManyWithoutBomsInput.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n**unit_procedure** - [UnitProcedureUpdateManyWithoutBomsInput](UnitProcedureUpdateManyWithoutBomsInput.md)\n[optional] \n\n**unit_procedures_primary** - [UnitProcedureUpdateManyWithoutBomsInput](UnitProcedureUpdateManyWithoutBomsInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "0b341a155a216745ac62837d8756b4a87c112909c1e1bd4f239853a3fbc72550"
+  }
+}

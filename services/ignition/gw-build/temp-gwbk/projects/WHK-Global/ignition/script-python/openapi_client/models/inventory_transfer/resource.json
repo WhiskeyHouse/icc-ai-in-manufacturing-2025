@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryTransfer\n\n## Properties\n**created_at** - datetime\n\n\n**created_by** - str\n[optional] \n\n**department** - str\n[optional] \n\n**from_location** - [Asset](Asset.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**item** - [Item](Item.md)\n[optional] \n\n**lot** - [Lot](Lot.md)\n[optional] \n\n**notes** - str\n[optional] \n\n**quantity** - float\n[optional] \n\n**to_location** - [list[Asset]](Asset.md)\n[optional] \n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "9bdcbf3848d9d94b742d2dfdb2acc1a25a0929d73956f3755ed1b56e5ed4d3a2"
+  }
+}

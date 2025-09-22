@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# EquipmentPhaseUpdateManyWithoutBomItemsInput\n\n## Properties\n**connect** - [list[EquipmentPhaseWhereUniqueInput]](EquipmentPhaseWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[EquipmentPhaseWhereUniqueInput]](EquipmentPhaseWhereUniqueInput.md)\n[optional] \n\n**set** - [list[EquipmentPhaseWhereUniqueInput]](EquipmentPhaseWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "46c97db1e24ce8e294c6ea4c5c9c8bad5a35e472639c12a27e0d2936f934b48a"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# LotListRelationFilter\n\n## Properties\n**every** - [LotWhereInput](LotWhereInput.md)\n[optional] \n\n**some** - [LotWhereInput](LotWhereInput.md)\n[optional] \n\n**_none** - [LotWhereInput](LotWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "fb6c5f066fa546c142c3973315e2b30910d036c551820b65be46c763a072de62"
+  }
+}

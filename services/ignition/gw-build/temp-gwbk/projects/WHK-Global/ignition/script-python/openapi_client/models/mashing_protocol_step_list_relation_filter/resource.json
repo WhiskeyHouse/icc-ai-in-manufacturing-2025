@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolStepListRelationFilter\n\n## Properties\n**every** - [MashingProtocolStepWhereInput](MashingProtocolStepWhereInput.md)\n[optional] \n\n**some** - [MashingProtocolStepWhereInput](MashingProtocolStepWhereInput.md)\n[optional] \n\n**_none** - [MashingProtocolStepWhereInput](MashingProtocolStepWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "fce7623ea00558bed32f5ae4b5dd2f0167316120485dc53285c72df53af1ff6d"
+  }
+}

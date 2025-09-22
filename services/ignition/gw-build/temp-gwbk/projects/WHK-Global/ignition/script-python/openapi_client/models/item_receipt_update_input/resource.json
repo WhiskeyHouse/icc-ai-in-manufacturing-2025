@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemReceiptUpdateInput\n\n## Properties\n**created_by** - str\n[optional] \n\n**driver** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**inventories** - [InventoryUpdateManyWithoutItemReceiptsInput](InventoryUpdateManyWithoutItemReceiptsInput.md)\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**load_id** - float\n[optional] \n\n**lots** - object\n[optional] \n\n**purchase_order** - [PurchaseOrderWhereUniqueInput](PurchaseOrderWhereUniqueInput.md)\n[optional] \n\n**quantity** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**status** - str\n[optional] \n\n**supplier_lot** - str\n[optional] \n\n**tests** - [TestParameterUpdateManyWithoutItemReceiptsInput](TestParameterUpdateManyWithoutItemReceiptsInput.md)\n[optional] \n\n**tests_passed** - bool\n[optional] \n\n**to_asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**units** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n**weigh_in** - float\n[optional] \n\n**weigh_out** - float\n[optional] \n\n**silo_number** - float\n[optional] \n\n**asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "6c7c84495a19f0ef63607afbfbeb28891ef5e5e4ff2894963a4a2cdd10877b46"
+  }
+}

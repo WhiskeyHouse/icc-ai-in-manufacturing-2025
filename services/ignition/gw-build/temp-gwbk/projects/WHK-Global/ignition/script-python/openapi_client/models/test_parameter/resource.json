@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# TestParameter\n\n## Properties\n**active** - bool\n\n\n**class_id** - [TestParameter](TestParameter.md)\n[optional] \n\n**created_at** - datetime\n\n\n**id** - str\n\n\n**test_setpoint_boolean_value** - bool\n[optional] \n\n**updated_by** - str\n[optional] \n\n**name** - str\n\n\n**schema_version** - str\n[optional] \n\n**test_setpoint_value** - float\n[optional] \n\n**test_param_units** - str\n\n\n**test_setpoint_upper_limit** - float\n[optional] \n\n**test_param_revision** - str\n[optional] \n\n**test_setpoint_lower_limit** - float\n[optional] \n\n**test_result** - float\n[optional] \n\n**created_by** - str\n\n\n**description** - str\n[optional] \n\n**equipment_phases** - [list[EquipmentPhase]](EquipmentPhase.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**instances** - [list[TestParameter]](TestParameter.md)\n[optional] \n\n**is_class_def** - bool\n[optional] \n\n**item_receipt** - [ItemReceipt](ItemReceipt.md)\n[optional] \n\n**purchase_order** - [list[PurchaseOrder]](PurchaseOrder.md)\n[optional] \n\n**required** - bool\n[optional] \n\n**test_details** - str\n[optional] \n\n**test_pass** - bool\n[optional] \n\n**test_setpoint_type** - str\n[optional] \n\n**tested_at** - object\n[optional] \n\n**tested_by** - str\n[optional] \n\n**tooltip** - str\n[optional] \n\n**updated_at** - object\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "529713a57fd872c7e828c0f6fdd471c86eb90511edaccc174e5e11a7cc9e2328"
+  }
+}

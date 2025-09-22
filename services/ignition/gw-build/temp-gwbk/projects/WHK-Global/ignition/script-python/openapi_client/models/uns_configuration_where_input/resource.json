@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnsConfigurationWhereInput\n\n## Properties\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**enabled** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**entity_name** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**filter_criteria** - [JsonFilter](JsonFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**topic** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**transformation_function** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "e3a6c0973a006c26aee78d17d0d7eaa33171f236ad8261c39a4a624d3c0f53b4"
+  }
+}

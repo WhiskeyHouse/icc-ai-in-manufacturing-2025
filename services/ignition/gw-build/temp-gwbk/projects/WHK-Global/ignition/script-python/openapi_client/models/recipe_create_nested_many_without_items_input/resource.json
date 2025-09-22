@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeCreateNestedManyWithoutItemsInput\n\n## Properties\n**connect** - [list[RecipeWhereUniqueInput]](RecipeWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "689071950f1c650b1e674a86ee30f0578838b5aa36cb41c18d1d6c0f4fa3ff42"
+  }
+}

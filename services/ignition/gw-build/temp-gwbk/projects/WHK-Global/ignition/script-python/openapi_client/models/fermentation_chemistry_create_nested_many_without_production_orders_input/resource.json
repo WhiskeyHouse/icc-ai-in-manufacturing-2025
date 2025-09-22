@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationChemistryCreateNestedManyWithoutProductionOrdersInput\n\n## Properties\n**connect** - [list[FermentationChemistryWhereUniqueInput]](FermentationChemistryWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "e324a49f77fe5f538f53fa2d894ed4588f650718efcc0a4723d73b2e3c5dfd54"
+  }
+}

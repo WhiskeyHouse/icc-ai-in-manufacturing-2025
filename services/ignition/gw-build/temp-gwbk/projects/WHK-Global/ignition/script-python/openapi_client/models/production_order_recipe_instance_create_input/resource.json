@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ProductionOrderRecipeInstanceCreateInput\n\n## Properties\n**batches** - [BatchCreateNestedManyWithoutProductionOrderRecipeInstancesInput](BatchCreateNestedManyWithoutProductionOrderRecipeInstancesInput.md)\n[optional] \n\n**created_by** - str\n\n\n**mashing_protocol** - [MashingProtocolCreateNestedManyWithoutProductionOrderRecipeInstancesInput](MashingProtocolCreateNestedManyWithoutProductionOrderRecipeInstancesInput.md)\n\n\n**production_order** - [ProductionOrderWhereUniqueInput](ProductionOrderWhereUniqueInput.md)\n\n\n**recipe** - [RecipeWhereUniqueInput](RecipeWhereUniqueInput.md)\n\n\n**recipe_bom** - [RecipeBomCreateNestedManyWithoutProductionOrderRecipeInstancesInput](RecipeBomCreateNestedManyWithoutProductionOrderRecipeInstancesInput.md)\n\n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "77e32fb7a5c503ac13b000f405c914341a13b5bb1ea88433938fad78ef51b6e4"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# JsonFilter\n\n## Properties\n**equals** - dict[str, object]\n[optional] \n\n**path** - list[str]\n[optional] \n\n**string_contains** - str\n[optional] \n\n**array_contains** - list[str]\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "b5f245a647621b0886f76478ada133b1c9e111bf1183c8a2d9614bc87e778223"
+  }
+}

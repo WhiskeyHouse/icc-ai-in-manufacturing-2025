@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolWhereInput\n\n## Properties\n**batches** - [BatchListRelationFilter](BatchListRelationFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**master** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**master_instances** - [MashingProtocolListRelationFilter](MashingProtocolListRelationFilter.md)\n[optional] \n\n**master_mashing_protocol** - [MashingProtocolWhereUniqueInput](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n**name** - [StringFilter](StringFilter.md)\n[optional] \n\n**production_order_recipe_instances** - [ProductionOrderRecipeInstanceListRelationFilter](ProductionOrderRecipeInstanceListRelationFilter.md)\n[optional] \n\n**recipes** - [RecipeListRelationFilter](RecipeListRelationFilter.md)\n[optional] \n\n**revision** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**running** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**running_instances** - [MashingProtocolListRelationFilter](MashingProtocolListRelationFilter.md)\n[optional] \n\n**running_mashing_protocol** - [MashingProtocolWhereUniqueInput](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n**steps** - [MashingProtocolStepListRelationFilter](MashingProtocolStepListRelationFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "cbb4f72ef3e5155b07d15653d750e16df4593adc9a199b6323bdfa21b2c0e2d2"
+  }
+}

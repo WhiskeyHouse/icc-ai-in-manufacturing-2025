@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# TestUpdateInput\n\n## Properties\n**active** - bool\n[optional] \n\n**created_by** - str\n[optional] \n\n**edited_by** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**is_class_definition** - bool\n[optional] \n\n**schema_version** - str\n[optional] \n\n**test_description** - str\n[optional] \n\n**test_name** - str\n[optional] \n\n**test_revision** - float\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "44ab26c02120aff8795bd5f54b4e7c84309d4cfaaff6c60482f0c7b48d333594"
+  }
+}

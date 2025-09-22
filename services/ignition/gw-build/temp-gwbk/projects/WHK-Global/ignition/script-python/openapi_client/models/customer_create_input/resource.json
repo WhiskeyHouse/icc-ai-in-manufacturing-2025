@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# CustomerCreateInput\n\n## Properties\n**address** - str\n\n\n**batches** - [BatchCreateNestedManyWithoutCustomersInput](BatchCreateNestedManyWithoutCustomersInput.md)\n[optional] \n\n**created_by** - str\n\n\n**customer_code** - str\n[optional] \n\n**description** - str\n[optional] \n\n**edited_by** - str\n[optional] \n\n**email** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**inventory_log** - [InventoryLogWhereUniqueInput](InventoryLogWhereUniqueInput.md)\n[optional] \n\n**name** - str\n\n\n**phone** - str\n[optional] \n\n**production_orders** - [ProductionOrderCreateNestedManyWithoutCustomersInput](ProductionOrderCreateNestedManyWithoutCustomersInput.md)\n[optional] \n\n**recipes** - [RecipeCreateNestedManyWithoutCustomersInput](RecipeCreateNestedManyWithoutCustomersInput.md)\n[optional] \n\n**revision** - float\n\n\n**sales_orders** - [SalesOrderCreateNestedManyWithoutCustomersInput](SalesOrderCreateNestedManyWithoutCustomersInput.md)\n[optional] \n\n**schedule_orders** - [ScheduleOrderCreateNestedManyWithoutCustomersInput](ScheduleOrderCreateNestedManyWithoutCustomersInput.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "2aaae439e9518bb15d636c63a295c7859762aa656122e3d15bceb7b3360738e5"
+  }
+}

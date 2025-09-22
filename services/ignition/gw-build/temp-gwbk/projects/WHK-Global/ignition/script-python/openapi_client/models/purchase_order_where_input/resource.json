@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# PurchaseOrderWhereInput\n\n## Properties\n**accepted_lots** - [LotListRelationFilter](LotListRelationFilter.md)\n[optional] \n\n**asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**class_name** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**complete** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**created_at** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**erp_id** - [StringFilter](StringFilter.md)\n[optional] \n\n**global_id** - [StringFilter](StringFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**item** - [ItemListRelationFilter](ItemListRelationFilter.md)\n[optional] \n\n**item_receipts** - [ItemReceiptListRelationFilter](ItemReceiptListRelationFilter.md)\n[optional] \n\n**line_items** - [JsonFilter](JsonFilter.md)\n[optional] \n\n**lots_rejected** - [PurchaseOrderListRelationFilter](PurchaseOrderListRelationFilter.md)\n[optional] \n\n**name** - [StringFilter](StringFilter.md)\n[optional] \n\n**purchase_order_receipt_date** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**purchase_order_received** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**purchase_order_rejected_lots** - [PurchaseOrderWhereUniqueInput](PurchaseOrderWhereUniqueInput.md)\n[optional] \n\n**quality_tests** - [TestParameterListRelationFilter](TestParameterListRelationFilter.md)\n[optional] \n\n**receipt_status** - str\n[optional] \n\n**received_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**revision** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**total_order_quantity** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**transaction_group** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**updated_at** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**vendor** - [VendorWhereUniqueInput](VendorWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "348838b9dac02a8398dd0fc9278e0b2f03cf90496beff7859cb51cb71335593e"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BooleanFilter\n\n## Properties\n**equals** - bool\n[optional] \n\n**_not** - bool\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "d76529429dbe3e0cdc2dbc591269a6a7c3db430ac16591d82d0f92aa98c4ee05"
+  }
+}

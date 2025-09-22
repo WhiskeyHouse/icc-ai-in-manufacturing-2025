@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemReceiptWhereInput\n\n## Properties\n**created_at** - [DateTimeFilter](DateTimeFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**driver** - [StringFilter](StringFilter.md)\n[optional] \n\n**global_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**inventories** - [InventoryListRelationFilter](InventoryListRelationFilter.md)\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**load_id** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**lots** - [JsonFilter](JsonFilter.md)\n[optional] \n\n**purchase_order** - [PurchaseOrderWhereUniqueInput](PurchaseOrderWhereUniqueInput.md)\n[optional] \n\n**quantity** - [FloatFilter](FloatFilter.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**status** - str\n[optional] \n\n**supplier_lot** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**tests** - [TestParameterListRelationFilter](TestParameterListRelationFilter.md)\n[optional] \n\n**tests_passed** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**to_asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**units** - [StringFilter](StringFilter.md)\n[optional] \n\n**updated_at** - [DateTimeFilter](DateTimeFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**weigh_in** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**weigh_out** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ea137c66b054b58cc86a0439dd814cabe4f2df4e8c0c9e4e53fe7de6912ba583"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# PurchaseOrderUpdateManyWithoutItemsInput\n\n## Properties\n**connect** - [list[PurchaseOrderWhereUniqueInput]](PurchaseOrderWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[PurchaseOrderWhereUniqueInput]](PurchaseOrderWhereUniqueInput.md)\n[optional] \n\n**set** - [list[PurchaseOrderWhereUniqueInput]](PurchaseOrderWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "2db097dc6b0d1333d73aef2e090f87a1db9c12ee6ca673b2f0da3b042b481cfc"
+  }
+}

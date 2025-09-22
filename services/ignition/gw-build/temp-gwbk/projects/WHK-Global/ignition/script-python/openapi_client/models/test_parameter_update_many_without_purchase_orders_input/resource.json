@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# TestParameterUpdateManyWithoutPurchaseOrdersInput\n\n## Properties\n**connect** - [list[TestParameterWhereUniqueInput]](TestParameterWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[TestParameterWhereUniqueInput]](TestParameterWhereUniqueInput.md)\n[optional] \n\n**set** - [list[TestParameterWhereUniqueInput]](TestParameterWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "6fc7d5eafcc2beac57552fb79e782fe07982b1b4892be16dcf82bccc3e26d9c5"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "```python\nfrom __future__ import print_function\nimport time\nimport openapi_client\nfrom openapi_client.rest import ApiException\nfrom pprint import pprint\n# Enter a context with an instance of the API client\n\nwith openapi_client.ApiClient(configuration) as api_client:\n\n\n# Create an instance of the API class\napi_instance = openapi_client.RecipeBomsApi(api_client)\n\ntry:\n    api_instance.()\nexcept ApiException as e:\nprint('Exception when calling RecipeBomsApi->: %s\n' % e)\n```",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "1494c21e7f5d80686abcb560586a4dfec4c9b85426d5dea377c04e39b149070a"
+  }
+}

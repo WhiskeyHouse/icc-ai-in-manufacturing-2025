@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeListRelationFilter\n\n## Properties\n**every** - [RecipeWhereInput](RecipeWhereInput.md)\n[optional] \n\n**some** - [RecipeWhereInput](RecipeWhereInput.md)\n[optional] \n\n**_none** - [RecipeWhereInput](RecipeWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "22f00f1231c65b34500355cd90eca5fbd3f8bde6ee669ca7c2539f126dad8045"
+  }
+}

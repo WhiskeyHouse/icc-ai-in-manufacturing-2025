@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# EquipmentPhaseListRelationFilter\n\n## Properties\n**every** - [EquipmentPhaseWhereInput](EquipmentPhaseWhereInput.md)\n[optional] \n\n**some** - [EquipmentPhaseWhereInput](EquipmentPhaseWhereInput.md)\n[optional] \n\n**_none** - [EquipmentPhaseWhereInput](EquipmentPhaseWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "3ba8a266e2e06725e3d4d040401701fc3ec2b5c547b17cfd5df5557076e8b30e"
+  }
+}

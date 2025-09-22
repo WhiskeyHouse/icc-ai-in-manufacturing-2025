@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# OperationUpdateInput\n\n## Properties\n**abbreviation** - str\n[optional] \n\n**active** - bool\n[optional] \n\n**auxiliary_phases** - object\n[optional] \n\n**class_id** - [OperationWhereUniqueInput](OperationWhereUniqueInput.md)\n[optional] \n\n**created_by** - str\n[optional] \n\n**description** - str\n[optional] \n\n**edited_by** - str\n[optional] \n\n**equipment_phases** - [EquipmentPhaseUpdateManyWithoutOperationsInput](EquipmentPhaseUpdateManyWithoutOperationsInput.md)\n[optional] \n\n**fermentation_chemistries** - [FermentationChemistryUpdateManyWithoutOperationsInput](FermentationChemistryUpdateManyWithoutOperationsInput.md)\n[optional] \n\n**fermentation_day_data** - [FermentationDayDatumUpdateManyWithoutOperationsInput](FermentationDayDatumUpdateManyWithoutOperationsInput.md)\n[optional] \n\n**fermentation_setting_data** - [FermentationSettingDatumUpdateManyWithoutOperationsInput](FermentationSettingDatumUpdateManyWithoutOperationsInput.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**instances** - [OperationUpdateManyWithoutOperationsInput](OperationUpdateManyWithoutOperationsInput.md)\n[optional] \n\n**is_class_definition** - bool\n[optional] \n\n**lot_id** - str\n[optional] \n\n**mashing_data** - [MashingDatumUpdateManyWithoutOperationsInput](MashingDatumUpdateManyWithoutOperationsInput.md)\n[optional] \n\n**name** - str\n[optional] \n\n**path** - str\n[optional] \n\n**procedure_sequence_index** - float\n[optional] \n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**unit_procedure** - [UnitProcedureWhereUniqueInput](UnitProcedureWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "66812797b23b36df9b200bddd93f47e0bf1f6a8d4a26891a35bb4a3824d3c49a"
+  }
+}

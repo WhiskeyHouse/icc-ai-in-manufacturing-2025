@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ProductionOrderUpdateManyWithoutCustomersInput\n\n## Properties\n**connect** - [list[ProductionOrderWhereUniqueInput]](ProductionOrderWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[ProductionOrderWhereUniqueInput]](ProductionOrderWhereUniqueInput.md)\n[optional] \n\n**set** - [list[ProductionOrderWhereUniqueInput]](ProductionOrderWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "3f21fb4ec650dc887a72e702d652ca0f7e0055d52e52cad678870934af5efce3"
+  }
+}

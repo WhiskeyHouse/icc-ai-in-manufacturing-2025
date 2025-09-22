@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryLogUpdateManyWithoutItemsInput\n\n## Properties\n**connect** - [list[InventoryLogWhereUniqueInput]](InventoryLogWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[InventoryLogWhereUniqueInput]](InventoryLogWhereUniqueInput.md)\n[optional] \n\n**set** - [list[InventoryLogWhereUniqueInput]](InventoryLogWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "c389fd6f80b8bafdb9c1fe3fd4034e244cb14e518551ffa93d46085ee5185cc9"
+  }
+}

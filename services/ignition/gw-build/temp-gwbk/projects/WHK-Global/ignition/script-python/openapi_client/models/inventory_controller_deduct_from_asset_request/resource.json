@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryControllerDeductFromAssetRequest\n\n## Properties\n**asset_id** - str\n\n\n**quantity** - float\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "b35d7ec1d24a2b104ef19270cede7a0e41779562f3a8052865f36a8b8703a297"
+  }
+}

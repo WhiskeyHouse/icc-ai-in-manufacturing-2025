@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# TestParameterUpdateManyWithoutTestParametersInput\n\n## Properties\n**connect** - [list[TestParameterWhereUniqueInput]](TestParameterWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[TestParameterWhereUniqueInput]](TestParameterWhereUniqueInput.md)\n[optional] \n\n**set** - [list[TestParameterWhereUniqueInput]](TestParameterWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "3250bb211801c65d49d64888f81a941e16ac19357e8a2a3a35e6ba9b41179613"
+  }
+}

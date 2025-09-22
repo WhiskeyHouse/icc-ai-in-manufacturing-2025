@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# AdditiveActualUpdateManyWithoutItemsInput\n\n## Properties\n**connect** - [list[AdditiveActualWhereUniqueInput]](AdditiveActualWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[AdditiveActualWhereUniqueInput]](AdditiveActualWhereUniqueInput.md)\n[optional] \n\n**set** - [list[AdditiveActualWhereUniqueInput]](AdditiveActualWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "5f7890079362cbcb2ec2282bac681fee5a1657fa9673ac6ba26be5a71556a735"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ScheduleOrderWhereInput\n\n## Properties\n**actual_end** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**actual_start** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**created_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**customers** - [CustomerListRelationFilter](CustomerListRelationFilter.md)\n[optional] \n\n**duration** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**duration_units** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**estimated_barreling_start_time** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**estimated_distillation_duration** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**estimated_distillation_start_time** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**estimated_end** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**estimated_fermentation_duration** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**estimated_fermentation_start_time** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**estimated_mashing_duration** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**estimated_mashing_start_time** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**estimated_processing_start_time** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**estimated_start** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**estimated_total_production_duration** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n**global_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**name** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**production_order_allocation** - [JsonFilter](JsonFilter.md)\n[optional] \n\n**production_orders** - [ProductionOrderListRelationFilter](ProductionOrderListRelationFilter.md)\n[optional] \n\n**recipe_group** - [RecipeGroupWhereUniqueInput](RecipeGroupWhereUniqueInput.md)\n[optional] \n\n**recipe_name** - [StringFilter](StringFilter.md)\n[optional] \n\n**schedule_order_queues** - [ScheduleOrderQueueWhereUniqueInput](ScheduleOrderQueueWhereUniqueInput.md)\n[optional] \n\n**schedule_order_recipe** - [RecipeWhereUniqueInput](RecipeWhereUniqueInput.md)\n[optional] \n\n**status** - str\n[optional] \n\n**total_barrels** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**total_proof_gallons** - [FloatNullableFilter](FloatNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "6b73663ccb0bba544a4eb9f440db66551f468ee36d95f9c834fe91d4f9506fff"
+  }
+}

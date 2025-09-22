@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# CustomerWhereInput\n\n## Properties\n**address** - [StringFilter](StringFilter.md)\n[optional] \n\n**batches** - [BatchListRelationFilter](BatchListRelationFilter.md)\n[optional] \n\n**created_at** - [DateTimeFilter](DateTimeFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**customer_code** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**description** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**edited_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**email** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**global_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**inventory_log** - [InventoryLogWhereUniqueInput](InventoryLogWhereUniqueInput.md)\n[optional] \n\n**name** - [StringFilter](StringFilter.md)\n[optional] \n\n**phone** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**production_orders** - [ProductionOrderListRelationFilter](ProductionOrderListRelationFilter.md)\n[optional] \n\n**recipes** - [RecipeListRelationFilter](RecipeListRelationFilter.md)\n[optional] \n\n**revision** - [IntFilter](IntFilter.md)\n[optional] \n\n**sales_orders** - [SalesOrderListRelationFilter](SalesOrderListRelationFilter.md)\n[optional] \n\n**schedule_orders** - [ScheduleOrderListRelationFilter](ScheduleOrderListRelationFilter.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**updated_at** - [DateTimeFilter](DateTimeFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "5d181ad1c298f5d141a566f8f7f7135c3c7e180c3c68930e76ecf601ef9c9a3e"
+  }
+}

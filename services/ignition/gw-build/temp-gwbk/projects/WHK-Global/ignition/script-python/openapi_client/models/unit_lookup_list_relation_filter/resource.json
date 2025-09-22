@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitLookupListRelationFilter\n\n## Properties\n**every** - [UnitLookupWhereInput](UnitLookupWhereInput.md)\n[optional] \n\n**some** - [UnitLookupWhereInput](UnitLookupWhereInput.md)\n[optional] \n\n**_none** - [UnitLookupWhereInput](UnitLookupWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "a072978ef1dabad9fb5b277b6d4f87e1586603b876229fe7fc010343def968ce"
+  }
+}

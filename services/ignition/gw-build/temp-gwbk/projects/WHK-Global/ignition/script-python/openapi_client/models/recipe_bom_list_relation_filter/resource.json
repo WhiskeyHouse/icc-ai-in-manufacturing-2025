@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeBomListRelationFilter\n\n## Properties\n**every** - [RecipeBomWhereInput](RecipeBomWhereInput.md)\n[optional] \n\n**some** - [RecipeBomWhereInput](RecipeBomWhereInput.md)\n[optional] \n\n**_none** - [RecipeBomWhereInput](RecipeBomWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "23bfa95ff970bf91d013da2619ba9ead148572f199f53109cac429fdb33fda8e"
+  }
+}

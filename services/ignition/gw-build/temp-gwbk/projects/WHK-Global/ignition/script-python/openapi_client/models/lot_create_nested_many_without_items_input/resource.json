@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# LotCreateNestedManyWithoutItemsInput\n\n## Properties\n**connect** - [list[LotWhereUniqueInput]](LotWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "44d4cf138f23b52932e5a35e6882a835c1882626027a3570f1a8827dccf40a75"
+  }
+}

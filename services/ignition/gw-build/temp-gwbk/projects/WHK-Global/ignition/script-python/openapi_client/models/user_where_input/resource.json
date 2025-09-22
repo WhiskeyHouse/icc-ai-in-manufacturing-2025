@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UserWhereInput\n\n## Properties\n**first_name** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**last_name** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**username** - [StringFilter](StringFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "adf15d8b42dcbd5a3a057a91ef1b91e6de9f10c77883df64d667d20ca2927ff4"
+  }
+}

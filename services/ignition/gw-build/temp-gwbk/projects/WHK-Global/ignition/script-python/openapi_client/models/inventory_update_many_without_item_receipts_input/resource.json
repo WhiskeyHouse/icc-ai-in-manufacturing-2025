@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryUpdateManyWithoutItemReceiptsInput\n\n## Properties\n**connect** - [list[InventoryWhereUniqueInput]](InventoryWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[InventoryWhereUniqueInput]](InventoryWhereUniqueInput.md)\n[optional] \n\n**set** - [list[InventoryWhereUniqueInput]](InventoryWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "1df4b5fde9df451feb80bbace7073260b33f8f9a7901b41faa1cbb0254d4ec08"
+  }
+}

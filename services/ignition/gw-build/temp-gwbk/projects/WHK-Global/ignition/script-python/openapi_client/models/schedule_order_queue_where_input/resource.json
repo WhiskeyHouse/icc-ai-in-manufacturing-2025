@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ScheduleOrderQueueWhereInput\n\n## Properties\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**global_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**next_operation** - str\n[optional] \n\n**next_unit_procedure** - [UnitProcedureWhereUniqueInput](UnitProcedureWhereUniqueInput.md)\n[optional] \n\n**next_unit_procedure_name** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**queue_index** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**schedule_order** - [ScheduleOrderWhereUniqueInput](ScheduleOrderWhereUniqueInput.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "e43a582917d46c7e11be3d7a1b48f230bb68afc29222d3a9882fc4fed5f708d8"
+  }
+}

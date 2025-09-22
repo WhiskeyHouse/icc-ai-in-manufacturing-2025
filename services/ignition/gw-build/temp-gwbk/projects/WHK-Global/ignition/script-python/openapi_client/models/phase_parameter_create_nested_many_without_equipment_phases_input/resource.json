@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# PhaseParameterCreateNestedManyWithoutEquipmentPhasesInput\n\n## Properties\n**connect** - [list[PhaseParameterWhereUniqueInput]](PhaseParameterWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "a78bc074e655da7a517816a557283a3e477f96592553131c97bb677c88ba6551"
+  }
+}

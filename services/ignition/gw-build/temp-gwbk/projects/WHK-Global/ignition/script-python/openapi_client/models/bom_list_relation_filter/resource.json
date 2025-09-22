@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BomListRelationFilter\n\n## Properties\n**every** - [BomWhereInput](BomWhereInput.md)\n[optional] \n\n**some** - [BomWhereInput](BomWhereInput.md)\n[optional] \n\n**_none** - [BomWhereInput](BomWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "3f1bf07b4dbaacebb533c59d2127f72d22fcea559e82578b529f210cddfa56ec"
+  }
+}

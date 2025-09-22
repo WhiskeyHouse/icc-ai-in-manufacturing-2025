@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingDatum\n\n## Properties\n**additive_actuals** - [list[AdditiveActual]](AdditiveActual.md)\n[optional] \n\n**asset** - [Asset](Asset.md)\n[optional] \n\n**backset_quantity** - float\n[optional] \n\n**bom** - [Bom](Bom.md)\n[optional] \n\n**cook_complete_time** - object\n[optional] \n\n**cook_drop_time** - object\n[optional] \n\n**cook_duration** - float\n[optional] \n\n**cook_start_time** - object\n[optional] \n\n**cook_started_by** - str\n[optional] \n\n**cooker_number** - float\n[optional] \n\n**corn_quantity** - float\n[optional] \n\n**created_at** - datetime\n\n\n**drop_duration** - float\n[optional] \n\n**id** - str\n\n\n**malt_quantity** - float\n[optional] \n\n**operation** - [Operation](Operation.md)\n[optional] \n\n**pre_malt_quantity** - float\n[optional] \n\n**recipe_bom** - [RecipeBom](RecipeBom.md)\n[optional] \n\n**rye_quantity** - float\n[optional] \n\n**specialty_quantity** - float\n[optional] \n\n**total_duration** - float\n[optional] \n\n**updated_at** - datetime\n\n\n**water_quantity** - float\n[optional] \n\n**wheat_quantity** - float\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ac8f089b1803f4e65c5474430ffa056fa37f9044818c56817a8d135566d57cda"
+  }
+}

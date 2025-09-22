@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnsConfigurationUpdateInput\n\n## Properties\n**created_by** - str\n[optional] \n\n**enabled** - bool\n[optional] \n\n**entity_name** - str\n[optional] \n\n**event_type** - list[str]\n[optional] \n\n**filter_criteria** - object\n[optional] \n\n**topic** - str\n[optional] \n\n**transformation_function** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "2f14420501301660de55cf05cb371acbe8ad2747207086d21e40ece80a4cee89"
+  }
+}

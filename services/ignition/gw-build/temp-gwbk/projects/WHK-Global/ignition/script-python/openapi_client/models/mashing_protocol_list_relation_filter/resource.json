@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolListRelationFilter\n\n## Properties\n**every** - [MashingProtocolWhereInput](MashingProtocolWhereInput.md)\n[optional] \n\n**some** - [MashingProtocolWhereInput](MashingProtocolWhereInput.md)\n[optional] \n\n**_none** - [MashingProtocolWhereInput](MashingProtocolWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "a8f284b4120817e523b465bf10dfad9a3803118d6c08088a4448be3239a01e41"
+  }
+}

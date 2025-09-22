@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# LotUpdateManyWithoutItemsInput\n\n## Properties\n**connect** - [list[LotWhereUniqueInput]](LotWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[LotWhereUniqueInput]](LotWhereUniqueInput.md)\n[optional] \n\n**set** - [list[LotWhereUniqueInput]](LotWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "9160800f119702adce8a3c7f133823cf2617f2dc5b685e61d8564428eec96bd7"
+  }
+}

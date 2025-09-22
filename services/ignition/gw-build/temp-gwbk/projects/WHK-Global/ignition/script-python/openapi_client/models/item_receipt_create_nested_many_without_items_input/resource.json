@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemReceiptCreateNestedManyWithoutItemsInput\n\n## Properties\n**connect** - [list[ItemReceiptWhereUniqueInput]](ItemReceiptWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "bb0d3fdaa8a58c52c77d4e70fe745dc39c382c14fa09dbf02fc969b698b6ba6b"
+  }
+}

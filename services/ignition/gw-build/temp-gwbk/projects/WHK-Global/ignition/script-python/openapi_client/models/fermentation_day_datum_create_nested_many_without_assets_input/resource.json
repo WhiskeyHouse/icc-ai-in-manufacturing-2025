@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationDayDatumCreateNestedManyWithoutAssetsInput\n\n## Properties\n**connect** - [list[FermentationDayDatumWhereUniqueInput]](FermentationDayDatumWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "4dee84824bd68f23e9f42e58853da9804041a3c869a8c4261cd9cdf5e985fb77"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ProductionOrderRecipeInstanceUpdateManyWithoutProductionOrdersInput\n\n## Properties\n**connect** - [list[ProductionOrderRecipeInstanceWhereUniqueInput]](ProductionOrderRecipeInstanceWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[ProductionOrderRecipeInstanceWhereUniqueInput]](ProductionOrderRecipeInstanceWhereUniqueInput.md)\n[optional] \n\n**set** - [list[ProductionOrderRecipeInstanceWhereUniqueInput]](ProductionOrderRecipeInstanceWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "a209e86fd5b7d702044d05a2ad4c54e6d3b6058a9fe9d7453013e478c8ac346d"
+  }
+}

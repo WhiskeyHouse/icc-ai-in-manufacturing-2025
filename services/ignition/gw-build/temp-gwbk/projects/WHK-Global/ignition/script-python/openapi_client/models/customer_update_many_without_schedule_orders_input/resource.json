@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# CustomerUpdateManyWithoutScheduleOrdersInput\n\n## Properties\n**connect** - [list[CustomerWhereUniqueInput]](CustomerWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[CustomerWhereUniqueInput]](CustomerWhereUniqueInput.md)\n[optional] \n\n**set** - [list[CustomerWhereUniqueInput]](CustomerWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "212f9419bff65d7df4f557d03ae349c0737b9c13ef23205e869fe9fe3c263af3"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ScheduleOrderCreateNestedManyWithoutCustomersInput\n\n## Properties\n**connect** - [list[ScheduleOrderWhereUniqueInput]](ScheduleOrderWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "c25dfd6ab07d415fc338a23b2919627c1dee51f8d5c643de6c44e3a2a58bdc1c"
+  }
+}

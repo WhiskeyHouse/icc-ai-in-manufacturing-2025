@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemReceiptCreateInput\n\n## Properties\n**created_by** - str\n\n\n**driver** - str\n\n\n**global_id** - str\n[optional] \n\n**inventories** - [InventoryCreateNestedManyWithoutItemReceiptsInput](InventoryCreateNestedManyWithoutItemReceiptsInput.md)\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n\n\n**load_id** - float\n[optional] \n\n**lots** - object\n[optional] \n\n**purchase_order** - [PurchaseOrderWhereUniqueInput](PurchaseOrderWhereUniqueInput.md)\n[optional] \n\n**quantity** - float\n\n\n**schema_version** - str\n[optional] \n\n**status** - str\n[optional] \n\n**supplier_lot** - str\n[optional] \n\n**tests** - [TestParameterCreateNestedManyWithoutItemReceiptsInput](TestParameterCreateNestedManyWithoutItemReceiptsInput.md)\n[optional] \n\n**tests_passed** - bool\n[optional] \n\n**to_asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**units** - str\n\n\n**updated_by** - str\n[optional] \n\n**weigh_in** - float\n[optional] \n\n**weigh_out** - float\n[optional] \n\n**silo_number** - float\n[optional] \n\n**asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "7d6e11f68599d590b250a8c6108546697394d17fa080d9880e80d23b2392f1cb"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BomItemCreateNestedManyWithoutBomItemsInput\n\n## Properties\n**connect** - [list[BomItemWhereUniqueInput]](BomItemWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "33b6102d7397cc0492cb2b589762204edf38c569ec143af4cc8b635a2b31d4e6"
+  }
+}

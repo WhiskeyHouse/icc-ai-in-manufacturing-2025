@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeBomUpdateManyWithoutRecipeBomsInput\n\n## Properties\n**connect** - [list[RecipeBomWhereUniqueInput]](RecipeBomWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[RecipeBomWhereUniqueInput]](RecipeBomWhereUniqueInput.md)\n[optional] \n\n**set** - [list[RecipeBomWhereUniqueInput]](RecipeBomWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "68a8c33c4239412a79f64f227fa279eea3cf12d2b9822cb5839b6dc4ce2e81ce"
+  }
+}

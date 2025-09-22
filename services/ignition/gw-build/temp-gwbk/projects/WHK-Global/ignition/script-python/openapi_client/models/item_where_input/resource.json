@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemWhereInput\n\n## Properties\n**active** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**additive_actuals** - [AdditiveActualListRelationFilter](AdditiveActualListRelationFilter.md)\n[optional] \n\n**bom_items** - [BomItemListRelationFilter](BomItemListRelationFilter.md)\n[optional] \n\n**boms_wip_item** - [BomListRelationFilter](BomListRelationFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**erp_id** - [StringFilter](StringFilter.md)\n[optional] \n\n**global_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**inventories** - [InventoryListRelationFilter](InventoryListRelationFilter.md)\n[optional] \n\n**inventory_logs** - [InventoryLogListRelationFilter](InventoryLogListRelationFilter.md)\n[optional] \n\n**inventory_transfers** - [InventoryTransferListRelationFilter](InventoryTransferListRelationFilter.md)\n[optional] \n\n**item_class** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**item_description** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**item_group** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**item_name** - [StringFilter](StringFilter.md)\n[optional] \n\n**item_number** - [StringFilter](StringFilter.md)\n[optional] \n\n**item_receipts** - [ItemReceiptListRelationFilter](ItemReceiptListRelationFilter.md)\n[optional] \n\n**item_revision** - [IntNullableFilter](IntNullableFilter.md)\n[optional] \n\n**item_type** - [StringFilter](StringFilter.md)\n[optional] \n\n**lot_continer_item** - [LotWhereUniqueInput](LotWhereUniqueInput.md)\n[optional] \n\n**lots** - [LotListRelationFilter](LotListRelationFilter.md)\n[optional] \n\n**production_orders** - [ProductionOrderListRelationFilter](ProductionOrderListRelationFilter.md)\n[optional] \n\n**purchase_orders** - [PurchaseOrderListRelationFilter](PurchaseOrderListRelationFilter.md)\n[optional] \n\n**recipe_boms** - [RecipeBomItemListRelationFilter](RecipeBomItemListRelationFilter.md)\n[optional] \n\n**recipes** - [RecipeListRelationFilter](RecipeListRelationFilter.md)\n[optional] \n\n**sales_orders** - [SalesOrderListRelationFilter](SalesOrderListRelationFilter.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**vendor** - [VendorWhereUniqueInput](VendorWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "96d62447c3cd697942eeffd0a279c2a0eefe1943abececf27d54a58c37fc11e5"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# Item\n\n## Properties\n**active** - bool\n[optional] \n\n**additive_actuals** - [list[AdditiveActual]](AdditiveActual.md)\n[optional] \n\n**bom_items** - [list[BomItem]](BomItem.md)\n[optional] \n\n**boms_wip_item** - [list[Bom]](Bom.md)\n[optional] \n\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**erp_id** - str\n\n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**inventories** - [list[Inventory]](Inventory.md)\n[optional] \n\n**inventory_logs** - [list[InventoryLog]](InventoryLog.md)\n[optional] \n\n**inventory_transfers** - [list[InventoryTransfer]](InventoryTransfer.md)\n[optional] \n\n**item_class** - str\n[optional] \n\n**item_description** - str\n[optional] \n\n**item_group** - str\n[optional] \n\n**item_name** - str\n\n\n**item_number** - str\n\n\n**item_receipts** - [list[ItemReceipt]](ItemReceipt.md)\n[optional] \n\n**item_revision** - float\n[optional] \n\n**item_type** - str\n\n\n**lot_continer_item** - [Lot](Lot.md)\n[optional] \n\n**lots** - [list[Lot]](Lot.md)\n[optional] \n\n**production_orders** - [list[ProductionOrder]](ProductionOrder.md)\n[optional] \n\n**purchase_orders** - [list[PurchaseOrder]](PurchaseOrder.md)\n[optional] \n\n**recipe_boms** - [list[RecipeBomItem]](RecipeBomItem.md)\n[optional] \n\n**recipes** - [list[Recipe]](Recipe.md)\n[optional] \n\n**sales_orders** - [list[SalesOrder]](SalesOrder.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n**updated_at** - datetime\n\n\n**updated_by** - str\n[optional] \n\n**vendor** - [Vendor](Vendor.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "e6c15570594413526e8b5978ba1340026d8777649346fb219c1cea6b579065c1"
+  }
+}

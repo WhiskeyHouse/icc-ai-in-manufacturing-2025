@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# DateTimeNullableFilter\n\n## Properties\n**equals** - datetime\n[optional] \n\n**_in** - list[datetime]\n[optional] \n\n**not_in** - list[datetime]\n[optional] \n\n**lt** - datetime\n[optional] \n\n**lte** - datetime\n[optional] \n\n**gt** - datetime\n[optional] \n\n**gte** - datetime\n[optional] \n\n**_not** - datetime\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "a107dcdefa451f337fa5e6c109aa89883bc50410eb69b691a37bdb2c9ab5843f"
+  }
+}

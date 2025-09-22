@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ProductionOrderBomItem\n\n## Properties\n**created_at** - datetime\n\n\n**id** - str\n\n\n**updated_at** - datetime\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "4a1640eb2a35186ec392243e7ef9ccca5b982e1c2c09387bac8161f8b55043af"
+  }
+}

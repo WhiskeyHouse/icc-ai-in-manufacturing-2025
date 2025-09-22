@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# EquipmentPhaseCreateInput\n\n## Properties\n**active** - bool\n[optional] \n\n**bom_item** - [BomItemCreateNestedManyWithoutEquipmentPhasesInput](BomItemCreateNestedManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n**class_id** - [EquipmentPhaseWhereUniqueInput](EquipmentPhaseWhereUniqueInput.md)\n[optional] \n\n**class_name** - str\n[optional] \n\n**created_by** - str\n\n\n**description** - str\n[optional] \n\n**edited_by** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**instances** - [EquipmentPhaseCreateNestedManyWithoutEquipmentPhasesInput](EquipmentPhaseCreateNestedManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n**instructions** - [InstructionCreateNestedManyWithoutEquipmentPhasesInput](InstructionCreateNestedManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n**is_class_definition** - bool\n[optional] \n\n**message** - str\n[optional] \n\n**name** - str\n\n\n**operation** - [OperationWhereUniqueInput](OperationWhereUniqueInput.md)\n\n\n**operation_sequence_index** - float\n[optional] \n\n**path** - str\n[optional] \n\n**phase_parameters** - [PhaseParameterCreateNestedManyWithoutEquipmentPhasesInput](PhaseParameterCreateNestedManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n**revision** - float\n[optional] \n\n**schema_version** - str\n[optional] \n\n**step_type** - str\n\n\n**test_parameters** - [TestParameterCreateNestedManyWithoutEquipmentPhasesInput](TestParameterCreateNestedManyWithoutEquipmentPhasesInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "babf856a356ab0488d70ef86608260fd1b33655ff4652aafd4d4f419a6834758"
+  }
+}

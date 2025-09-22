@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemListRelationFilter\n\n## Properties\n**every** - [ItemWhereInput](ItemWhereInput.md)\n[optional] \n\n**some** - [ItemWhereInput](ItemWhereInput.md)\n[optional] \n\n**_none** - [ItemWhereInput](ItemWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "4ea83e0b39cc54a25159e03169929a5cea1ccbbd43bd7c4ccef99c5004db5966"
+  }
+}

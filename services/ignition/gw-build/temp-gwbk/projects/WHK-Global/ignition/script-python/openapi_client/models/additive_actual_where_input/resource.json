@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# AdditiveActualWhereInput\n\n## Properties\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**item_number** - [StringFilter](StringFilter.md)\n[optional] \n\n**lot_number** - [StringFilter](StringFilter.md)\n[optional] \n\n**mashing_datum** - [MashingDatumWhereUniqueInput](MashingDatumWhereUniqueInput.md)\n[optional] \n\n**quantity** - [IntFilter](IntFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "dd08d64d5912b4d9c8439872b356312b56bba3b0203adcf8e6967d05a2691c82"
+  }
+}

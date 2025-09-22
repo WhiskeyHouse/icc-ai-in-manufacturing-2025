@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationChemistryListRelationFilter\n\n## Properties\n**every** - [FermentationChemistryWhereInput](FermentationChemistryWhereInput.md)\n[optional] \n\n**some** - [FermentationChemistryWhereInput](FermentationChemistryWhereInput.md)\n[optional] \n\n**_none** - [FermentationChemistryWhereInput](FermentationChemistryWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "05c555655e39e07b3b236222b3e6548ec45e245bc4fa766b85428a95471d171e"
+  }
+}

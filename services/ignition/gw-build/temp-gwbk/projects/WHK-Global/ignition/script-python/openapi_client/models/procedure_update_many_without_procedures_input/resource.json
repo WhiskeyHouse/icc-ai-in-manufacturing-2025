@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ProcedureUpdateManyWithoutProceduresInput\n\n## Properties\n**connect** - [list[ProcedureWhereUniqueInput]](ProcedureWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[ProcedureWhereUniqueInput]](ProcedureWhereUniqueInput.md)\n[optional] \n\n**set** - [list[ProcedureWhereUniqueInput]](ProcedureWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ae08c4df07c41a77165448d1827d23b05ab20b1096cdf0388f07db26040e4147"
+  }
+}

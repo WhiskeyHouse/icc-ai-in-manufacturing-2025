@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolStepUpdateManyWithoutRecipeBomItemsInput\n\n## Properties\n**connect** - [list[MashingProtocolStepWhereUniqueInput]](MashingProtocolStepWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[MashingProtocolStepWhereUniqueInput]](MashingProtocolStepWhereUniqueInput.md)\n[optional] \n\n**set** - [list[MashingProtocolStepWhereUniqueInput]](MashingProtocolStepWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "85590f82ab3380a2f50f232d8343462c43543401b1e05ff5a206607fabb843f0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemGroup\n\n## Properties\n**created_at** - datetime\n\n\n**description** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**name** - str\n\n\n**updated_at** - datetime\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "323301b8770ecaadce8f564728bf1f7c52cf59c761a5d9d63e070424e3fa01be"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingDatumUpdateManyWithoutAssetsInput\n\n## Properties\n**connect** - [list[MashingDatumWhereUniqueInput]](MashingDatumWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[MashingDatumWhereUniqueInput]](MashingDatumWhereUniqueInput.md)\n[optional] \n\n**set** - [list[MashingDatumWhereUniqueInput]](MashingDatumWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "3388604cf68cce76b9dc368446a3c93ba2505e3eae167646495d8f597926108e"
+  }
+}

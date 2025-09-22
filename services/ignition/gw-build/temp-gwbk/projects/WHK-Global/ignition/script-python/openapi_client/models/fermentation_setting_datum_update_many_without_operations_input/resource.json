@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationSettingDatumUpdateManyWithoutOperationsInput\n\n## Properties\n**connect** - [list[FermentationSettingDatumWhereUniqueInput]](FermentationSettingDatumWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[FermentationSettingDatumWhereUniqueInput]](FermentationSettingDatumWhereUniqueInput.md)\n[optional] \n\n**set** - [list[FermentationSettingDatumWhereUniqueInput]](FermentationSettingDatumWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "c7ebe2cffb4c09e8d7d6faef76089e1f4cca9e4c67d3148af78bf262f2eb589a"
+  }
+}

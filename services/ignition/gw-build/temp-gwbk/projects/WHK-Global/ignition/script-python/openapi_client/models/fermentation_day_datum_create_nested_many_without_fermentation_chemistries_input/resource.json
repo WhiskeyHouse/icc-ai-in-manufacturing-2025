@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# FermentationDayDatumCreateNestedManyWithoutFermentationChemistriesInput\n\n## Properties\n**connect** - [list[FermentationDayDatumWhereUniqueInput]](FermentationDayDatumWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "e1f484872313e8949967793a289799ef2608f85c6ccdb006943c6a6868fb4a79"
+  }
+}

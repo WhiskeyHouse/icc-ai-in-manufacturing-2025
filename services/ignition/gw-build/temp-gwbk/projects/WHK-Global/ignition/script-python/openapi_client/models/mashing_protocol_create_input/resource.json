@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolCreateInput\n\n## Properties\n**batches** - [BatchCreateNestedManyWithoutMashingProtocolsInput](BatchCreateNestedManyWithoutMashingProtocolsInput.md)\n[optional] \n\n**created_by** - str\n\n\n**master** - bool\n[optional] \n\n**master_instances** - [MashingProtocolCreateNestedManyWithoutMashingProtocolsInput](MashingProtocolCreateNestedManyWithoutMashingProtocolsInput.md)\n[optional] \n\n**master_mashing_protocol** - [MashingProtocolWhereUniqueInput](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n**name** - str\n\n\n**production_order_recipe_instances** - [ProductionOrderRecipeInstanceCreateNestedManyWithoutMashingProtocolsInput](ProductionOrderRecipeInstanceCreateNestedManyWithoutMashingProtocolsInput.md)\n[optional] \n\n**recipes** - [RecipeCreateNestedManyWithoutMashingProtocolsInput](RecipeCreateNestedManyWithoutMashingProtocolsInput.md)\n[optional] \n\n**revision** - str\n[optional] \n\n**running** - bool\n[optional] \n\n**running_instances** - [MashingProtocolCreateNestedManyWithoutMashingProtocolsInput](MashingProtocolCreateNestedManyWithoutMashingProtocolsInput.md)\n[optional] \n\n**running_mashing_protocol** - [MashingProtocolWhereUniqueInput](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n**steps** - [MashingProtocolStepCreateNestedManyWithoutMashingProtocolsInput](MashingProtocolStepCreateNestedManyWithoutMashingProtocolsInput.md)\n\n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "1abbef831425d7d944f9561c8b4b4b93398ce5f5102d3e49d85fcb540f447579"
+  }
+}

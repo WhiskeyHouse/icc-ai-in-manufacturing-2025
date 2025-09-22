@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InstructionListRelationFilter\n\n## Properties\n**every** - [InstructionWhereInput](InstructionWhereInput.md)\n[optional] \n\n**some** - [InstructionWhereInput](InstructionWhereInput.md)\n[optional] \n\n**_none** - [InstructionWhereInput](InstructionWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "101a438c8d01c6ac473962f1e0ee0c7edb6931d4b0a8ac6bcd08d8c067ab4e78"
+  }
+}

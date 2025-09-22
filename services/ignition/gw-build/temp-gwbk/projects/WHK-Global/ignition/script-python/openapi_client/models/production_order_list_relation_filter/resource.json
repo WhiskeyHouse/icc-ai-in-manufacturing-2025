@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ProductionOrderListRelationFilter\n\n## Properties\n**every** - [ProductionOrderWhereInput](ProductionOrderWhereInput.md)\n[optional] \n\n**some** - [ProductionOrderWhereInput](ProductionOrderWhereInput.md)\n[optional] \n\n**_none** - [ProductionOrderWhereInput](ProductionOrderWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "0e9a5d5b9454539c544a1f9bde10410d3555240da506a77a75d441adef08ab06"
+  }
+}

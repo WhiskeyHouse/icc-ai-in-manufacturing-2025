@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# SalesOrderCreateNestedManyWithoutCustomersInput\n\n## Properties\n**connect** - [list[SalesOrderWhereUniqueInput]](SalesOrderWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "d09d07c82531cc248c202b2436a6f4eac8aaf87e66416dfdf23fa82d6b346507"
+  }
+}

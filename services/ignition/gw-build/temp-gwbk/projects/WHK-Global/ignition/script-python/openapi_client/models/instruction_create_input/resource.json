@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InstructionCreateInput\n\n## Properties\n**active** - bool\n[optional] \n\n**created_by** - str\n\n\n**edited_by** - str\n[optional] \n\n**equipment_phase** - [EquipmentPhaseCreateNestedManyWithoutInstructionsInput](EquipmentPhaseCreateNestedManyWithoutInstructionsInput.md)\n[optional] \n\n**file_path** - str\n\n\n**global_id** - str\n[optional] \n\n**name** - str\n[optional] \n\n**revision** - float\n\n\n**schema_version** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "8d9684ce74d724d06be0e824c532a5d22f7e19b083363f5d29412260f7af1dc4"
+  }
+}

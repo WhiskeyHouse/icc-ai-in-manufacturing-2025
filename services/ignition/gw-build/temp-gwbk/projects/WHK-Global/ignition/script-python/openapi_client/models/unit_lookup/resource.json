@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitLookup\n\n## Properties\n**abbreviation** - str\n\n\n**base_record** - [UnitLookup](UnitLookup.md)\n[optional] \n\n**base_unit** - bool\n[optional] \n\n**conversion_rate** - float\n[optional] \n\n**created_at** - datetime\n\n\n**id** - str\n\n\n**name** - str\n\n\n**plural_abbreviation** - str\n\n\n**plural_name** - str\n\n\n**type_name** - str\n\n\n**unit_lookup_records** - [list[UnitLookup]](UnitLookup.md)\n[optional] \n\n**updated_at** - datetime\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "d0250db6021c5164dfd56452876fbc8b3d031a726d1b7ac23d0706aa35564657"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# UnitProcedureUpdateManyWithoutBomsInput\n\n## Properties\n**connect** - [list[UnitProcedureWhereUniqueInput]](UnitProcedureWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[UnitProcedureWhereUniqueInput]](UnitProcedureWhereUniqueInput.md)\n[optional] \n\n**set** - [list[UnitProcedureWhereUniqueInput]](UnitProcedureWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ce600a648bfe048b7c230f7edac29d37548195532e3a78aae7a2b905a228b712"
+  }
+}

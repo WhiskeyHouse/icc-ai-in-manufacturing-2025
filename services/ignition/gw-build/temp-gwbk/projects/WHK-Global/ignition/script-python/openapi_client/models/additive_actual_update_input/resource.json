@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# AdditiveActualUpdateInput\n\n## Properties\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**item_number** - str\n[optional] \n\n**lot_number** - str\n[optional] \n\n**mashing_datum** - [MashingDatumWhereUniqueInput](MashingDatumWhereUniqueInput.md)\n[optional] \n\n**quantity** - float\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "432804247a84b6cfa3741138b37c4f7c32f0d0bd0d809c95ce15eb5d632dd0c3"
+  }
+}

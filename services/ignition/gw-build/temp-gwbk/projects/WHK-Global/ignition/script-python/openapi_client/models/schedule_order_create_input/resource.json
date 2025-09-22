@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ScheduleOrderCreateInput\n\n## Properties\n**actual_end** - object\n[optional] \n\n**actual_start** - object\n[optional] \n\n**created_by** - str\n[optional] \n\n**customers** - [CustomerCreateNestedManyWithoutScheduleOrdersInput](CustomerCreateNestedManyWithoutScheduleOrdersInput.md)\n[optional] \n\n**duration** - float\n[optional] \n\n**duration_units** - str\n[optional] \n\n**estimated_barreling_start_time** - object\n[optional] \n\n**estimated_distillation_duration** - float\n[optional] \n\n**estimated_distillation_start_time** - object\n[optional] \n\n**estimated_end** - object\n[optional] \n\n**estimated_fermentation_duration** - float\n[optional] \n\n**estimated_fermentation_start_time** - object\n[optional] \n\n**estimated_mashing_duration** - float\n[optional] \n\n**estimated_mashing_start_time** - object\n[optional] \n\n**estimated_processing_start_time** - object\n[optional] \n\n**estimated_start** - object\n[optional] \n\n**estimated_total_production_duration** - float\n[optional] \n\n**global_id** - str\n[optional] \n\n**name** - str\n[optional] \n\n**production_order_allocation** - object\n\n\n**production_orders** - [ProductionOrderCreateNestedManyWithoutScheduleOrdersInput](ProductionOrderCreateNestedManyWithoutScheduleOrdersInput.md)\n\n\n**recipe_group** - [RecipeGroupWhereUniqueInput](RecipeGroupWhereUniqueInput.md)\n\n\n**recipe_name** - str\n\n\n**schedule_order_queues** - [ScheduleOrderQueueWhereUniqueInput](ScheduleOrderQueueWhereUniqueInput.md)\n[optional] \n\n**schedule_order_recipe** - [RecipeWhereUniqueInput](RecipeWhereUniqueInput.md)\n[optional] \n\n**status** - str\n[optional] \n\n**total_barrels** - float\n[optional] \n\n**total_proof_gallons** - float\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "e844b1b4b4748031d1d905278d195e38f5cfcdc09119be8a78bc01797eaaee18"
+  }
+}

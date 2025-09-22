@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingDatumCreateNestedManyWithoutOperationsInput\n\n## Properties\n**connect** - [list[MashingDatumWhereUniqueInput]](MashingDatumWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "913e168726e896a88cbaf4e81186f2faea2594555c07d7a517fe0a9a554eafdd"
+  }
+}

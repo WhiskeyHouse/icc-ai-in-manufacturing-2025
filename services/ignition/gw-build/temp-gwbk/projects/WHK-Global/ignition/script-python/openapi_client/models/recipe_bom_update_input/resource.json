@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeBomUpdateInput\n\n## Properties\n**mashing_data** - [MashingDatumUpdateManyWithoutRecipeBomsInput](MashingDatumUpdateManyWithoutRecipeBomsInput.md)\n[optional] \n\n**master** - bool\n[optional] \n\n**master_instances** - [RecipeBomUpdateManyWithoutRecipeBomsInput](RecipeBomUpdateManyWithoutRecipeBomsInput.md)\n[optional] \n\n**master_recipe_bom** - [RecipeBomWhereUniqueInput](RecipeBomWhereUniqueInput.md)\n[optional] \n\n**production_order_recipe_instances** - [ProductionOrderRecipeInstanceUpdateManyWithoutRecipeBomsInput](ProductionOrderRecipeInstanceUpdateManyWithoutRecipeBomsInput.md)\n[optional] \n\n**recipe** - [RecipeUpdateManyWithoutRecipeBomsInput](RecipeUpdateManyWithoutRecipeBomsInput.md)\n[optional] \n\n**recipe_bom_i_tem** - [RecipeBomItemUpdateManyWithoutRecipeBomsInput](RecipeBomItemUpdateManyWithoutRecipeBomsInput.md)\n[optional] \n\n**revision** - str\n[optional] \n\n**running** - bool\n[optional] \n\n**running_instances** - [RecipeBomUpdateManyWithoutRecipeBomsInput](RecipeBomUpdateManyWithoutRecipeBomsInput.md)\n[optional] \n\n**running_recipe_bom** - [RecipeBomWhereUniqueInput](RecipeBomWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "f77068e7879fa62fa1bd9016a2917c71188af4d188e666a1064a2ffccfa6a7ff"
+  }
+}

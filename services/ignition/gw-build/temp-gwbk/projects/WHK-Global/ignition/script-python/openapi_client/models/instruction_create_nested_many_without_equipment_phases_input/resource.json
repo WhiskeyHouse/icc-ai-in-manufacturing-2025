@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InstructionCreateNestedManyWithoutEquipmentPhasesInput\n\n## Properties\n**connect** - [list[InstructionWhereUniqueInput]](InstructionWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "bcc70ec02a8a77e703271eec37053dee33cc80b9d9f047895767a7ed7ad755f2"
+  }
+}

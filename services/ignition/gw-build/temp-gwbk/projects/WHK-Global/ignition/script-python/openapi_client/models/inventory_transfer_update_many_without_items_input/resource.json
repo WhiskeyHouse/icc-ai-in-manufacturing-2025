@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryTransferUpdateManyWithoutItemsInput\n\n## Properties\n**connect** - [list[InventoryTransferWhereUniqueInput]](InventoryTransferWhereUniqueInput.md)\n[optional] \n\n**disconnect** - [list[InventoryTransferWhereUniqueInput]](InventoryTransferWhereUniqueInput.md)\n[optional] \n\n**set** - [list[InventoryTransferWhereUniqueInput]](InventoryTransferWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "0b0c0d3c5fa304bf0d666e5ae9db2817d6f5a8635e468a1413a3f709e0daf6e7"
+  }
+}

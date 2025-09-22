@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeBomWhereInput\n\n## Properties\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**mashing_data** - [MashingDatumListRelationFilter](MashingDatumListRelationFilter.md)\n[optional] \n\n**master** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**master_instances** - [RecipeBomListRelationFilter](RecipeBomListRelationFilter.md)\n[optional] \n\n**master_recipe_bom** - [RecipeBomWhereUniqueInput](RecipeBomWhereUniqueInput.md)\n[optional] \n\n**production_order_recipe_instances** - [ProductionOrderRecipeInstanceListRelationFilter](ProductionOrderRecipeInstanceListRelationFilter.md)\n[optional] \n\n**recipe** - [RecipeListRelationFilter](RecipeListRelationFilter.md)\n[optional] \n\n**recipe_bom_i_tem** - [RecipeBomItemListRelationFilter](RecipeBomItemListRelationFilter.md)\n[optional] \n\n**revision** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**running** - [BooleanNullableFilter](BooleanNullableFilter.md)\n[optional] \n\n**running_instances** - [RecipeBomListRelationFilter](RecipeBomListRelationFilter.md)\n[optional] \n\n**running_recipe_bom** - [RecipeBomWhereUniqueInput](RecipeBomWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "4a50ddfea1b5a55c966322e19792e79c610a4347589283814818eddd547dd595"
+  }
+}

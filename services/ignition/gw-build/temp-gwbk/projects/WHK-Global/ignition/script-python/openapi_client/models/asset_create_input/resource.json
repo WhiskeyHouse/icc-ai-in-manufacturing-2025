@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# AssetCreateInput\n\n## Properties\n**asset_path** - str\n\n\n**asset_type** - str\n\n\n**batches** - [BatchCreateNestedManyWithoutAssetsInput](BatchCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**children** - [AssetCreateNestedManyWithoutAssetsInput](AssetCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**created_by** - str\n\n\n**description** - str\n\n\n**fermentation_chemistries** - [FermentationChemistryCreateNestedManyWithoutAssetsInput](FermentationChemistryCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**fermentation_day_data** - [FermentationDayDatumCreateNestedManyWithoutAssetsInput](FermentationDayDatumCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**global_id** - str\n[optional] \n\n**inventories** - [InventoryCreateNestedManyWithoutAssetsInput](InventoryCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**inventory_logs** - [InventoryLogCreateNestedManyWithoutAssetsInput](InventoryLogCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**inventory_transfers_from** - [InventoryTransferCreateNestedManyWithoutAssetsInput](InventoryTransferCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**inventory_transfers_to** - [InventoryTransferCreateNestedManyWithoutAssetsInput](InventoryTransferCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**item_receipts** - [ItemReceiptCreateNestedManyWithoutAssetsInput](ItemReceiptCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**lot_proofing_tank** - [LotCreateNestedManyWithoutAssetsInput](LotCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**lot_tankof_origin** - [LotCreateNestedManyWithoutAssetsInput](LotCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**lots** - [LotCreateNestedManyWithoutAssetsInput](LotCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**lots_filled_from** - [LotCreateNestedManyWithoutAssetsInput](LotCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**mashing_data** - [MashingDatumCreateNestedManyWithoutAssetsInput](MashingDatumCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**name** - str\n\n\n**parent** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n[optional] \n\n**proof_initial** - float\n[optional] \n\n**purchase_orders** - [PurchaseOrderCreateNestedManyWithoutAssetsInput](PurchaseOrderCreateNestedManyWithoutAssetsInput.md)\n[optional] \n\n**revision** - float\n[optional] \n\n**schema_version** - str\n\n\n**status** - str\n[optional] \n\n**updated_by** - str\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "8ad56c06101908aca4b61322b0d17442f4b5e571a8f5e8d9109651d61e8b4258"
+  }
+}

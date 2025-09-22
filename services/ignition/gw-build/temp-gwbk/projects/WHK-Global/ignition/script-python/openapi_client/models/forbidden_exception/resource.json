@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ForbiddenException\n\n## Properties\n**status_code** - float\n\n\n**message** - str\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "2d120f5c47deae188e550e97fa9eb846feb7d6ee62ccd6071d678eef28182764"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "OpenAPI generic API client. This client handles the client-server communication, and is invariant across implementations. Specifics of the methods and models for each application are generated from the OpenAPI templates.",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ba4fb1150dd085924c8bacd1c1c847a394ec17044b019f5f2c29fe345f111ca0"
+  }
+}

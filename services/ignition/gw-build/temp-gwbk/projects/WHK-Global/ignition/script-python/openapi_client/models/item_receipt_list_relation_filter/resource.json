@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# ItemReceiptListRelationFilter\n\n## Properties\n**every** - [ItemReceiptWhereInput](ItemReceiptWhereInput.md)\n[optional] \n\n**some** - [ItemReceiptWhereInput](ItemReceiptWhereInput.md)\n[optional] \n\n**_none** - [ItemReceiptWhereInput](ItemReceiptWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "af02a2a5445197c0e49781db4f384d956822475317a666de775dc118992f7f60"
+  }
+}

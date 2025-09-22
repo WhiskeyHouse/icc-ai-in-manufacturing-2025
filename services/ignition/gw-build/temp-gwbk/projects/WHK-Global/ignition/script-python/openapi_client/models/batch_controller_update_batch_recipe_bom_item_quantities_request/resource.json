@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# BatchControllerUpdateBatchRecipeBomItemQuantitiesRequest\n\n## Properties\n**items** - dict[str, float]\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "fd8e4115344c2cf37da6be066ac0556cd29c1c3f56a8608d7dc4980dc6de4085"
+  }
+}

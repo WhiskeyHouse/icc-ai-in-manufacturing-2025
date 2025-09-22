@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# MashingProtocolCreateNestedManyWithoutMashingProtocolsInput\n\n## Properties\n**connect** - [list[MashingProtocolWhereUniqueInput]](MashingProtocolWhereUniqueInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "7ae024bf466483366c3b9974604bf459241ffee541303a7b96b1d6de48798b79"
+  }
+}

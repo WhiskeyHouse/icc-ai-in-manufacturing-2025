@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryLogCreateInput\n\n## Properties\n**asset** - [AssetWhereUniqueInput](AssetWhereUniqueInput.md)\n\n\n**customers** - [CustomerCreateNestedManyWithoutInventoryLogsInput](CustomerCreateNestedManyWithoutInventoryLogsInput.md)\n[optional] \n\n**date** - datetime\n\n\n**date_time** - datetime\n\n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n\n\n**logged_by** - str\n\n\n**quantity** - float\n[optional] \n\n**raw_measurement_units** - str\n[optional] \n\n**raw_measurement_value** - str\n[optional] \n\n**revised_by** - str\n[optional] \n\n**revision** - float\n[optional] \n\n**units** - str\n\n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "ab89a91653b9a848148986b67f2a7cf319592e10a6315152509b094e7864c542"
+  }
+}

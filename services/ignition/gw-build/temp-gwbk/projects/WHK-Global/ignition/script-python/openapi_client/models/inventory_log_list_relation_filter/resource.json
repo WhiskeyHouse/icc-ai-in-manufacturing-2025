@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# InventoryLogListRelationFilter\n\n## Properties\n**every** - [InventoryLogWhereInput](InventoryLogWhereInput.md)\n[optional] \n\n**some** - [InventoryLogWhereInput](InventoryLogWhereInput.md)\n[optional] \n\n**_none** - [InventoryLogWhereInput](InventoryLogWhereInput.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "95cf4a27b7a73908507abdbee9dfc9d6fcc14b743215cccfe1efafd66390c553"
+  }
+}

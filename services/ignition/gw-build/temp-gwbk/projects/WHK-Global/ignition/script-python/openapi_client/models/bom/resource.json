@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# Bom\n\n## Properties\n**bom_item** - [list[BomItem]](BomItem.md)\n\n\n**bom_name** - str\n\n\n**bom_revision** - str\n\n\n**bom_type** - str\n[optional] \n\n**class_name** - str\n[optional] \n\n**created_at** - datetime\n\n\n**created_by** - str\n\n\n**edited_at** - datetime\n\n\n**edited_by** - str\n[optional] \n\n**effective_end_date** - object\n[optional] \n\n**effective_start_date** - object\n[optional] \n\n**erp_id** - str\n[optional] \n\n**global_id** - str\n[optional] \n\n**id** - str\n\n\n**inactive** - bool\n[optional] \n\n**item** - [Item](Item.md)\n\n\n**mashing_data** - [list[MashingDatum]](MashingDatum.md)\n[optional] \n\n**notes** - str\n[optional] \n\n**production_order** - [list[ProductionOrder]](ProductionOrder.md)\n[optional] \n\n**schema_version** - str\n[optional] \n\n**unit_procedure** - [list[UnitProcedure]](UnitProcedure.md)\n[optional] \n\n**unit_procedures_primary** - [list[UnitProcedure]](UnitProcedure.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "592665d8817e565a82aa406a602a9b6eba374fd5c652e3a0d544cabf5191d955"
+  }
+}

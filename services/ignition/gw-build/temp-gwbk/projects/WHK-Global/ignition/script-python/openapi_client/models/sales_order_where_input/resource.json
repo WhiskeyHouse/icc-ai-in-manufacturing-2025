@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# SalesOrderWhereInput\n\n## Properties\n**created_at** - [DateTimeFilter](DateTimeFilter.md)\n[optional] \n\n**created_by** - [StringFilter](StringFilter.md)\n[optional] \n\n**customer** - [CustomerWhereUniqueInput](CustomerWhereUniqueInput.md)\n[optional] \n\n**customer_code** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**erp_id** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**global_id** - [StringFilter](StringFilter.md)\n[optional] \n\n**id** - [StringFilter](StringFilter.md)\n[optional] \n\n**item** - [ItemListRelationFilter](ItemListRelationFilter.md)\n[optional] \n\n**line_items** - [JsonFilter](JsonFilter.md)\n[optional] \n\n**name** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**order_type** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**production_orders** - [ProductionOrderWhereUniqueInput](ProductionOrderWhereUniqueInput.md)\n[optional] \n\n**quantity** - [IntFilter](IntFilter.md)\n[optional] \n\n**requested_ship_date** - [DateTimeNullableFilter](DateTimeNullableFilter.md)\n[optional] \n\n**revision** - [IntFilter](IntFilter.md)\n[optional] \n\n**schema_version** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n**updated_at** - [DateTimeFilter](DateTimeFilter.md)\n[optional] \n\n**updated_by** - [StringNullableFilter](StringNullableFilter.md)\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "1c9009d037856e6b31f37a3381cf380c6512a4dc06a155b22692ddf0115f0619"
+  }
+}

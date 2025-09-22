@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "documentation": "# RecipeBomItemCreateInput\n\n## Properties\n**batch** - [BatchWhereUniqueInput](BatchWhereUniqueInput.md)\n[optional] \n\n**class_id** - [RecipeBomItemWhereUniqueInput](RecipeBomItemWhereUniqueInput.md)\n[optional] \n\n**created_by** - str\n\n\n**global_id** - str\n[optional] \n\n**instances** - [RecipeBomItemCreateNestedManyWithoutRecipeBomItemsInput](RecipeBomItemCreateNestedManyWithoutRecipeBomItemsInput.md)\n[optional] \n\n**is_class_definition** - bool\n[optional] \n\n**item** - [ItemWhereUniqueInput](ItemWhereUniqueInput.md)\n[optional] \n\n**lot** - str\n[optional] \n\n**mashing_protocol_steps** - [MashingProtocolStepCreateNestedManyWithoutRecipeBomItemsInput](MashingProtocolStepCreateNestedManyWithoutRecipeBomItemsInput.md)\n[optional] \n\n**operation** - str\n\n\n**operation_index** - float\n\n\n**quantity** - float\n[optional] \n\n**quantity_actual** - float\n[optional] \n\n**recipe_boms** - [RecipeBomWhereUniqueInput](RecipeBomWhereUniqueInput.md)\n[optional] \n\n**units** - str\n\n\n**updated_by** - object\n[optional] \n\n",
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "hintScope": 7,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-02-17T04:07:38Z"
+    },
+    "lastModificationSignature": "8ad4a80df485755e98137fb63328bb7784a63e1a734ea2093a9b783a2e27a718"
+  }
+}
