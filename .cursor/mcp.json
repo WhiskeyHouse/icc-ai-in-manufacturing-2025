@@ -13,12 +13,9 @@
       "url": "http://127.0.0.1:8007/mcp"
     },
     "ignition-linter": {
-      "command": "uv",
-      "args": ["run", "fastmcp", "run", "mcp-ignition-linter.py"],
-      "cwd": "/Users/pmannion/Documents/whiskeyhouse/icc-ai-in-manufacturing-2025",
-      "env": {
-        "PYTHONPATH": "/Users/pmannion/Documents/whiskeyhouse/icc-ai-in-manufacturing-2025"
-      }
+      "command": "python3",
+      "args": ["-m", "ignition_lint.server", "--http"],
+      "cwd": "../ignition-lint"
     }
   }
 }

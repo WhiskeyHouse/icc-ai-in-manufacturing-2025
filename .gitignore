@@ -67,3 +67,5 @@ certs/
 *.pfx
 
 */temp-gwbk/
+
+*/.resources/
