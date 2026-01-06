@@ -9,10 +9,10 @@ uvicorn==0.27.0
 pydantic>=1.10.8,<2.0.0
 python-dotenv==1.0.0
 tenacity==8.2.3
-python-jose==3.3.0
+python-jose==3.4.0
 passlib==1.7.4
-python-multipart==0.0.6
-sentry-sdk==1.39.1
+python-multipart==0.0.18
+sentry-sdk==1.45.1
 prometheus-client==0.19.0
 redis==5.0.1
 httpx==0.26.0
@@ -26,5 +26,5 @@ pytest-asyncio==0.23.3
 pytest-cov==4.1.0
 testcontainers==3.7.1
 asyncio==3.4.3
-aiohttp==3.9.1
+aiohttp==3.13.3
 pytest-mock==3.12.0
