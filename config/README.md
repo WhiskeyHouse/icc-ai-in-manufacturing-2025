@@ -11,7 +11,6 @@ config/
 ├── rabbitmq/       # Message broker configuration
 ├── certs/          # SSL certificates and security
 ├── otel-config.yml # OpenTelemetry configuration
-├── newrelic.js     # New Relic monitoring
 └── playwright.config.js # Browser automation config
 ```
 
@@ -75,7 +74,6 @@ Application monitoring and observability configurations.
 
 **Files**:
 - `otel-config.yml` - OpenTelemetry tracing configuration
-- `newrelic.js` - New Relic APM configuration
 - `playwright.config.js` - Browser automation test configuration
 
 ## Usage
@@ -91,9 +89,6 @@ POSTGRES_USER=admin
 # API Gateway
 KONG_ADMIN_ACCESS_LOG=/dev/stdout
 KONG_ADMIN_ERROR_LOG=/dev/stderr
-
-# Monitoring
-NEW_RELIC_LICENSE_KEY=${NEW_RELIC_LICENSE_KEY}
 ```
 
 ### Docker Compose Integration
